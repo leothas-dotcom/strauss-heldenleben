@@ -1,0 +1,22 @@
+== Ääni vs. A_puoli_kuuntelu.wav
+perusta_0_240.mp4                  suurin ero   0.00 ms, ajautuminen +0.0 ppm
+         5s:  -0.00 ms (1.00)      62s:  -0.00 ms (1.00)     118s:  -0.00 ms (1.00)     175s:  +0.00 ms (1.00)     232s:  +0.00 ms (1.00)
+
+== Teemakartan iskut (8, pakolliset): oikea ruutu = ensimmäinen, joka alkaa aikaisintaan 33 ms ennen ääntä
+tunniste              ääni     oikea ruutu  suurin muutos  muutos  ympärillä  tulos
+held_isku_t6            17.64      17.633        17.633     1.5        0.3  OK
+held_isku_t8            21.62      21.600        21.600     2.2        0.3  OK
+held_isku_t11           27.50      27.467        27.467     2.7        2.2  OK
+held_reh9              154.66     154.633       154.700     0.5        0.4  +2 ruutua
+held_isku1             213.40     213.367       213.367     1.6        0.6  OK
+held_isku2             217.26     217.233       217.233     1.5        0.6  OK
+held_isku3             220.95     220.933       220.933     1.4        0.7  OK
+held_isku4             224.64     224.633       224.633     1.3        0.6  OK
+
+== Aksentit z >= 9 puolen paketeista demo400, A2, A3 (1, vain tiedoksi: ei suunniteltua kuvatapahtumaa, ei poikkeamia)
+tunniste              ääni     oikea ruutu  suurin muutos  muutos  ympärillä  ruutuero
+aks_demo400_181.51     181.51     181.500       181.500     0.4        0.3  +0
+
+== Jähmettymät ennen yleistaukoa (239.2 s): 3: [102.77, 171.03, 180.37]
+
+4 poikkeamaa

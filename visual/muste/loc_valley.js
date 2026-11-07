@@ -1,0 +1,387 @@
+// B, aamunkoiton laakso: kuvakäsikirjoituksen otot 1–6 (ankkurit held_alku ... held_lyyrinen).
+// Ohjaus (docs/ohjaus.md, näytös 1, otot 1.1–1.4; osa 1, 31.10.2026):
+//   1.1 held_alku: sankari selkäkuvassa (1/2) harjanteella; keihäs nousee sävelen mukana ja kärki jättää
+//       teemaviivan YHDEN jatkuvan vedon. Kahdeksan käyrätorvea = kahdeksan hahmoa (sankari + 7 toveria) on
+//       kuvassa koko ajan held_alku -> held_intro_loppuu (ei ilmesty eikä katoa). Korjaus 2 (kierros 2, C11):
+//       sointuiskut T. 6, 8 (viirinkärjet napsahtavat + tuulenpuuska pyyhkäisee viivoituksena) ja T. 11
+//       (kaikki kahdeksan nostavat kellon fraasin mittaisena liikkeenä): hahmon keho ei reagoi iskuun.
+//       Vuoret: lyijykynäluonnos/paperi, berliininsininen painuu vasta held_viulut:ssa (B2).
+//   1.2 held_viulut: kääntyy profiiliin (asentokirjasto kaantyminen_profiiliin) ja kävelee (kavely)
+//       harjannetta pitkin kohti aurinkoa; keihäs pitää sävelen; viulut sytyttävät tuulen.
+//   1.3 held_vasket_t13: pysähtyy ja nostaa keihään molemmin käsin (keihaan_nosto_molemmin), kun aurinko
+//       nousee harjanteen takaa; patarummut pöllähdyttävät harjanteen reunan.
+//   1.4 held_intro_loppuu: kääntyy tovereihin, jotka nousevat riviin, ja nostaa kellon (kellon_nosto);
+//       held_viulut_paluu: puuska nostaa viirit.
+
+import * as THREE from 'three';
+import { C, ink, flat, group, poly, ridgeGeo, ridgePts, skylineGeo, rect, cloud, sky as makeSky, streaks, strokeGeo, waveMat, pennantGeo, circle, clamp, smoothstep, mix, hash1, vnoise1 } from './paper.js';
+import { knightBack, KP, kmix, POSES, backGrip } from './puppets.js';
+import { leader, camPath, ease, GRIP_BELOW } from './hero.js';
+import { tipTrail, heroGate } from './brush.js';
+
+export function build(K) {
+  const { S } = K;
+  const T0 = S.T0;
+  const A = S.A;
+  const tHits = ['held_isku_t6', 'held_isku_t8', 'held_isku_t11'].map((id) => A(id));
+  const tViol = A('held_viulut').t;            // kohotahti
+  const tBrass = A('held_vasket_t13').t;
+  const tHeroes = A('held_intro_loppuu').t;    // vahvistettu
+  const tGust = A('held_viulut_paluu').t;
+  const tEnd = A('held_lyyrinen').t;
+
+  const scene = new THREE.Scene();
+  const SKY = makeSky(scene);
+  const far3 = flat(scene, ridgeGeo(-700, 700, 52, 3, { lambda: 170, base: -400 }), ink(C.paper, { shade: C.blue, raster: 0.24 }), { z: -230 });
+  const far2 = flat(scene, ridgeGeo(-450, 450, 40, 7, { lambda: 90, base: -250 }), ink(C.paper, { shade: C.blue, raster: 0.5 }), { z: -125 });
+  const mist1 = flat(scene, rect(1200, 14), ink(C.paper, { shade: C.blue, raster: 0.1 }), { z: -100, y: 2 });
+  // B2: ennen held_viulut:a vuoret ovat paperia ja lyijykynäviivaa; berliininsininen painuu pisteittäin (uAppear) vasta jousten tullessa
+  const midPts = ridgePts(-260, 260, 22, 11, { lambda: 48 });
+  const midSketch = flat(scene, ridgeGeo(-260, 260, 22, 11, { lambda: 48, base: -160 }), ink(C.paper, { shade: C.blue, raster: 0.08 }), { z: -46.1 });
+  // lyijykynäviiva (ohjaus 1.1 'vuoret paperia ja lyijykynää', tyyliohje luku 12 kohta 1 'haalea lyijykynäluonnos vuorista'): haalea rasteroitu sininen, ei musta murtoviiva
+  const midLine = flat(scene, strokeGeo(midPts, 0.16), ink(C.blue, { shade: C.paper, raster: 0.55 }), { z: -45.9 });
+  const mid = flat(scene, ridgeGeo(-260, 260, 22, 11, { lambda: 48, base: -160 }), ink(C.blue, { grad: [C.black, 6, -12, 0.85] }), { z: -46 });
+  const midAll = [midSketch, midLine, mid];
+  const mist2 = flat(scene, rect(700, 6), ink(C.paper, { shade: C.blue, raster: 0.22 }), { z: -30, y: -3 });
+  // pääharjanne: tasanne ritareille (x -15..17)
+  const topPts = [];
+  for (let i = 0; i <= 160; i++) {
+    const x = -130 + (260 * i) / 160;
+    const plateau = 1 - smoothstep(14, 26, Math.abs(x - 1));
+    const y = plateau * (0.12 * (vnoise1(x * 0.8, 5) - 0.5)) + (1 - plateau) * (-0.32 * Math.max(0, Math.abs(x - 1) - 14) + 3.5 * (vnoise1(x / 9, 9) - 0.5));
+    topPts.push([x, y]);
+  }
+  flat(scene, skylineGeo(topPts, -80), ink(C.black, {}), { z: 0 });
+  // harjanteen pinta (sama murtoviiva kuin yllä): hahmot seisovat sen päällä
+  const ground = (x) => {
+    const f = clamp((x - topPts[0][0]) / (topPts[topPts.length - 1][0] - topPts[0][0]), 0, 1) * (topPts.length - 1);
+    const i = Math.min(topPts.length - 2, Math.floor(f));
+    return topPts[i][1] + (topPts[i + 1][1] - topPts[i][1]) * (f - i);
+  };
+  const rimMat = ink(C.paper, {});
+  flat(scene, strokeGeo(topPts, 0.07), rimMat, { z: 0.01 });
+  const foreMat = ink(C.black, {});
+  flat(scene, poly([[-30, -20], [-30, -2], [-24, -1.2], [-19, -2.6], [-15, -4.5], [-14, -20]]), foreMat, { z: 7 });
+  flat(scene, poly([[14, -20], [15, -5], [19, -2.2], [24, -1.4], [30, -2.5], [30, -20]]), foreMat, { z: 7.5 });
+
+  // --- ritari (profiili ja selkäkuva) ---
+  const L = leader(scene, {});
+  const BX = -7;   // selkäkuvan paikka harjanteella; profiilissa ritari kävelee tästä rivin keskelle (x 0,5)
+  const back = knightBack(scene);
+  const BL_LEN = 4.4;   // pitkä keihäs: kärjen rata kattaa kuvan korkeuden, ritari pysyy pienenä (kärki kämmenestä)
+  const backLance = back.lance;   // ryhmä on oikean käden kämmenessä (puppets.js knightBack.hold)
+  flat(backLance, rect(0.05, BL_LEN + GRIP_BELOW, 0.5, 0), ink(C.black), { y: -GRIP_BELOW });
+  const backFlag = flat(backLance, pennantGeo(1.3, 0.5), waveMat(C.red, { amp: 0.2, k: 5 }), { y: 4.3, z: 0.01 });
+  backFlag.scale.x = -1;   // yksi tuuli (-x)
+  // pieni viiri; veto on sivellinjälki, ei toinen lippu
+  // välähdys kellossa (viulujen ensimmäinen säde)
+  const glint = group(scene, { z: 0.6 });
+  const glintMat = ink(C.paper, {});
+  flat(glint, poly([[0, 0.9], [0.12, 0.12], [0.9, 0], [0.12, -0.12], [0, -0.9], [-0.12, -0.12], [-0.9, 0], [-0.12, 0.12]]), glintMat, {});
+
+  // --- toverit: 7 torviritaria keihäineen, KUVASSA KOKO AJAN (C11: kahdeksan torvea = kahdeksan hahmoa) ---
+  // Hahmot seisovat harjanteella held_alku:sta alkaen; ne eivät ilmesty, katoa eivätkä pompi iskuissa.
+  // Oikea ryhmä (4) odottaa paikallaan; vasen ryhmä (3) seuraa sankaria jonossa hänen kävellessään
+  // (held_viulut -> held_vasket_t13) ja pysähtyy hänen kanssaan riviin. Samassa tuulessa (windAt).
+  const XS = [-9.6, -7.0, -4.3, 3.7, 6.3, 8.9, 11.5];
+  const LANCES = [3.8, 3.3, 4.1, 3.5, 4.2, 3.4, 3.9];   // eri pituiset keihäät: viirit eivät mene päällekkäin
+  const MRAST = [0, 0.15, 0.3, 0.1, 0.25, 0.05, 0.2];
+  const mates = XS.map((x, i) => ({
+    L: leader(scene, { raster: 0, coilRaster: 0.15 * (i % 2), lance: LANCES[i], nb: 20, bannerColor: i % 2 ? C.paper : C.red }),
+    x, z: -0.35 - 0.04 * i, follow: i < 3,
+  }));
+  const wind = streaks(scene, 170, ink(C.paper, {}), 1.2);
+  // patarummun lyönnit: pölypilvi nousee harjanteen reunalta (elementti, ei koko kuvan tärähdys)
+  const puffMats = [];
+  const puffs = [-8.3, -5.65, -1.9, 2.1, 5.0, 7.6, 10.2].map((x, i) => {
+    const m = ink(C.paper, { shade: C.blue, raster: 0.3 });
+    puffMats.push(m);
+    const g = flat(scene, cloud(2.4, 0.9, 500 + i, false), m, { x, y: 0.05, z: -1.2 });   // hahmojen takana: pöllähdys ei peitä jalkoja
+    g.visible = false;
+    return g;
+  });
+
+  // --- data ---
+  // Sävelkorkeus teemaviivasta (analysis/teemaviiva.py), muuten S.melody. 0 = Es2 (midi 39), 1 = kolme oktaavia ylempänä.
+  // Keihäs nousee sen mukana: kärjen korkeus on sävel, ja kärjen jättämä veto on teemaviiva maailmassa.
+  const TL = K.TL;
+  const midiAt = (t) => { const m = TL && TL.midi(t); return m !== null && m !== undefined && TL && t < TL.t1 ? m : S.melody(t); };
+  const pitchU = (t) => { let a = 0; for (let q = -2; q <= 2; q++) a += clamp((midiAt(t + q * 0.03) - 39) / 36, 0, 1.05); return a / 5; };
+  // Kärjen korkeus mukailee melodiaa tasoitetusti: fraasin mittainen kolmiosuodin (±0,8 s, mediaani poistaa yksittäiset ylikuoret), joten iso kaari näkyy mutta nuotit eivät nyki
+  const midiN = (t) => clamp((midiAt(t) - 39) / 36, 0, 1.05);
+  // esilaskettu taulukko (0,02 s ruudukko): mediaani (±0,1 s) ja gaussinen tasoitus (sigma 0,35 s) -> sileä kaari
+  const MG0 = T0 - 2, MDT = 0.02, MN = Math.ceil((tBrass + 3 - MG0) / MDT);
+  const raw = Array.from({ length: MN }, (_, i) => { const t1 = MG0 + i * MDT; return [midiN(t1 - 0.1), midiN(t1), midiN(t1 + 0.1)].sort((x, y) => x - y)[1]; });
+  const kern = Array.from({ length: 71 }, (_, j) => Math.exp(-0.5 * ((j - 35) * MDT / 0.35) ** 2));
+  const smooth = raw.map((_, i) => { let a = 0, w = 0; for (let j = 0; j < 71; j++) { const k = i + j - 35; if (k < 0 || k >= MN) continue; a += kern[j] * raw[k]; w += kern[j]; } return a / w; });
+  const mel = (t) => { const f = clamp((t - MG0) / MDT, 0, MN - 1.001), i = Math.floor(f); return smooth[i] + (smooth[i + 1] - smooth[i]) * (f - i); };
+  const horns = (t) => smoothstep(0.3, 0.8, S.energy.horns(t));
+  // viulut soivat: kohotahdista tahdin 17 taukoon ja taas tahdista 20 (partituuri, ankkurit)
+  const violinsOn = (t) => (t >= tViol - 0.1 && t < tHeroes) || t >= tGust - 0.1;
+  const violins = (t) => (violinsOn(t) ? Math.max(0.45, S.energy.violins(t)) : 0) * smoothstep(tViol - 0.1, tViol + 0.8, t);
+  // Sointuiskut T. 6, 8, 11 (kahdeksan käyrätorvea, fagotit, kontrabassot f): ISKUN TEKEE ELEMENTTI, EI KEHO.
+  // Viirinkärjet napsahtavat ylös ja tuulenpuuska pyyhkäisee (viivoitus). snap = välitön nousu iskun ruudulla
+  // (S.A(id) - S.LEAD, kuvasääntö 15: suurin muutos ensimmäisessä ruudussa) ja sen jälkeen hidastuva palautuminen
+  // (eksponentiaalinen jälkiliike); se menee vain tuuleen (viirit), viirin kärkeen ja viivoitukseen.
+  // T. 8 on voimakkaampi kuin T. 6 (kirjoitettu crescendo); T. 11 lisäksi nostaa kellot (bellHit).
+  const HIT_AMP = [0.6, 1.0, 0.85];
+  // iskun ruutu = ensimmäinen ruutu, joka alkaa aikaisintaan S.LEAD ennen ääntä (toleranssi liukulukuvirheelle); sitä ennen 0
+  const snapAt = (t, h, dec) => (t >= h - S.LEAD - 1e-3 ? Math.exp(-(t - (h - S.LEAD)) / dec) : 0);
+  const hitSnap = (t, dec = 0.55) => tHits.reduce((m, h, i) => m + HIT_AMP[i] * snapAt(t, h.t, dec), 0);
+  // puuskan tuottama viivoituksen lisämatka (snapin integraali, jotta viivat eivät hyppää paikasta toiseen)
+  const hitSweep = (t) => tHits.reduce((m, h, i) => m + HIT_AMP[i] * (t < h.t - S.LEAD - 1e-3 ? 0 : 0.55 * (1 - Math.exp(-(t - (h.t - S.LEAD)) / 0.55))), 0);
+  // T. 11: kaikki kahdeksan nostavat kellon soittoasentoon fraasin mittaisena liikkeenä (nousu 1,6 s, lasku 1,6 s)
+  const tBell = tHits[2].t;
+  const bellHit = (t) => ease(smoothstep(tBell - 0.2, tBell + 1.4, t)) * (1 - ease(smoothstep(tBell + 2.2, tBell + 3.8, t)));
+  // patarummun lyönnit vaskien tulosta alkaen
+  const drum = S.strokesIn(tBrass - 0.2, tEnd);
+  const low = S.accIn(tBrass, tHeroes, 5).filter((x) => x.kaistat_z.matala > 6);
+  // trumpettien toistuvat soinnut tahdeista 17-19: nuotinalut
+  const tptOns = S.onsetsIn(tHeroes, tGust);
+  const softSnap = (t, h, dec) => smoothstep(h - 1 / 30, h + 0.1, t) * Math.exp(-Math.max(0, t - h) / dec);   // trumpettien nuotinalut: ennallaan
+  const tptFlick = (t) => (t >= tHeroes && t < tGust ? tptOns.reduce((m, o) => m + softSnap(t, o, 0.2), 0) : 0);   // vain viirien värähdys
+
+  // --- sankarin teot (asentokirjasto puppets.js POSES), ajat ankkureista ---
+  const tTurn = tViol;                     // 1.2 kääntyy profiiliin
+  const tWalk0 = tViol + 1.0, tWalk1 = tBrass - 0.4;   // kävely harjannetta pitkin
+  const walkU = (t) => ease(smoothstep(tWalk0, tWalk1, t));
+  const heroX = (t) => mix(BX, 0.5, walkU(t));
+  const pitchArm = (t) => { const u = mel(t); return { aN: 1.45 + 1.3 * u, eN: 0.55 - 0.3 * u, lanceAng: 0.55 - 0.75 * u }; };
+  const turnBack = (t) => smoothstep(tHeroes - 0.5, tHeroes + 0.2, t);   // 1.4 kääntyy tovereihin (syrjän kautta)
+  function leaderState(t) {
+    let pose, facing = 1;
+    if (t < tBrass - 0.4) {
+      // 1.2: syrjästä profiiliin ja kävelemään; keihäskäsi pitää sävelen koko ajan
+      const turn = POSES.kaantyminen_profiiliin(smoothstep(tTurn, tTurn + 1.2, t));
+      const walk = POSES.kavely((t - tWalk0) / 0.9);
+      const w = smoothstep(tWalk0 - 0.3, tWalk0 + 0.3, t) * (1 - smoothstep(tWalk1 - 0.5, tWalk1, t));
+      pose = { ...kmix(turn, walk, w), ...pitchArm(t), sx: 1 };   // profiili täysleveänä heti vaihdon jälkeen (ei viivamaista välivaihetta)
+      pose = { ...pose, ...kmix(pose, KP.call, bellHit(t)) };   // T. 11: kello soittoasentoon fraasin mittaisena liikkeenä (kaikki kahdeksan)
+    } else if (t < tHeroes - 1.6) {
+      // 1.3: pysähtyy ja nostaa keihään molemmin käsin auringolle (fraasin mittainen nosto)
+      const r = ease(smoothstep(tBrass - 0.4, tBrass + 2.4, t));
+      pose = kmix({ ...KP.stand, ...pitchArm(tBrass - 0.4) }, KP.lanceBoth, r);
+    } else {
+      // 1.4: kääntyy tovereihin ja nostaa kellon
+      const tb = turnBack(t);
+      facing = tb < 0.5 ? 1 : -1;
+      const down = ease(smoothstep(tHeroes - 1.6, tHeroes - 0.7, t));
+      const base = kmix(KP.lanceBoth, KP.proud, down);
+      pose = { ...kmix(base, KP.call, horns(t) * smoothstep(tHeroes - 0.2, tHeroes + 1.2, t)), sx: 0.55 + 0.45 * Math.abs(1 - 2 * tb) };
+    }
+    return { x: heroX(t), y: 0, z: -0.3, facing, pose: { ...pose, cape: violins(t) } };
+  }
+  // yksi tuuli kaikille viireille (sankari, toverit): jousista ja voimakkuudesta; sointuiskut ja trumpettien nuotinalut
+  // lisäävät siihen puuskan, joka nostaa ja venyttää viirin kärkeä (ei kehoa)
+  const windBase = (t) => ({ x: -(0.5 + 2.6 * violins(t) + 0.8 * S.loud(t)), y: 0.2 + 2.4 * violins(t) });
+  // Viiri piirretään tuulihistoriasta (hero.js place: wind(t - k*dt)), joten pehmeä ikkunointi muuttaisi napsahduksen
+  // viirin yli kulkevaksi aalloksi. Iskupuuska luetaan siksi nykyisen ruudun ajasta (nowT): koko viiri napsahtaa
+  // iskun ruudulla ja palautuu hidastuen. nowT asetetaan update():n alussa.
+  let nowT = -1e9;
+  const windAt = (t) => {
+    const g = hitSnap(nowT), f = tptFlick(t);
+    return { x: -(0.5 + 2.6 * violins(t) + 0.8 * S.loud(t) + 4.0 * g + 1.0 * f), y: 0.2 + 2.4 * violins(t) + 3.0 * g + 1.2 * f };
+  };
+
+  // --- otot ---
+  const backEnd = tViol;                // selkäkuva teeman ajan; viuluissa kääntyy profiiliin (1.2)
+  const shots = [
+    // 1-4 yksi jatkuva nosturiajo: selkäkuvasta laakson pohjalta auringonnousun laajaan kuvaan.
+    // Veto (kameraan kiinnitetty, etualalla) jatkuu piirtyen koko ajan.
+    // Stillisääntö: avauksessa ritari pieni selkäkuva alhaalla, veto kuvan ainoa pääosa, taivas tyhjä;
+    // kamera nousee vedon mukana (1.1), jatkaa profiilikävelyn (1.2) yli ja laajenee auringonnousuun (1.3).
+    { name: '1.1-1.3 nosturi: selkäkuva -> auringonnousu', a: T0, b: tHeroes,
+      cam: camPath([{ pos: [BX - 0.5, 1.0, 25], look: [BX + 2.0, 7.0, -120], fov: 50 }, { pos: [BX + 0.2, 2.6, 25], look: [BX + 3.5, 8.5, -140], fov: 50 },
+        { pos: [-1.2, 3.4, 22], look: [1.5, 6.5, -90], fov: 46 }, { pos: [2, 6.5, 32], look: [2, 4.8, -30], fov: 42 }], (u) => 0.2 * clamp(u) + 0.8 * (1 - (1 - clamp(u)) ** 4)) },
+    { name: '5 matala edestä: kahdeksan nousee', a: tHeroes, b: tHeroes + 3.4,
+      cam: camPath([{ pos: [1, -0.6, 23], look: [1, 2.4, 0], fov: 42 }, { pos: [1, -0.2, 20.5], look: [1, 2.6, 0], fov: 42 }]) },
+    // C11: kahdeksan hahmoa pysyy kuvassa koko ajan: sivuajo kulkee rivin matkassa, mutta niin kaukaa, että koko rivi (x -9,6 ... 11,5) mahtuu
+    { name: '5 sivuajo rivin ohi', a: tHeroes + 3.4, b: tGust,
+      cam: camPath([{ pos: [-2.5, 1.2, 22], look: [-1.5, 3.2, 0], fov: 46 }, { pos: [3.5, 1.4, 22], look: [3.5, 3.3, 0], fov: 46 }]) },
+    { name: '6 puuska nostaa viirit (koko joukko)', a: tGust, b: tEnd + 1.5,
+      cam: camPath([{ pos: [1.2, 2.2, 18.5], look: [1.0, 3.6, 0], fov: 44 }, { pos: [1.0, 2.7, 17.5], look: [1.0, 3.8, 0], fov: 44 }]) },
+  ];
+
+  // --- käyrätorviteema keihään kärjen jättämänä vetona maailmassa (brush.js tipTrail) ---
+  // Selkäkuvan keihäs nousee sävelen mukana (backLance), ja kärki jättää punaisen vedon, joka ajelehtii
+  // tuulessa ja kuivuu. Profiilissa (tHeroes alkaen) veto jatkuu johtajan keihään kärjestä.
+  // Muste säästeliäästi (tuotantojako.md): laaksossa YKSI veto held_alku -> held_viulut, haalistuen
+  // held_vasket_t13:een. Veto on sivellinjälki, ei toinen lippu: kärjen kohdalta ohut (press kasvaa iän
+  // myötä), leveys paineesta (voimakkuus); portti sulkeutuu viulujen tultua ja muste vanhenee nopeammin (k).
+  let curT = 0;
+  const trail = tipTrail(scene, S, {
+    seed: 11, N: 320, wmax: 0.24, wmin: 0.02, hairW: 0.04, drift: 0.45,
+    press: (tt) => clamp(0.3 + 0.7 * S.loud(tt)) * smoothstep(0.05, 1.1, curT - tt),
+    // B2: yksi jatkuva veto: portti on auki koko teeman ajan (ei kynnystä soittimen energiasta, joka katkoi vedon pätkiksi)
+    gate: (tt) => smoothstep(T0 - 0.3, T0 + 0.9, tt) * (1 - smoothstep(tViol - 0.9, tViol - 0.1, tt)),   // veto päättyy sankarin kääntyessä (kärkimalli vaihtuu selkäkuvasta profiiliin: ei hyppyä vetoon)
+  });
+  const trailK = (t) => mix(1, 0.45, smoothstep(tViol, tBrass, t));
+  // ritari on jo nousemassa harjanteen takaa musiikin alkaessa (ei jähmettymää 7,8 s): liike käynnissä T0:ssa
+  const backRise = () => 1;   // kierros 2: sankari seisoo harjanteella jo held_alku:ssa (kahdeksan hahmoa kuvassa), nousu on keihään nousu
+  const backLanceRot = (tt) => mix(1.45, -0.05, mel(tt)) + 0.03 * Math.sin(tt);   // Es2 lähes vaakaan, kolme oktaavia ylempänä pystyyn
+  const backArm = (tt) => 0.25 + 1.0 * mel(tt);
+  const backY = (tt) => -2.4 * (1 - backRise(tt));
+  const backSx = (tt) => Math.max(0.45, 1 - 0.55 * smoothstep(tViol - 0.4, tViol, tt))   // selkäkuva kapenee 0,45:een = profiilin täyden leveyden verran: vaihto profiiliin ei muuta leveyttä;   // kääntyy syrjäksi ennen profiilia
+  // Veto alkaa keihään kärjestä joka ruudussa: selkäkuvassa kärki lasketaan kämmenestä (hold) samoilla
+  // kaavoilla kuin näkymäpuun keihäs, profiilissa johtajan frame (hero.js tipAt).
+  function tipAt(tt) {
+    if (tt < T0 - 0.3) return null;
+    if (tt < backEnd) {
+      const r = backLanceRot(tt), a = backArm(tt);
+      const hx = 0.33 + 0.66 * Math.sin(a), hy = 1.72 - 0.66 * Math.cos(a);
+      // viirin häntä: kiinnityskohta keihäässä (0; 4,3) kierrettynä kulmaan r, häntä tuulessa 1,3 vasemmalle (viiri ei kierry)
+      const ax = -4.3 * Math.sin(r), ay = 4.3 * Math.cos(r);
+      return { x: BX + backSx(tt) * (hx + ax - 1.3), y: backY(tt) + hy + ay, z: -0.3 + 0.08 };
+    }
+    if (tt >= tBrass) return null;   // vaskista alkaen viiri on viiri, ei sivellin
+    return L.tailAt(tt);
+  }
+
+  // toverin tila (puhdas ajan funktio): seisoo harjanteella koko ajan. Vasen ryhmä kävelee sankarin mukana
+  // (sama walkU, sama kävelyn paino), oikea ryhmä seisoo. Kellot nousevat T. 11:ssä (bellHit) ja tahdissa 17 alkaen
+  // käyrätorvien voimakkuuden mukaan (horns). Mikään ei reagoi yksittäiseen iskuun: ei y-liikettä, ei näkyvyyden vaihtoa.
+  const FOLLOW = 6.0;   // vasen ryhmä kävelee 6,0 yksikköä (sankari 7,5): koko joukko pysyy kuvassa jo avauksessa
+  const walkW = (tt) => smoothstep(tWalk0 - 0.3, tWalk0 + 0.3, tt) * (1 - smoothstep(tWalk1 - 0.5, tWalk1, tt));
+  function mateState(i, tt) {
+    const M = mates[i];
+    const x = M.x - (M.follow ? FOLLOW * (1 - walkU(tt)) : 0);
+    const wk = M.follow ? walkW(tt) : 0;
+    const base = kmix(KP.proud, KP.stand, 0.3 * (i % 2));
+    const stride = kmix(base, POSES.kavely((tt - tWalk0) / 0.9 + 0.23 * i), wk);
+    const h = Math.max(bellHit(tt - 0.04 * i), smoothstep(tHeroes - 0.4, tHeroes + 0.8, tt) * horns(tt - 0.04 * i));   // kellot nousevat tahdissa 17 fraasin mittaisena liikkeenä
+    const pose = kmix(stride, KP.call, h);
+    return { x, y: ground(x), z: M.z, facing: 1, lanceAng: 0.03 * Math.sin(tt * 0.9 + i), pose: { ...pose, tilt: pose.tilt + 0.05 * Math.sin(tt * 1.1 + i) }, bell: h };
+  }
+  const mateWidth = (t) => 0.7 * (0.55 + 0.45 * smoothstep(tBrass, tBrass + 3, t));   // heraldiset viirit avautuvat vaskien tullessa
+
+  function update(t) {
+    nowT = t;
+    const lows = S.energy.lows(t);
+    const up = smoothstep(T0 - 1, T0 + 12, t);
+    far3.position.y = -42 * (1 - up) - 3 * (1 - lows);
+    far2.position.y = -26 * (1 - up) - 2 * (1 - lows);
+    const wb = smoothstep(tViol, tViol + 4, t);   // berliininsininen painuu vuoriin jousten tullessa (B2)
+    midAll.forEach((m) => { m.position.y = -9 * (1 - smoothstep(T0, T0 + 9, t)); });
+    mid.visible = wb > 0.001;
+    mid.material.uniforms.uAppear.value = wb;
+    far3.material.uniforms.uRaster.value = mix(0.05, 0.24, wb);
+    far2.material.uniforms.uRaster.value = mix(0.1, 0.5, wb);
+    mist1.position.x = t * 1.5;
+    mist2.position.x = -t * 2.2;
+    // taivas: yö -> sarastus (teema) -> valo (viulut) -> aamu (vasket ja aurinko)
+    const u = SKY.u;
+    u.uTime.value = t;
+    // E2 (kierros 4): aurinko ja taivas nousevat YHDELLÄ kaarella T0 -> tEnd (ei ikkunoita jaksoille): nopeus kasvaa vaskien tullessa
+    // (tBrass) ja hidastuu vasta perillä (tEnd). Taivaan kirkkaus kasvaa yhdellä tasaisella käyrällä (ei portaita); värit saavat
+    // vaihtua (yö -> sarastus -> valo -> aamu), kirkkaus ei pysähdy.
+    const au = clamp((t - T0) / (tEnd - T0));
+    const sunF = smoothstep(0, 1, Math.pow(au, 1.9));                     // aurinko: hidas alku, painottuu vaskien jälkeen
+    const skyP = 1 - Math.pow(1 - au, 1.65);                               // taivas: kirkastuu yhtä kaarta, nopeus ei mene nollaan ennen tEndiä (mitattu: kirkkaus kasvaa tasaisesti)
+    u.uBlackTop.value = 0.85 * Math.pow(1 - skyP, 1.5);
+    u.uBlueH.value = -0.25 + 0.7 * skyP;
+    u.uRedAmt.value = 0.75 * smoothstep(T0 - 2, T0 + 5, t) * (1 - 0.6 * sunF);
+    const sunY = -10 + 180 * sunF;
+    u.uSun.value.set(60, sunY, 34, t > T0 - 1 ? 1 : 0);   // aurinko iso, ritari pieni (1.3)
+    u.uRays.value = 0;
+    rimMat.uniforms.uColor.value.copy(t > tBrass ? C.red : C.paper);
+
+    // ritari: selkäkuva oton 1 ajan
+    const backView = t < backEnd;
+    L.P.root.visible = !backView;
+    L.place(t, leaderState, windAt, { noBanner: backView, noLance: backView, capeWind: violins(t), width: 0.04 + 0.86 * smoothstep(tViol, tViol + 1.8, t) });   // viirinauha avautuu ohuesta (ei ilmesty leveänä yhdessä ruudussa kääntyessä)
+    back.root.visible = backView;
+    back.root.position.set(BX, backY(t), -0.3);
+    back.root.scale.x = backSx(t);
+    back.M.cape.uniforms.uTime.value = t;
+    back.M.cape.uniforms.uAmp.value = 0.1 + 0.2 * S.loud(t);
+    backFlag.material.uniforms.uTime.value = t;
+    backFlag.material.uniforms.uAmp.value = 0.2 + 0.25 * hitSnap(t);   // iskussa viirin kärki napsahtaa (vain viiri)
+    backFlag.visible = true;
+    // keihäs nousee melodian mukana (laulu): kärki on sävel, ja veto syntyy kärjestä
+    back.hold(backArm(t), backLanceRot(t));
+    backFlag.rotation.z = -backLanceRot(t) - 0.45 * hitSnap(t);   // viiri roikkuu tuulessa vaakaan, ei kierry keihään mukana
+    curT = t;
+    trail.set(t, tipAt, windBase, T0 - 0.3, trailK(t));   // veto ajelehtii perustuulessa (iskupuuska ei sotke sitä)
+    // kellon välähdys kohotahdissa
+    const g = S.pulse(t, tViol, 0.5);
+    glint.visible = g > 0.02 && !backView;
+    if (glint.visible) {
+      glint.position.set(heroX(t) + 0.25, 3.55, 0.6);
+      glint.scale.setScalar(0.25 + 1.1 * g);
+      glint.rotation.z = 0.6 * (t - tViol);
+    }
+
+    // toverit keihäineen: kuvassa koko ajan; iskut näkyvät vain viirien kärjissä (windAt) ja viivoituksessa
+    // sivuääni rasterina (sankari pääosassa), täysväriin kun käyrätorvet ottavat teeman (tahti 17)
+    const mr = 1 - smoothstep(tBrass, tHeroes, t);
+    mates.forEach((M, i) => {
+      M.L.place(t, (tt) => mateState(i, tt), windAt, { capeWind: violins(t), width: mateWidth(t), rigid: true });
+      M.L.P.M.body.uniforms.uRaster.value = mix(MRAST[i], 0.5, mr);
+      M.L.bannerMat.uniforms.uRaster.value = 0.35 * mr;
+    });
+    const gust = S.pulse(t, tGust, 1.1);
+    const hs = hitSnap(t, 0.7);   // puuska: viivoitus pyyhkäisee
+
+    // tuuli = viulut
+    const v = violins(t);
+    const lo = S.loud(t);
+    wind.set((i) => {
+      if (hash1(i * 7 + 1) > v * 1.1 + 1.2 * gust + 1.6 * hs) return null;
+      const sp = 5 + 6 * hash1(i * 3);
+      const span = 60;
+      // vaihe = nopeuden integraali (ei hyppyjä, kun puuska muuttaa nopeutta)
+      const sweep = (t < tGust ? 0 : 2 * 1.1 * (1 - Math.exp(-(t - tGust) / 1.1))) + 5 * hitSweep(t);
+      const ph = (((hash1(i * 5) * span + sp * (1.1 * t + sweep)) % span) + span) % span;
+      return { x: -30 + ph, y: -9 + 24 * hash1(i * 11) + ph * 0.32, ang: 0.32, len: (1.2 + 3 * hash1(i * 13)) * (0.4 + v + gust + 1.2 * hs), w: 0.045 };
+    });
+    // patarummut ja matalat iskut: pölypilvet harjanteen reunalla (puolet pilvistä per lyönti)
+    const thuds = [...drum.map((d) => ({ t: d, s: 0.6 })), ...low.map((x) => ({ t: x.t, s: 1 }))];
+    puffs.forEach((g, i) => {
+      let best = null;
+      for (const e of thuds) { const a = t - (e.t - S.LEAD); if (a >= 0 && a < 0.8 && hash1(e.t * 7 + i) < 0.55 && (!best || a < best.a)) best = { a, s: e.s }; }
+      g.visible = !!best;
+      if (!best) return;
+      const r = best.s * (0.5 + 1.2 * ease(clamp(best.a / 0.4)));
+      g.scale.set(r, r * (1 + best.a), 1);
+      puffMats[i].uniforms.uAppear.value = 1 - smoothstep(0.3, 0.8, best.a);
+    });
+    const dim = t < T0 ? 0.45 : 0.45 * (1 - smoothstep(T0, tViol + 2, t));
+    return { dim };
+  }
+  // opastarkistus: paikan omat elementit (viirinkärjet iskuissa, kellon välähdys, aurinko, viirit, tuuli, pöllähdykset)
+  // veto alkaa kärjestä: vedon uusin piste (trail.last) ja keihään kärki näkymäpuusta (selkäkuvan tai johtajan keihäs)
+  function tipGap() {
+    const k = trail.last;
+    if (!trail.mesh.visible || k.tipX === null || k.ink < 0.05) return null;   // vain kun vedon uusin pää on musteella (portti auki)
+    scene.updateMatrixWorld(true);
+    // viirin vapaa pää näkymäpuusta: selkäkuvassa viirin häntä, profiilissa viirinauhan viimeinen kärkipari
+    let v;
+    if (back.root.visible) v = backFlag.localToWorld(new THREE.Vector3(1.3, 0, 0));
+    else { const g = L.banner.geometry.getAttribute('position'), n = g.count / 2 - 1; v = { x: (g.getX(2 * n) + g.getX(2 * n + 1)) / 2, y: (g.getY(2 * n) + g.getY(2 * n + 1)) / 2 }; }
+    return Math.hypot(v.x - k.tipX, v.y - k.tipY);
+  }
+  const probe = (t) => ({
+    karki_ero: tipGap(),
+    midi_raaka: midiN(t), mel_t: mel(t),
+    viirinkarjet: mates.length,                 // kaikki seitsemän toveria kuvassa koko ajan
+    viirinkarjet_y: hitSnap(t),                // iskun napsahdus: viirin kärjen nosto (vain viiri, ei keho)
+    viirit_n: 7 * (mateWidth(t) / 0.7 - 0.55) / 0.45,   // heraldiset viirit avautuvat vaskien tullessa
+    kellot: mates.reduce((m, M, i) => m + mateState(i, t).bell, 0) / mates.length,
+    valahdys: glint.visible ? glint.scale.x : 0,
+    aurinko_y: SKY.u.uSun.value.y,
+    viirit_amp: 0.06 + 0.25 * smoothstep(0.15, 0.7, S.energy.brass(t)) * smoothstep(tBrass, tBrass + 3, t) + 0.4 * S.pulse(t, tGust, 1.1),
+    tuuli: violins(t),
+    pollahdys: puffs.filter((g) => g.visible).length,
+    rivi_y: mates.reduce((m, M, i) => m + mateState(i, t).bell, 0) / mates.length,   // kellojen nosto (aiemmin rivin nousu)
+    nuket_rivissa: mates.filter((M) => M.L.P.root.visible).length,
+    selka_y: back.root.visible ? back.root.position.y : null,
+    aurinko: SKY.u.uSun.value.y,
+    maa: S.energy.lows(t),
+    ritari_x: heroX(t),
+    selkakuva_y: backY(t),
+    torvi: Math.max(t < tBrass ? heroGate(S, t) : 0, t >= tHeroes ? horns(t) : 0),
+    keihas_molemmin: t >= tBrass - 0.4 && t < tHeroes - 1.6 ? ease(smoothstep(tBrass - 0.4, tBrass + 2.4, t)) : 0,
+  });
+  const grip = () => (back.root.visible ? [backGrip(back, GRIP_BELOW, BL_LEN)] : []);
+  return { scene, update, shots, probe, grip };
+}

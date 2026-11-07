@@ -1,0 +1,8 @@
+1125.7 s  J taistelukenttä/4.1 kutsu: kolme viiriä horisontissa            kääntö max   0.1 °/s (1145.0 s)  siirto max 0.2 m/s
+1145.0 s  J taistelukenttä/4.1 ritari ratsaille, kenttä painuu esiin       kääntö max   0.2 °/s (1157.6 s)  siirto max 2.3 m/s
+1164.3 s  J taistelukenttä/4.1 viirit lähempänä                            kääntö max   0.1 °/s (1164.3 s)  siirto max 5.2 m/s
+1172.5 s  J taistelukenttä/4.2 patarummut: pysäytys kentän laidalla        kääntö max   0.1 °/s (1175.7 s)  siirto max 5.2 m/s
+1179.0 s  J taistelukenttä/4.3 rynnäkkö: sukellus kerrosten läpi           kääntö max   2.9 °/s (1223.5 s)  siirto max 6.0 m/s
+1223.7 s  K levy/levy                                                      kääntö max   0.0 °/s (0.0 s)  siirto max 1.5 m/s
+
+ottoja 6, rajan 20 °/s ylittäviä 0

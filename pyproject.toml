@@ -1,0 +1,42 @@
+[project]
+name = "heldenleben-video"
+version = "0.1.0"
+description = "Ein Heldenleben – musiikkivideo koodilla: analyysityökalut"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Signaalianalyysi (analysis/analyze.py, prepare.py)
+    "librosa>=0.10",
+    "numpy",
+    "scipy",
+    "soundfile",
+    "matplotlib",
+    # Kuuntelutyökalu näytönohjaimella (analysis/listen.py)
+    "torch==2.11.0",
+    "torchaudio==2.11.0",      # beat_this ja torchcrepe vaativat; torchaudion viimeisin julkaisu on 2.11
+    "panns-inference==0.1.1",  # soittimet ja äänitapahtumat ruuduittain (AudioSet, PANNs CNN14)
+    # CLAP: soittimet ja luonne tekstikuvauksilla. Huom: laion/larger_clap_music-painoilla
+    # upotukset romahtavat sekä 5.21.1:llä että 4.57.6:lla (29.10.2026), joten vika on painoissa,
+    # ei kirjastossa. CLAP-vaihe on pois oletuksista, kunnes toimiva checkpoint löytyy.
+    "transformers>=5.0",
+    "beat-this==1.1.0",        # iskut ja tahdin alut
+    "demucs==4.1.0",           # stemmit: lyömäsoittimet, basso, "laulu", muu
+    "torchcrepe==0.0.24",      # melodian ja basson sävelkorkeus
+    # Partituurin luku (analysis/score.py): IMSLP:n Leuckart-partituurin sivut ovat JBIG2-kuvia,
+    # joita Pillow ei pura. PyMuPDF renderöi sivut PNG:ksi (tahtiviivat, harjoitusnumerot).
+    "pymupdf>=1.24,<2",        # 2.x vetää mukaan pymupdf4llm- ja layout-paketit, joita ei tarvita
+]
+
+[tool.uv]
+package = false
+# Projekti ajetaan Windowsissa (setup.ps1); lukitus vain sille.
+environments = ["sys_platform == 'win32'"]
+
+# PyTorch CUDA 13 -versiona; PyPI:n oletus olisi CPU-versio.
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }

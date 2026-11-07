@@ -1,0 +1,19 @@
+ 242.7 s  G suo/2.1a laskeutuu suolle                                      kääntö max   6.8 °/s (242.9 s)  siirto max 7.2 m/s
+ 243.0 s  G suo/2.1b pisto: hyttynen ja ritari                             kääntö max   1.4 °/s (244.6 s)  siirto max 0.3 m/s
+ 246.0 s  G suo/2.2a sorsa (oboe)                                          kääntö max   0.8 °/s (248.1 s)  siirto max 0.2 m/s
+ 250.0 s  G suo/2.2b haikara (englannintorvi)                              kääntö max   1.2 °/s (251.0 s)  siirto max 0.5 m/s
+ 252.0 s  G suo/2.2c kotilot (Dehring)                                     kääntö max   0.4 °/s (255.6 s)  siirto max 0.1 m/s
+ 259.0 s  G suo/2.2d sorsa kiihtyy                                         kääntö max   1.0 °/s (260.5 s)  siirto max 0.3 m/s
+ 262.0 s  G suo/2.2e peili ja sammakot                                     kääntö max   0.8 °/s (263.8 s)  siirto max 0.3 m/s
+ 265.5 s  G suo/2.2f varikset kuolleessa puussa                            kääntö max   0.5 °/s (268.8 s)  siirto max 0.1 m/s
+ 272.0 s  G suo/2.3 kuoro: sameus sakenee                                  kääntö max   0.2 °/s (278.5 s)  siirto max 0.0 m/s
+ 284.9 s  G suo/2.4a molli: kypärä alas                                    kääntö max   1.0 °/s (288.8 s)  siirto max 0.1 m/s
+ 292.5 s  G suo/2.4b hiljaa, ei olentoja                                   kääntö max   0.1 °/s (299.1 s)  siirto max 0.1 m/s
+ 305.2 s  G suo/2.5a lampi: harjanne ja vuoret nousevat                    kääntö max   0.2 °/s (315.1 s)  siirto max 0.1 m/s
+ 324.2 s  G suo/2.5b kasvot ja lampi: aurinko                              kääntö max   0.2 °/s (336.4 s)  siirto max 0.0 m/s
+ 347.8 s  G suo/2.5c laaja: viirit, hän tarttuu viiriin                    kääntö max   0.2 °/s (354.8 s)  siirto max 0.1 m/s
+ 361.5 s  G suo/2.5d muisto häipyy, ritari kävelee puulle                  kääntö max   0.2 °/s (364.5 s)  siirto max 0.2 m/s
+ 367.2 s  G suo/2.6 piiritys                                               kääntö max   0.2 °/s (374.0 s)  siirto max 0.1 m/s
+ 380.5 s  G suo/2.7 toverit harjanteella                                   kääntö max   0.3 °/s (386.2 s)  siirto max 0.1 m/s
+ 391.7 s  G suo/2.8a viiri pystyyn                                         kääntö max   0.3 °/s (400.6 s)  siirto max 0.1 m/s
+ 408.2 s  G suo/2.8b veto suon yli                                         kääntö max   2.4 °/s (413.0 s)  siirto max 1.4 m/s

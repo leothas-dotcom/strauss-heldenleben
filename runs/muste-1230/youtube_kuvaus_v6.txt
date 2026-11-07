@@ -1,0 +1,51 @@
+Richard Strauss: Ein Heldenleben (A Hero's Life), Op. 40 – Side A
+Vienna Philharmonic Orchestra, Clemens Krauss. Recorded by Decca in Vienna, September 1952 (LP: London LL 659).
+
+Every frame of this video is drawn by code, and every event in the picture has a reason in the music.
+
+This is a music video for the first LP side of Strauss's tone poem: the Hero, his Adversaries, his Companion, and the beginning of the Battle. The side ends where the record did in 1952, in the middle of the battle, and the picture turns into the record itself. Side B (the end of the Battle, the Works of Peace, the Hero's Retirement) is in production.
+
+WHY
+
+When I was a child, my father and I listened to classical records together, and he told me what was happening in the music: who was speaking, who was arriving, when the storm would break. I used to wonder where he got those stories. He is an orchestral musician. This week I heard the Helsinki Philharmonic at the Musiikkitalo, and he was on stage. That is where this video began.
+
+It moves me that I can now do the same thing with a machine as my partner, and bring his stories to life as pictures. The listening guide that steers every frame here is, in the end, his way of listening: someone sitting next to you, telling you what happens next.
+
+I made this for him.
+
+HOW IT WAS MADE
+
+An AI model cannot hear. So the first job was to build it ears: a local analysis toolkit (Demucs stems, PANNs instrument detection, beat_this, torchcrepe pitch tracking, librosa) that turns the old mono LP, surface noise and all, into data: who plays when, beats, dynamics, written accents to the hundredth of a second, and even the clicks and hiss of the record. A theme map and a "listening guide" (our substitute for lyrics) place Strauss's themes and events in the time of this particular recording, checked by ear and against the score.
+
+The visual style, "Living print", comes from the record itself: three printing inks measured from the LP sleeve (cream paper, Prussian blue, vermilion, black), halftone instead of gradients, and the record's noise visible as paper grain and dust at exactly the moments you hear it. Three more colours are saved for turning points. You will see one of them once on this side.
+
+The storyboard gives every instrument group a role. The horns are the hero, a knight. The solo violin is a single white line. The woodwind critics are creatures shaped like their instruments. Cuts, gestures and changes of light are tied to measured anchors in the audio, never to a clock.
+
+The scenes are written in JavaScript (three.js, a two-dimensional paper multiplane) as pure functions of time, rendered frame by frame in headless Chrome, piped to ffmpeg and checked by scripts: camera speed, set edges, audio sync against the source, every written accent on its frame.
+
+The code was written by Claude (Anthropic) in Claude Code and directed by a professional orchestral musician, who checked each cut by ear and by eye. No AI-generated images or video were used anywhere. Every shape you see is drawn by code.
+
+CHAPTERS
+0:00 The needle drops
+0:07 I. Der Held (The Hero)
+4:03 II. Des Helden Widersacher (The Hero's Adversaries)
+7:02 III. Des Helden Gefährtin (The Hero's Companion)
+18:45 IV. Des Helden Walstatt (The Hero's Battlefield) begins
+20:23 End of Side A
+
+THE RECORDING
+Transfer from the Internet Archive (Boston Public Library LP collection): https://archive.org/details/lp_ein-heldenleben_richard-strauss-the-vienna-philharmonic-or
+Strauss's music is in the public domain worldwide. The 1952 recording is in the public domain in the EU (recordings published before 1963). US law protects pre-1972 recordings for longer, so availability may differ there. No ads are run on this video.
+
+TOOLS
+Python: librosa, Demucs, PANNs, beat_this, torchcrepe, PyTorch · JavaScript: three.js, Puppeteer · ffmpeg · Claude Code
+Inspiration: Devarf, "I Had Opus 5.5 Make the Same Music Video at Every Effort", for the idea of building ears for the model.
+
+Making-of and Side B: coming later.
+
+#Strauss #EinHeldenleben #ClassicalMusic #CreativeCoding #GenerativeArt #ClaudeCode
+
+SUOMEKSI
+Richard Straussin Sankarielämän A-puoli musiikkivideona. Jokainen ruutu on piirretty koodilla, ja jokaisella kuvan tapahtumalla on syy musiikissa. Tekoälylle rakennettiin ensin korvat (ääni dataksi), sitten tyyli levyn kannen kolmesta painoväristä, sitten kuvakäsikirjoitus, jossa käyrätorvet ovat sankari. Ohjaus ja tarkistus: orkesterimuusikko. Koodi: Claude.
+
+Lapsena kuuntelin isäni kanssa klassisia levyjä, ja hän kertoi, mitä musiikissa tapahtuu. Mietin, mistä hän ne tarinat keksi. Isäni on orkesterimuusikko; tällä viikolla kuuntelin Helsingin kaupunginorkesteria Musiikkitalossa, ja hän oli lavalla. Siitä tämä video alkoi. Kuunteluopas, joka ohjaa tämän videon jokaista kuvaa, on lopulta hänen tapansa kuunnella: joku istuu vieressä ja kertoo, mitä seuraavaksi tapahtuu. Tein tämän hänelle.

@@ -1,0 +1,6 @@
+   0.0–7.5    A paperi / paperi                                                      ruutuja   16  tyhjää max 99.85 % (6.0 s)
+1225.0–1227.5 J taistelukenttä / 64 taistelu: sukellus kerrosten läpi                ruutuja    6  tyhjää max 65.59 % (1227.5 s)
+1228.0–1239.5 K levy / levy                                                          ruutuja   24  tyhjää max 79.83 % (1239.5 s)
+kerrosalueita verrattu 8203 kertaa (keskimäärin 3.3 kerrosta ruudulla)
+
+tarkistettu 2480 ruutua (15 ruudun välein), tyhjää taustaa 46 ruudussa, kerrosreunan ylityksiä 0 ruudussa

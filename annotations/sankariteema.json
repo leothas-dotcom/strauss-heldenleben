@@ -1,0 +1,619 @@
+{
+ "lahde": "partituuri IMSLP 19168 s. 3–4, sellostemma (käyttäjän lupa 30.10.2026); muoto vain, tarkka sävelkorkeus ja ajoitus mitataan äänestä analysis/teemaviiva.py:llä",
+ "huomautus": "Iskut neljäsosina (0 = tahdin alku, 4/4). Sidotut samat sävelet on yhdistetty yhdeksi nuotiksi. T14–16 ei nuotinnettu: sellot vaikenevat, johtava linja on viulujen nopeita juoksutuksia.",
+ "tahtiankkurit": {
+  "1": 7.62,
+  "6": 17.64,
+  "8": 21.62,
+  "9": 23.62,
+  "11": 27.5,
+  "13": 31.42,
+  "17": 39.44,
+  "20": 45.74
+ },
+ "nuotit": [
+  {
+   "tahti": 1,
+   "isku": 0,
+   "kesto": 2.3333,
+   "savel": "Eb2",
+   "midi": 39,
+   "varmuus": "varma",
+   "huomio": "puolinuotti sidottu triolin 1. kahdeksasosaan"
+  },
+  {
+   "tahti": 1,
+   "isku": 2.3333,
+   "kesto": 0.3333,
+   "savel": "Bb2",
+   "midi": 46,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 1,
+   "isku": 2.6667,
+   "kesto": 0.3333,
+   "savel": "Eb3",
+   "midi": 51,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 1,
+   "isku": 3,
+   "kesto": 0.3333,
+   "savel": "G3",
+   "midi": 55,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 1,
+   "isku": 3.3333,
+   "kesto": 0.3333,
+   "savel": "Bb3",
+   "midi": 58,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 1,
+   "isku": 3.6667,
+   "kesto": 0.3333,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": "3 apuviivaa bassoavaimessa"
+  },
+  {
+   "tahti": 2,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "C4",
+   "midi": 60,
+   "varmuus": "varma",
+   "huomio": "pisteellinen puolinuotti, bassoavain"
+  },
+  {
+   "tahti": 2,
+   "isku": 3,
+   "kesto": 0.75,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": "tenoriavain alkaa"
+  },
+  {
+   "tahti": 2,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "Bb4",
+   "midi": 70,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 3,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "Bb4",
+   "midi": 70,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 3,
+   "isku": 3,
+   "kesto": 0.25,
+   "savel": "Ab4",
+   "midi": 68,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 3,
+   "isku": 3.25,
+   "kesto": 0.25,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 3,
+   "isku": 3.5,
+   "kesto": 0.25,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 3,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "C4",
+   "midi": 60,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 4,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "G3",
+   "midi": 55,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 4,
+   "isku": 3,
+   "kesto": 0.75,
+   "savel": "Bb3",
+   "midi": 58,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 4,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 5,
+   "isku": 0,
+   "kesto": 2,
+   "savel": "Ab3",
+   "midi": 56,
+   "varmuus": "varma",
+   "huomio": "bassoavain palaa; aksentti"
+  },
+  {
+   "tahti": 5,
+   "isku": 2,
+   "kesto": 2.75,
+   "savel": "G3",
+   "midi": 55,
+   "varmuus": "varma",
+   "huomio": "aksentti; sidottu T6 pisteelliseen kahdeksasosaan"
+  },
+  {
+   "tahti": 6,
+   "isku": 0.75,
+   "kesto": 0.25,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": "kuudestoistaosa ylös"
+  },
+  {
+   "tahti": 6,
+   "isku": 1,
+   "kesto": 2,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": "puolinuotti, sama sävel kuin edellinen"
+  },
+  {
+   "tahti": 6,
+   "isku": 3,
+   "kesto": 0.75,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 6,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 7,
+   "isku": 0,
+   "kesto": 1,
+   "savel": "D4",
+   "midi": 62,
+   "varmuus": "varma",
+   "huomio": "aksentoidut neljäsosat alas"
+  },
+  {
+   "tahti": 7,
+   "isku": 1,
+   "kesto": 1,
+   "savel": "Cb4",
+   "midi": 59,
+   "varmuus": "varma",
+   "huomio": "alennusmerkki kirjoitettu"
+  },
+  {
+   "tahti": 7,
+   "isku": 2,
+   "kesto": 1,
+   "savel": "Bb3",
+   "midi": 58,
+   "varmuus": "varma",
+   "huomio": "alennusmerkki kirjoitettu (varmistus)"
+  },
+  {
+   "tahti": 7,
+   "isku": 3,
+   "kesto": 1,
+   "savel": "Ab3",
+   "midi": 56,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 8,
+   "isku": 0,
+   "kesto": 0.75,
+   "savel": "Ab3",
+   "midi": 56,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 8,
+   "isku": 0.75,
+   "kesto": 0.25,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 8,
+   "isku": 1,
+   "kesto": 2,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": "sama sävel kuin edellinen"
+  },
+  {
+   "tahti": 8,
+   "isku": 3,
+   "kesto": 1,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 9,
+   "isku": 0,
+   "kesto": 1,
+   "savel": "Bb4",
+   "midi": 70,
+   "varmuus": "varma",
+   "huomio": "alempi järjestelmä, tenoriavain"
+  },
+  {
+   "tahti": 9,
+   "isku": 1,
+   "kesto": 2,
+   "savel": "Ab4",
+   "midi": 68,
+   "varmuus": "epävarma",
+   "huomio": "apuviivat: Ab4 tai Bb4"
+  },
+  {
+   "tahti": 9,
+   "isku": 3,
+   "kesto": 1.25,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": "sidottu T10 ensimmäiseen kuudestoistaosaan"
+  },
+  {
+   "tahti": 10,
+   "isku": 0.25,
+   "kesto": 0.25,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 10,
+   "isku": 0.5,
+   "kesto": 0.375,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": "pisteellinen kuudestoistaosa"
+  },
+  {
+   "tahti": 10,
+   "isku": 0.875,
+   "kesto": 0.125,
+   "savel": "Ab3",
+   "midi": 56,
+   "varmuus": "epävarma",
+   "huomio": "32-osa; Ab3 tai Bb3"
+  },
+  {
+   "tahti": 10,
+   "isku": 1,
+   "kesto": 2,
+   "savel": "C4",
+   "midi": 60,
+   "varmuus": "epävarma",
+   "huomio": "puolinuotti; C4 tai D4"
+  },
+  {
+   "tahti": 10,
+   "isku": 3,
+   "kesto": 1,
+   "savel": "B3",
+   "midi": 59,
+   "varmuus": "varma",
+   "huomio": "palautusmerkki"
+  },
+  {
+   "tahti": 11,
+   "isku": 0,
+   "kesto": 1,
+   "savel": "B4",
+   "midi": 71,
+   "varmuus": "varma",
+   "huomio": "palautusmerkki, 2. apuviiva"
+  },
+  {
+   "tahti": 11,
+   "isku": 1,
+   "kesto": 2,
+   "savel": "B4",
+   "midi": 71,
+   "varmuus": "varma",
+   "huomio": "palautusmerkki"
+  },
+  {
+   "tahti": 11,
+   "isku": 3,
+   "kesto": 1,
+   "savel": "G#4",
+   "midi": 68,
+   "varmuus": "varma",
+   "huomio": "ylennysmerkki"
+  },
+  {
+   "tahti": 12,
+   "isku": 0,
+   "kesto": 0.25,
+   "savel": "G#4",
+   "midi": 68,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 12,
+   "isku": 0.25,
+   "kesto": 0.25,
+   "savel": "F#4",
+   "midi": 66,
+   "varmuus": "varma",
+   "huomio": "ylennysmerkki"
+  },
+  {
+   "tahti": 12,
+   "isku": 0.5,
+   "kesto": 0.375,
+   "savel": "E4",
+   "midi": 64,
+   "varmuus": "varma",
+   "huomio": "palautusmerkki"
+  },
+  {
+   "tahti": 12,
+   "isku": 0.875,
+   "kesto": 0.125,
+   "savel": "G#3",
+   "midi": 56,
+   "varmuus": "epävarma",
+   "huomio": "32-osa, ylennysmerkki; G#3 tai A3"
+  },
+  {
+   "tahti": 12,
+   "isku": 1,
+   "kesto": 1.6667,
+   "savel": "D#4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": "neljäsosa sidottu neljäsosatriolin 1. säveleen"
+  },
+  {
+   "tahti": 12,
+   "isku": 2.6667,
+   "kesto": 0.6667,
+   "savel": "D4",
+   "midi": 62,
+   "varmuus": "varma",
+   "huomio": "palautusmerkki, neljäsosatrioli"
+  },
+  {
+   "tahti": 12,
+   "isku": 3.3333,
+   "kesto": 0.6667,
+   "savel": "Db4",
+   "midi": 61,
+   "varmuus": "varma",
+   "huomio": "alennusmerkki"
+  },
+  {
+   "tahti": 13,
+   "isku": 0,
+   "kesto": 2,
+   "savel": "Db4",
+   "midi": 61,
+   "varmuus": "epävarma",
+   "huomio": "puolinuotti; teema hajoaa, viulut jatkavat juoksutuksilla T13–16 (ei nuotinnettu)"
+  },
+  {
+   "tahti": 17,
+   "isku": 0,
+   "kesto": 2.3333,
+   "savel": "Eb2",
+   "midi": 39,
+   "varmuus": "varma",
+   "huomio": "puolinuotti sidottu triolin 1. kahdeksasosaan; teeman kertaus ff, sama kuin T1–4"
+  },
+  {
+   "tahti": 17,
+   "isku": 2.3333,
+   "kesto": 0.3333,
+   "savel": "Bb2",
+   "midi": 46,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 17,
+   "isku": 2.6667,
+   "kesto": 0.3333,
+   "savel": "Eb3",
+   "midi": 51,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 17,
+   "isku": 3,
+   "kesto": 0.3333,
+   "savel": "G3",
+   "midi": 55,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 17,
+   "isku": 3.3333,
+   "kesto": 0.3333,
+   "savel": "Bb3",
+   "midi": 58,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 17,
+   "isku": 3.6667,
+   "kesto": 0.3333,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": "3 apuviivaa bassoavaimessa"
+  },
+  {
+   "tahti": 18,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "C4",
+   "midi": 60,
+   "varmuus": "varma",
+   "huomio": "pisteellinen puolinuotti, bassoavain"
+  },
+  {
+   "tahti": 18,
+   "isku": 3,
+   "kesto": 0.75,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "varma",
+   "huomio": "tenoriavain alkaa"
+  },
+  {
+   "tahti": 18,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "Bb4",
+   "midi": 70,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 19,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "Bb4",
+   "midi": 70,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 19,
+   "isku": 3,
+   "kesto": 0.25,
+   "savel": "Ab4",
+   "midi": 68,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 19,
+   "isku": 3.25,
+   "kesto": 0.25,
+   "savel": "G4",
+   "midi": 67,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 19,
+   "isku": 3.5,
+   "kesto": 0.25,
+   "savel": "F4",
+   "midi": 65,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 19,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "C4",
+   "midi": 60,
+   "varmuus": "varma",
+   "huomio": ""
+  },
+  {
+   "tahti": 20,
+   "isku": 0,
+   "kesto": 3,
+   "savel": "G3",
+   "midi": 55,
+   "varmuus": "varma",
+   "huomio": "pisteellinen puolinuotti"
+  },
+  {
+   "tahti": 20,
+   "isku": 3,
+   "kesto": 0.75,
+   "savel": "Bb3",
+   "midi": 58,
+   "varmuus": "epävarma",
+   "huomio": "geteilt: ylempi ääni; alempi ääni Ab3-pohjainen"
+  },
+  {
+   "tahti": 20,
+   "isku": 3.75,
+   "kesto": 0.25,
+   "savel": "Eb4",
+   "midi": 63,
+   "varmuus": "epävarma",
+   "huomio": "geteilt, treble-avain; ylempi ääni"
+  }
+ ]
+}

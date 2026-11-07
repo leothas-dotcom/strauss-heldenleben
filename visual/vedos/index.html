@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Heldenleben – elävä vedos</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+  <style>
+    html, body { margin: 0; background: #1F1A18; overflow: hidden; }
+    #stage { position: relative; width: 1920px; height: 1080px; }
+    #stage canvas { position: absolute; left: 0; top: 0; display: block; }
+    body.preview #stage { transform-origin: 0 0; transform: scale(var(--s, 0.5)); }
+    #hud { position: fixed; left: 10px; top: 10px; padding: 8px 10px; white-space: pre; color: #E8DCC6;
+           background: rgba(31, 26, 24, 0.82); font: 15px/1.35 Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <div id="stage"><canvas id="view"></canvas></div>
+  <div id="slate" hidden style="position:fixed;left:24px;bottom:24px;max-width:1100px;padding:14px 18px;background:rgba(31,26,24,0.88);color:#E8DCC6;font:22px/1.4 Georgia;border-left:6px solid #F5461A"></div>
+  <div id="hud" hidden>välilyönti: toista / pysäytä · ← →: ±5 s</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

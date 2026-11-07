@@ -1,0 +1,97 @@
+{
+  "_ohje": "Mallipainojen manifesti. analysis/fetch_models.py lataa tiedostot kansioon models/ ja tarkistaa SHA-256:n. Tyhjä (null) tarkistussumma kirjataan ensimmäisellä latauksella valitulla --pin-valinnalla, sen jälkeen jokainen tiedosto tarkistetaan sitä vasten. Lisenssit tarkistettava ennen julkaisua.",
+  "models": [
+    {
+      "name": "panns_cnn14_sed",
+      "task": "soittimet ja äänitapahtumat ruuduittain (AudioSet, 527 luokkaa)",
+      "type": "url",
+      "url": "https://zenodo.org/record/3987831/files/Cnn14_DecisionLevelMax_mAP%3D0.385.pth?download=1",
+      "path": "panns/Cnn14_DecisionLevelMax_mAP=0.385.pth",
+      "sha256": "dd3b4043a87d4ec13df8082c0fcfee3fb5084151808e47e060987a95eabdd142",
+      "license": "PANNs: MIT (koodi); painojen lisenssi [tarkista Zenodo-tietueesta]"
+    },
+    {
+      "name": "audioset_labels",
+      "task": "AudioSet-luokkien nimet (PANNs lukee nämä importissa)",
+      "type": "url",
+      "url": "https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/class_labels_indices.csv",
+      "path": "panns/class_labels_indices.csv",
+      "sha256": "cdd1049833c4b86127c2773ac0d14a2754b6a6d0d1798002ed5c66e699708429",
+      "license": "AudioSet: CC BY 4.0"
+    },
+    {
+      "name": "clap_music",
+      "task": "soittimet ja luonne tekstikuvauksilla (zero-shot)",
+      "type": "hf",
+      "repo": "laion/larger_clap_music",
+      "revision": "a0b4534a14f58e20944452dff00a22a06ce629d1",
+      "path": "clap",
+      "files": {
+        "config.json": "2d7722d338bb83ea8824272b1431f088954d3425d79eb3c2d39489478516dc03",
+        "preprocessor_config.json": "9739f58296aa6f9ac18008fd0150fb2649bc554985fbde86d0a4041c882ac753",
+        "tokenizer.json": "dc239041d98de27ffc3975473a1a23e3db4c937b23c138c38bbc66588bd247e5",
+        "tokenizer_config.json": "e2eb445cfdbf4711de620cbdf10478b0423950799e85652d9f28da47066ab86d",
+        "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+        "vocab.json": "ed19656ea1707df69134c4af35c8ceda2cc9860bf2c3495026153a133670ab5e",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "pytorch_model.bin": "5c289311f4a030d768af7ffbfdecd01b008aa64824211899a4e59f4f9d154fd1"
+      },
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "demucs_htdemucs_ft_bag",
+      "task": "stemmit: neljän hienosäädetyn mallin kokoonpanon kuvaus",
+      "type": "package",
+      "module": "demucs",
+      "file": "remote/htdemucs_ft.yaml",
+      "path": "demucs/htdemucs_ft.yaml",
+      "sha256": "69470b8c1bbd674437b51bc9fb491327a10ab0396b702c93389b9cf750016346",
+      "license": "MIT"
+    },
+    {
+      "name": "demucs_htdemucs_ft_drums",
+      "task": "stemmit: rummut",
+      "type": "url",
+      "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/f7e0c4bc-ba3fe64a.th",
+      "path": "demucs/f7e0c4bc-ba3fe64a.th",
+      "sha256": "ba3fe64ae8ef66ac9a4857222ce48efbdc5eb3ad375cb79dd13debee5aaa4066",
+      "license": "MIT"
+    },
+    {
+      "name": "demucs_htdemucs_ft_bass",
+      "task": "stemmit: basso",
+      "type": "url",
+      "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/d12395a8-e57c48e6.th",
+      "path": "demucs/d12395a8-e57c48e6.th",
+      "sha256": "e57c48e6b0e38af4f7118d7bd08c49f0a0c0edf7d09143bdd902ea0d237303e6",
+      "license": "MIT"
+    },
+    {
+      "name": "demucs_htdemucs_ft_other",
+      "task": "stemmit: muu",
+      "type": "url",
+      "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/92cfc3b6-ef3bcb9c.th",
+      "path": "demucs/92cfc3b6-ef3bcb9c.th",
+      "sha256": "ef3bcb9c8b40d14ae5d51b6db2587339cc12c6b77c0be151ce6d69002e087bf2",
+      "license": "MIT"
+    },
+    {
+      "name": "demucs_htdemucs_ft_vocals",
+      "task": "stemmit: laulu (orkesterissa johtava melodialinja?)",
+      "type": "url",
+      "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/04573f0d-f3cf25b2.th",
+      "path": "demucs/04573f0d-f3cf25b2.th",
+      "sha256": "f3cf25b222c4eed7cd49dd8b2c9597d50c18bd154090f7b919cfa5f93cf22c49",
+      "license": "MIT"
+    },
+    {
+      "name": "beat_this_final0",
+      "task": "iskut ja tahdin alut",
+      "type": "url",
+      "url": "https://cloud.cp.jku.at/public.php/dav/files/7ik4RrBKTS273gp/final0.ckpt",
+      "path": "beat_this/final0.ckpt",
+      "sha256": "8c328b45f59d8dd3dff219253ff6a8d6482be57d0133a29140e2febbf8eb8331",
+      "license": "beat_this: MIT (koodi); painojen lisenssi [tarkista]"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+1224.3–1224.7 J taistelukenttä / 4.3 rynnäkkö: sukellus kerrosten läpi               ruutuja    3  tyhjää max 69.95 % (1224.3 s)
+1224.8–1227.2 J taistelukenttä / 4.4 kamera vetäytyy                                 ruutuja   15  tyhjää max 70.45 % (1227.2 s)
+1227.3–1239.8 K levy / levy                                                          ruutuja   76  tyhjää max 79.91 % (1239.8 s)
+kerrosalueita verrattu 1788 kertaa (keskimäärin 2.7 kerrosta ruudulla)
+
+tarkistettu 672 ruutua (5 ruudun välein), tyhjää taustaa 94 ruudussa, kerrosreunan ylityksiä 0 ruudussa

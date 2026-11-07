@@ -1,0 +1,24 @@
+{
+  "name": "drehbuehne-400",
+  "replaces": "video-400 ja video-400b (friisi-idea hylätty liian staattisena 29.10.2026)",
+  "side": 1,
+  "start": 0,
+  "duration": 400,
+  "paketti": "build/demo400",
+  "jaksot": "build/demo400/segments.json (45 jaksoa -> 18 lohkoa, visual/drehbuehne/plan.js)",
+  "merkinnat": "annotations/cues.json",
+  "kuvakasikirjoitus": "runs/drehbuehne-400/storyboard.md",
+  "kohtaus": "visual/drehbuehne/index.html (three.js r170)",
+  "video": "runs/drehbuehne-400/renders/heldenleben_drehbuehne_400s.mp4",
+  "otot": 100,
+  "tanssijat": 39,
+  "render": {
+    "fps": 30,
+    "resolution": [1920, 1080],
+    "workers": 2,
+    "chunk_s": 40,
+    "fade_out_s": 3.5,
+    "codec": "libx264 crf 18, aac 320k",
+    "kesto_min": 7.6
+  }
+}

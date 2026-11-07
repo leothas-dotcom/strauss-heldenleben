@@ -1,0 +1,178 @@
+[
+  {
+    "id": "C11",
+    "otsikko": "Alun iskut T. 6, 8, 11",
+    "t0": 16.5,
+    "t1": 29.0,
+    "fps": 6,
+    "piti_nakya": "Sankari ja seitsemän toveria (8 käyrätorvea) kuvassa koko ajan; iskuissa viirinkärjet napsahtavat tai tuuli muuttuu. Hahmot eivät ilmesty, katoa tai pomppaa."
+  },
+  {
+    "id": "B2",
+    "otsikko": "Teemaviiva avauksessa",
+    "t0": 7.6,
+    "t1": 32.0,
+    "fps": 1,
+    "piti_nakya": "Yksi punainen veto piirtyy teemaviivana (Es2:sta ylös kolmisointua), vedon päässä selkäkuva laakson pohjalla. Vuoret painuvat sinisellä, kun jouset tulevat (23 s)."
+  },
+  {
+    "id": "D4",
+    "otsikko": "Ennen auringonnousua",
+    "t0": 28.0,
+    "t1": 40.0,
+    "fps": 2,
+    "piti_nakya": "Yksi jatkuva nosturiajo selkäkuvasta auringonnousuun, ei leikkausta eikä friisin ilmestymistä kerralla. Aurinko nousee korkeimman huipun takaa, ja vaskien tullessa (31,4 s) se on KOKONAAN vapaana harjanteen yllä, ei osin vuoren takana (A13); ritari pienenä etualalla."
+  },
+  {
+    "id": "A7",
+    "otsikko": "Meri, tiirat, laivasto",
+    "t0": 44.0,
+    "t1": 110.0,
+    "fps": 0.5,
+    "piti_nakya": "Avomeri, tiirat vaahdosta (puupuhaltimet), laivaston kilpa, ensimmäinen huippu aallon harjalla. Viirit samaan tuuleen, eivät päällekkäin."
+  },
+  {
+    "id": "B4",
+    "otsikko": "Muste elää ja kuivuu",
+    "t0": 108.0,
+    "t1": 142.0,
+    "fps": 0.5,
+    "piti_nakya": "Hän hajoaa vedoiksi: kaksi punaista vetoa laulaa rinnakkain (käyrätorvet I–II), alttoviulu sininen katkoviiva välissä; sitten vedot kokoontuvat ritariksi. Muste piirtyy painokohdassa ja kuivuu rasteriksi, ei staattinen värisevä viiva."
+  },
+  {
+    "id": "B5",
+    "otsikko": "Kahdeksan käyrätorvea reh8",
+    "t0": 140.0,
+    "t1": 172.0,
+    "fps": 1,
+    "piti_nakya": "Koko joukko lähikuvassa tasangolla, kellot ylhäällä, teemaviiva leveänä. Viirien portaat avautuvat aksenttien iskuissa (154,5–171), eivät kellon mukaan joka sekunti. Hahmot eivät nykäise."
+  },
+  {
+    "id": "B6",
+    "otsikko": "Salamat ja yleistauko",
+    "t0": 211.0,
+    "t1": 244.0,
+    "fps": 2,
+    "piti_nakya": "Salama katkon alussa ennen jokaista neljää kohtaloiskua, yhä lähempänä huippua; paussissa sade ja tuuli hiljenevät, viirit painuvat, kukaan ei loikkaa. Sitten selkäkuva huipulla ja sädekehä; yleistauossa paperi nousee kuvan yli (3,8 s)."
+  },
+  {
+    "id": "C12",
+    "otsikko": "Nousu huipulle",
+    "t0": 224.0,
+    "t1": 240.0,
+    "fps": 1,
+    "piti_nakya": "Joukko kiipeää rinnettä; jokainen hahmo seisoo maalla. Ei hahmoja ilmassa kallion seinämällä. Sädekehä 234–238."
+  },
+  {
+    "id": "C4",
+    "otsikko": "Suo ja olennot",
+    "t0": 243.0,
+    "t1": 330.0,
+    "fps": 0.5,
+    "piti_nakya": "Huiluhyttynen, oboesorsa, englannintorvihaikara, tuubakotilot, fagottisammakot, pasuunavarikset: soitinten muotoisia, yhtenäinen mittakaava suhteessa ritariin, lähikuvissa ritarin kanssa, peili veden alla eikä hahmon päällä."
+  },
+  {
+    "id": "C6",
+    "otsikko": "Muisto lammessa",
+    "t0": 330.0,
+    "t1": 410.0,
+    "fps": 0.5,
+    "piti_nakya": "Tyynen lammen pinnassa aamun auringonnousu ylösalaisin: harjanteen oikea muoto, ei käännetty kolmio/kartio. Kasvaa aalto aallolta; ritari nostaa päätään; olennot väistyvät reunoille."
+  },
+  {
+    "id": "B3",
+    "otsikko": "Kumppanin viiva saapuu",
+    "t0": 420.0,
+    "t1": 472.0,
+    "fps": 1,
+    "piti_nakya": "Metsäaukion sininen iltataivas; paperinvalkoinen viiva seuraa sooloviulun suuntaa (nousee kun viulu nousee). Ritari laskee viirinsä lepoon; vastaotossa nostaa kellon."
+  },
+  {
+    "id": "A10",
+    "otsikko": "Kumppanin jakso: tapahtuuko mitään",
+    "t0": 472.0,
+    "t1": 760.0,
+    "fps": 0.1,
+    "piti_nakya": "Sommitelma vaihtuu jaksorajoissa (sama kuva enintään ~30 s); ritarilla jokaiseen mielialaan oma ele; pizzicatot viivan värähdyksenä pisteinä; ritari kävelee joen rantaan."
+  },
+  {
+    "id": "A5",
+    "otsikko": "Kuutamojoki ja vene",
+    "t0": 760.0,
+    "t1": 900.0,
+    "fps": 0.2,
+    "piti_nakya": "Kaksi hahmoa astuu veneeseen, vene liukuu; viiri ja viiva kietoutuvat punokseksi maston päällä; harpun glissandot kuunvalon väreinä; kumppani näkyy, sankari ei ole yksin."
+  },
+  {
+    "id": "B10",
+    "otsikko": "Harppu luo kuun siltaa",
+    "t0": 840.0,
+    "t1": 870.0,
+    "fps": 1,
+    "piti_nakya": "Harpun glissandot ovat kuun sillan (kuunvalon juova vedessä) paperinvalkoista välkettä, joka osuu kuultuihin glissandoihin. EI harpun muotoa, kieliä tai pylvästä: kirjaimellinen soitin on bugi (käyttäjän emämoka-palaute 31.10., palautelista B10–B12)."
+  },
+  {
+    "id": "A12",
+    "otsikko": "Purppurahuippu",
+    "t0": 924.0,
+    "t1": 954.0,
+    "fps": 1,
+    "piti_nakya": "Purppura koko kuvan tapahtumana huipussa; vain sankarin viiri ja kumppanin viiva, ei kolmea tai neljää viiriä. Käyttäjä toivoo lisäksi, että tähdet pyörisivät yhteisen keskipisteen ympäri kuin LP."
+  },
+  {
+    "id": "A11",
+    "otsikko": "Sankari muuttuu kosinnan jälkeen",
+    "t0": 950.0,
+    "t1": 1010.0,
+    "fps": 0.5,
+    "piti_nakya": "Huipun jälkeen sankarissa näkyy pysyvä muutos (valkoinen juova viirissä / vaate / kumppani kietoutuneena), jonka hän kantaa loppuun asti."
+  },
+  {
+    "id": "B10b",
+    "otsikko": "Harppu 17:51",
+    "t0": 1062.0,
+    "t1": 1076.0,
+    "fps": 1,
+    "piti_nakya": "Harppu näkyvänä elementtinä: kuun sillan välke vedessä, ei harpun muotoa (B10–B12)."
+  },
+  {
+    "id": "B9",
+    "otsikko": "Puupuhaltimet palaavat 17:57",
+    "t0": 1074.0,
+    "t1": 1090.0,
+    "fps": 2,
+    "piti_nakya": "Arvostelijoiden katkelmat unisessa hiljaisuudessa: tunnistettavat suon olennot (sama teema, sama hahmo), ei ympyröitä. Musiikin muutokselle on kuvallinen vastaus."
+  },
+  {
+    "id": "A8",
+    "otsikko": "Siirtymä osasta 3 osaan 4",
+    "t0": 1098.0,
+    "t1": 1132.0,
+    "fps": 2,
+    "piti_nakya": "Yö haalistuu paperiksi ja muste kuivuu, ritari nousee seisomaan, horisonttiin piirtyy kolmen viirin luonnos, sitten kulissitrumpetit. Ei pitkää tyhjää paperia eikä välähdystä väärästä kohtauksesta."
+  },
+  {
+    "id": "C8",
+    "otsikko": "Taistelu: eleet ja viulun teema",
+    "t0": 1126.0,
+    "t1": 1240.0,
+    "fps": 0.5,
+    "piti_nakya": "Kolme kulissitrumpettia kolmena viirinä samassa tuulessa; ritari nousee ratsaille; olennot mustina läiskinä, salamat iskuissa; ritari lyö viirillä fraaseittain; ei natsitervehdystä muistuttavaa elettä; kumppanin viiva/vaate näkyy, kun viulu soi; lopussa kenttä kiertyy levyksi."
+  },
+  {
+    "id": "A13",
+    "otsikko": "Huipun aurinko ei jää vuoren taakse",
+    "t0": 228.0,
+    "t1": 240.0,
+    "fps": 1,
+    "piti_nakya": "Otto 23 (230–234 s): aurinko kokonaan vapaalla taivaalla huippumuurin vasemmalla puolella, ei puoliksi muurin takana. Tablo (234–240 s): sädekehän kiekko ja säteet kokonaan näkyvissä ritarin vieressä; huipun kärjet ritarin jalkojen tasolla eivätkä peitä kiekkoa. v2:ssa kiekon alaosa oli mustan huipun takana (bugi)."
+  },
+  {
+    "id": "B11",
+    "otsikko": "Harpun glissandot = kuun sillan välke (802–820 s)",
+    "t0": 801.0,
+    "t1": 820.0,
+    "fps": 2,
+    "piti_nakya": "Kahdeksan laskevaa harpun glissandoa 804,2–817,7 s (partituuri harj. 37, mitatut tahdinalut 802,3/806,1/809,9/813,6/817,7 s). Jokaisessa glissandossa kuun silta (kuunvalon juova vedessä) levenee ja kirkastuu kuusta katsojaa kohti ja jättää hiipuvan jäljen; välkerengas sillan juurella. Glissandojen välissä silta kapea ja rauhallinen. EI harpun muotoa, kieliä, pylvästä tai kaulaa missään ruudussa: kirjaimellinen soitin on bugi (kuvasääntö 8, tyyliohje luku 18). Tarkista myös, ettei välke tapahdu silloin, kun glissandoa ei ole."
+  }
+]

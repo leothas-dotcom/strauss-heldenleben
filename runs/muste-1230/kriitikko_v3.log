@@ -1,0 +1,23 @@
+C11         16.5-   29.0 s   60 ruutua @ 4.80 fps  -> C11_16.5-29.0.png
+B2           7.6-   32.0 s   25 ruutua @ 1.00 fps  -> B2_7.6-32.0.png
+D4          28.0-   40.0 s   24 ruutua @ 2.00 fps  -> D4_28.0-40.0.png
+A7          44.0-  110.0 s   33 ruutua @ 0.50 fps  -> A7_44.0-110.0.png
+B4         108.0-  142.0 s   17 ruutua @ 0.50 fps  -> B4_108.0-142.0.png
+B5         140.0-  172.0 s   32 ruutua @ 1.00 fps  -> B5_140.0-172.0.png
+B6         211.0-  244.0 s   60 ruutua @ 1.82 fps  -> B6_211.0-244.0.png
+C12        224.0-  240.0 s   16 ruutua @ 1.00 fps  -> C12_224.0-240.0.png
+C4         243.0-  330.0 s   44 ruutua @ 0.50 fps  -> C4_243.0-330.0.png
+C6         330.0-  410.0 s   40 ruutua @ 0.50 fps  -> C6_330.0-410.0.png
+B3         420.0-  472.0 s   52 ruutua @ 1.00 fps  -> B3_420.0-472.0.png
+A10        472.0-  760.0 s   29 ruutua @ 0.10 fps  -> A10_472.0-760.0.png
+A5         760.0-  900.0 s   28 ruutua @ 0.20 fps  -> A5_760.0-900.0.png
+B10        840.0-  870.0 s   30 ruutua @ 1.00 fps  -> B10_840.0-870.0.png
+A12        924.0-  954.0 s   30 ruutua @ 1.00 fps  -> A12_924.0-954.0.png
+A11        950.0- 1010.0 s   30 ruutua @ 0.50 fps  -> A11_950.0-1010.0.png
+B10b      1062.0- 1076.0 s   14 ruutua @ 1.00 fps  -> B10b_1062.0-1076.0.png
+B9        1074.0- 1090.0 s   32 ruutua @ 2.00 fps  -> B9_1074.0-1090.0.png
+A8        1098.0- 1132.0 s   60 ruutua @ 1.76 fps  -> A8_1098.0-1132.0.png
+C8        1126.0- 1240.0 s   57 ruutua @ 0.50 fps  -> C8_1126.0-1240.0.png
+A13        228.0-  240.0 s   12 ruutua @ 1.00 fps  -> A13_228.0-240.0.png
+B11        801.0-  820.0 s   38 ruutua @ 2.00 fps  -> B11_801.0-820.0.png
+index: runs/muste-1230/kriitikko_v3\index.md

@@ -1,0 +1,19 @@
+{
+  "name": "video-400b",
+  "replaces": "video-400 (hylätty 29.10.2026)",
+  "side": 1,
+  "start": 0,
+  "duration": 400,
+  "paketti": "build/demo400",
+  "jaksot": "build/demo400/segments.json (45 jaksoa, analysis/segments.py)",
+  "merkinnat": "annotations/cues.json",
+  "kuvakasikirjoitus": "runs/video-400b/storyboard.md",
+  "video": "runs/video-400b/renders/heldenleben_400s.mp4",
+  "render": {
+    "fps": 30,
+    "resolution": [1920, 1080],
+    "workers": 2,
+    "fade_out_s": 3.5,
+    "codec": "libx264 crf 18, aac 320k"
+  }
+}

@@ -1,0 +1,90 @@
+[
+ {
+  "id": "B3",
+  "otsikko": "Kumppanin viiva saapuu",
+  "t0": 422.0,
+  "t1": 472.0,
+  "fps": 1,
+  "piti_nakya": "Metsäaukion sininen iltataivas; paperinvalkoinen viiva seuraa sooloviulun suuntaa (nousee kun viulu nousee). Ritari laskee viirinsä lepoon; vastaotossa nostaa kellon."
+ },
+ {
+  "id": "A10",
+  "otsikko": "Kumppanin jakso: tapahtuuko mitään",
+  "t0": 472.0,
+  "t1": 760.0,
+  "fps": 0.1,
+  "piti_nakya": "Sommitelma vaihtuu jaksorajoissa (sama kuva enintään ~30 s); ritarilla jokaiseen mielialaan oma ele; pizzicatot viivan värähdyksenä pisteinä; ritari kävelee joen rantaan."
+ },
+ {
+  "id": "A5",
+  "otsikko": "Kuutamojoki ja vene",
+  "t0": 760.0,
+  "t1": 900.0,
+  "fps": 0.2,
+  "piti_nakya": "Kaksi hahmoa astuu veneeseen, vene liukuu; viiri ja viiva kietoutuvat punokseksi maston päällä; harpun glissandot kuunvalon väreinä; kumppani näkyy, sankari ei ole yksin."
+ },
+ {
+  "id": "B10",
+  "otsikko": "Harppu luo kuun siltaa",
+  "t0": 840.0,
+  "t1": 870.0,
+  "fps": 1,
+  "piti_nakya": "Harpun glissandot ovat kuunvalon paperinvalkoisia väreitä tummassa vedessä; harpun pitäisi näkyä selvästi (käyttäjä: maaginen kohta, ei näy riittävästi)."
+ },
+ {
+  "id": "A12",
+  "otsikko": "Purppurahuippu",
+  "t0": 924.0,
+  "t1": 954.0,
+  "fps": 1,
+  "piti_nakya": "Purppura koko kuvan tapahtumana huipussa; vain sankarin viiri ja kumppanin viiva, ei kolmea tai neljää viiriä. Käyttäjä toivoo lisäksi, että tähdet pyörisivät yhteisen keskipisteen ympäri kuin LP."
+ },
+ {
+  "id": "A11",
+  "otsikko": "Sankari muuttuu kosinnan jälkeen",
+  "t0": 950.0,
+  "t1": 1010.0,
+  "fps": 0.5,
+  "piti_nakya": "Huipun jälkeen sankarissa näkyy pysyvä muutos (valkoinen juova viirissä / vaate / kumppani kietoutuneena), jonka hän kantaa loppuun asti."
+ },
+ {
+  "id": "B10b",
+  "otsikko": "Harppu 17:51",
+  "t0": 1062.0,
+  "t1": 1076.0,
+  "fps": 1,
+  "piti_nakya": "Harppu näkyvänä elementtinä (kuun silta), ei vain taustana."
+ },
+ {
+  "id": "B9",
+  "otsikko": "Puupuhaltimet palaavat 17:57",
+  "t0": 1074.0,
+  "t1": 1090.0,
+  "fps": 2,
+  "piti_nakya": "Arvostelijoiden katkelmat unisessa hiljaisuudessa: tunnistettavat suon olennot (sama teema, sama hahmo), ei ympyröitä. Musiikin muutokselle on kuvallinen vastaus."
+ },
+ {
+  "id": "A8",
+  "otsikko": "Siirtymä osasta 3 osaan 4",
+  "t0": 1098.0,
+  "t1": 1126.0,
+  "fps": 2,
+  "piti_nakya": "Yö haalistuu paperiksi ja muste kuivuu, ritari nousee seisomaan, horisonttiin piirtyy kolmen viirin luonnos, sitten kulissitrumpetit. Ei pitkää tyhjää paperia eikä välähdystä väärästä kohtauksesta."
+ },
+ {
+  "id": "A10p",
+  "otsikko": "Pizzicato viivan värähdyksenä (10 fps)",
+  "t0": 427.0,
+  "t1": 431.0,
+  "fps": 8,
+  "piti_nakya": "Pizzicaton hetkellä (427,2 / 430,0 s) viiva katkeaa hetkeksi ja katkon kohdalle ilmestyy paperinvalkoisia pisteitä, jotka hiipuvat; viiva palaa."
+ },
+ {
+  "id": "A12s",
+  "otsikko": "Tähdet pyörivät huipussa",
+  "t0": 924.0,
+  "t1": 948.0,
+  "fps": 0.5,
+  "piti_nakya": "Tähdet kiertyvät hitaasti yhteisen keskipisteen ympäri (kulma kasvaa ~0,87 rad); kuu ja vuoret paikallaan. Vertaa saman tähden paikkaa ruuduissa."
+ }
+]

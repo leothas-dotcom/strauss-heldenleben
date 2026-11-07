@@ -1,0 +1,3 @@
+{"a":972,"b":973,"raaka":[[972.499,0.22,"aN"],[972.537,0.14,"aF"]],"vahdin_jalkeen":2}
+{"a":973,"b":974,"raaka":[],"vahdin_jalkeen":1}
+valmis, 2 ikkunaa joissa hyppy

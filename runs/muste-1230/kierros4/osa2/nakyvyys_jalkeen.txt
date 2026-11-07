@@ -1,0 +1,17 @@
+  244.50 G suo/2.1b pisto: hyttynen ja ritari     ohi   keihas / hyttynen* (85 %, liikkeessä)
+  261.00 G suo/2.2d sorsa kiihtyy                 ohi   kotilo1* / kotilo2* (20 %, liikkeessä)
+  285.00 G suo/2.4a molli: kypärä alas            ohi   sorsa* / kotilo2* (10 %, liikkeessä)
+  285.50 G suo/2.4a molli: kypärä alas            ohi   sorsa* / sammakko2* (50 %, liikkeessä)
+  286.00 G suo/2.4a molli: kypärä alas            ohi   kotilo2* / sammakko1* (58 %, liikkeessä)
+  287.00 G suo/2.4a molli: kypärä alas            ohi   kotilo1* / kotilo2* (62 %, liikkeessä)
+  370.50 G suo/2.6 piiritys                       ohi   sorsa* / haikara* (17 %, liikkeessä)
+  381.50 G suo/2.7 toverit harjanteella           ohi   sorsa / kotilo2* (37 %, liikkeessä)  |  ohi   kotilo2* / sammakko1* (15 %, liikkeessä)
+  382.00 G suo/2.7 toverit harjanteella           ohi   sorsa / sammakko2* (44 %, liikkeessä)  |  ohi   kotilo1* / sammakko2* (60 %, liikkeessä)
+  382.50 G suo/2.7 toverit harjanteella           ohi   kotilo1* / kotilo2* (40 %, liikkeessä)
+
+hetkiä 358 (väli 0.5 s), 240–422 s; marginaali 0.04, päällekkäisyysraja 0.1
+reunan takana (lepo), sekunnit olennoittain: ei yhtään
+penkereen takana (lepo), sekunnit olennoittain: ei yhtään
+päällekkäin (lepo vs lepo), sekunnit pareittain: ei yhtään
+ohi liikkeessä (* = liikkeessä; ei rike), sekunnit pareittain: hyttynen+keihas 0.5, kotilo1+kotilo2 1.5, kotilo2+sorsa 1.0, sammakko2+sorsa 1.0, kotilo2+sammakko1 1.0, haikara+sorsa 0.5, kotilo1+sammakko2 0.5
+rikkeitä 0

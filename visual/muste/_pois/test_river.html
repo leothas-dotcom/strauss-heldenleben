@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Muste – paikka I, metsäaukio ja kuutamojoki (tyylikuva)</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+  <style>
+    html, body { margin: 0; background: #1F1A18; overflow: hidden; }
+    #stage { position: relative; width: 1920px; height: 1080px; }
+    #stage canvas { position: absolute; left: 0; top: 0; display: block; }
+    #hud { position: fixed; left: 10px; top: 10px; padding: 8px 10px; white-space: pre; color: #E8DCC6;
+           background: rgba(31, 26, 24, 0.82); font: 15px/1.35 Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <div id="stage"><canvas id="view"></canvas></div>
+  <div id="hud" hidden></div>
+  <script type="module">
+    // Tyylikuvan ajuri: paikka I (loc_river.js) yksin. Data kolmesta A-puolen paketista (kuten vedos/main.js).
+    //   window.seek(t), window.duration, window.sceneReady; ?debug=1 näyttää oton ja signaalit.
+    import * as THREE from 'three';
+    import { U, C, createPost } from './ink.js';
+    import { createSignals } from './signals.js';
+    import { loadSide } from './data.js';
+    import { clamp } from '../util.js';
+    import * as river from './loc_river.js';
+
+    const W = 1920, H = 1080;
+    const debug = new URLSearchParams(location.search).get('debug') === '1';
+    const PACKS = [
+      { dir: 'build/demo400', from: 0, to: 400 },
+      { dir: 'build/A2', from: 400, to: 810 },
+      { dir: 'build/A3', from: 810, to: 1240 },
+    ];
+    try {
+      const view = document.getElementById('view');
+      view.width = W; view.height = H;
+      const data = await loadSide(PACKS);
+      const S = createSignals(data);
+      const renderer = new THREE.WebGLRenderer({ canvas: view, antialias: false, preserveDrawingBuffer: true, alpha: false });
+      renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.setClearColor(C.paper, 1);
+      const post = createPost(renderer, W, H);
+      const duration = data.meta.duration;
+      const L = river.build({ S, LEAD: 1 / 30, a: S.A('gef_viulu').t, b: S.A('wal_kulissi1').t, check: false });
+      const cam = new THREE.PerspectiveCamera(40, W / H, 0.1, 3000);
+      const shotOf = (t) => { let s = L.shots[0]; L.shots.forEach((x) => { if (t >= x.a) s = x; }); return s; };
+      window.seek = (t) => {
+        t = clamp(t, 0, duration);
+        const fx = L.update(t) || {};
+        const s = shotOf(t);
+        const c = s.cam(clamp((t - s.a) / Math.max(0.05, s.b - s.a)), t);
+        cam.position.set(...c.pos);
+        cam.up.set(0, 1, 0);
+        cam.fov = c.fov ?? 40;
+        cam.updateProjectionMatrix();
+        cam.lookAt(...c.look);
+        cam.updateMatrixWorld(true);
+        U.uDim.value = fx.dim ?? 0;
+        renderer.setRenderTarget(post.rtA);
+        renderer.render(L.scene, cam);
+        const u = post.uniforms;
+        u.uMix.value = 0; u.uPaper.value = fx.paper ?? 0; u.uTitle.value = 0; u.uFlash.value = 0; u.uWood.value = 0; u.uShake.value = 0;
+        u.uMis.value = 0.4 + 1.6 * clamp(S.tension(t)); u.uGrain.value = 0.05;
+        post.render();
+        if (debug) {
+          const hud = document.getElementById('hud');
+          hud.hidden = false;
+          hud.textContent = `t ${t.toFixed(2)}  otto: ${s.name}  ${s.a.toFixed(1)}-${s.b.toFixed(1)}\n` +
+            `viul ${S.fam.violins(t).toFixed(2)}  mel ${S.melody(t).toFixed(1)}  harppu ${S.fam.harp(t).toFixed(2)}  käyrät ${S.energy.horns(t).toFixed(2)}`;
+        }
+        return !renderer.getContext().isContextLost();
+      };
+      window.__L = L;
+      window.probe = (t) => ({ str: S.fam.strings(t), evio: S.energy.violins(t), viul: S.fam.violins(t), mel: S.melody(t), harp: S.fam.harp(t), horns: S.energy.horns(t), hornsF: S.fam.horns(t), wind: S.fam.winds(t) });
+      window.A = (id) => S.A(id);
+      window.shotList = () => L.shots.map((s) => [s.name, s.a.toFixed(2), s.b.toFixed(2)]);
+      window.contextOk = () => !renderer.getContext().isContextLost();
+      window.duration = duration;
+      window.sceneReady = true;
+    } catch (e) {
+      window.sceneError = String(e && e.stack ? e.stack : e);
+      console.error(e);
+    }
+  </script>
+</body>
+</html>

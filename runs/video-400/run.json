@@ -1,0 +1,22 @@
+{
+  "name": "video-400",
+  "side": 1,
+  "start": 0,
+  "duration": 400,
+  "paketti": "build/demo400",
+  "merkinnat": "annotations/cues.json",
+  "video": "runs/video-400/renders/heldenleben_400s.mp4",
+  "versiot": {
+    "master": "heldenleben_400s.mp4 (H.264 CRF 18, 2,96 Gt)",
+    "jako": "heldenleben_400s_jako.mp4 (H.264 CRF 24, 1,23 Gt)",
+    "kevyt": "heldenleben_400s_hevc.mp4 (HEVC NVENC CQ 28, 0,45 Gt)"
+  },
+  "renderointiaika_min": 4.6,
+  "render": {
+    "fps": 30,
+    "resolution": [1920, 1080],
+    "workers": 3,
+    "fade_out_s": 3.5,
+    "codec": "libx264 crf 18, aac 320k"
+  }
+}

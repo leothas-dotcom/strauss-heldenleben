@@ -1,0 +1,75 @@
+# Tarkistajan raportti, osa 3 (Kumppani), stillit 3.1-3.22
+
+Tarkistaja: tuore, riippumaton. Arvioitu vain se, minkä stillit näyttävät. Alareunan 80 px musta palkki ohitettu. Kuvasääntöjen numerointi 1-27 (docs/kuvasaannot.md).
+
+## Yleiset huomiot ja merkintätapa
+
+- "KYLLÄ" kohdat on listattu numeroina; vain EI-kohdille on perustelu.
+- Ei arvioitavissa stillistä: 13-18 (liike, ajoitus, kamera), 21 (yksi tuuli, vain osin: katso alla), F (mittaukset), sekä 8-9 ja 12 vain siltä osin kuin kuvasta näkyy.
+- Kohdat 24-27 (natsitervehdys, keksityt lainaukset, kolmio lammessa, teksti kuvassa): yhdessäkään stillissä ei ole tekstiä, lainausta tai käännettyä kolmiota. Suoraa käsivartta viistosti ylös ja eteen ei ole missään. Rajatapaukset on merkitty alla (3.16, 3.17: ritari pitää keihästä vaakaan, keihäs nousee oikealle noin 10 astetta).
+- Kohta 1 (enintään kolme elementtiryhmää): laajoissa rantakuvissa on aina puuryhmä, vuoret, järvi, vene, ritari ja viiva (5-6 ryhmää), joten kohta 1 on EI kaikissa laajoissa kuvissa. Se ei ole kuvakohtainen yllätys vaan koko rantaniityn rakenne.
+- Kohta 12 (erikoisvärit): purppuraa on vain stilleissä t895.6 (pienet salmiakit), t928.5 (koko kuva) ja t957.8 (punos). Kultaa ja vihreää ei ole. Ei hehkua tai sumua missään.
+- Kohta 20 (lavasteiden reunat): ei havaittuja reunavuotoja, paitsi mahdollinen pieni valkoinen salmiakki vasemmassa yläkulmassa kuvassa t693.2 (noin x 30-60, y 15-70); tarkista kohtauscheckillä.
+- 3.22: kuvat ovat tunnetusti paperin peitossa; kerron vain näkemäni.
+
+## Pisteytystaulukko
+
+| Otto | Still | Rikkeet (EI-kohdat ja perustelu; muut kohdat KYLLÄ, ellei toisin sanota) |
+|---|---|---|
+| 3.1 Ääni | t429.5 | **1 EI**: puuryhmä, kaksi vuorta, järvi, vene, ritari ja viiva = yli kolme ryhmää; mustat puut ovat suurin muoto, ei viiva. Muut: 2,3,4,5 (ritari on tiny mutta viiri maassa/ viistossa luettavissa),7,8,9,11,12,19,20,22 KYLLÄ. |
+| 3.2 Ensimmäinen vastaus | t436.0 | **3 EI**: ritari täyttää noin 55-60 % kuvan korkeudesta; ei lähikuva (kello ei täytä kuvaa) eikä pieni, vaan keskikoko. **22 EI (lievä)**: keihäs kulkee ritarin vartalon poikki vinosti. Kohta 1 KYLLÄ (ritari, kivet, järvi). Isku/pöllähdys (kivet) näkyy alaosassa. |
+| 3.3 Keskustelu | t456.5 | **1 EI**: viiva, puut, vuori, järvi, vene, ritari = yli kolme. **4 EI**: viiva on ontto ääriviiva (vaalea kehys), puiden musta massa on kuvan terävin ja painavin muoto; viiva ei ole "täydessä värissä". **5 EI (lievä)**: viiva näyttää veitseltä/leikkuupöytäkaaren muodolta, ei viivalta. **22 EI**: viiva kulkee puiden latvojen päällä ja edessä (puiden lomassa, mutta menee latvaa vasten). Ritari pieni (kohta 3 KYLLÄ). |
+| 3.4 Toinen vastaus | t499.4 | **1 EI**: puut, vuoret, aurinko, järvi, vene, ritari, keihäs+viiri maassa. **4 EI (lievä)**: viiva (sooloviulu) on kuvassa vain haaleana tahrana (x 840-1040, y 310-340), joten pääääntä ei ole; ritari on kuvan ainoa terävä väri. Kypärä ei näy ritarin vieressä (pää on yhä kello); ritari istuu rannalla (ei kivellä). 2,3,7 KYLLÄ. |
+| 3.5 kaipaus | t525.0 | **1 EI**: viiva, puut, vuori, vene, ritari, keihäs+viiri. **22 EI**: ei; viiva on kaukana. Kohdat 2,3,4,5,7 KYLLÄ. Ohjauksen "pitkä laskeva kaari veden yllä" ei näy: viiva on silmukkapiirros vuoren päällä. |
+| 3.5 ilo | t545.0 | **1 EI**: viiva, ritari, vene, aurinko, puut, vuoret. **22 EI**: viivan viuhka peittää ritarin pään ja olkapään (viiva ja ritari samassa tilassa). **5 EI (lievä)**: ritarin yläosan siluetti hukkuu viivan alle. Ohjauksen "sahalaita kiveltä kivelle" ei näy; viiva on viuhka. |
+| 3.5 kevytmielisyys | t560.0 | **1 EI**: viiva, vene, puut, ritari, keihäs, aurinko. **22 EI (lievä)**: pieni silmukkaviiva koskettaa ritarin kasvoaluetta/kelloa. Ritari pienehkö (noin 20 %); kohta 3 rajalla (keskikokoon päin). Ohjauksen "katoaa puun taakse ja ilmestyy selän takaa" ei näy. |
+| 3.5 hellyys | t575.0 | **3 EI**: ritari noin 40 % kuvan korkeudesta, istuu; keskikoko. **22 EI**: viiva laskeutuu suoraan ritarin kellon/pään yli ja kämmenelle; kellon siluetti peittyy (tarkoituksellinen, mutta rikkoo kohdan 22). **1 EI**: viiva, ritari, vene, vuoret, puut. Viiva leikkaantuu kuvan yläreunaan (pitkä). |
+| 3.5 sarkasmi | t595.0 | **1 EI**: piikki, ritari, vene, vuoret, puu. **22 EI**: piikkiviiva leikkaa veneen mastoa ja runkoa (x 1080-1550, y 560-1000). **3 EI**: ritari on pieni alareunassa, mutta kuvassa hänet on leikattu bar-alueen kohdalla; siluetti vaikea lukea. Viiri ei näy ("viiri hätkähtää" ei näy). |
+| 3.6 Painokas vastaus | t613.2 | **3 EI**: ritari noin 60 % korkeudesta, jalat leikkautuvat reunaan; kello ei täytä kuvaa, joten "lähikuva" jää keskikooksi. **22 EI (lievä)**: vene leikkautuu oikeassa reunassa ritarin viereen. Kohta 1 KYLLÄ (ritari, järvi, vuoret). Kohta 24: käsivarsi taipuu kyynärpäästä ylös, ei suora; KYLLÄ. |
+| 3.7 Kiihtyminen | t627.9 | **1 EI**: viivapyörre, ritari, vene, vuoret, puut, keihäs+viiri. **5 EI**: viivan rengas peittää ritarin siluetin lähes kokonaan (vain punaisia pätkiä). **22 EI**: rengas on ritarin päällä. Ohjauksen "pakenee korkealle" ei näy, rengas on ritarin ympärillä. |
+| 3.8 Pisteet | t663.0 | **1 EI**: pisteet, puut, vuoret, ritari, viiri, vene. **4 EI**: sinisten pisteiden valkoinen reuna ja täysi sävy kilpailevat ritarin kanssa; "matala kontrasti" ei toteudu. **3 EI (lievä)**: ritari noin 20 %, keskikoko-pieni. Viiva näkyy vain kulmassa oikeassa yläreunassa (x 1830-1920, y 0-60), leikkautuneena. 22: pisteet ovat puiden edessä, eivät peitä ritaria; KYLLÄ. |
+| 3.9 Leimahdus | t693.2 | **5 EI**: viiri peittää ritarin pään ja ylävartalon (vain jalat ja rintakilpi näkyvät); ritarin teko luettavissa viiristä, mutta ei hahmosta. **22 EI**: viiri on ritarin edessä (viiri kuuluu kantajalleen, mutta peittää tämän). **20 tarkista**: valkoinen salmiakki vasemmassa yläkulmassa. Kohta 1 KYLLÄ (viiri on yksi hallitseva muoto). 3 KYLLÄ (viiri täyttää kuvan). |
+| 3.10 Nauru | t715.5 | **1 EI**: viiva, ritari, vene, vuoret, puut. **7 EI (lievä)**: viiva on kuvan keskikorkeudella vuorten päällä, ei yläreunassa; yläneljännes on tyhjä paperia. Ritari pieni ✓ (kohta 3 KYLLÄ), seisoo viiri kädessä. |
+| 3.11 Rauhoittava | t740.5 | **3 EI**: ritari noin 35 % kuvan korkeudesta; kuva on keskikoko, ei "lähikuva kädestä ja maasta" (käsi ei täytä kuvaa). **22 EI (lievä)**: keihäs+viiri makaavat ritarin edessä ja ulottuvat hänen jalkojensa alle. Kohta 1 KYLLÄ. Käsi ojennettu eteen vaakaan; ei viistosti ylös (24 KYLLÄ). |
+| 3.12 Lähentyminen | t777.0 | **1 EI**: viiva, ritari, vene, vuori, puu. **5 EI (lievä)**: viivan pää on koukku (kävelykepin kahva), ei viivan eleen näköinen. **22 EI (lievä)**: viiva leikkautuu kuvan yläreunaan vasemmalla. Ritari noin 22 % (3 KYLLÄ, pieni). Ohjauksen "aurinko laskee veteen" ei näy. |
+| 3.12 Lähentyminen | t790.0 | **3 EI**: ritari noin 40 % korkeudesta, keskikoko. **1 EI**: viiva, ritari, puu, vuori/järvi, keihäs+viiri. **22 EI**: viiva laskeutuu ritarin ojennetulle kädelle (tarkoitettu); käsi peittyy. Viiva ja ritari samassa rajauksessa ✓. |
+| 3.13 Rakkauskohtaus | t808.0 | **1 EI**: kuu, vene, puut, ritari+viiva, ruovikko, kuun juova. **5 EI**: ritarin siluetti hukkuu viivan renkaaseen (vain punainen pätkä ja pieni valkoinen kaari). **22 EI**: viivarengas on ritarin päällä. **3**: ritari noin 12 % (KYLLÄ, pieni). Vene tyhjä ja ritari rannalla ("työntää veneen" vasta tulossa). Kuu on kuvan suurin ja terävin muoto. |
+| 3.13 Rakkauskohtaus | t823.4 | **1 EI**: kuu, vene, puut, ritari, viiva, viiri mastossa, ruovikko. **22 EI (lievä)**: viiva-kaari päättyy mastoon ja kulkee veneen yli; ritarin takana ja edessä. Ritari pieni ✓ (3 KYLLÄ), souta/istuu veneessä ✓ (airot näkyvät). Hyvä kuun juova. |
+| 3.14 Kahden kesken | t850.0 | **Ritari ei näy lainkaan** (ohjaus: "lepuuttaa airoja"). **5 EI**: ei hahmoa. **3 EI/ei sovellu**: ei ritaria. Kohta 1 KYLLÄ (punos+viiri, kuu, puut = kolme ryhmää; vene ei näy). Kohta 2 KYLLÄ. Kohta 4 KYLLÄ (punos terävä ja täysivärinen). Kuu ja punos ovat selvä kaksi muotoa ("kuu takana"), mutta ritari ja vene puuttuvat. |
+| 3.15 Hiljaisuus ja nousu | t895.6 | **Ritari ei näy**; vene ei näy (ohjaus: "vene leijuu"). **5 EI**: ei hahmoa. Kohdat 1,2,4 KYLLÄ. Kuuden pienen purppuran salmiakin aavistus punoksessa ✓ (12 KYLLÄ). Sommitelma on lähes sama kuin t850.0 (viirin varsi vasemmalla, punos oikealle, kuu takana); kesto (R17, 30 s) ei arvioitavissa stillistä, mutta ero on pieni. |
+| 3.16 Ovella | t915.2 | **1 EI**: kuu, vene+ritari, punos, olennot, ruovikko, puut. **22 EI (lievä)**: punos+viiri ulottuu kuun ja mastin yli; olennot ja ruovikko ovat samassa tilassa. **24 tarkista**: ritarin käsi+keihäs muodostavat suoran linjan viistosti ylös oikealle (noin 10 astetta) kohti olentoja; ei suora käsivarsi, mutta lähellä rajaa. Ritari pieni (3 KYLLÄ). |
+| 3.17 Huippu: PURPPURA | t928.5 | **1 EI**: kuu, vene+ritari, ruovikko, vuoret, punos, keihään viiri; ohjaus lupaa "veto, kuu ja purppura ainoat muodot", mutta vene, ruovikko, vuoret ja tähdet ovat mukana. **Punainen veto kuun yli ei näy**: vain pieni punainen kärkiviiri keihään päässä (x 1040-1150, y 650-690) ja punos. **12 KYLLÄ** (taivas ja vesi purppuraa, vuoret ja kuu säilyttävät sinisen/paperin; tämä on kerran koko kuvan tapahtuma). **24 tarkista**: keihäs nousee noin 10 astetta oikealle. Ritari pieni (3 KYLLÄ). |
+| 3.18 Hellänä | t957.8 | **3 EI**: ritari noin 30 % korkeudesta ja istuu, keskikoko ("lähikuva" ei toteudu). **1 EI**: punos+viiri, kuu, vene+ritari, ruovikko, puut, punainen veto. **10 EI**: punainen veto taivaalla (x 1215-1910, y 285-320) on irrallinen, ei kiinni keihään kärjessä (keihäs makaa veneessä); sääntö 10: irrallinen veto on virhe. **12**: punos on selvästi purppuraa (ei vain aavistus), ohjauksen mukaan "jää vain punokseen" ✓, taivas sininen ✓. |
+| 3.19 Vielä aalto | t973.5 | **1 EI**: kuu, vene+ritari, viiri, viivapuhallus, ruovikko, vuoret. **5 EI (lievä)**: ritari on pieni (noin 7 %), siluetti vaikea lukea; viirin kärki hajoaa pisteiksi. **22 EI (lievä)**: viivan pilvi koskettaa vuorten reunaa kuun alla. Ritari pieni (3 KYLLÄ). |
+| 3.20 Jälkihehku | t1028.2 | **1 EI**: viivakaaret, vene, ritari (selin), viiri+keihäs, kuu, vuoret. **3 EI**: ritari noin 28 % korkeudesta, keskikoko, vain "seisoo/istuu". **22 EI**: viivakaari kulkee ritarin pään yli ja veneen mastoa vasten. **23**: selkäkuva ✓ (ainoa sallittu), mutta ritari seisoo/istuu kauempana veneestä, ei "kaksi hahmoa kuuta katsomassa": viiva-kaari ei istu vieressä vaan ylitse. Kuu on oikealla, kaukana ritarista. |
+| 3.21 Uni | t1089.2 | **1 EI**: kuu, vene, puut, ritari+viiri, viiva. **Mustia pisteitä tähtien joukossa ei näy** (ohjauksen "hetkeksi", ei arvioitavissa yhdestä stillistä). Ritari pieni alhaalla (noin 20 %); viiva makaa vaakaan hänen jaloissaan ✓ ("nukkuu suorana"). Taivas tyhjä ✓. 3 KYLLÄ (rajalla), 5 KYLLÄ (punainen kartio+kello; ei käsivarsia näkyvissä). |
+| 3.22 Tyven | t1112.0 | Ei arvioitavissa. Näen: koko ruutu on paperinvärinen rakeinen pinta, jossa on harvakseltaan pieniä sinisiä roiskeläiskiä ja yksi pikkuruinen oranssi piste (x 665, y 565). Ritaria, viiriä tai viivaa ei näy. |
+| 3.22 Tyven | t1116.2 | Ei arvioitavissa. Näen: täysin tasainen paperinvärinen rakeinen pinta, ei yhtään muotoa tai väriläiskää. |
+
+## Kolme kysymystä
+
+**(a) Tekeekö sankari jokaisessa otossa jotain? OSITTAIN.**
+Kuvista näkyy teko tai pääosasäännön sallima kuuntelu kaikissa muissa otoissa paitsi:
+- **3.14 (t850.0) ja 3.15 (t895.6): ritaria ei näy lainkaan** ja vene puuttuu. Pääosasäännön mukaan torvet vaiti -> viiri/muste yksin, ritari pieni tai poissa, joten poissaolo on sallittu 3.15:ssa. 3.14:n ohjausrivin teko ("lepuuttaa airoja") ei kuitenkaan näy, koska ritaria ei ole kuvassa.
+- **3.22:** ei arvioitavissa (paperin peitossa).
+- 3.7 (t627.9) ja 3.13 (t808.0): ritari on viivan renkaan alla, joten teko ei lue siluetista.
+- 3.9 (t693.2): teko (viirin leimahdus) lukee, mutta ritari on suurelta osin viirin takana.
+Selvästi toimivia: 3.2 (soittoele), 3.4, 3.8, 3.11 (käsi ojennettu), 3.13 t823.4 (soutaa), 3.16 (nousee seisomaan keihäs vaakaan), 3.18 (istuu), 3.20, 3.21.
+
+**(b) Näkyykö kosinnan kaari ilman selitystä? OSITTAIN KYLLÄ.**
+Kaari lukee viivan etäisyydestä ja ritarin asennosta: viiva kaukana vasemmalla (t429.5) -> tulee puiden luo (t456.5) -> hämärtyy lähes pois (t499.4) -> leikkii ritarin ympärillä (t525-575) -> ritari "yrittää" (t613.2 nostaa) -> viiva pyörteenä (t627.9) -> viiva kuvan kulmassa tai poissa (t663, t693.2, t740.5) -> kauimpana silmukoina (t715.5 viiva korkealla, ritari pieni) -> ritari polvillaan käsi ojennettuna ja keihäs maassa (t740.5, luopuminen) -> viiva laskeutuu käteen (t777, t790) -> viiva rengas/kaari (t808, t823.4) -> punos (t850 ->). Heikkoudet: viiva on jo hyvin lähellä tai ritarin päällä kolme kertaa ennen luopumista (t545, t575, t627.9), joten "yritys -> kauemmas" ei kasva portaittain; t627.9:ssä viiva on ritarin ympärillä juuri siinä kohdassa, jossa pitäisi paeta.
+
+**(c) Saapuuko purppura koko kuvan tapahtumana ja vain kerran? KYLLÄ (varauksin).**
+t928.5: taivas ja vesi ovat purppuraa, kuu ja vuoret säilyvät; muissa stilleissä taivas on sininen tai paperi. Aavistus: t895.6, kuusi pientä salmiakkia punoksessa. t957.8: punos on edelleen selvästi purppura (ei enää vain pieni, mutta ohjaus sallii "jää punokseen"). Ei purppuraa muualla (t808-850: ei; t915.2: ei; t973.5 ja t1028.2: ei). Varaus: tulo (saapuminen) ei näy yhdestä stillistä; punainen veto kuun yli ei näy t928.5:ssä.
+
+## Kolme pahinta ongelmaa
+
+1. **Viiva peittää ritarin tai kulkee muiden hahmojen yli (kohta 22 ja 5):** t545.0, t575.0, t595.0 (viiva leikkaa veneen), t627.9 (rengas peittää ritarin), t808.0 (rengas peittää ritarin), t1028.2 (kaari pään ja mastin yli); lisäksi t456.5 (viiva puiden päällä). Samaan kuuluu t693.2: viiri peittää ritarin pään.
+2. **Kohta 1 (yli kolme elementtiryhmää) toistuu lähes kaikissa laajoissa kuvissa:** puuryhmä + vuoret + järvi + vene + ritari + viiva (+ kuu) on aina mukana. Pahimmat ovat t429.5, t456.5, t499.4, t525-595, t627.9, t663.0, t715.5, t808-823, t915.2, t928.5, t957.8, t1028.2, t1089.2.
+3. **Kohta 3 (keskikokoinen ritari tai lähikuva ei täytä kuvaa):** t436.0, t575.0, t613.2, t740.5, t790.0, t957.8, t1028.2; lisäksi t850.0 ja t895.6 ilman ritaria (kohta 5 ja pääosasääntö). Irrallinen punainen veto t957.8:ssa rikkoo kohtaa 10.
+
+## Otot joissa kohdat 1-3 rikkoutuvat
+
+- **Kohta 1 (yksi hallitseva muoto, enintään kolme ryhmää) EI:** 3.1, 3.3, 3.4, 3.5 (kaikki viisi), 3.7, 3.8, 3.10, 3.12 (t777, t790), 3.13 (molemmat), 3.16, 3.17, 3.18, 3.19, 3.20, 3.21.
+- **Kohta 2 (kolmasosa tyhjää):** ei rikkoudu missään stillissä; kaikissa yläkolmannes on tyhjää taivasta tai tähtitaivasta (3.3:ssa puiden kärjet ja 3.9:ssä viirin yläreuna ulottuvat yläkolmannekseen, mutta suurin osa on tyhjää; 3.5 sarkasmin piikki ja 3.12 viiva leikkaavat yläkolmanneksen, ohjauksen mukaisesti).
+- **Kohta 3 (mittakaava) EI:** 3.2 (t436.0), 3.5 hellyys (t575.0), 3.6 (t613.2), 3.11 (t740.5), 3.12 (t790.0), 3.18 (t957.8), 3.20 (t1028.2); rajalla: 3.5 kevytmielisyys (t560.0), 3.8 (t663.0), 3.21 (t1089.2).

@@ -1,0 +1,23 @@
+{
+  "name": "torviritari-400",
+  "replaces": "sankarin-paiva-400 (kesken), drehbuehne-400 ja vedos-400 (hylätyt)",
+  "side": 1,
+  "start": 0,
+  "duration": 400,
+  "paketti": "build/demo400",
+  "ajat": "annotations/teemat.json -> annotations/cues.json (ankkurit tunnisteilla), build/demo400/aksentit.json",
+  "aikojen_totuus": "build/kuuntelu/A_puoli_kuuntelu.wav (sovittu 30.10.2026)",
+  "kuvakasikirjoitus": "runs/torviritari-400/storyboard.md",
+  "kohtaus": "visual/torviritari/index.html (three.js r170)",
+  "video": "runs/torviritari-400/renders/heldenleben_torviritari_400s.mp4",
+  "otot": 46,
+  "paikat": ["A levy", "B laakso", "C joki", "D kukkula", "E niitty", "F-G tasanko ja myrskyvuori", "H suo"],
+  "render": {
+    "fps": 30,
+    "resolution": [1920, 1080],
+    "workers": 2,
+    "chunk_s": 40,
+    "fade_out_s": 3.5,
+    "codec": "libx264 crf 18, aac 320k"
+  }
+}

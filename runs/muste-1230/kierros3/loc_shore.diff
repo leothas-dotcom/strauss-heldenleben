@@ -1,0 +1,187 @@
+--- /home/claude/loc_shore_v2.js	2026-10-31 20:53:43.225328818 +0200
++++ loc_shore.js	2026-10-31 20:53:43.241344896 +0200
+@@ -25,6 +25,7 @@
+ // --- Vesi: kuun polku ja purppuralaatta -------------------------------------------------------------
+ const WATER_FS = /* glsl */ `
+   uniform float uCell, uTime, uGlint, uDark, uDim, uMoonX, uMoonAmt, uTop, uPur;
++  uniform vec4 uHarp;   // B10/B11: kaksi harpun glissandon rintamaa kuun sillalla (syvyys 0 = kuu/horisontti -> 1 = katsoja, voimakkuus)
+   uniform vec3 uBase, uDeep, uPaper, uPurC;
+   uniform vec4 uRings[16];
+   varying vec3 vW;
+@@ -37,8 +38,14 @@
+     float row = floor(rowF);
+     float line = 1.0 - smoothstep(0.1, 0.22, abs(fract(rowF) - 0.5));
+     float moonB = uMoonAmt * exp(-pow((vW.x - uMoonX) / (1.0 + 2.2 * (1.0 - depth)), 2.0));
+-    float dash = step(0.7 - 0.42 * moonB, vnoise(vec2(vW.x * 1.0 + uTime * (0.25 + 0.2 * hash12(vec2(row, 1.0))), row * 1.3)));
+-    c = mix(c, uPaper, dash * line * clamp(uGlint * 0.55 + moonB * 0.9, 0.0, 1.0) * (1.0 - 0.5 * depth));
++    // harpun glissando = välke, joka valuu kuun siltaa pitkin kuusta katsojaa kohti (laskeva glissando); rintama ja hiipuva jälki
++    float hcol = exp(-pow((vW.x - uMoonX) / (1.3 + 2.6 * depth), 2.0));
++    float d1 = depth - uHarp.x, d2 = depth - uHarp.z;
++    float hb = uHarp.y * (exp(-d1 * d1 / 0.004) + 0.5 * (1.0 - step(0.0, d1)) * exp(d1 / 0.22))
++             + uHarp.w * (exp(-d2 * d2 / 0.004) + 0.5 * (1.0 - step(0.0, d2)) * exp(d2 / 0.22));
++    hb = clamp(hb, 0.0, 1.2) * hcol;
++    float dash = step(0.7 - 0.42 * moonB - 0.3 * hb, vnoise(vec2(vW.x * 1.0 + uTime * (0.25 + 0.2 * hash12(vec2(row, 1.0))), row * 1.3)));
++    c = mix(c, uPaper, dash * line * clamp(uGlint * 0.55 + moonB * 0.9 + hb, 0.0, 1.0) * (1.0 - 0.5 * depth * (1.0 - min(hb, 1.0))));
+     for (int i = 0; i < 16; i++) {
+       vec4 R = uRings[i];
+       if (R.w <= 0.0) continue;
+@@ -74,6 +81,7 @@
+   return out;
+ }
+ const RAW = await loadChannels(CH_NAMES);
++const HARP = await (await fetch('/visual/muste/harppu_glissandot.json')).json();
+ // kanava tasoitettuna ja suhteutettuna oman ikkunansa [a, b] s 98. persentiiliin (PANNs-todennäköisyydet ovat pieniä: vertaa suhteellisesti)
+ function chanNorm(name, a, b, sigma, pct = 0.98) {
+   const sm = gaussian(RAW[name], sigma);
+@@ -134,7 +142,13 @@
+   const pzN = chanNorm('panns_pizzicato', T.viulu, T.rk, 2, 0.98);
+   const violinN = chanNorm('panns_violin_fiddle', T.viulu, T.hs, 6, 0.95);                          // sooloviulun / viulujen kanava (sash)
+   const sashSig = (t) => clamp(violinN(t));
+-  const harpEv = chanPeaks('panns_harp', T.rk, T.hs, 3, 0.08, 2.0).filter(([o]) => o < T.hu - 0.5 || o > T.sh + 0.5);   // huippu pidetään puhtaana (A12)
++  // B10/B11 (kierros 3): harpun glissandot partituurista ja mitatuista tahdeista (harppu_glissandot.json), EI panns_harp-kanavasta (kuollut).
++  // [alku, loppu, voimakkuus]; tahdin alku = mitattu isku, iskun paikka partituurista.
++  const harpGl = HARP.glissandot.map((g) => {
++    const D = HARP.tahdit, b0 = D[g.tahti], L = D[g.tahti + 1] - b0;
++    return [b0 + ((g.alku - 1) * L) / 4, b0 + ((g.loppu - 1) * L) / 4, g.dyn === 'ff' ? 1 : 0.6];
++  }).filter(([a]) => a > T.rk - 1 && a < T.hs);
++  const harpChord = HARP.sointu.map((c) => HARP.tahdit[c.tahti]);
+   const fluteN = chanNorm('panns_flute', T.un - 10, T.hs + 5, 15, 0.98);
+   const clarN = chanNorm('panns_clarinet', T.un - 10, T.hs + 5, 15, 0.98);
+   const woodN = chanNorm('panns_wind_instrument_woodwind_instrument', T.un - 10, T.hs + 5, 15, 0.98);
+@@ -672,6 +686,7 @@
+   lakeMat.fragmentShader = WATER_FS;
+   lakeMat.uniforms.uMoonX = { value: 0 };
+   lakeMat.uniforms.uMoonAmt = { value: 0 };
++  lakeMat.uniforms.uHarp = { value: new THREE.Vector4(0, 0, 0, 0) };
+   lakeMat.uniforms.uPur = { value: 0 };
+   lakeMat.uniforms.uPurC = { value: C.purple.clone() };
+   lakeMat.uniforms.uDim = U.uDim;
+@@ -786,7 +801,7 @@
+     return g;
+   });
+   const dotOns = S.onsetsIn(T.pu, T.le, (t) => S.fam.winds(t) > 0.08);
+-  const harpOns = harpEv.map(([o]) => o);          // harpun mitatut glissandot -> vesirenkaat ja valosilta
++  const harpOns = [...harpChord, ...harpGl.map(([, b]) => b)].sort((a, b) => a - b);   // välkerenkaat: soinnun isku ja glissandon pohja (rintama saapuu veneen eteen)
+   const flowT = W.integ((t) => 0.3 + 1.6 * clamp(W.lows(t)));
+   // (paperipesu ja lyijykynäluonnos ovat main.js:n PAPER_TRANS: gef_hiljaisuus -> wal_kulissi1)
+   // taivaan kohteet
+@@ -889,16 +904,7 @@
+   const pzDots = new THREE.InstancedMesh(new THREE.CircleGeometry(1, 10), pzMat, PZN);
+   pzDots.frustumCulled = false;
+   scene.add(pzDots);
+-  // Harppu luo kuun siltaa (B10): glissando = harpun muotoinen valosilta veneestä kuuhun (pylväs, kaareva kaula, vinopohja ja 21 kieltä).
+-  // Kielet soivat vuorotellen veneestä kuuta kohti (nouseva glissando) ja himmenevät; runko hohtaa niin kauan kuin glissando elää.
+-  const HN = 21;
+-  const harpMat = ink(C.paper, { shade: C.blue, raster: 0 });
+-  const neckR = ribbon(40), pillarR = ribbon(2), baseR = ribbon(2);
+-  [neckR, pillarR, baseR].forEach((r) => { const m = new THREE.Mesh(r.geo, harpMat); m.frustumCulled = false; scene.add(m); r.mesh = m; });
+-  const hStr = new THREE.InstancedMesh(new THREE.PlaneGeometry(1, 1), harpMat, HN);
+-  hStr.frustumCulled = false;
+-  scene.add(hStr);
+-  const HZ = -4.6;
++  // B10 (kierros 3): EI harpun muotoa (käyttäjä: emämoka). Harppu = kuun sillan välke vedessä (WATER_FS uHarp) ja välkerenkaat.
+   const brG = group(scene);
+   const br = braid(brG, 160);
+   const brGP = group(scene);
+@@ -906,17 +912,18 @@
+   brP.redMat.uniforms.uColor.value.copy(C.purple);
+   brP.meshes[1].visible = false;
+   lead.place(T.viulu, heroState, windV, {});   // alustaa tipAt:n tilafunktion ennen ensimmäistä ruutua
+-  // harpun glissandon verhokäyrä: runko syttyy glissandon alussa ja hohtaa noin 4 s (mitatut huiput harpEv)
+-  const harpEnv = (t) => {
+-    let F = 0;
+-    for (const [o, v] of harpEv) if (t > o - 0.2 && t < o + 4.2) F = Math.max(F, smoothstep(o - 0.1, o + 0.5, t) * (1 - smoothstep(o + 2.2, o + 4.0, t)) * (0.7 + 0.3 * Math.min(1, v)));
+-    return F;
+-  };
+-  const harpLevel = (t, u) => {   // kielen u (0 = vene, 1 = kuu) soivuus: nouseva glissando, jälkikaiku
+-    let L = 0;
+-    for (const [o, v] of harpEv) { const tp = o + 1.6 * u; if (t > tp - 0.12 && t < tp + 5) L = Math.max(L, smoothstep(tp - 0.1, tp + 0.4, t) * Math.exp(-Math.max(0, t - tp) / 1.3) * (0.7 + 0.3 * Math.min(1, v))); }
+-    return L;
++  // harpun glissandon rintama kuun sillalla: syvyys 0 (kuu) -> 1 (katsoja) glissandon keston aikana, hiipuu lopun jälkeen
++  const harpFronts = (t) => {
++    const act = [];
++    for (const [a, b, v] of harpGl) {
++      if (t < a - 0.1 || t > b + 1.8) continue;
++      const f = clamp((t - a) / (b - a), 0, 1) + 0.15 * smoothstep(b, b + 1.8, t);
++      act.push([f, v * smoothstep(a - 0.08, a + 0.2, t) * (1 - smoothstep(b, b + 1.6, t))]);
++    }
++    act.sort((p, q) => q[1] - p[1]);
++    return [act[0] || [0, 0], act[1] || [0, 0]];
+   };
++  const harpEnv = (t) => { const [p, q] = harpFronts(t); return Math.max(p[1], q[1]); };
+   // --- Päivitys -------------------------------------------------------------------------------------------
+   const lastU = {};
+   function update(t) {
+@@ -984,8 +991,12 @@
+     // kuun väreet
+     const wu = lakeMat.uniforms;
+     wu.uTime.value = flowT(t);
+-    const harpF = harpEnv(t) * (moonK > 0.3 ? 1 : 0);
+-    wu.uGlint.value = clamp(0.25 + 0.75 * clamp(S.fam.harp(t)) + 0.6 * harpF);
++    const harpF = harpEnv(t + S.LEAD) * (moonK > 0.3 ? 1 : 0);
++    {
++      const [h1, h2] = harpFronts(t + S.LEAD), g = moonK > 0.3 ? 1 : 0;
++      wu.uHarp.value.set(h1[0], h1[1] * g, h2[0], h2[1] * g);
++    }
++    wu.uGlint.value = clamp(0.25 + 0.25 * harpF);
+     const moonRefX = cam.pos[0] + (MOON.x - cam.pos[0]) * ((cam.pos[2] - WATER_Z) / (cam.pos[2] - MOON.z));
+     wu.uMoonX.value = moonRefX;
+     wu.uMoonAmt.value = moonK * 0.9;
+@@ -994,7 +1005,7 @@
+     for (let i = harpOns.length - 1; i >= 0 && ri < 12; i--) {
+       const o = harpOns[i];
+       if (o > t || t - o > 3) continue;
+-      lake.rings[ri++].set(B.x + (hash1(i * 13) - 0.5) * 8, 0.6 + 1.6 * hash1(i * 17), o, 0.6 + 0.8 * hash1(i * 19));
++      lake.rings[ri++].set(moonRefX + (hash1(i * 13) - 0.5) * 2.5, 0.5 + 0.6 * hash1(i * 17), o, 0.6 + 0.5 * hash1(i * 19));   // kuun sillan juurella
+     }
+     moonDash.set(moonRefX, 2.2, 1.7, 2.0, WATER_Z + 0.1, t, moonK);
+     boatDash.set(B.x, B.y - 0.45, 4.8 * Math.abs(B.dir), 1.5, B.z - 0.2, t, onBoat ? 1 : 0);
+@@ -1003,7 +1014,7 @@
+     const inHand = lat.mode === 'hand';
+     const width = 0.9 + 1.1 * win(tStrike - 0.2, tStrike + 0.5, tStrike + 4, tStrike + 12, t) * (t < T.lu ? 1 : 0.8 + 0.2 * 0) ;
+     // soitinryhmien jatkuvat vaikutukset (roolit.json): torvet -> ritarin viitta, puupuhaltimet -> heinien huojunta, patarummut -> maan pöly, harput -> järven välke
+-    const hornK = W.horns(t), windK = clamp(W.winds(t) * 2.5), percK = clamp(S.fam.perc(t) * 3), harpK = clamp(S.fam.harp(t));
++    const hornK = W.horns(t), windK = clamp(W.winds(t) * 2.5), percK = clamp(S.fam.perc(t) * 3), harpK = clamp(harpEnv(t));
+     lead.place(t, (tt) => heroState(tt), windV, { capeWind: 0.1 + 0.7 * hornK, noLance: !inHand, noBanner: !inHand, width, sashSignal: sashSig });
+     const showBack = hs.onShoreBack;
+     lead.P.root.visible = !showBack;
+@@ -1138,30 +1149,6 @@
+     }
+     for (let i = nPz; i < PZN; i++) { m4.makeScale(0, 0, 0); pzDots.setMatrixAt(i, m4); }
+     pzDots.instanceMatrix.needsUpdate = true;
+-    // harppusilta: glissando = harpun muotoinen valosilta veneestä kuun alareunaan (z = HZ, kameran mukaan kuun kohdalle)
+-    {
+-      const vis = harpF > 0.03;
+-      neckR.mesh.visible = pillarR.mesh.visible = baseR.mesh.visible = hStr.visible = vis;
+-      if (vis) {
+-        const kz = (cam.pos[2] - HZ) / (cam.pos[2] - MOON.z);
+-        const Cx = cam.pos[0] + (MOON.x - 2.1 - cam.pos[0]) * kz, Cy = cam.pos[1] + (MOON.y - 1.2 - cam.pos[1]) * kz;
+-        const halfW = (cam.pos[2] - HZ) * 0.647, Ax = Math.max(Math.min(B.x + 2.9, Cx - 5.5), cam.pos[0] - 0.88 * halfW), Ay = B.y + 0.8, len = Math.hypot(Cx - Ax, Cy - Ay), Hc = clamp(0.5 * len, 3.0, 6.0);
+-        const chordY = (u) => Ay + (Cy - Ay) * u, neckY = (u) => chordY(u) + Hc * Math.pow(1 - u, 1.4), px = (u) => Ax + (Cx - Ax) * u;
+-        const NX = new Float32Array(40), NY = new Float32Array(40), NW = new Float32Array(40);
+-        for (let i = 0; i < 40; i++) { const u = i / 39; NX[i] = px(u); NY[i] = neckY(u); NW[i] = 0.15 * Math.sqrt(harpF) * (1 - 0.4 * u); }
+-        neckR.fill(NX, NY, HZ + 0.01, NW);
+-        pillarR.fill([Ax, Ax], [Ay, Ay + Hc], HZ + 0.01, [0.24 * Math.sqrt(harpF), 0.2 * Math.sqrt(harpF)]);
+-        baseR.fill([Ax, Cx], [Ay, Cy], HZ + 0.01, [0.0001, 0.0001]);   // vinopohjan ohut viiva aliasoi (välke): kehys on pylväs, kaula ja kielet
+-        for (let i = 0; i < HN; i++) {
+-          const u = ((i + 0.7) / (HN + 0.4)) * 0.96, lv = harpLevel(t, u), top = neckY(u), bot = chordY(u);
+-          const wdt = (0.02 + 0.16 * lv) * smoothstep(0.02, 0.22, lv);   // kieli kasvaa sisään pehmeästi (ei yhden ruudun ponnahdusta)
+-          m4.makeScale(wdt, Math.max(0.01, top - bot), 1);
+-          m4.setPosition(px(u) + 0.035 * lv * Math.sin(t * 9 + i * 1.7), (top + bot) / 2, HZ + 0.02);   // hidas värinä (ei yli 1,5 Hz: ei välkettä)
+-          hStr.setMatrixAt(i, m4);
+-        }
+-        hStr.instanceMatrix.needsUpdate = true;
+-      }
+-    }
+     // maan pöllähdys: pöly nousee iskusta ja hiipuu
+     let puff = 0;
+     // maan pöly: kuusi pientä läiskää ritarin jaloissa (tai veneen vieressä), koko patarummun energian mukaan
+@@ -1225,7 +1212,7 @@
+       torvi: R3(Math.max(hs.act ?? 0, headTurn(t), 0.1 + 0.7 * (L.hornK ?? 0))), maa: R3(0.34 + 0.2 * W.lows(t)), pollahdys: R3(Math.max(L.puff ?? 0, L.mote ?? 0)), olennot: R3(Math.max(L.door ?? 0, L.nDots ? 0.6 : 0, L.nDrops ? 0.6 : 0, 0.12 + 0.48 * (L.windK ?? 0))),
+       muste_ikkuna: R3(inkWin(t)), tuuli: R3(W.wind(t)),
+       tahdet: { kulma: R3(starsAngle(t)), nopeus: R3((starsAngle(t + 0.05) - starsAngle(t - 0.05)) / 0.1) },
+-      mitatut: { dip: R3(pzDip(t)), dip_t1: R3(pzDip(t - 0.3)), pisteita: L.nPz ?? 0, pizzicato_n: pzEv.length, pizzicato: R3(pzN(t)), harppu_n: harpEv.length, harppu_silta: R3(harpEnv(t)), huilu: R3(fluteN(t)), klarinetti: R3(clarN(t)), puupuhaltimet: R3(woodN(t)), viulu: R3(violinN(t)) },
++      mitatut: { dip: R3(pzDip(t)), dip_t1: R3(pzDip(t - 0.3)), pisteita: L.nPz ?? 0, pizzicato_n: pzEv.length, pizzicato: R3(pzN(t)), harppu_n: harpGl.length, harppu_silta: R3(harpEnv(t)), huilu: R3(fluteN(t)), klarinetti: R3(clarN(t)), puupuhaltimet: R3(woodN(t)), viulu: R3(violinN(t)) },
+     };
+   };
+   function grip() {

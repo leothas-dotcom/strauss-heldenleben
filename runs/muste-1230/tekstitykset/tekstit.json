@@ -1,0 +1,632 @@
+{
+ "_ohje": "Selittävät tekstitykset, A-puoli. Ääni: joku istuu vieressä ja kertoo, mitä seuraavaksi tapahtuu. Ajat tulevat ankkureista (annotations/teemat.json), ei sekunteja tähän. 'b' ja 'osuus' = aika kahden ankkurin välillä. lahde: mistä väite on (porter, tutkimus, opas, partituuri, tyyli, ohjaus, kuva, koodi; tulkinta = meidän luentamme).",
+ "nimi": "heldenleben_A",
+ "kielet": [
+  "de",
+  "sv",
+  "fr",
+  "es",
+  "it",
+  "ja"
+ ],
+ "hiljaisuus": [
+  "held_dom7",
+  "wid_1_huilu"
+ ],
+ "tekstit": [
+  {
+   "id": "avaus",
+   "a": "alku",
+   "lahde": "isä: youtube-kuvaus",
+   "fi": "Tekstitys kertoo, mitä musiikissa tapahtuu, kuin joku istuisi vieressäsi.",
+   "en": "These captions tell you what happens in the music, like someone beside you."
+  },
+  {
+   "id": "sankari",
+   "a": "held_alku",
+   "lahde": "porter, opas",
+   "fi": "Sankari: käyrätorvet ja sellot yhdessä. Teema nousee yli kolme oktaavia.",
+   "en": "The Hero: horns and cellos together. The theme climbs over three octaves."
+  },
+  {
+   "id": "punainen",
+   "a": "held_alku",
+   "b": "held_isku_t6",
+   "osuus": 0.4,
+   "lahde": "tyyli, ohjaus",
+   "fi": "Punainen on sankarin väri. Veto piirtyy, kun käyrätorvet laulavat.",
+   "en": "Red is the Hero's colour. The brushstroke appears when the horns sing."
+  },
+  {
+   "id": "kahdeksan",
+   "a": "held_isku_t6",
+   "lahde": "opas, kuva",
+   "fi": "Kaikki kahdeksan käyrätorvea iskevät. Siksi ritareita on kahdeksan.",
+   "en": "All eight horns strike together. That is why there are eight knights."
+  },
+  {
+   "id": "viulut",
+   "a": "held_viulut",
+   "lahde": "opas, kuvasäännöt, kuva",
+   "fi": "Viulut tulevat vasta nyt: tuulen valkoiset viivat.",
+   "en": "The violins only enter now: the white lines of the wind."
+  },
+  {
+   "id": "vasket",
+   "a": "held_vasket_t13",
+   "lahde": "opas, kuvasäännöt",
+   "fi": "Vasket ja patarummut ensi kertaa. Vasket ovat aurinko.",
+   "en": "Brass and timpani for the first time. The brass is the sun."
+  },
+  {
+   "id": "patarumpu",
+   "a": "held_intro_loppuu",
+   "lahde": "koodi, kuvasäännöt",
+   "fi": "Pöly ritarien jaloissa on patarumpu: lyönnit nostavat pilviä.",
+   "en": "The dust at their feet is the timpani: its strokes raise puffs of it."
+  },
+  {
+   "id": "mielikuvitus",
+   "a": "held_lyyrinen",
+   "lahde": "porter, opas",
+   "fi": "Puupuhaltimet ja harput tulevat. Tämä on sankarin mielikuvitus.",
+   "en": "Woodwinds and harps enter. This is the Hero's imagination."
+  },
+  {
+   "id": "tiirat",
+   "a": "held_t25",
+   "lahde": "tyyli, kuvasäännöt",
+   "fi": "Tiirat ovat puupuhaltimia. Jokaisella soittimella on oma hahmonsa.",
+   "en": "The terns are the woodwinds. Every instrument has its own character."
+  },
+  {
+   "id": "huippu1",
+   "a": "held_huippu1",
+   "lahde": "opas",
+   "fi": "Musiikki kasvaa kohti ensimmäistä huippua.",
+   "en": "The music grows towards its first summit."
+  },
+  {
+   "id": "hella",
+   "a": "held_t49",
+   "lahde": "opas, kuva",
+   "fi": "Sankarin hellempi puoli. Harput väreilevät vedessä.",
+   "en": "The Hero's tender side. The harps ripple in the water."
+  },
+  {
+   "id": "veto",
+   "a": "held_reh6",
+   "lahde": "opas, ohjaus",
+   "fi": "Kaksi käyrätorvea laulaa: kaksi punaista vetoa. Hän on nyt mustetta.",
+   "en": "Two horns sing: two red strokes. He has dissolved into ink."
+  },
+  {
+   "id": "kokoon",
+   "a": "held_t61",
+   "lahde": "opas, kuva",
+   "fi": "Voima kerääntyy alhaalta. Hän on taas ritari, ja joukko marssii.",
+   "en": "Strength gathers from below. He is a knight again, and the troop marches."
+  },
+  {
+   "id": "tutti",
+   "a": "held_reh8",
+   "lahde": "opas",
+   "fi": "Nyt kaikki kahdeksan käyrätorvea soittavat teemaa täydellä voimalla.",
+   "en": "Now all eight horns play the theme at full strength."
+  },
+  {
+   "id": "eroica",
+   "a": "held_reh9",
+   "b": "held_reh10",
+   "osuus": 0.25,
+   "lahde": "tutkimus (Strauss)",
+   "fi": "Es-duuri, kuten Eroicassa. Strauss lupasi: ei surumarssia, mutta käyrätorvia.",
+   "en": "E flat, as in the Eroica. Strauss promised no funeral march, but plenty of horns."
+  },
+  {
+   "id": "vuori",
+   "a": "held_reh10",
+   "lahde": "opas, kuva",
+   "fi": "Koko orkesteri, fortissimo. Edessä on myrskyvuori.",
+   "en": "Full orchestra, fortissimo. Ahead lies the storm mountain."
+  },
+  {
+   "id": "putous",
+   "a": "held_reh11",
+   "lahde": "opas, ohjaus",
+   "fi": "Harput ja puupuhaltimet ryöppyävät alas: vesiputous.",
+   "en": "Harps and woodwinds cascade downwards: the waterfall."
+  },
+  {
+   "id": "iskut",
+   "a": "held_isku1",
+   "ennakko": true,
+   "lahde": "opas, kuva",
+   "fi": "Neljä kertaa sointu katkeaa ja isku lyö. Salama, ja joukko jatkaa.",
+   "en": "Four times the chord breaks off and a blow falls. Lightning, then onward."
+  },
+  {
+   "id": "dom7",
+   "a": "held_dom7_sointu",
+   "lahde": "porter, opas, kuva",
+   "fi": "Yksi valtava sointu, joka ei ratkea. Pilvet väistyvät.",
+   "en": "One huge chord that refuses to resolve. The clouds part."
+  },
+  {
+   "id": "sadekeha",
+   "a": "held_dom7_sointu",
+   "b": "held_dom7",
+   "osuus": 0.5,
+   "lahde": "tyyli, koodi",
+   "fi": "Sädekehä on levyn ääni: jokainen säde on yksi taajuusalue.",
+   "en": "The halo is the record's sound: each ray is one band of frequencies."
+  },
+  {
+   "id": "hyttynen",
+   "a": "wid_1_huilu",
+   "lahde": "porter, partituuri, tyyli",
+   "fi": "Hyttynen on huilu, ensimmäinen kriitikko: \"hyvin terävä ja piikikäs\".",
+   "en": "The mosquito is the flute, first critic: \"very sharp and pointed\"."
+  },
+  {
+   "id": "sorsa",
+   "a": "wid_2_oboe",
+   "lahde": "porter, partituuri, tyyli",
+   "fi": "Sorsa on oboe. Se mutisee narisevasti.",
+   "en": "The duck is the oboe. It mutters, rasping."
+  },
+  {
+   "id": "dehring",
+   "a": "wid_dehring1",
+   "lahde": "porter, tyyli",
+   "fi": "Kaksi kotiloa, kaksi tuubaa kvintin päässä: Doktor Dehring, pedantti.",
+   "en": "Two snails, two tubas a fifth apart: Doktor Dehring, the pedant."
+  },
+  {
+   "id": "kvintit",
+   "a": "wid_dehring1",
+   "b": "wid_6",
+   "osuus": 0.6,
+   "lahde": "porter, tutkimus",
+   "fi": "Rinnakkaiset kvintit rikkovat hänen sääntöjään. Kuuntele: Dok-tor Deh-ring.",
+   "en": "Parallel fifths break his own rules. Listen: Dok-tor Deh-ring."
+  },
+  {
+   "id": "pilkka",
+   "a": "wid_7_8",
+   "lahde": "porter, tyyli",
+   "fi": "Haikara on englannintorvi: se pilkkaa teemaa. Sammakot ovat fagotit.",
+   "en": "The heron is the cor anglais, mocking his theme. The frogs are bassoons."
+  },
+  {
+   "id": "varikset",
+   "a": "wid_9_pasuunat",
+   "lahde": "porter, tyyli",
+   "fi": "Varikset ovat kolme sordinoitua pasuunaa.",
+   "en": "The crows are three muted trombones."
+  },
+  {
+   "id": "sameus",
+   "a": "wid_kuoro",
+   "lahde": "opas, tyyli",
+   "fi": "Kaikki yhtä aikaa. Sameus laskeutuu: tämä on taistelu selkeydestä.",
+   "en": "All at once. Murk descends: this is a fight for clarity."
+  },
+  {
+   "id": "molli",
+   "a": "wid_sankari_molli",
+   "lahde": "tutkimus (Kennedy), opas",
+   "fi": "Sankarin teema kuuluu nyt mollissa, hiljaa ja tummana.",
+   "en": "The Hero's theme now sounds in the minor, quiet and dark."
+  },
+  {
+   "id": "lampi",
+   "a": "wid_reh17",
+   "lahde": "opas, ohjaus (tulkinta)",
+   "fi": "Viulut nousevat aaltoina. Hän katsoo lampeen ja muistaa aamun.",
+   "en": "The violins rise in waves. He looks into the pond and remembers the dawn."
+  },
+  {
+   "id": "muisto",
+   "a": "wid_reh17",
+   "b": "wid_uusi_hyokkays",
+   "osuus": 0.32,
+   "lahde": "ohjaus, koodi",
+   "fi": "Muisto kasvaa aalto aallolta, jousten mukana.",
+   "en": "The memory grows wave by wave, with the strings."
+  },
+  {
+   "id": "muisto2",
+   "a": "wid_reh17",
+   "b": "wid_uusi_hyokkays",
+   "osuus": 0.72,
+   "lahde": "ohjaus, kuva",
+   "fi": "Aamun aurinko ja viirit ylösalaisin vedessä.",
+   "en": "The morning's sun and banners, upside down in the water."
+  },
+  {
+   "id": "hyokkays",
+   "a": "wid_uusi_hyokkays",
+   "lahde": "tutkimus (Kennedy)",
+   "fi": "Kriitikot hyökkäävät uudelleen.",
+   "en": "The critics attack again."
+  },
+  {
+   "id": "toverit",
+   "a": "wid_reh20",
+   "lahde": "opas, kuva",
+   "fi": "Kaikki kahdeksan käyrätorvea vastaavat. Toverit ovat tulleet.",
+   "en": "All eight horns answer. His comrades have arrived."
+  },
+  {
+   "id": "karsivallisyys",
+   "a": "wid_sankari_nousee",
+   "lahde": "porter, kuva",
+   "fi": "Kärsivällisyys loppuu: viiri nousee ja leimahtaa.",
+   "en": "His patience runs out: the banner rises and flares."
+  },
+  {
+   "id": "voitto",
+   "a": "wid_voitto",
+   "lahde": "porter",
+   "fi": "Hän ajaa vastustajat pakoon ja puhkeaa pieneen voitonhymniin.",
+   "en": "He drives them off and breaks into a short hymn of victory."
+  },
+  {
+   "id": "viiva",
+   "a": "gef_viulu",
+   "lahde": "porter, tyyli",
+   "fi": "Sooloviulu on kumppani: valkoinen viiva, kohta, johon ei paineta mustetta.",
+   "en": "The solo violin is the Companion: a white line, where no ink is printed."
+  },
+  {
+   "id": "korkeus",
+   "a": "gef_viulu",
+   "b": "gef_vastaus1",
+   "osuus": 0.5,
+   "lahde": "koodi",
+   "fi": "Viiva nousee ja laskee viulun sävelten mukana.",
+   "en": "The line rises and falls with the violin's notes."
+  },
+  {
+   "id": "vastaus1",
+   "a": "gef_vastaus1",
+   "lahde": "opas, ohjaus",
+   "fi": "Käyrätorvet vastaavat. Sankari puhuu lyhyesti, viulu pitkään.",
+   "en": "The horns reply. The Hero speaks briefly, the violin at length."
+  },
+  {
+   "id": "pauline",
+   "a": "gef_viulu2",
+   "b": "gef_vastaus2",
+   "osuus": 0.3,
+   "lahde": "porter",
+   "fi": "Kumppani on Pauline de Ahna, Straussin vaimo.",
+   "en": "The Companion is Pauline de Ahna, Strauss's wife."
+  },
+  {
+   "id": "pauline2",
+   "a": "gef_viulu2",
+   "b": "gef_vastaus2",
+   "osuus": 0.6,
+   "lahde": "porter (Strauss Rollandille)",
+   "fi": "Strauss kuvasi häntä: monisyinen, keimaileva, joka hetki erilainen.",
+   "en": "Strauss called her complex, a little coquettish, never the same twice."
+  },
+  {
+   "id": "vastaus2",
+   "a": "gef_vastaus2",
+   "lahde": "opas",
+   "fi": "Sellot ja bassot: sankarin toinen vastaus.",
+   "en": "Cellos and basses: the Hero's second reply."
+  },
+  {
+   "id": "mieliala",
+   "a": "gef_mielialat",
+   "lahde": "porter",
+   "fi": "Viulu vaihtaa mielialaa muutamassa tahdissa, kuin kameleontti.",
+   "en": "The violin changes mood within a few bars, like a chameleon."
+  },
+  {
+   "id": "merkinnat",
+   "a": "gef_mielialat",
+   "b": "gef_vastaus3",
+   "osuus": 0.2,
+   "lahde": "partituuri (Sehnsucht, leichtfertig, übermütig)",
+   "fi": "Strauss kirjoitti mielialat partituuriin: kaipaus, keveys, riehakkuus.",
+   "en": "Strauss wrote the moods into the score: longing, frivolity, high spirits."
+  },
+  {
+   "id": "muoto",
+   "a": "gef_mielialat",
+   "b": "gef_vastaus3",
+   "osuus": 0.5,
+   "lahde": "tyyli",
+   "fi": "Viivan muoto on sen mieliala: kaaret, silmukat, kiehkurat.",
+   "en": "The shape of the line is its mood: arcs, loops, curls."
+  },
+  {
+   "id": "siksak",
+   "a": "gef_mielialat",
+   "b": "gef_vastaus3",
+   "osuus": 0.87,
+   "lahde": "tyyli, kuva",
+   "fi": "Terävä siksak on sarkasmi.",
+   "en": "The sharp zigzag is sarcasm."
+  },
+  {
+   "id": "vastaus3",
+   "a": "gef_vastaus3",
+   "lahde": "opas, ohjaus (tulkinta)",
+   "fi": "Käyrätorvet ja bassot painokkaasti: sankari yrittää voittaa hänet.",
+   "en": "Horns and basses, emphatically: the Hero tries to win her over."
+  },
+  {
+   "id": "pyorre",
+   "a": "gef_kiihkea",
+   "lahde": "opas, kuva",
+   "fi": "Viulu kiihtyy, kiertää hänet pyörteeksi ja pakenee.",
+   "en": "The violin speeds up, whirls around him and escapes.",
+   "b": "gef_puupuhaltimet",
+   "osuus": 0.3
+  },
+  {
+   "id": "puupuhaltimet",
+   "a": "gef_puupuhaltimet",
+   "b": "gef_leimahdus",
+   "osuus": 0.3,
+   "lahde": "opas [tarkista]: siksi kysymys",
+   "fi": "Puupuhaltimet palaavat. Arvostelijoiden kaikuako?",
+   "en": "The woodwinds return. An echo of the critics?"
+  },
+  {
+   "id": "leimahdus",
+   "a": "gef_leimahdus",
+   "lahde": "opas, ohjaus (tulkinta)",
+   "fi": "Hän leimahtaa: suurin eleensä, ja se on väärä ele.",
+   "en": "He flares up: his grandest gesture, and it is the wrong one."
+  },
+  {
+   "id": "nauru",
+   "a": "gef_lustig",
+   "lahde": "opas",
+   "fi": "Viulu nauraa hänelle, nopeasti ja korkealla.",
+   "en": "The violin laughs at him, fast and high."
+  },
+  {
+   "id": "kaanne",
+   "a": "gef_rauhoittava",
+   "lahde": "porter, ohjaus (tulkinta)",
+   "fi": "Käännekohta: hän lakkaa esiintymästä. Hellä, rauhoittava fraasi.",
+   "en": "The turning point: he stops performing. A tender, calming phrase.",
+   "b": "gef_viulu3",
+   "osuus": 0.3
+  },
+  {
+   "id": "lahemmas",
+   "a": "gef_viulu3",
+   "lahde": "ohjaus, kuva",
+   "fi": "Viiva laskeutuu lähemmäs, vuoro vuorolta.",
+   "en": "The line comes closer, turn by turn."
+  },
+  {
+   "id": "rakkaus",
+   "a": "gef_rakkaus",
+   "lahde": "porter, opas",
+   "fi": "Rakkauskohtaus, Ges-duuri: koko orkesteri laulaa.",
+   "en": "The love scene, in G flat major: the whole orchestra sings."
+  },
+  {
+   "id": "silta",
+   "a": "gef_rakkaus",
+   "b": "gef_rakkaus_hiljaa",
+   "osuus": 0.15,
+   "lahde": "partituuri, tyyli",
+   "fi": "Harppujen glissandot: kuun silta välkkyy vedessä.",
+   "en": "The harps' glissandos: the moon's path shimmers on the water."
+  },
+  {
+   "id": "ihminen",
+   "a": "gef_rakkaus",
+   "b": "gef_rakkaus_hiljaa",
+   "osuus": 0.62,
+   "lahde": "käyttäjän poikkeus 1.11.",
+   "fi": "Viiva saa hetkeksi ihmisen muodon.",
+   "en": "For a while, the line takes human form."
+  },
+  {
+   "id": "punos",
+   "a": "gef_rakkaus_hiljaa",
+   "lahde": "porter, kuva",
+   "fi": "Punainen ja valkoinen kietoutuvat yhteen, kuten teemat musiikissa.",
+   "en": "Red and white entwine, as their themes do in the music.",
+   "b": "gef_hiljenee",
+   "osuus": 0.4
+  },
+  {
+   "id": "hidas",
+   "a": "gef_rakkaus_hiljaa",
+   "b": "gef_hiljenee",
+   "osuus": 0.72,
+   "lahde": "porter",
+   "fi": "Tämä on teoksen hidas osa: Heldenleben on yksi suuri sonaattimuoto.",
+   "en": "This is the slow movement: the whole work is one vast sonata form."
+  },
+  {
+   "id": "nousu",
+   "a": "gef_nousu",
+   "lahde": "opas",
+   "fi": "Jouset ja harppu alkavat nousta.",
+   "en": "Strings and harp begin to climb."
+  },
+  {
+   "id": "ovi",
+   "a": "gef_kolkutus",
+   "lahde": "porter, opas [tarkista]",
+   "fi": "Puupuhaltimet kesken nousun: vastustajat kolkuttavat ovelle.",
+   "en": "Woodwinds break in: the adversaries are knocking at the door."
+  },
+  {
+   "id": "huippu",
+   "a": "gef_huippu",
+   "lahde": "porter",
+   "fi": "Rakkauden huippu: sankarin teema palaa.",
+   "en": "The peak of love: the Hero's theme returns."
+  },
+  {
+   "id": "purppura",
+   "a": "gef_huippu",
+   "b": "gef_sankari_hiljaa",
+   "osuus": 0.2,
+   "lahde": "tyyli",
+   "fi": "Purppura: koko videon ensimmäinen uusi väri.",
+   "en": "Purple: the first new colour in the whole video."
+  },
+  {
+   "id": "goethe",
+   "a": "gef_huippu",
+   "b": "gef_sankari_hiljaa",
+   "osuus": 0.5,
+   "lahde": "tyyli (Goethe)",
+   "fi": "Goethelle se oli korkein väri: siinä punainen ja sininen kohtaavat.",
+   "en": "For Goethe it was the highest colour: where red and blue meet."
+  },
+  {
+   "id": "jalkihehku",
+   "a": "gef_jalkihehku",
+   "lahde": "opas",
+   "fi": "Jälkihehku. Hiljaiset käyrätorvet kutsuvat yössä.",
+   "en": "Afterglow. Soft horn calls in the night."
+  },
+  {
+   "id": "kutsut",
+   "a": "gef_jalkihehku",
+   "b": "gef_arvostelijat_uni",
+   "osuus": 0.27,
+   "lahde": "tyyli (Friedrich), kuva",
+   "fi": "Kaksi hahmoa katsoo kuuta, kuten Friedrichin maalauksessa.",
+   "en": "Two figures watch the moon, as in a painting by Friedrich."
+  },
+  {
+   "id": "savellys",
+   "a": "gef_jalkihehku",
+   "b": "gef_arvostelijat_uni",
+   "osuus": 0.6,
+   "lahde": "porter",
+   "fi": "Strauss sävelsi teoksen vuonna 1898, noin kolmessa kuukaudessa.",
+   "en": "Strauss wrote this work in about three months in 1898."
+  },
+  {
+   "id": "quixote",
+   "a": "gef_jalkihehku",
+   "b": "gef_arvostelijat_uni",
+   "osuus": 0.8,
+   "lahde": "tutkimus",
+   "fi": "Sisarteos on Don Quixote: naurettava sankari tämän ylevän peilinä.",
+   "en": "Its sister work is Don Quixote: a ridiculous hero mirroring this noble one."
+  },
+  {
+   "id": "uni",
+   "a": "gef_arvostelijat_uni",
+   "lahde": "tutkimus (de), opas",
+   "fi": "Puupuhaltimet kuiskivat: arvostelijoiden katkelmia yön hiljaisuudessa.",
+   "en": "Woodwinds whisper: fragments of the critics in the night's silence."
+  },
+  {
+   "id": "tyven",
+   "a": "gef_hiljaisuus",
+   "lahde": "opas, kuva",
+   "fi": "Lähes hiljaisuus. Muste kuivuu, ja yö haalistuu paperiksi.",
+   "en": "Almost silence. The ink dries and the night fades to paper."
+  },
+  {
+   "id": "luonnos",
+   "a": "gef_hiljaisuus",
+   "b": "wal_kulissi1",
+   "osuus": 0.6,
+   "lahde": "tyyli, kuva",
+   "fi": "Paperille piirtyy luonnos siitä, mitä on tulossa.",
+   "en": "A sketch appears on the paper: what is to come."
+  },
+  {
+   "id": "kutsu",
+   "a": "wal_kulissi1",
+   "lahde": "porter, kuva",
+   "fi": "Kolme trumpettia lavan takaa kutsuu taisteluun: kolme viiriä.",
+   "en": "Three trumpets offstage call to battle: three banners."
+  },
+  {
+   "id": "ratsaille",
+   "a": "wal_vastaus",
+   "lahde": "opas, kuva",
+   "fi": "Orkesteri vastaa, ja sankari nousee ratsaille.",
+   "en": "The orchestra answers, and the Hero mounts his horse."
+  },
+  {
+   "id": "kutsu2",
+   "a": "wal_kulissi2",
+   "lahde": "opas",
+   "fi": "Toinen kutsu, nyt lähempänä.",
+   "en": "A second call, closer now."
+  },
+  {
+   "id": "taistelu",
+   "a": "wal_taistelu",
+   "lahde": "opas",
+   "fi": "Patarummut: taistelu alkaa.",
+   "en": "Timpani: the battle begins."
+  },
+  {
+   "id": "kriitikko1899",
+   "a": "wal_taistelu",
+   "b": "wal_puolenvaihto",
+   "osuus": 0.27,
+   "lahde": "tutkimus",
+   "fi": "Vuoden 1899 kriitikolle tämä oli kaiken rumuuden ja rähinän huipentuma.",
+   "en": "To a critic of 1899 this was the culmination of all ugliness and din."
+  },
+  {
+   "id": "vyo",
+   "a": "wal_taistelu",
+   "b": "wal_puolenvaihto",
+   "osuus": 0.42,
+   "lahde": "ohjaus, kuva, koodi (sash)",
+   "fi": "Valkoinen vyö: kumppani on hänen mukanaan taistelussa.",
+   "en": "The white sash: the Companion rides with him into battle."
+  },
+  {
+   "id": "pyorteet",
+   "a": "wal_taistelu",
+   "b": "wal_puolenvaihto",
+   "osuus": 0.6,
+   "lahde": "kuva, koodi",
+   "fi": "Vastustajat palaavat pyörteinä. Salamat ja läiskät ovat kirjoitettuja iskuja.",
+   "en": "The critics return as whirlwinds. Lightning and ink mark written accents."
+  },
+  {
+   "id": "apuoli",
+   "a": "wal_puolenvaihto",
+   "lahde": "opas, kuva",
+   "fi": "Levyn A-puoli loppuu kesken taistelun. Kenttä kiertyy levyn uraksi.",
+   "en": "Side A ends mid-battle. The field winds itself into the record's groove."
+  },
+  {
+   "id": "vedos",
+   "a": "wal_puolenvaihto",
+   "b": "loppu",
+   "osuus": 0.42,
+   "lahde": "tyyli",
+   "fi": "Ääni painettiin aikanaan levyyn. Tämä video on sen uusi vedos, kuvana.",
+   "en": "The sound was once pressed into vinyl. This video is a new printing of it."
+  },
+  {
+   "id": "bpuoli",
+   "a": "wal_puolenvaihto",
+   "b": "loppu",
+   "osuus": 0.75,
+   "lahde": "opas",
+   "fi": "Taistelu jatkuu B-puolella.",
+   "en": "The battle continues on Side B."
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Ritarin vyö – tarkistus</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+  <style>
+    html, body { margin: 0; background: #1F1A18; overflow: hidden; }
+    #stage { position: relative; width: 1920px; height: 1080px; }
+    #stage canvas { position: absolute; left: 0; top: 0; display: block; }
+    .lbl { position: absolute; text-align: center; color: #1F1A18; font: 600 20px/1.2 Georgia, serif; }
+  </style>
+</head>
+<body>
+  <div id="stage"><canvas id="view"></canvas><div id="labels"></div></div>
+  <script type="module" src="./test_sash.js"></script>
+</body>
+</html>

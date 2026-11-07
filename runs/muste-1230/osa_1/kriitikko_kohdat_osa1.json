@@ -1,0 +1,74 @@
+[
+ {
+  "id": "C11",
+  "otsikko": "Alun iskut T. 6, 8, 11",
+  "t0": 16.5,
+  "t1": 29.0,
+  "fps": 6,
+  "piti_nakya": "Sankari ja seitsemän toveria (8 käyrätorvea) kuvassa koko ajan; iskuissa viirinkärjet napsahtavat tai tuuli muuttuu. Hahmot eivät ilmesty, katoa tai pomppaa."
+ },
+ {
+  "id": "B2",
+  "otsikko": "Teemaviiva avauksessa",
+  "t0": 7.6,
+  "t1": 32.0,
+  "fps": 1,
+  "piti_nakya": "Yksi punainen veto piirtyy teemaviivana (Es2:sta ylös kolmisointua), vedon päässä selkäkuva laakson pohjalla. Vuoret painuvat sinisellä, kun jouset tulevat (23 s)."
+ },
+ {
+  "id": "D4",
+  "otsikko": "Ennen auringonnousua",
+  "t0": 28.0,
+  "t1": 40.0,
+  "fps": 2,
+  "piti_nakya": "Yksi jatkuva nosturiajo selkäkuvasta auringonnousuun, ei leikkausta eikä friisin ilmestymistä kerralla. Aurinko nousee korkeimman huipun takaa, ritari pienenä etualalla."
+ },
+ {
+  "id": "A7",
+  "otsikko": "Meri, tiirat, laivasto",
+  "t0": 44.0,
+  "t1": 110.0,
+  "fps": 0.5,
+  "piti_nakya": "Avomeri, tiirat vaahdosta (puupuhaltimet), laivaston kilpa, ensimmäinen huippu aallon harjalla. Viirit samaan tuuleen, eivät päällekkäin."
+ },
+ {
+  "id": "B4",
+  "otsikko": "Muste elää ja kuivuu",
+  "t0": 108.0,
+  "t1": 142.0,
+  "fps": 0.5,
+  "piti_nakya": "Hän hajoaa vedoiksi: kaksi punaista vetoa laulaa rinnakkain (käyrätorvet I–II), alttoviulu sininen katkoviiva välissä; sitten vedot kokoontuvat ritariksi. Muste piirtyy painokohdassa ja kuivuu rasteriksi, ei staattinen värisevä viiva."
+ },
+ {
+  "id": "B5",
+  "otsikko": "Kahdeksan käyrätorvea reh8",
+  "t0": 140.0,
+  "t1": 172.0,
+  "fps": 1,
+  "piti_nakya": "Koko joukko lähikuvassa tasangolla, kellot ylhäällä, teemaviiva leveänä. Viirien portaat avautuvat aksenttien iskuissa (154,5–171), eivät kellon mukaan joka sekunti. Hahmot eivät nykäise."
+ },
+ {
+  "id": "B6",
+  "otsikko": "Salamat ja yleistauko",
+  "t0": 211.0,
+  "t1": 244.0,
+  "fps": 2,
+  "piti_nakya": "Salama katkon alussa ennen jokaista neljää kohtaloiskua, yhä lähempänä huippua; paussissa sade ja tuuli hiljenevät, viirit painuvat, kukaan ei loikkaa. Sitten selkäkuva huipulla ja sädekehä; yleistauossa paperi nousee kuvan yli (3,8 s)."
+ },
+ {
+  "id": "C12",
+  "otsikko": "Nousu huipulle",
+  "t0": 224.0,
+  "t1": 240.0,
+  "fps": 1,
+  "piti_nakya": "Joukko kiipeää rinnettä; jokainen hahmo seisoo maalla. Ei hahmoja ilmassa kallion seinämällä. Sädekehä 234–238."
+ },
+ {
+  "id": "C8_huippu",
+  "otsikko": "C8 pieni: eleet 224-240 s",
+  "t0": 224.0,
+  "t1": 240.0,
+  "fps": 1,
+  "piti_nakya": "Yksikään käsivarsi ei ole suorana viistosti ylös eteen (ei natsitervehdystä muistuttavaa elettä, ei rivissä yhtä aikaa nousevia suoria käsiä); kellot soittoasentoon, viirit pystyyn, keihäät pystyssä."
+ }
+]

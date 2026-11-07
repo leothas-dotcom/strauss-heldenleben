@@ -1,0 +1,120 @@
+{
+  "_ohje": "Soitinroolit (docs/tuotantojako.md, luku 'Kuunteluopas kuvaksi'): jokainen soitin on hahmo tai elementti, joka näkyy ja liikkuu silloin, kun soitin soi. kanavat = listen.f32:n PANNs-kanavat (tai 'teemaviiva' = build/<paketti>/teemaviiva.json:n midi), elementti = kuvan elementti, mittari = window.opasProbe(t):n kenttä, jonka liike mitataan kanavaa vasten (analysis/opastarkistus.py). Vaihe 0 kirjoittaa, osat täydentävät omalta alueeltaan (mittari, jos sellainen puuttuu).",
+  "roolit": [
+    {
+      "soitin": "käyrätorvet",
+      "kanavat": [
+        "panns_french_horn"
+      ],
+      "elementti": "ritari (teko: keihäs, kello) ja viirin punainen muste vain neljässä kohdassa",
+      "mittari": "torvi",
+      "lepo": "muste ei piirry, kun torvi on vaiti"
+    },
+    {
+      "soitin": "sankariteeman sävel",
+      "kanavat": [
+        "teemaviiva"
+      ],
+      "elementti": "keihään kärjen korkeus (ja vedon korkeus)",
+      "mittari": "muste.punainen.karki_y",
+      "lepo": "Spearman > 0,8 avauksessa (held_alku .. held_vasket_t13)"
+    },
+    {
+      "soitin": "sellot, bassot",
+      "kanavat": [
+        "panns_cello",
+        "panns_double_bass"
+      ],
+      "elementti": "maa: vuorten rasteri, harjanteet, maan viivoitus ja joen virta (osa 3)",
+      "mittari": "maa"
+    },
+    {
+      "soitin": "viulut, alttoviulut",
+      "kanavat": [
+        "panns_violin_fiddle",
+        "panns_string_section"
+      ],
+      "elementti": "usvat, tuulen viivoitus, kuun väreet",
+      "mittari": "tuuli"
+    },
+    {
+      "soitin": "sooloviulu",
+      "kanavat": [
+        "viuluviiva"
+      ],
+      "elementti": "kumppanin valkoinen viiva",
+      "mittari": "muste.valkoinen.muste"
+    },
+    {
+      "soitin": "huilu, oboe, englannintorvi, klarinetti, fagotti",
+      "kanavat": [
+        "panns_flute",
+        "panns_clarinet",
+        "panns_wind_instrument_woodwind_instrument"
+      ],
+      "elementti": "soitinolennot (tiirat merellä, suon olennot, pisteet puiden takana)",
+      "mittari": "olennot"
+    },
+    {
+      "soitin": "trumpetit, pasuunat, tuuba",
+      "kanavat": [
+        "panns_trumpet",
+        "panns_trombone",
+        "panns_brass_instrument"
+      ],
+      "elementti": "aurinko, salamat, taistelun mustat kiilat",
+      "mittari": "aurinko"
+    },
+    {
+      "soitin": "patarummut",
+      "kanavat": [
+        "panns_timpani"
+      ],
+      "elementti": "maan pöllähdys, ryöpyt",
+      "mittari": "pollahdys"
+    },
+    {
+      "soitin": "harput",
+      "kanavat": [
+        "panns_harp"
+      ],
+      "elementti": "välkerenkaat, glissando = kuun väreet, putouksen ryöpyt",
+      "mittari": "vareet"
+    },
+    {
+      "soitin": "lautaset, pikkurumpu",
+      "kanavat": [
+        "panns_cymbal",
+        "panns_snare_drum"
+      ],
+      "elementti": "taistelun iskut (elementin teko); virvelit pisteviivoina maassa, kirjoitetut iskut läiskinä ja salamina",
+      "mittari": "pisteviivat"
+    },
+    {
+      "soitin": "huilu (hyttynen)",
+      "kanavat": [
+        "panns_flute"
+      ],
+      "elementti": "huiluhyttynen: piikki ja siivet liikkuvat huilun fraasin mukaan",
+      "mittari": "mosq_ele"
+    },
+    {
+      "soitin": "oboe, englannintorvi, fagotti, klarinetti (sorsa, haikara, sammakot)",
+      "kanavat": [
+        "panns_wind_instrument_woodwind_instrument",
+        "panns_clarinet"
+      ],
+      "elementti": "sorsan nokka, haikaran askel ja sammakoiden kurnutus",
+      "mittari": "puupuhallin_olennot"
+    },
+    {
+      "soitin": "tuubat, pasuunat (kotilot, varikset)",
+      "kanavat": [
+        "panns_trombone",
+        "panns_brass_instrument"
+      ],
+      "elementti": "kotiloiden kellot ja varisten vetoputki",
+      "mittari": "vaski_olennot"
+    }
+  ]
+}

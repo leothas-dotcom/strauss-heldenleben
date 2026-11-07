@@ -1,0 +1,52 @@
+# Opastarkistus: visual/muste/index.html (239–424 s, puoli 1)
+
+Vain mitattu: ankkurin kuvallinen vastaus (vastaukset.json) ja sen mittarin muutos opasProbe-tilasta;
+soitinroolit listen.f32:n kanavia vasten; kärjen korkeus teemaviivaa vasten.
+
+## 1. Ankkurit: kuvallinen vastaus ja mitattu muutos
+
+| ankkuri | t | oppaan sana | vastaus | mittari | t−0,5 → t+0,5 | ±1 ruutu | tulos |
+|---|---|---|---|---|---|---|---|
+| held_dom7 | 239.20 | Sointu katkeaa | sädekehä sammuu | `sadekeha` | 0.85 | 0.102 | OK |
+| held_gp | 239.20 | Yleistauko | paperi nousee kuvan yli | `valo.paperi` | 1 | 0 | OK |
+| wid_1_huilu | 243.00 | Huilu I yksin korkealla (arvostelija 1) | suo ilmestyy paperin alta ja huiluhyttynen laskeutuu ritarin viereen: pistin työntyy ensimmäisellä sävelellä | `paikka` | 1 | 0 | OK |
+| wid_2_oboe | 246.00 | Oboe schnarrend (arvostelija 2) | oboesorsa tulee veteen, kaksoislehdykkä käy fraasin mukaan; ritari kääntää selkänsä | `sorsa_ele` | 0.946 | 0.14 | OK |
+| wid_3_4 | 250.00 | Pikkuhuilu ja englannintorven kromaattinen nousu | haikara astuu portaita ylös paalulta paalulle; ritari kääntyy takaisin ja nousee puoliksi | `haikara_askel` | 0.25 | 0.0167 | OK |
+| wid_dehring1 | 252.00 | Tuubat p: Dok-tor Deh-ring | kotilot penkereellä, kellot kääntyvät hitaasti; ritari painaa käden korvalle | `kotilo_ele` | 0.946 | 0.539 | OK |
+| wid_6 | 259.00 | Oboe ja Es-klarinetti korkealla (arvostelija 6) | sorsan nokka käy nopeammin ja pää nyökkii | `sorsa_ele` | 0.868 | 0.515 | OK |
+| wid_7_8 | 262.00 | Englannintorvi ja fagotit ff (pilkka) | peili veden alla: laiha Quijote venyy; fagottisammakot kurnuttavat tukilla; ritari katsoo | `peili` | 0.817 | 0.104 | OK |
+| wid_9_pasuunat | 265.50 | Sordinoidut pasuunat ff | varikset laskeutuvat harppupuuhun, pasuunoiden vetoputki liikkuu; ritari vetää viirin suojaan | `varis_ele` | 0.946 | 0.522 | OK |
+| wid_kuoro | 272.00 | Arvostelijat yhteen ääneen | kaikki olennot kuvassa, musta rasteriusva sakenee; ritari yrittää nousta ja painuu takaisin | `sameus` | 0.222 | 0.0262 | OK |
+| wid_sankari_molli | 284.90 | Sankariteema mollissa | kypärä painuu alas, keihäs laskeutuu maahan ja viiri tummuu; olennot vaikenevat | `viiri_tumma` | 0.153 | 0.00303 | OK |
+| wid_reh16 | 292.50 | Käyrätorvet V-VIII pp | tumma viiri hengittää hitaasti, olennot kuuntelevat vaiti | `viiri_leveys` | 0.0266 | 0.014 | OK |
+| wid_reh17 | 305.20 | Viulut G-kielellä, jouset aaltoina | ritari kävelee lammen rantaan ja polvistuu; aamun harjanne alkaa nousta veden alle | `muisto_aalto1` | 0.0778 | 0.00529 | OK |
+| wid_uusi_hyokkays | 367.20 | Arvostelijat uusivat hyökkäyksensä | olennot palaavat ja piirittävät; ritari seisoo selkä puuhun viiri kädessä | `olento_nakyy` | 6 | 0 | OK |
+| wid_reh20 | 380.50 | Oboet ja fagotit ff, kahdeksan käyrätorvea | toverien siluetit nousevat vastarannan harjanteelle | `toverit_n` | 2 | 0 | OK |
+| wid_reh20_lautaset | 384.60 | Lautaset zischend | roiske lammessa (yhden elementin teko ruutua ennen ääntä) | `roiske` | 1.53 | 1.07 | OK |
+| wid_sankari_nousee | 391.70 | Jouset f, sankari nousee | ritari nostaa viirin pystyyn molemmin käsin | `viirikarki_y` | 0.167 | 0.167 | OK |
+| wid_voitto | 408.20 | Vasket ff, pieni voitto | viiri pyyhkäisee leveän punaisen vedon suon yli, olennot hajoavat tippoina, sameus väistyy | `veto` | 0.07 | 0.00875 | OK |
+| gef_viulu | 422.00 | Kumppani astuu esiin, sooloviulu | rasteriliukuma suolta rantaniitylle ankkurissa; valkoinen viiva piirtyy puiden latvoissa (3.1), ritari pieni pysähtyy ja kuuntelee | `paikka` | 1 | 1 | OK |
+
+Vastauksia ilman ankkuria mittausalueella: held_alku, held_isku_t6, held_isku_t8, held_viulut, held_isku_t11, held_vasket_t13, held_intro_loppuu, held_viulut_paluu, held_lyyrinen, held_t25, held_t31, held_t34, held_reh4, held_huippu1, held_reh5_isku, held_huippu1_kohta, held_t47, held_tunnelma_vaihtuu, held_t49, held_reh6, held_t61, held_reh8, held_reh9, held_reh10, held_reh11, held_reh12, held_isku1, held_isku2, held_isku3, held_isku4, held_dom7_sointu, gef_vastaus1, gef_viulu2, gef_vastaus2, gef_mielialat, gef_vastaus3, gef_kiihkea, gef_puupuhaltimet, gef_leimahdus, gef_lustig, gef_rauhoittava, gef_viulu3, gef_rakkaus, gef_rakkaus_hiljaa, gef_hiljenee, gef_nousu, gef_kolkutus, gef_huippu, gef_sankari_hiljaa, gef_aalto, gef_jalkihehku, gef_arvostelijat_uni, gef_hiljaisuus, wal_kulissi1, wal_vastaus, wal_kulissi2, wal_taistelu, wal_puolenvaihto
+
+## 2. Soitinroolit: elementti liikkuu, kun soitin soi (ikkunat 2 s)
+
+| soitin | kanava | elementti | mittari | Spearman | soi & levossa | vaiti & liikkuu | tulos |
+|---|---|---|---|---|---|---|---|
+| käyrätorvet | panns_french_horn | ritari (teko: keihäs, kello) ja viirin punainen muste vain neljässä kohdassa | `torvi` | – | | | ei mittausta alueella |
+| sellot, bassot | panns_cello, panns_double_bass | maa: vuorten rasteri, harjanteet, maan viivoitus ja joen virta (osa 3) | `maa` | – | | | ei mittausta alueella |
+| viulut, alttoviulut | panns_violin_fiddle, panns_string_section | usvat, tuulen viivoitus, kuun väreet | `tuuli` | – | | | ei mittausta alueella |
+| huilu, oboe, englannintorvi, klarinetti, fagotti | panns_flute, panns_clarinet, panns_wind_instrument_woodwind_instrument | soitinolennot (tiirat merellä, suon olennot, pisteet puiden takana) | `olennot` | 0.71 | 4% | 4% | OK |
+| trumpetit, pasuunat, tuuba | panns_trumpet, panns_trombone, panns_brass_instrument | aurinko, salamat, taistelun mustat kiilat | `aurinko` | – | | | ei mittausta alueella |
+| patarummut | panns_timpani | maan pöllähdys, ryöpyt | `pollahdys` | – | | | ei mittausta alueella |
+| harput | panns_harp | välkerenkaat, glissando = kuun väreet, putouksen ryöpyt | `vareet` | – | | | ei mittausta alueella |
+| lautaset, pikkurumpu | panns_cymbal, panns_snare_drum | taistelun iskut (elementin teko); virvelit pisteviivoina maassa, kirjoitetut iskut läiskinä ja salamina | `pisteviivat` | – | | | ei mittausta alueella |
+| huilu (hyttynen) | panns_flute | huiluhyttynen: piikki ja siivet liikkuvat huilun fraasin mukaan | `mosq_ele` | 0.37 | 39% | 0% | OK |
+| oboe, englannintorvi, fagotti, klarinetti (sorsa, haikara, sammakot) | panns_wind_instrument_woodwind_instrument, panns_clarinet | sorsan nokka, haikaran askel ja sammakoiden kurnutus | `puupuhallin_olennot` | 0.53 | 21% | 4% | OK |
+| tuubat, pasuunat (kotilot, varikset) | panns_trombone, panns_brass_instrument | kotiloiden kellot ja varisten vetoputki | `vaski_olennot` | 0.31 | 46% | 11% | OK |
+
+## 3. Kärjen korkeus seuraa teemaviivaa (avaus)
+
+Ei mitattavissa (teemaviiva tai avauksen ankkurit puuttuvat mittausalueelta).
+
+**1 virhettä**

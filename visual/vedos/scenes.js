@@ -1,0 +1,82 @@
+// Kuvakäsikirjoituksen kohtaukset (runs/vedos-1230/storyboard.md, luku 2) koneluettavana.
+// Ajat tulevat teemakartan ankkureista (S.A); tässä ovat vain tunnisteet, tekstit slatea varten
+// ja kohtauksen kuvaparametrit:
+//   style  sankaritason muoto (luonteenpiirre tai tila)
+//   d      kameran etäisyys (pieni = lähellä, iso = laaja)
+//   lift   kameran korkeuden lisä rekisterin päälle
+//   key    still-kuvan hetki kohtauksen sisällä (0..1)
+
+export const SCENES = [
+  // [#, alku, loppu, nimi, musiikki, kuva, { style, d, lift, key }]
+  [0, '@0', 'held_alku', 'Neula', 'Neula laskeutuu (≈3 s), sisäänajoura', 'Kermapaperi herää rahinan tahtiin; lyijykynäluonnos vuorista', { style: 'none', d: 20, key: 0.75 }],
+  // Jakso 1: Sankari
+  [1, 'held_alku', 'held_isku_t6', 'Ensimmäinen sävel', 'Sankariteema matalalta: käyrätorvi, alttoviulut, sellot; Es-duuri; viulut tauolla', 'Taso nousee laakson kaistalta, yläreuna = teeman kaari. Selkäkuva 1', { style: 'nousu', d: 16, lift: -1.5, key: 0.6 }],
+  [2, 'held_isku_t6', 'held_viulut', 'Sointuiskut T. 6 ja 8', 'f-sointuiskut: 8 käyrätorvea, fagotit, kontrabassot', 'Taso kurottaa ylemmäs; iskussa 8 viirinkärkeä napsahtaa tason yllä', { style: 'nousu', d: 17, key: 0.05 }],
+  [3, 'held_viulut', 'held_vasket_t13', 'Jouset liittyvät', 'Viulut ensimmäistä kertaa (23.1), T. 9; isku T. 11', 'Vuoret painautuvat berliininsinisellä; viivoitus taivaalla', { style: 'nousu', d: 18, key: 0.4 }],
+  [4, 'held_vasket_t13', 'held_intro_loppuu', 'Ensimmäinen avautuminen', 'Trumpetti, pasuunat, tuuba, patarummut ensimmäistä kertaa; ff', 'Taso paksunee vaskien massasta; aamunkoi vaalenee kermaksi; pölyä', { style: 'nousu', d: 20, key: 0.6 }],
+  [5, 'held_intro_loppuu', 'held_lyyrinen', 'Viiri aukeaa friisiä pitkin', 'Käyrätorvet ff matalalla, trumpetit p; I viulut tauolla, palaavat 45.7', 'Viiri aukeaa friisiä pitkin; taivas tyhjenee; juoksutus taivaalle', { style: 'suora', d: 20, key: 0.85 }],
+  [6, 'held_lyyrinen', 'held_t25', 'Mielikuvitus', 'Puupuhaltimet ja 2 harppua ensimmäistä kertaa; lyyrinen vastateema H-duuri', 'Tason reunasta versoo piiskaviivakiehkuroita; harppu välkkyy sumumeressä', { style: 'kiehkurat', d: 18, key: 0.6 }],
+  [7, 'held_t25', 'held_t31', 'Puupuhallinten laulu', 'Englannintorvi, klarinetit, oboet virtaavina; käyrätorvet I–II laulavat', 'Kaksi rasteriviivaa kiertyy tason yllä', { style: 'kiehkurat', d: 18, key: 0.5 }],
+  [8, 'held_t31', 'held_t34', 'Uusi kasvu hiljaa', 'pp: harput, viulujen juoksutukset, käyrätorvet espressivo', 'Taso kapenee ja aloittaa uuden kaaren alhaalta', { style: 'pehmea', d: 17, key: 0.5 }],
+  [9, 'held_t34', 'held_reh4', 'Tunteen palo', 'Huilut ja käyrätorviryhmä f, harput; T. 36 ff', 'Tason reuna leimuaa liekkikielinä', { style: 'liekit', d: 18, key: 0.6 }],
+  [10, 'held_reh4', 'held_huippu1', 'Pyrkimys', 'p, uusi kasvu; oboeiden, englannintorven ja viulujen sforzandot', 'Taso nousee portaittain; sforzandot lovina', { style: 'portaat', d: 18, key: 0.6 }],
+  [11, 'held_huippu1', 'held_huippu1_kohta', 'Kohti huippua', 'Crescendo; 94.1 ff-sointu, käyrätorvi I arpeggio', 'Taso kasvaa massaksi; huipun luonnos oikealla', { style: 'massa', d: 22, key: 0.6 }],
+  [12, 'held_huippu1_kohta', 'held_t47', 'Ensimmäinen huippu', 'Massiivinen ja matala (voim. 0,93, rekisteri 0,06) – vahvistettu', 'Taso täyttää alakolmanneksen leveänä ja raskaana', { style: 'massa', d: 24, key: 0.5 }],
+  [13, 'held_t47', 'held_t49', 'Myrsky laantuu', 'Huilu ja englannintorvi pienin soolokuvioin, klarinetti nousee', 'Massa asettuu; kaksi pientä rasteriviivaa leikkii taivaalla', { style: 'pehmea', d: 20, key: 0.6 }],
+  [14, 'held_t49', 'held_reh6', 'Hellempi puoli', 'pp ausdrucksvoll: huilu ja I viulut, harput, patarummun tremolo pp', 'Tason reuna pehmenee; sumun viivoitus värisee', { style: 'pehmea', d: 15, key: 0.5 }],
+  [15, 'held_reh6', 'held_t61', 'Kaksi käyrätorvea', 'Käyrätorvet I–II ausdrucksvoll, alttoviulun soolo, klarinetti', 'Kontrapunkti: kaksi rinnakkaista kaistaa, alttoviulu sinisenä viivana', { style: 'kaksi', d: 15, key: 0.5 }],
+  [16, 'held_t61', 'held_reh8', 'Voima alhaalta', 'Crescendo matalalta: käyrätorvet f marcato, sellot ja bassot; huilusoolo', 'Vuoret nousevat; yläreuna suoristuu (suoraselkäisyys)', { style: 'suora', d: 19, lift: -1, key: 0.7 }],
+  [17, 'held_reh8', 'held_reh9', 'Paluu, täysi voima', 'ff-tutti: 8 käyrätorvea teemassa, vasket, kaikki jouset', 'Paluu: kohtauksen 1 kaari samassa kohdassa ruutua, täytenä ja leveänä', { style: 'nousu', d: 22, key: 0.5 }],
+  [18, 'held_reh9', 'held_reh10', 'Teema kaikkialla', 'ff-tutti; sankariarpeggiot fagoteissa, käyrätorvissa, selloissa', 'Monta nousevaa kaarta eri kerroksilla (kontrapunkti)', { style: 'kaaret', d: 22, key: 0.4 }],
+  [19, 'held_reh10', 'held_reh11', 'Kohti huippua', 'fff-tutti, ei patarumpuja [tarkista]', 'Sädekehän luonnos oikealla; laatat liukuvat erilleen', { style: 'massa', d: 24, lift: 1, key: 0.6 }],
+  [20, 'held_reh11', 'held_reh12', 'Ryöppy', 'Puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun tremolo [tarkista]', 'Laskevat rasterivirrat sumumereen; glissandot väreinä', { style: 'kiehkurat', d: 22, key: 0.5 }],
+  [21, 'held_reh12', 'held_isku1', 'Vuoren muoto', 'ff-tutti patarumpuineen; arpeggiot matalissa [tarkista]', 'Taso kiipeää jyrkkänä vuoren muotona', { style: 'portaat', d: 22, key: 0.6 }],
+  [22, 'held_isku1', 'held_dom7_sointu', 'Neljä kohtaloiskua', 'ff-sointu katkeaa, kohotahti-isku lyö: 213.4, 217.3, 221.0, 224.6', 'Leiman jälki iskussa, joka kerta korkeammalle; kohdistus seuraa sointua', { style: 'portaat', d: 22, key: 0.8 }],
+  [23, 'held_dom7_sointu', 'held_dom7', 'Dominanttiseptimi', 'Pasuunat ja tuubat fff, pitkä Bb7-sointu; patarummun molto cresc.', 'Sädekehä leimahtaa huipulla seisovan selkäkuvan 2 takana', { style: 'massa', d: 24, lift: 2, key: 0.75 }],
+  [24, 'held_gp', 'wid_1_huilu', 'Yleistauko', 'Yleistauko T. 117, ainoa pitkä hiljaisuus', 'Painaminen pysähtyy; tyhjä paperi, rahina pölynä', { style: 'none', d: 24, key: 0.5 }],
+  // Jakso 2: Vastustajat
+  [25, 'wid_1_huilu', 'wid_2_oboe', 'Ensimmäinen piste', 'Huilu I "sehr scharf und spitzig" yksin korkealla', 'Neulanterävä piste pistää paperiin; kuolleet puut', { style: 'none', d: 18, key: 0.6 }],
+  [26, 'wid_2_oboe', 'wid_3_4', 'Mutisija', 'Oboe "schnarrend" keskirekisterissä', 'Pisteparvi paisuu', { style: 'none', d: 18, key: 0.7 }],
+  [27, 'wid_3_4', 'wid_dehring1', 'Portaat', 'Pikkuhuilu, englannintorven kromaattinen nousu; lautaset [tarkista]', 'Pisteiden portaat nousevat', { style: 'none', d: 18, key: 0.8 }],
+  [28, 'wid_dehring1', 'wid_6', 'Dehring', 'Tenori- ja bassotuuba p: "Dok-tor Deh-ring"', 'Kaksi raskasta täplää, aina kvintin päässä, rinnakkain', { style: 'none', d: 18, key: 0.6 }],
+  [29, 'wid_6', 'wid_7_8', 'Kiihtynyt oboe', 'Oboe ja Es-klarinetti korkealla [tarkista]', 'Värisevät pisteet', { style: 'none', d: 18, key: 0.6 }],
+  [30, 'wid_7_8', 'wid_9_pasuunat', 'Vääristely', 'Englannintorvi ff ja 2 fagottia ff [tarkista]', 'Sankarin kaari rasterikarikatyyrinä; kaksi hyppivää täplää', { style: 'karikatyyri', d: 18, key: 0.7 }],
+  [31, 'wid_9_pasuunat', 'wid_kuoro', 'Pasuunat', '3 sordinoitua pasuunaa ff, trilli; tuubat', 'Leimasimen tahra; Dehring palaa', { style: 'none', d: 19, key: 0.4 }],
+  [32, 'wid_kuoro', 'wid_sankari_molli', 'Sameus', 'Arvostelijat yhteen ääneen mf', 'Musta rasteriusva sakenee', { style: 'none', d: 20, key: 0.5 }],
+  [33, 'wid_sankari_molli', 'wid_reh16', 'Tummana ja hiljaa', 'Sankariteema mollissa: fagotit, bassoklarinetti, käyrätorvet, sordinoidut jouset', 'Taso matalalla, tummanpunainen', { style: 'tumma', d: 17, lift: -1, key: 0.6 }],
+  [34, 'wid_reh16', 'wid_reh17', 'Ei vielä vastaa', 'Käyrätorvet V–VIII pp toistuvin soinnuin', 'Tumma taso hengittää hitaasti', { style: 'tumma', d: 17, lift: -1, key: 0.5 }],
+  [35, 'wid_reh17', 'wid_uusi_hyokkays', 'Sankari kerää itseään', 'I viulut sordinoituina G-kielellä "mit Steigerung"; jouset aaltoina [tarkista]', 'Aalto aallolta (jaksorajat) väri palaa; sameus ohenee', { style: 'keraa', d: 19, key: 0.7 }],
+  [36, 'wid_uusi_hyokkays', 'wid_reh20', 'Uusi hyökkäys', 'Pikkuhuilu, huilu, oboet, englannintorvi, Es-klarinetti ff; tuubat, pasuunat', 'Pisteparvet palaavat tiheinä; sameus sakenee', { style: 'tumma', d: 19, key: 0.6 }],
+  [37, 'wid_reh20', 'wid_sankari_nousee', 'Vastakkain', 'Oboet ja fagotit ff, 8 käyrätorvea espressivo, lautaset zischend', 'Taso ja pisteet vastakkain; roiske', { style: 'keraa', d: 18, key: 0.4 }],
+  [38, 'wid_sankari_nousee', 'wid_voitto', 'Sinooperi leimahtaa', 'Jouset f; käyrätorvet 6:41.4', 'Täysi sinooperi leimahtaa; taso nousee pisteiden läpi', { style: 'liekit', d: 19, key: 0.7 }],
+  [39, 'wid_voitto', 'gef_viulu', 'Pieni voitonhymni', 'Vasket ff (huippu 0,96)', 'Pisteet hajoavat kehyksestä; voitonkaari; iltarusko', { style: 'nousu', d: 23, key: 0.5 }],
+  // Jakso 3: Kumppani
+  [40, 'gef_viulu', 'gef_vastaus1', 'Viiva saapuu', 'Sooloviulu pp, harppu', 'Paperinvalkoinen piiskaviiva iltataivaalla; metsäaukio ja joki', { style: 'none', d: 17, key: 0.8 }],
+  [41, 'gef_vastaus1', 'gef_viulu2', 'Sankari vastaa', 'Käyrätorvet ja patarumpu mp', 'Taso vastaa horisontissa lyhyenä nousuna', { style: 'pehmea', d: 17, key: 0.6 }],
+  [42, 'gef_viulu2', 'gef_vastaus2', 'Keskustelu', 'Viulu ja harppu pp, matalat jouset vuorottelevat', 'Viiva taivaalla, taso maassa vuorotellen', { style: 'pehmea', d: 18, key: 0.5 }],
+  [43, 'gef_vastaus2', 'gef_mielialat', 'Sankarin vastaus', 'Sellot, bassot ja harppu mp, H-duuri', 'Taso laulaa matalalla; harppu joen pinnassa', { style: 'pehmea', d: 18, key: 0.4 }],
+  [44, 'gef_mielialat', 'gef_vastaus3', 'Viisi mielialaa', 'Sooloviulu pp: teeskennelty kaipaus, iloisuus, kevytmielisyys, hellyys, sarkasmi', 'Viivan luonne vaihtuu jaksorajoissa', { style: 'none', d: 16, key: 0.5 }],
+  [45, 'gef_vastaus3', 'gef_kiihkea', 'Painokkaasti', 'Käyrätorvet ja bassot mf, B-duuri', 'Taso nousee viivan alle', { style: 'suora', d: 18, key: 0.6 }],
+  [46, 'gef_kiihkea', 'gef_puupuhaltimet', 'Kiihkeä', 'Viulu kiihkeänä, nopeita kuvioita', 'Viiva kiihtyy koukeroiksi', { style: 'none', d: 17, key: 0.6 }],
+  [47, 'gef_puupuhaltimet', 'gef_leimahdus', 'Reunalla', 'Puupuhaltimet etualalla [tarkista]', 'Puupuhaltimet neutraalina sinisenä rasterina (kaiku vai pistely? [tarkista])', { style: 'none', d: 18, key: 0.5 }],
+  [48, 'gef_leimahdus', 'gef_lustig', 'Sankari leimahtaa', 'Käyrätorvet ja vasket mf → f', 'Sinooperi täyteen väriin', { style: 'liekit', d: 19, key: 0.6 }],
+  [49, 'gef_lustig', 'gef_rauhoittava', 'Riehakkuus', 'Viulu hyvin nopeana ja korkealla [tarkista]', 'Suuret koukerot korkealla', { style: 'none', d: 17, key: 0.5 }],
+  [50, 'gef_rauhoittava', 'gef_viulu3', 'Rauhoittava fraasi', 'Matalat jouset ja harppu p [tarkista]', 'Taso laskee pehmeänä ja leveänä', { style: 'pehmea', d: 18, key: 0.5 }],
+  [51, 'gef_viulu3', 'gef_rakkaus', 'Lähentyminen', 'Viulu ja harppu vuorottelevat orkesterin kanssa, p', 'Viiva laskeutuu, taso nousee; aurinko laskee', { style: 'pehmea', d: 17, key: 0.8 }],
+  [52, 'gef_rakkaus', 'gef_rakkaus_hiljaa', 'Rakkausduetto', 'Ges-duuri cantabile, koko orkesteri f, harpun glissandot', 'Viiva kietoutuu tason ympärille; kuutamojoki', { style: 'duetto', d: 18, key: 0.5 }],
+  [53, 'gef_rakkaus_hiljaa', 'gef_hiljenee', 'Kahden kesken', 'Harppu ja viulu mp, lämmin mf 14:06', 'Kietoutunut muoto kulkee hitaasti', { style: 'duetto', d: 15, key: 0.5 }],
+  [54, 'gef_hiljenee', 'gef_kolkutus', 'Hiljaisuus ja nousu', 'pp, sitten jouset ja harppu pp → mf', 'Muoto ohenee ja kasvaa', { style: 'duetto', d: 16, key: 0.6 }],
+  [55, 'gef_kolkutus', 'gef_huippu', 'Ovella', 'Puupuhaltimet ja matala vaski hiljaa [tarkista]', 'Pisteet kolkuttavat kehyksen reunaa', { style: 'duetto', d: 17, key: 0.6 }],
+  [56, 'gef_huippu', 'gef_sankari_hiljaa', 'Rakkauden huippu', 'Nousu p → f; sankarin teema palaa', 'Purppura (1/2): kohtaamiskohta omalla purppuralaatalla', { style: 'huippu', d: 19, lift: 1, key: 0.4 }],
+  [57, 'gef_sankari_hiljaa', 'gef_jalkihehku', 'Sankari hellänä', 'Käyrätorvet hiljaa, Fis/Ges-duuri; vielä aalto', 'Taso lepää, purppura haalistuu', { style: 'duetto', d: 17, key: 0.5 }],
+  [58, 'gef_jalkihehku', 'gef_arvostelijat_uni', 'Kuu', 'pp, käyrätorvet hiljaa (16:20, 16:45, 17:05, 17:14.5), harppu: jälkihehku, yö', 'Kaksi hahmoa selkäpuolelta katsomassa kuuta', { style: 'kutsu', d: 18, key: 0.45 }],
+  [59, 'gef_arvostelijat_uni', 'gef_hiljaisuus', 'Unessa', 'Puupuhaltimet pp: arvostelijoiden katkelmat', 'Mustia pisteitä tähtien joukossa', { style: 'none', d: 18, key: 0.5 }],
+  [60, 'gef_hiljaisuus', 'wal_kulissi1', 'Tyyntä', 'Lähes hiljaisuus', 'Yö haalistuu paperiksi', { style: 'none', d: 20, key: 0.5 }],
+  // Jakso 4: Taistelu (alku)
+  [61, 'wal_kulissi1', 'wal_vastaus', 'Kolme viiriä', 'Kaukainen trumpettifanfaari pp → mp', 'Kolme viiriä horisontissa: musta, valkoinen, punainen', { style: 'none', d: 22, key: 0.6 }],
+  [62, 'wal_vastaus', 'wal_kulissi2', 'Orkesteri vastaa', 'Orkesteri f, hiipuu', 'Taso vastaa; kenttä puupiirroksena', { style: 'suora', d: 20, key: 0.4 }],
+  [63, 'wal_kulissi2', 'wal_taistelu', 'Toinen kutsu', 'Trumpettikutsu uudelleen', 'Kolme viiriä lähempänä', { style: 'none', d: 18, key: 0.6 }],
+  ['64a', 'wal_taistelu', '@seg:wal_taistelu', 'Patarummut', 'Patarummut f, 3/4', 'Kenttä musta ja tulenpunainen; lyönnit pöllähdyttävät viivoitusta', { style: 'suora', d: 18, key: 0.5 }],
+  ['64b', '@seg:wal_taistelu', 'wal_puolenvaihto', 'Taistelun alku', 'Trumpetit ja virvelit, 3/4, kasvu f:ään (opas 19:39.5)', 'Trumpettien huudot punaisina kiiloina, virvelit pisteviivoituksena; kamera sukeltaa', { style: 'taistelu', d: 14, key: 0.6 }],
+  [65, 'wal_puolenvaihto', '@end', 'Sivun kääntö', 'A-puoli katkeaa kesken taistelun', 'Friisi kiertyy A-levyksi: renkaat = väripartituuri', { style: 'none', d: 20, key: 0.7 }],
+];

@@ -1,0 +1,2 @@
+huiput 23.10s:936 23.07s:919 26.50s:14 26.57s:13 28.13s:13
+ruutuja 572, kärjen korkeus 3.88–7.57, max |y''| 14.4 yks/s², Spearman 0.654

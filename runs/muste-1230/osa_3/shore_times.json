@@ -1,0 +1,272 @@
+{
+ "T": {
+  "viulu": 422,
+  "v1": 434.5,
+  "v2": 441.5,
+  "va2": 471.5,
+  "mo": 518,
+  "va3": 605,
+  "ki": 621.5,
+  "pu": 637.5,
+  "le": 688.5,
+  "lu": 702,
+  "ra": 729,
+  "v3": 752,
+  "rk": 802,
+  "rh": 832.5,
+  "hi": 877,
+  "no": 886.5,
+  "ko": 908,
+  "hu": 920,
+  "sh": 948.5,
+  "aa": 967,
+  "ja": 980,
+  "un": 1076.4,
+  "hs": 1102,
+  "wal": 1125.7
+ },
+ "M": [
+  533.42,
+  551.26,
+  566.44,
+  581.18
+ ],
+ "calls": [
+  982.2000000000005,
+  990.2000000000023,
+  1008.3000000000064,
+  1043.5999999999922
+ ],
+ "shots": [
+  {
+   "n": "3.1 ääni: viiva latvoissa, ritari pieni",
+   "a": 422,
+   "b": 434.5
+  },
+  {
+   "n": "3.2 vastaus: kello, lähikuva",
+   "a": 434.5,
+   "b": 441.5
+  },
+  {
+   "n": "3.3 keskustelu: ensimmäinen askel",
+   "a": 441.5,
+   "b": 452.4
+  },
+  {
+   "n": "3.3 keskustelu: puiden lomassa",
+   "a": 452.4,
+   "b": 460.82
+  },
+  {
+   "n": "3.3 keskustelu: ritari niityllä",
+   "a": 460.82,
+   "b": 471.5
+  },
+  {
+   "n": "3.4 toinen vastaus: kävelee rantaan",
+   "a": 471.5,
+   "b": 479.72
+  },
+  {
+   "n": "3.4 toinen vastaus: ranta ja aurinko puiden takana",
+   "a": 479.72,
+   "b": 504.42
+  },
+  {
+   "n": "3.4 toinen vastaus: kivellä",
+   "a": 504.42,
+   "b": 518
+  },
+  {
+   "n": "3.5 kaipaus: kaari veden yllä",
+   "a": 518,
+   "b": 533.42
+  },
+  {
+   "n": "3.5 ilo: kiveltä kivelle",
+   "a": 533.42,
+   "b": 551.26
+  },
+  {
+   "n": "3.5 kevytmielisyys: puun taakse",
+   "a": 551.26,
+   "b": 566.44
+  },
+  {
+   "n": "3.5 hellyys: kämmenelle",
+   "a": 566.44,
+   "b": 581.18
+  },
+  {
+   "n": "3.5 sarkasmi: piikki",
+   "a": 581.18,
+   "b": 605
+  },
+  {
+   "n": "3.6 painokas vastaus: kello täyttää kuvan",
+   "a": 605,
+   "b": 621.5
+  },
+  {
+   "n": "3.7 kiihtyminen: pyörre, kuva laajenee",
+   "a": 621.5,
+   "b": 637.5
+  },
+  {
+   "n": "3.8 pisteet: keihäs otetaan",
+   "a": 637.5,
+   "b": 653.46
+  },
+  {
+   "n": "3.8 pisteet: metsänreuna",
+   "a": 653.46,
+   "b": 673.76
+  },
+  {
+   "n": "3.8 pisteet: kääntyy kohti",
+   "a": 673.76,
+   "b": 688.5
+  },
+  {
+   "n": "3.9 leimahdus: viiri täyttää kuvan",
+   "a": 688.5,
+   "b": 702
+  },
+  {
+   "n": "3.10 nauru: viiva kaukana, ritari pieni",
+   "a": 702,
+   "b": 729
+  },
+  {
+   "n": "3.11 rauhoittava fraasi: käsi ja maa",
+   "a": 729,
+   "b": 752
+  },
+  {
+   "n": "3.12 lähentyminen: latvoista",
+   "a": 752,
+   "b": 765.53
+  },
+  {
+   "n": "3.12 lähentyminen: kiven taakse",
+   "a": 765.53,
+   "b": 777.58
+  },
+  {
+   "n": "3.12 lähentyminen: kämmenelle",
+   "a": 777.58,
+   "b": 790.48
+  },
+  {
+   "n": "3.12 lähentyminen: olkapäälle, kaari",
+   "a": 790.48,
+   "b": 802
+  },
+  {
+   "n": "3.13 rakkauskohtaus: työntää veneen",
+   "a": 802,
+   "b": 815.58
+  },
+  {
+   "n": "3.13 rakkauskohtaus: vene kuun juovalla",
+   "a": 815.58,
+   "b": 832.5
+  },
+  {
+   "n": "3.14 kahden kesken: punos syntyy",
+   "a": 832.5,
+   "b": 845.2
+  },
+  {
+   "n": "3.14 kahden kesken: punos lähikuvassa, kuu takana",
+   "a": 845.2,
+   "b": 863.52
+  },
+  {
+   "n": "3.14 kahden kesken: kaksi hahmoa",
+   "a": 863.52,
+   "b": 868.84
+  },
+  {
+   "n": "3.14 kahden kesken: pitkä veto",
+   "a": 868.84,
+   "b": 877
+  },
+  {
+   "n": "3.15 hiljaisuus: vene leijuu",
+   "a": 877,
+   "b": 886.5
+  },
+  {
+   "n": "3.15 nousu: punos levenee",
+   "a": 886.5,
+   "b": 900.66
+  },
+  {
+   "n": "3.15 nousu: kuu ja punos",
+   "a": 900.66,
+   "b": 908
+  },
+  {
+   "n": "3.16 ovella: nousee seisomaan",
+   "a": 908,
+   "b": 920
+  },
+  {
+   "n": "3.17 huippu: olennot painuvat, veto kuun yli",
+   "a": 920,
+   "b": 927.4
+  },
+  {
+   "n": "3.17 huippu: purppura",
+   "a": 927.4,
+   "b": 933.43
+  },
+  {
+   "n": "3.17 huippu: kuva nousee",
+   "a": 933.43,
+   "b": 948.5
+  },
+  {
+   "n": "3.18 hellänä: kaksi muotoa",
+   "a": 948.5,
+   "b": 967
+  },
+  {
+   "n": "3.19 aalto: vene rantaan",
+   "a": 967,
+   "b": 980
+  },
+  {
+   "n": "3.20 jälkihehku: laaja, kuu ja ranta",
+   "a": 980,
+   "b": 1005.03
+  },
+  {
+   "n": "3.20 jälkihehku: kaksi hahmoa",
+   "a": 1005.03,
+   "b": 1035.07
+  },
+  {
+   "n": "3.20 jälkihehku: taivas",
+   "a": 1035.07,
+   "b": 1050.06
+  },
+  {
+   "n": "3.20 jälkihehku: kaksi hahmoa, kutsu",
+   "a": 1050.06,
+   "b": 1076.4
+  },
+  {
+   "n": "3.21 uni: pisteet tähdissä, ritari siluettina",
+   "a": 1076.4,
+   "b": 1102
+  },
+  {
+   "n": "3.22 tyven: paperi, kaksi muotoa",
+   "a": 1102,
+   "b": 1126.7
+  }
+ ]
+}

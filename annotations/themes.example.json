@@ -1,0 +1,44 @@
+{
+  "_ohje": "Malli teemaluettelolle. Kopioi nimelle themes.json. Jokaisen johtoaiheen melodiakaari partituurista: kuvan muodot rakennetaan näistä (docs/visuaalinen_tyyli.md, luku 4). Sävel nuottinimenä ('Eb3', keski-C = 'C4') ja kesto iskuina. Kaaren pitää olla oikea; tarkka rytmi auttaa mutta ei ole välttämätön. Täytä 'notes' ja 'source' (tahdit tai harjoitusnumero).",
+  "_esimerkki_nuotista": { "pitch": "Eb3", "beats": 1.0 },
+  "themes": [
+    {
+      "id": "hero",
+      "title": "Sankariteema, avaus",
+      "instruments": ["horns", "cellos"],
+      "key": "Eb major",
+      "source": null,
+      "notes": []
+    },
+    {
+      "id": "hero_soothing",
+      "title": "Sankarin rauhoittava fraasi (rakkausduetto)",
+      "instruments": ["horns", "strings"],
+      "key": "Gb major",
+      "source": null,
+      "notes": []
+    },
+    {
+      "id": "companion",
+      "title": "Kumppanin teema",
+      "instruments": ["solo_violin"],
+      "source": null,
+      "notes": []
+    },
+    {
+      "id": "dehring",
+      "title": "Doktor Dehring",
+      "instruments": ["tubas"],
+      "parallel_interval_semitones": 7,
+      "source": null,
+      "notes": []
+    },
+    {
+      "id": "fanfare",
+      "title": "Kulissitrumpettien fanfaari",
+      "instruments": ["offstage_trumpets"],
+      "source": null,
+      "notes": []
+    }
+  ]
+}

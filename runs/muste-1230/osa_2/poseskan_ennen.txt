@@ -1,0 +1,7 @@
+{"a":252,"b":253,"raaka":[[252.7,0.81,"kF"]],"vahdin_jalkeen":0}
+{"a":266,"b":267,"raaka":[[266.15,1.35,"eF"]],"vahdin_jalkeen":0}
+{"a":271,"b":272,"raaka":[[271.966,0.35,"tilt"]],"vahdin_jalkeen":0}
+{"a":314,"b":315,"raaka":[[314.359,1.69,"hN"]],"vahdin_jalkeen":0}
+{"a":361,"b":362,"raaka":[[361.52,0.8,"aN"]],"vahdin_jalkeen":0}
+{"a":391,"b":392,"raaka":[[391.667,0.38,"eN"]],"vahdin_jalkeen":0}
+valmis, 6 ikkunaa joissa hyppy

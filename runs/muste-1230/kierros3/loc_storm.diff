@@ -1,0 +1,40 @@
+--- /home/claude/loc_storm_v2.js	2026-10-31 22:04:23.388948707 +0200
++++ /home/claude/hl/visual/muste/loc_storm.js	2026-10-31 22:07:15.782243176 +0200
+@@ -51,6 +51,9 @@
+ 
+   // --- maailma: tasanne x -40..60, rinne 60..140 (huippu y 46) ---
+   const SUMX = 140, SUMY = 46;
++  // A13 (kierros 3, todennettu stilleistä 229–239 s): huippukohdan aurinko ei jää vuoren taakse
++  const SUN_DX23 = -50, SUN_LIFT23 = 10;   // otto 23: aurinko huippumuurin vasemmalla puolella vapaalla taivaalla
++  const CROWN_TAB = 0.3;                    // tablo: kruunun kärjet ritarin jalkojen tasolle (1 = ennallaan)
+   const slopeY = (x) => (x < 60 ? 0 : x < SUMX ? Math.pow((x - 60) / (SUMX - 60), 1.15) * SUMY : SUMY);
+   const groundPts = [];
+   for (let i = 0; i <= 420; i++) { const x = -60 + i * 0.6; groundPts.push([x, slopeY(x) + 0.25 * (vnoise1(x / 2.3, 5) - 0.5) * (x > 60 ? 3 : 1)]); }
+@@ -58,7 +61,7 @@
+   flat(scene, skylineGeo(groundPts, -60), groundMat, { z: 0 });
+   // huipun kruunu: ritari seisoo keskisyvennyksessä (noin 0,65 h), kärjet kehystävät häntä eivätkä
+   // peitä sädekehän taivasta tablon lähiotossa
+-  flat(scene, crownPeak(14, 6, 3), groundMat, { x: SUMX - 0.3, y: SUMY - 4.0, z: -0.05 });
++  const crown = flat(scene, crownPeak(14, 6, 3), groundMat, { x: SUMX - 0.3, y: SUMY - 4.0, z: -0.05 });
+   const far3 = flat(scene, ridgeGeo(-500, 900, 46, 51, { lambda: 150, base: -300 }), ink(C.paper, { shade: C.blue, raster: 0.32 }), { z: -230 });
+   const stormMt = flat(scene, crownPeak(120, 70, 9), ink(C.blue, { shade: C.black, raster: 0.25 }), { x: 260, y: 0, z: -180 });
+   const mid = flat(scene, ridgeGeo(-300, 600, 14, 53, { lambda: 45, base: -120 }), ink(C.blue, { shade: C.paper, raster: 0.1 }), { z: -70 });
+@@ -363,7 +366,17 @@
+     mid.position.y = -12 * (1 - rise);
+     stormMt.visible = t > tFar - 3;
+     // aurinko ja sädekehä huipun takana (selkäkuvan suunnassa)
+-    u.uSun.value.set(SUMX + 30, SUMY + 60 + 45 * (t < tStorm ? 1 : 0), 26, t < tStorm ? 1 - dm : smoothstep(tChord, tChord + 3, t));
++    // A13 (kierros 3): tablossa (tTab, leikkaus) huipun kruunun kärjet madalletaan ritarin jalkojen tasolle, jotta musta huippu ei leikkaa
++    // sädehtivää aurinkoa; ritarin seisoma syvennys (paikallinen y ~3,6) pysyy paikallaan. Aurinkoa ei nosteta: viirit peittäisivät sen.
++    {
++      const sc = t >= tTab - S.LEAD ? CROWN_TAB : 1;
++      crown.scale.y = sc;
++      crown.position.y = SUMY - 0.4 - 3.6 * sc;
++    }
++    // A13: nosturiotossa huipulle (tChord -> tTab) aurinko on kokonaan huippumuurin yläpuolella, ei sen takana
++    const in23 = t >= tChord - S.LEAD && t < tTab - S.LEAD;
++    const sunLift = in23 ? SUN_LIFT23 : 0, sunDx = in23 ? SUN_DX23 : 0;
++    u.uSun.value.set(SUMX + 30 + sunDx, SUMY + 60 + sunLift + 45 * (t < tStorm ? 1 : 0), 26, t < tStorm ? 1 - dm : smoothstep(tChord, tChord + 3, t));
+     u.uCloudGap.value.set(SUMX + 30, SUMY + 60, 160, gap);
+     // sädekehä syttyy soinnun mukana ja sammuu, kun sointu katkeaa (held_dom7)
+     u.uRays.value = (0.3 * smoothstep(tChord + 1, tStrike - 0.5, t) + 0.55 * smoothstep(tStrike - S.LEAD, tStrike + 0.5, t) + 0.15 * smoothstep(T_D - 0.5, T_D - S.LEAD, t)) * (1 - smoothstep(T_D - S.LEAD, T_D + 0.3, t));

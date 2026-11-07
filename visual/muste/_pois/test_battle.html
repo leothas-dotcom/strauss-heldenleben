@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Heldenleben – muste, taistelukentän tyylikuva</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+  <style>
+    html, body { margin: 0; background: #1F1A18; overflow: hidden; }
+    #stage { position: relative; width: 1920px; height: 1080px; }
+    #stage canvas { position: absolute; left: 0; top: 0; display: block; }
+    body.preview #stage { transform-origin: 0 0; transform: scale(var(--s, 0.5)); }
+    #hud { position: fixed; left: 10px; top: 10px; padding: 8px 10px; white-space: pre; color: #E8DCC6;
+           background: rgba(31, 26, 24, 0.82); font: 15px/1.35 Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <div id="stage"><canvas id="view"></canvas></div>
+  <div id="hud" hidden></div>
+  <script type="module">
+    // Tyylikuva: paikka J (taistelukenttä) ja A-levy. Sivun kääntö: kenttä -> levy rasteriliukumana.
+    //   window.seek(t), window.camProbe(t), window.sceneReady, window.duration
+    import * as THREE from 'three';
+    import { U, C, createPost } from './ink.js';
+    import { createSignals } from './signals.js';
+    import { loadSide } from './data.js';
+    import { build as buildBattle } from './loc_battle.js';
+    import { buildRecord } from './record.js';
+    import { clamp, smoothstep } from '../util.js';
+
+    const W = 1920, H = 1080;
+    const params = new URLSearchParams(location.search);
+    const mode = params.get('mode') || 'preview';
+    const debug = params.get('debug') === '1';
+    const PACKS = [
+      { dir: 'build/demo400', from: 0, to: 400 },
+      { dir: 'build/A2', from: 400, to: 810 },
+      { dir: 'build/A3', from: 810, to: 1240 },
+    ];
+    try {
+      const view = document.getElementById('view');
+      view.width = W; view.height = H;
+      const S = createSignals(await loadSide(PACKS));
+      const A = (id) => S.A(id).t;
+      const renderer = new THREE.WebGLRenderer({ canvas: view, antialias: false, preserveDrawingBuffer: true, alpha: false });
+      renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.setClearColor(C.paper, 1);
+      const post = createPost(renderer, W, H);
+      const duration = S.T_END;
+      const K = { S, LEAD: 1 / 30, a: A('wal_kulissi1'), b: A('wal_puolenvaihto') };
+      const L = buildBattle(K);
+      const R = buildRecord(S, A);
+      const cam = new THREE.PerspectiveCamera(40, W / H, 0.1, 3000);
+      const camR = new THREE.PerspectiveCamera(40, W / H, 0.1, 3000);
+      const T_REC = A('wal_puolenvaihto') + 3.5;
+      const shotOf = (t) => { let s = L.shots[0]; for (const x of L.shots) if (t >= x.a) s = x; return s; };
+      function aim(t) {
+        const s = shotOf(t);
+        const c = s.cam(clamp((t - s.a) / Math.max(0.05, s.b - s.a)), t);
+        cam.position.set(...c.pos);
+        cam.up.set(0, 1, 0);
+        cam.fov = c.fov ?? 40;
+        cam.updateProjectionMatrix();
+        cam.lookAt(...c.look);
+        cam.updateMatrixWorld(true);
+        return s;
+      }
+      const gl = renderer.getContext();
+      window.seek = (t) => {
+        t = clamp(t, 0, duration);
+        const tb = Math.min(t, K.b + 4);
+        aim(tb);
+        const fx = L.update(tb) || {};
+        window.lastFx = fx;
+        const rec = smoothstep(T_REC - 0.6, T_REC + 0.6, t);
+        U.uDim.value = 0;
+        if (rec < 1) { renderer.setRenderTarget(post.rtA); renderer.render(L.scene, cam); }
+        if (rec > 0) { R.update(t, camR); renderer.setRenderTarget(post.rtB); renderer.render(R.scene, camR); }
+        const u = post.uniforms;
+        u.uMix.value = rec; u.uMode.value = 0;
+        u.uFlash.value = 0; u.uWood.value = 0; u.uShake.value = 0;
+        u.uPaper.value = (fx.paper ?? 0) * (1 - rec);
+        u.uMis.value = (fx.mis ?? 0.3) * (1 - rec) + 0.3 * rec;
+        u.uGrain.value = 0.08 + 0.5 * clamp(S.hiss(t) * 20);
+        u.uTitle.value = 0;
+        for (const d of post.dust) d.set(0, 0, 0, 0);
+        post.render();
+        if (debug) {
+          const hud = document.getElementById('hud');
+          hud.hidden = false;
+          hud.textContent = `t ${t.toFixed(2)}  käyrät ${S.energy.horns(t).toFixed(2)}  tpt ${S.fam.tpt(t).toFixed(2)}  perc ${S.fam.perc(t).toFixed(2)}  loud ${S.loud(t).toFixed(3)}  mis ${(fx.mis ?? 0).toFixed(2)}  paper ${(fx.paper ?? 0).toFixed(2)}`;
+        }
+        return !gl.isContextLost();
+      };
+      window.camProbe = (t) => {
+        t = clamp(t, 0, duration);
+        const s = aim(Math.min(t, K.b + 4));
+        return { loc: 'J taistelukenttä', shot: s.name, cut: s.a, p: cam.position.toArray(), q: cam.quaternion.toArray(), fov: cam.fov, trans: t > T_REC - 1 };
+      };
+      window.probe = (t) => ({ loud: S.loud(t), tpt: S.fam.tpt(t), perc: S.fam.perc(t), violins: S.fam.violins(t), horns: S.energy.horns(t) });
+      window.anchors = () => Object.fromEntries(['wal_kulissi1', 'wal_vastaus', 'wal_kulissi2', 'wal_taistelu', 'wal_puolenvaihto'].map((k) => [k, A(k)]));
+      window.evts = (a, b) => ({ strokes: S.strokes.filter((x) => x >= a && x < b), bolts: S.accIn(a, b, 6).map((x) => [x.t, x.z]), loudQ: [1158, 1160, 1162, 1163, 1164, 1165].map((x) => [x, S.loud(x)]) });
+      window.contextOk = () => !gl.isContextLost();
+      window.duration = duration;
+      window.sceneReady = true;
+      if (mode === 'preview') {
+        document.body.classList.add('preview');
+        const fit = () => document.documentElement.style.setProperty('--s', Math.min(innerWidth / W, innerHeight / H));
+        addEventListener('resize', fit); fit();
+        let t0 = parseFloat(params.get('t') || K.a);
+        const loop = () => { window.seek(t0); requestAnimationFrame(loop); };
+        document.addEventListener('keydown', (e) => { if (e.code === 'ArrowRight') t0 += 5; if (e.code === 'ArrowLeft') t0 -= 5; });
+        loop();
+      }
+    } catch (e) {
+      window.sceneError = String(e && e.stack ? e.stack : e);
+      console.error(e);
+    }
+  </script>
+</body>
+</html>

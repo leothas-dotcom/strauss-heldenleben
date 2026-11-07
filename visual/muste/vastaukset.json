@@ -1,0 +1,532 @@
+{
+  "_ohje": "Kuvallinen vastaus jokaiselle teemakartan ankkurille (cues.json teema, kuunteluoppaan aikakoodattu kohta). mittari = window.opasProbe(t):n kenttä: muste.punainen.pituus | muste.punainen.karki_y | muste.punainen.muste | muste.n | ritari.<kenttä> | nuket.n | nuket.aN (keskiarvo) | kamera.x/y/z/fov | valo.dim | valo.paperi | otto | paikka | kohtaus | <paikan oma kenttä>. kynnys = pienin muutos t-0,5 s -> t+0,5 s, joka lasketaan vastaukseksi (merkkijonolle: muuttuu). isku = true: muutoksen on osuttava ±1 ruutuun (t-1/30 .. t+1/30). Vaihe 0 kirjoittaa näytöksen 1; osa 1 täydentää ja korjaa.",
+  "vastaukset": [
+    {
+      "ankkuri": "held_alku",
+      "opas": "Sankari astuu esiin",
+      "elementti": "kermapaperi vaihtuu laaksoon (rasteriliukuma), selkäkuva nousee harjanteen takaa ja veto alkaa",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_isku_t6",
+      "opas": "Ensimmäinen isku: koko joukko vastaa sankarille",
+      "elementti": "viirinkärjet napsahtavat ja tuulenpuuska pyyhkäisee; kaikki kahdeksan hahmoa kuvassa",
+      "mittari": "viirinkarjet_y",
+      "kynnys": 0.05,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_isku_t8",
+      "opas": "Toinen sointuisku",
+      "elementti": "viirinkärjet napsahtavat",
+      "mittari": "viirinkarjet_y",
+      "kynnys": 0.05,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_viulut",
+      "opas": "Viulut ensimmäistä kertaa",
+      "elementti": "viulut sytyttävät tuulen (säde kellossa näkyy vain profiilissa: osa 1)",
+      "mittari": "tuuli",
+      "kynnys": 0.1
+    },
+    {
+      "ankkuri": "held_isku_t11",
+      "opas": "Kolmas sointuisku",
+      "elementti": "viirinkärjet napsahtavat",
+      "mittari": "viirinkarjet_y",
+      "kynnys": 0.05,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_vasket_t13",
+      "opas": "Vasket ja patarummut: nousu ff:ään",
+      "elementti": "aurinko nousee harjanteen takaa, heraldiset viirit nousevat",
+      "mittari": "viirit_n",
+      "kynnys": 0.5
+    },
+    {
+      "ankkuri": "held_intro_loppuu",
+      "opas": "Käyrätorvet ff: toverit",
+      "elementti": "kahdeksan nostaa kellot soittoasentoon",
+      "mittari": "rivi_y",
+      "kynnys": 0.2
+    },
+    {
+      "ankkuri": "held_viulut_paluu",
+      "opas": "Viulujen juoksutus",
+      "elementti": "tuulenpuuska nostaa viirit",
+      "mittari": "viirit_amp",
+      "kynnys": 0.1
+    },
+    {
+      "ankkuri": "held_lyyrinen",
+      "opas": "Lyyrinen vastateema: puupuhaltimet ja harput",
+      "elementti": "rasteriliukuma avomerelle",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_t25",
+      "opas": "Puupuhallinten laulu",
+      "elementti": "tiirat kiertyvät keulan ympärille; ritari ojentaa kätensä, tiira laskeutuu keihään kärkeen",
+      "mittari": "tiirat_y",
+      "kynnys": 0.3
+    },
+    {
+      "ankkuri": "held_t31",
+      "opas": "Uusi aalto, harput",
+      "elementti": "ritari nostaa purjeen (uusi aalto)",
+      "mittari": "purje",
+      "kynnys": 0.02
+    },
+    {
+      "ankkuri": "held_t34",
+      "opas": "Laivaston kilpa",
+      "elementti": "laivasto liittyy rinnalle",
+      "mittari": "laivasto",
+      "kynnys": 0.5
+    },
+    {
+      "ankkuri": "held_reh4",
+      "opas": "Uusi kasvu",
+      "elementti": "mainingit kasvavat; sforzandot ovat tiirojen syöksyjä",
+      "mittari": "mainingit",
+      "kynnys": 0.0
+    },
+    {
+      "ankkuri": "held_huippu1",
+      "opas": "Crescendo ensimmäiseen huippuun",
+      "elementti": "laiva aallon harjalle (osa 1 täydentää mittarin)",
+      "mittari": "mainingit",
+      "kynnys": 0.005
+    },
+    {
+      "ankkuri": "held_reh5_isku",
+      "opas": "ff-sointu",
+      "elementti": "roiske (osa 1 täydentää mittarin)",
+      "mittari": "otto",
+      "kynnys": 0,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_huippu1_kohta",
+      "opas": "Huipun kohta",
+      "elementti": "aurinko murtautuu pilvestä, harja murtuu",
+      "mittari": "aurinko",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "held_t47",
+      "opas": "Myrsky laantuu",
+      "elementti": "rasteriliukuma niitylle alkaa",
+      "mittari": "otto",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_tunnelma_vaihtuu",
+      "opas": "Tunnelma vaihtuu: huilu ja englannintorvi",
+      "elementti": "kultainen niitty, kaksi pääskyä",
+      "mittari": "siirtyma",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_t49",
+      "opas": "pp ausdrucksvoll: puron äärellä",
+      "elementti": "ritari polvistuu",
+      "mittari": "ritari.hN",
+      "kynnys": 0.1
+    },
+    {
+      "ankkuri": "held_reh6",
+      "opas": "Käyrätorvet I-II laulavat",
+      "elementti": "hahmo hajoaa: kaksi punaista vetoa juoksee, alttoviulu sinisenä katkoviivana",
+      "mittari": "vedot",
+      "kynnys": 0.5
+    },
+    {
+      "ankkuri": "held_t61",
+      "opas": "Crescendo matalalta",
+      "elementti": "paperin kautta tasangolle, vuoret kohoavat",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_reh8",
+      "opas": "ff-tutti, 8 käyrätorvea sankariteemassa",
+      "elementti": "YKSI leveä veto piirtyy rivin yllä; ritarit nostavat kellot",
+      "mittari": "muste.n",
+      "kynnys": 0.5
+    },
+    {
+      "ankkuri": "held_reh9",
+      "opas": "Sankariarpeggiot",
+      "elementti": "kellojen portaat: iskut nostavat kellot",
+      "mittari": "nuket.aN",
+      "kynnys": 0.05,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_reh10",
+      "opas": "Kaikki liikkeessä",
+      "elementti": "laaja kuva: myrskyvuori kaukana",
+      "mittari": "otto",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_reh11",
+      "opas": "Putous: puupuhaltimet ja harput",
+      "elementti": "putous ryöppyää",
+      "mittari": "otto",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_reh12",
+      "opas": "Myrsky, patarummut",
+      "elementti": "pilvet, sade; kuva tummuu",
+      "mittari": "sade",
+      "kynnys": 0.03
+    },
+    {
+      "ankkuri": "held_isku1",
+      "opas": "Ensimmäinen kohtaloisku",
+      "elementti": "viirit napsahtavat ylös kohotahti-iskulla (salama on jo lyönyt katkossa, B6)",
+      "mittari": "napsahdus",
+      "kynnys": 0.1,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_isku2",
+      "opas": "Toinen kohtaloisku",
+      "elementti": "viirit napsahtavat ylös kohotahti-iskulla (salama on jo lyönyt katkossa, B6)",
+      "mittari": "napsahdus",
+      "kynnys": 0.1,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_isku3",
+      "opas": "Kolmas kohtaloisku",
+      "elementti": "viirit napsahtavat ylös kohotahti-iskulla (salama on jo lyönyt katkossa, B6)",
+      "mittari": "napsahdus",
+      "kynnys": 0.1,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_isku4",
+      "opas": "Neljäs kohtaloisku",
+      "elementti": "viirit napsahtavat ylös kohotahti-iskulla (salama on jo lyönyt katkossa, B6)",
+      "mittari": "napsahdus",
+      "kynnys": 0.1,
+      "isku": true
+    },
+    {
+      "ankkuri": "held_dom7_sointu",
+      "opas": "Dominanttiseptimi: pasuunat ja tuubat",
+      "elementti": "nosturi huipulle, sädekehä syttyy",
+      "mittari": "otto",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "held_dom7",
+      "opas": "Sointu katkeaa",
+      "elementti": "sädekehä sammuu",
+      "mittari": "sadekeha",
+      "kynnys": 0.2
+    },
+    {
+      "ankkuri": "held_gp",
+      "opas": "Yleistauko",
+      "elementti": "paperi nousee kuvan yli",
+      "mittari": "valo.paperi",
+      "kynnys": 0.2
+    },
+    {
+      "ankkuri": "gef_viulu",
+      "opas": "Kumppani astuu esiin, sooloviulu",
+      "elementti": "rasteriliukuma suolta rantaniitylle ankkurissa; valkoinen viiva piirtyy puiden latvoissa (3.1), ritari pieni pysähtyy ja kuuntelee",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "gef_vastaus1",
+      "opas": "Sankari vastaa: käyrätorvet ja patarumpu",
+      "elementti": "leikkaus lähikuvaan maahan: ritari nostaa kellon ja soittaa kutsun, maan viivoitus pöllähtää (3.2)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_viulu2",
+      "opas": "Keskustelu: viulu ja harppu",
+      "elementti": "leikkaus: viiva laskeutuu puiden lomaan, ritari astuu askeleen ja viiva vetäytyy, kolme vuoroa (3.3)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_vastaus2",
+      "opas": "Sankarin vastaus: sellot, bassot, harppu",
+      "elementti": "leikkaus: ritari kävelee rantaan ja istuu kivelle, valo laskee (3.4)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_mielialat",
+      "opas": "Mielialat vaihtuvat",
+      "elementti": "leikkaus: viiva kaipauksen kaarena veden yllä, ritari kallistaa päätä; viisi elettä jaksorajoissa (3.5)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_vastaus3",
+      "opas": "Sankari vastaa painokkaasti",
+      "elementti": "leikkaus lähikuvaan: ritari nousee, nostaa kellon ja soittaa pitkän vastauksen, viiva pois (3.6)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_kiihkea",
+      "opas": "Kumppani kiihtyy",
+      "elementti": "leikkaus: viiva kiertää ritarin pyörteeksi ja pakenee korkealle, kuva laajenee (3.7)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_puupuhaltimet",
+      "opas": "Puupuhaltimet etualalla [tarkista]",
+      "elementti": "leikkaus: siniset pisteet metsänreunassa, ritari ottaa keihään ja kääntyy niitä kohti (3.8)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_leimahdus",
+      "opas": "Sankari leimahtaa",
+      "elementti": "leikkaus lähikuvaan: keihäs iskeytyy maahan, viiri leimahtaa leveäksi, pisteet hajoavat (3.9)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_lustig",
+      "opas": "Kumppani nauraa ja riehaantuu [tarkista]",
+      "elementti": "leikkaus laajaan: viiva nauraa koukeroin kaukana, ritari pieni leimahtaneen viirin alla (3.10)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_rauhoittava",
+      "opas": "Sankarin rauhoittava fraasi [tarkista]",
+      "elementti": "leikkaus lähikuvaan: keihäs maahan, ritari istuu ja ojentaa kämmenen ylöspäin (3.11)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_viulu3",
+      "opas": "Lähentyminen",
+      "elementti": "leikkaus: viiva latvoista kiven taakse, kämmenelle ja olkapäälle kaareksi; molemmat samassa rajauksessa (3.12)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_rakkaus",
+      "opas": "Rakkauskohtaus alkaa, Ges-duuri",
+      "elementti": "leikkaus laajaan yöhön: ritari nostaa viirin, työntää veneen vesille ja soutaa, viiva keulassa (3.13)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_rakkaus_hiljaa",
+      "opas": "Kahden kesken",
+      "elementti": "leikkaus: viiva kietoutuu viirin ympärille punokseksi mastoon, ritari lepuuttaa airoja (3.14)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_hiljenee",
+      "opas": "Hetken hiljaisuus",
+      "elementti": "leikkaus: vene leijuu, punos ohenee (3.15)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_nousu",
+      "opas": "Jouset ja harppu nousevat",
+      "elementti": "leikkaus: punos levenee ja purppuran aavistus kohtaamiskohdassa (3.15)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_kolkutus",
+      "opas": "Arvostelijat kolkuttelevat ovelle [tarkista]",
+      "elementti": "leikkaus: olentojen siluetit nousevat kaislikosta, ritari nousee veneessä seisomaan keihäs vaakaan (3.16)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_huippu",
+      "opas": "Rakkauden huippu, sankarin teema palaa",
+      "elementti": "leikkaus: yksi punainen veto kuun yli kärjestä; taivas, kuun juova ja punos kohoavat purppuraan koko kuvan tapahtumana (3.17)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_sankari_hiljaa",
+      "opas": "Sankari hellänä",
+      "elementti": "leikkaus lähikuvaan: keihäs veneen pohjalle, ritari istuu punoksen viereen, purppura laskeutuu (3.18)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_aalto",
+      "opas": "Vielä yksi aalto",
+      "elementti": "leikkaus laajaan: vene kääntyy rantaan, kuun juova levenee (3.19)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_jalkihehku",
+      "opas": "Jälkihehku, yö",
+      "elementti": "leikkaus: ritari istuu rannalla selin kuuta katsoen, viiva vierellä kaarena (3.20)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_arvostelijat_uni",
+      "opas": "Arvostelijoiden katkelmat unessa",
+      "elementti": "leikkaus: mustat pisteet tähtien joukossa, ritari nousee ja katsoo pimeään, viiva nukkuu kiven päällä (3.21)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "gef_hiljaisuus",
+      "opas": "Tyyntä myrskyn edellä",
+      "elementti": "leikkaus: muste kuivuu, yö haalistuu paperiksi, ritari nostaa viirin maasta ja katsoo oikealle (3.22)",
+      "mittari": "otto"
+    },
+    {
+      "ankkuri": "wal_kulissi1",
+      "opas": "Kulissitrumpetit kutsuvat taisteluun, kaukaa horisontista",
+      "elementti": "yö haalistuu paperiksi (paperin kautta) ja taistelukenttä painuu esiin: kolme viiriä horisontissa (musta, valkoinen, punainen); ritari kääntyy ääntä kohti",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "wal_vastaus",
+      "opas": "Orkesteri vastaa f",
+      "elementti": "ritari nousee ratsaille ja kumppanin ohut viiva siirtyy satulaan hänen taakseen",
+      "mittari": "ritari_y",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wal_kulissi2",
+      "opas": "Toinen kutsu hiljaisuuden jälkeen",
+      "elementti": "horisontin kolme viiriä tulevat lähemmäs ja kuva palaa hiljaisuuden paperista",
+      "mittari": "viirit_z",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wal_taistelu",
+      "opas": "Taistelu alkaa: patarummut f, 3/4",
+      "elementti": "kenttä tummuu mustaksi ja tulenpunaiseksi, hevonen pysähtyy kentän laidalle ja viiri laskeutuu vaakaan",
+      "mittari": "kentta_punainen",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wal_puolenvaihto",
+      "opas": "A-puoli katkeaa kesken taistelun",
+      "elementti": "kamera vetäytyy ja kenttä alkaa kiertyä A-levyn uraksi",
+      "mittari": "kamera.z",
+      "kynnys": 0.1
+    },
+    {
+      "ankkuri": "wid_1_huilu",
+      "opas": "Huilu I yksin korkealla (arvostelija 1)",
+      "elementti": "suo ilmestyy paperin alta ja huiluhyttynen laskeutuu ritarin viereen: pistin työntyy ensimmäisellä sävelellä",
+      "mittari": "paikka",
+      "kynnys": 0
+    },
+    {
+      "ankkuri": "wid_2_oboe",
+      "opas": "Oboe schnarrend (arvostelija 2)",
+      "elementti": "oboesorsa tulee veteen, kaksoislehdykkä käy fraasin mukaan; ritari kääntää selkänsä",
+      "mittari": "sorsa_ele",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_3_4",
+      "opas": "Pikkuhuilu ja englannintorven kromaattinen nousu",
+      "elementti": "haikara astuu portaita ylös paalulta paalulle; ritari kääntyy takaisin ja nousee puoliksi",
+      "mittari": "haikara_askel",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_dehring1",
+      "opas": "Tuubat p: Dok-tor Deh-ring",
+      "elementti": "kotilot penkereellä, kellot kääntyvät hitaasti; ritari painaa käden korvalle",
+      "mittari": "kotilo_ele",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_6",
+      "opas": "Oboe ja Es-klarinetti korkealla (arvostelija 6)",
+      "elementti": "sorsan nokka käy nopeammin ja pää nyökkii",
+      "mittari": "sorsa_ele",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_7_8",
+      "opas": "Englannintorvi ja fagotit ff (pilkka)",
+      "elementti": "peili veden alla: laiha Quijote venyy; fagottisammakot kurnuttavat tukilla; ritari katsoo",
+      "mittari": "peili",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_9_pasuunat",
+      "opas": "Sordinoidut pasuunat ff",
+      "elementti": "varikset laskeutuvat kuolleeseen puuhun, pasuunoiden vetoputki liikkuu; ritari vetää viirin suojaan",
+      "mittari": "varis_ele",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_kuoro",
+      "opas": "Arvostelijat yhteen ääneen",
+      "elementti": "kaikki olennot kuvassa, musta rasteriusva sakenee; ritari yrittää nousta ja painuu takaisin",
+      "mittari": "sameus",
+      "kynnys": 0.03
+    },
+    {
+      "ankkuri": "wid_sankari_molli",
+      "opas": "Sankariteema mollissa",
+      "elementti": "kypärä painuu alas, keihäs laskeutuu maahan ja viiri tummuu; olennot vaikenevat",
+      "mittari": "viiri_tumma",
+      "kynnys": 0.05
+    },
+    {
+      "ankkuri": "wid_reh16",
+      "opas": "Käyrätorvet V-VIII pp",
+      "elementti": "tumma viiri hengittää hitaasti, olennot kuuntelevat vaiti",
+      "mittari": "viiri_leveys",
+      "kynnys": 0.005
+    },
+    {
+      "ankkuri": "wid_reh17",
+      "opas": "Viulut G-kielellä, jouset aaltoina",
+      "elementti": "ritari kävelee lammen rantaan ja polvistuu; aamun harjanne alkaa nousta veden alle",
+      "mittari": "muisto_aalto1",
+      "kynnys": 0.02
+    },
+    {
+      "ankkuri": "wid_uusi_hyokkays",
+      "opas": "Arvostelijat uusivat hyökkäyksensä",
+      "elementti": "olennot palaavat ja piirittävät; ritari seisoo selkä puuhun viiri kädessä",
+      "mittari": "olento_nakyy",
+      "kynnys": 1
+    },
+    {
+      "ankkuri": "wid_reh20",
+      "opas": "Oboet ja fagotit ff, kahdeksan käyrätorvea",
+      "elementti": "toverien siluetit nousevat vastarannan harjanteelle",
+      "mittari": "toverit_n",
+      "kynnys": 0.5
+    },
+    {
+      "ankkuri": "wid_reh20_lautaset",
+      "opas": "Lautaset zischend",
+      "elementti": "roiske lammessa (yhden elementin teko ruutua ennen ääntä)",
+      "mittari": "roiske",
+      "kynnys": 0.5,
+      "isku": true
+    },
+    {
+      "ankkuri": "wid_sankari_nousee",
+      "opas": "Jouset f, sankari nousee",
+      "elementti": "ritari nostaa viirin pystyyn molemmin käsin",
+      "mittari": "viirikarki_y",
+      "kynnys": 0.1
+    },
+    {
+      "ankkuri": "wid_voitto",
+      "opas": "Vasket ff, pieni voitto",
+      "elementti": "viiri pyyhkäisee leveän punaisen vedon suon yli, olennot hajoavat tippoina, sameus väistyy",
+      "mittari": "veto",
+      "kynnys": 0.02
+    }
+  ]
+}

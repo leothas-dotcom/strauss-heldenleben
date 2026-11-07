@@ -1,0 +1,48 @@
+{
+  "_ohje": "Malli merkintätiedostolle. Kopioi nimelle cues.json. Ajat sekunteina LP-puolen tiedoston alusta (side = 1 tai 2), esim. Audacityn label-raidalta. 'arvio': true = alustava arvio LP:n voimakkuuskäyrästä, tarkista korvalla. 'transform' = teeman muunnos: augment, diminish, invert, fragment, transpose, distort, combine, return. 'of' = minkä teeman muunnos. null = ei vielä merkitty.",
+  "recording": {
+    "title": "Ein Heldenleben – Wienin filharmonikot, Clemens Krauss (London LL 659)",
+    "sides": { "1": "audio/lp_krauss/side1.flac", "2": "audio/lp_krauss/side2.flac" }
+  },
+  "sections": [
+    { "id": "held",          "title": "Der Held",                             "side": 1, "start": 0.0,   "arvio": true },
+    { "id": "widersacher",   "title": "Des Helden Widersacher",               "side": 1, "start": 242.0, "arvio": true },
+    { "id": "gefaehrtin",    "title": "Des Helden Gefährtin",                 "side": 1, "start": 420.0, "arvio": true },
+    { "id": "walstatt",      "title": "Des Helden Walstatt",                  "side": 2, "start": 8.0,   "arvio": true },
+    { "id": "friedenswerke", "title": "Des Helden Friedenswerke",             "side": 2, "start": 430.0, "arvio": true },
+    { "id": "weltflucht",    "title": "Des Helden Weltflucht und Vollendung", "side": 2, "start": 720.0, "arvio": true }
+  ],
+  "themes": {
+    "hero":           "Sankariteema, Es-duuri, käyrätorvet + sellot",
+    "hero_dom7":      "Jakson 1 loppu: dominanttiseptimi + tauko",
+    "critic":         "Vastustaja (kenttä 'critic' = 1-9 Porterin luettelon mukaan: 1 huilu, 2 oboe, 3 lautaset, 4 englannintorvi kromaattinen, 5 Dehring, 6 oboe, 7 englannintorvi vääristää sankariteeman, 8 fagotit, 9 sord. pasuunat)",
+    "dehring":        "Doktor Dehring, 2 tuubaa rinnakkaisina kvintteinä (myös keskeytykset jaksossa 6)",
+    "hero_triumph":   "Sankari ajaa vastustajat pakoon, pieni voitonhymni",
+    "companion":      "Kumppani, sooloviulu (kenttä 'marking' = mieliala)",
+    "hero_soothing":  "Sankarin rauhoittava fraasi",
+    "love":           "Rakkausduetto, Ges-duuri, harppu",
+    "critics_door":   "Vastustajat kolkuttelevat ovelle duetin huipennuksessa",
+    "fanfare":        "Kolme kulissitrumpettia",
+    "battle":         "Taistelu (kehittely)",
+    "recapitulation": "Sankariteema riemukkaana taistelun jälkeen (kertaus)",
+    "quote":          "Lainaus aiemmasta teoksesta (kenttä 'work')",
+    "traum":          "Traum durch die Dämmerung, tenorituuba",
+    "pastoral":       "Englannintorvi muovaa sankariteeman maalaiseksi",
+    "duet":           "Viulun ja käyrätorven duetto",
+    "coda":           "Loppu"
+  },
+  "cues": [
+    { "side": 1, "t": 0.0,   "arvio": true, "theme": "hero",      "lead": ["horns", "cellos"], "note": "Avaus unisonossa" },
+    { "side": 1, "t": 235.0, "arvio": true, "theme": "hero_dom7", "lead": ["tutti"], "note": "Voimakkuus putoaa -28 dB -> -44 dB" },
+    { "side": 1, "t": null, "theme": "critic",    "critic": 1, "lead": ["flute"], "marking": "sehr scharf und spitzig" },
+    { "side": 1, "t": null, "theme": "dehring",   "critic": 5, "lead": ["tubas"] },
+    { "side": 1, "t": null, "theme": "critic",    "critic": 7, "lead": ["english_horn"], "transform": "distort", "of": "hero" },
+    { "side": 1, "t": null, "theme": "companion", "lead": ["solo_violin"], "marking": "heuchlerisch schmachtend" },
+    { "side": 1, "t": null, "theme": "love",      "lead": ["horns", "solo_violin", "harp"] },
+    { "side": null, "t": null, "theme": "fanfare", "lead": ["offstage_trumpets"] },
+    { "side": 2, "t": null, "theme": "recapitulation", "lead": ["horns", "tutti"], "transform": "return", "of": "hero" },
+    { "side": 2, "t": null, "theme": "quote",     "work": "Don Juan", "lead": [] },
+    { "side": 2, "t": null, "theme": "pastoral",  "lead": ["english_horn"], "transform": "return", "of": "hero" },
+    { "side": 2, "t": null, "theme": "duet",      "lead": ["solo_violin", "solo_horn"] }
+  ]
+}

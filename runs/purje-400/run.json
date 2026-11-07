@@ -1,0 +1,25 @@
+{
+  "name": "purje-400",
+  "title": "Punainen purje",
+  "side": 1,
+  "start": 0,
+  "duration": 400,
+  "paketti": "build/demo400",
+  "ajat": "annotations/teemat.json -> annotations/cues.json (ankkurit tunnisteilla), build/demo400/aksentit.json",
+  "aikojen_totuus": "build/kuuntelu/A_puoli_kuuntelu.wav (sovittu 30.10.2026)",
+  "kuvakasikirjoitus": "runs/purje-400/storyboard.md",
+  "kohtaus": "visual/purje/index.html (three.js r170)",
+  "pohja": "visual/torviritari (painojälki, paperimuodot, signaalit, nuket, levyn intro)",
+  "video": "runs/purje-400/renders/heldenleben_purje_400s.mp4",
+  "whatsapp": "runs/purje-400/renders/heldenleben_purje_400s_whatsapp.mp4",
+  "paikat": ["A levy", "B aamun satama", "C avomeri", "D tyyni lahti", "E rannikko ja putous", "F aaltovuori ja majakkaluoto", "G kaislalahti"],
+  "tarkistajat": ["elokuvakriitikko", "peittotarkistaja", "kamera", "yleiset mokat"],
+  "render": {
+    "fps": 30,
+    "resolution": [1920, 1080],
+    "workers": 2,
+    "chunk_s": 40,
+    "fade_out_s": 3.5,
+    "codec": "libx264 crf 18, aac 320k"
+  }
+}

@@ -1,0 +1,25 @@
+.venv/
+node_modules/
+build/
+output/
+audio/*
+!audio/.gitkeep
+models/
+runs/*/renders/
+runs/*/stills/
+
+# Ajojen kuvat ja videot kaikilla tasoilla (vain tekstit versionhallintaan)
+runs/**/*.png
+runs/**/*.jpg
+runs/**/*.jpeg
+runs/**/*.webp
+runs/**/*.mp4
+runs/**/*.mkv
+runs/**/*.webm
+runs/**/*.wav
+runs/**/*.flac
+runs/**/*.npz
+output/
+.claude/settings.local.json
+__pycache__/
+runs/**/*.tgz

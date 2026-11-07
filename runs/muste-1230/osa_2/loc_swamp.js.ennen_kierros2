@@ -1,0 +1,577 @@
+// G, suo aamupäivän sameudessa ja illassa: näytös 2, vastustajat (wid_1_huilu ... gef_viulu).
+// Ohjaus: docs/ohjaus.md luku 2. Kaikki ajat ovat ankkureita (S.A), jaksorajoja (S.segs) tai mitattuja
+// kanavia (S.fam, S.energy, S.onsetsIn); hahmon eleiden kestot ovat osuuksia kahden ankkurin välistä (fr()).
+//   2.1 Pisto: ritari laskeutuu suolle, istuu harppupuun juurelle; hyttynen (huilu) pistää, hän huitaisee keihäällä.
+//   2.2 Olennot yksi kerrallaan omilla ankkureillaan, ritari reagoi jokaiseen eri tavalla:
+//       sorsa (oboe): selkä sorsalle; haikara (englannintorvi): nousee puoliksi; kotilot (Dehring): käsi korvalle;
+//       peili (englannintorvi + fagotit): katsoo laihaa Quijotea; varikset (pasuunat): viiri suojaan.
+//   2.3 Kuoro: sameus sakenee, hän yrittää nousta mutta painuu takaisin.  2.4 Molli: kypärä alas, keihäs maahan.
+//   2.5 Muisto: polvistuu lammen ääreen; aamun harjanne (loc_valley.js:n profiili) nousee veden alle kolmessa aallossa
+//       (jaksorajat), kolmannella hän tarttuu viiriin.  2.6 Piiritys: nousee seisomaan, selkä puuhun.
+//   2.7 Toverit harjanteella vastaavat, roiske (lautaset).  2.8 Viiri pystyyn, leveä veto suon yli, olennot tippoina.
+
+import * as THREE from 'three';
+import { C, ink, flat, group, poly, rect, circle, deadTree, skylineGeo, strokeGeo, water, sky as makeSky, ridgePts, clamp, smoothstep, mix, hash1, vnoise1 } from './paper.js';
+import { knight, poseKnight, KP, kmix, POSES } from './puppets.js';
+import { fluteMosquito, oboeDuck, cAnglaisHeron, tubaSnail, bassoonFrog, tromboneCrow } from './critters.js';
+import { common } from './world.js';
+import { brushStroke, splat } from './brush.js';
+import { leader, camPath, ease } from './hero.js';
+
+// Aamun harjanne (loc_valley.js: topPts): tasanne x -13..15 ja loivat rinteet. Sama kaava, jotta lammen muisto on sama harjanne.
+const valleyRidge = (x) => {
+  const plateau = 1 - smoothstep(14, 26, Math.abs(x - 1));
+  return plateau * (0.12 * (vnoise1(x * 0.8, 5) - 0.5)) + (1 - plateau) * (-0.32 * Math.max(0, Math.abs(x - 1) - 14) + 3.5 * (vnoise1(x / 9, 9) - 0.5));
+};
+
+export function build(K) {
+  const { S } = K;
+  const A = K.a;
+  const at = (id) => S.A(id);
+  const tMos = at('wid_1_huilu').t, tDuck = at('wid_2_oboe').t, tQ = at('wid_3_4').t, tToad = at('wid_dehring1').t;
+  const tCrick = at('wid_6').t, tMock = at('wid_7_8').t, tCrow = at('wid_9_pasuunat').t;
+  const tChor = at('wid_kuoro').t, tAns = at('wid_sankari_molli').t, tR16 = at('wid_reh16').t;
+  const tNight = at('wid_reh17').t, tRet = at('wid_uusi_hyokkays').t, tR20 = at('wid_reh20').t, tSplash2 = at('wid_reh20_lautaset').t;
+  const tSnap = at('wid_sankari_nousee').t, tVoit = at('wid_voitto').t, END = at('gef_viulu').t;
+  const fr = (a, b, x) => a + (b - a) * x;   // osuus kahden ankkurin välistä
+  const ramp = (a, b, t) => ease(smoothstep(a, b, t));
+  const bump = (a, m, b, t) => ramp(a, m, t) * (1 - ramp(m, b, t));
+
+  // muiston kolme aaltoa = jousten crescendo-jaksorajat ankkureiden wid_reh17 ja wid_uusi_hyokkays välissä (segments.json)
+  const cres = S.segs.filter((s) => s.a > tNight + 1 && s.a < tRet - 1 && s.suunta === 'crescendo').map((s) => s.a);
+  if (cres.length < 2) throw new Error('muiston aallot: jaksorajoja puuttuu wid_reh17 .. wid_uusi_hyokkays');
+  const W1 = tNight, W2 = cres[0], W3 = cres[1];
+  const bnd = S.segs.map((s) => s.a).filter((a) => a > W3 + 1 && a < tRet - 1);
+  if (!bnd.length) throw new Error('muiston häipyminen: jaksoraja puuttuu');
+  const FADE = bnd[bnd.length - 1];
+
+  const scene = new THREE.Scene();
+  const SKY = makeSky(scene);
+  // --- maisema ---
+  const horizonPts = [];
+  for (let i = 0; i <= 300; i++) { const x = -300 + i * 2; horizonPts.push([x, 1.5 + 1.2 * Math.pow(vnoise1(x * 0.7, 3), 3) + 0.6 * vnoise1(x / 9, 4)]); }
+  flat(scene, skylineGeo(horizonPts, -80), ink(C.black, { shade: C.blue, raster: 0.25 }), { z: -120 });
+  for (let k = 0; k < 12; k++) flat(scene, deadTree(k * 7 + 3, 2.2 + hash1(k) * 1.4), ink(C.black, { shade: C.blue, raster: 0.4 }), { x: -40 + k * 7.5 + 3 * hash1(k + 1), y: -1, z: -26 - 10 * hash1(k + 2) });
+  const PZ = -4;
+  const pond = water(scene, 90, 14, { x: 8, y: -6.75, z: PZ, base: C.blue, deep: C.black, glint: 0.55 });
+  flat(scene, poly([[-60, 0.25], [60, 0.25], [60, 0.9], [20, 0.75], [8, 0.95], [-4, 0.7], [-60, 0.85]]), ink(C.black, { shade: C.blue, raster: 0.2 }), { z: PZ - 0.2 });
+  // lähirannan reuna: tasainen penger x < -0.3, jyrkkä lasku veteen (olennot ja ritari ovat saman kuvan sisällä)
+  flat(scene, poly([[-60, -14], [-60, 0], [-0.3, 0.05], [0.1, -0.9], [0.8, -2.8], [1.6, -4.6], [60, -4.6], [60, -14]]), ink(C.black, { grad: [C.blue, -0.4, -3.6, 0.9] }), { z: 0 });
+  // haikaran portaat (kromaattinen nousu): neljä paalua, joista jokainen on edellistä korkeampi
+  const woodMat = ink(C.black, { shade: C.blue, raster: 0.3 });
+  const POSTS = [[3.9, -2.3], [4.45, -1.85], [5.0, -1.4], [5.55, -0.95]];
+  for (const [px, py] of POSTS) flat(scene, poly([[-0.12, -4.6], [-0.1, py], [0.1, py], [0.12, -4.6]]), woodMat, { x: px, y: 0, z: PZ + 0.1 });
+  // sammakoiden tukki penkereellä
+  flat(scene, poly([[-3.7, -0.1], [-3.7, 0.2], [-1.9, 0.12], [-1.9, -0.1]]), woodMat, { z: 0.03 });
+  const reedMat = ink(C.black);
+  const reed = (x, y0, h, lean, z) => flat(scene, poly([[x - 0.05, y0], [x + 0.05, y0], [x + lean + 0.01, y0 + h], [x + lean - 0.01, y0 + h]]), reedMat, { z });
+  for (let k = 0; k < 26; k++) reed(8.2 + k * 0.22 + 0.1 * hash1(k), 0, 1.6 + 1.8 * hash1(k + 1), 0.4 * (hash1(k + 2) - 0.5), 0.04);
+  for (let k = 0; k < 40; k++) reed(2.0 + k * 0.5 + 0.3 * hash1(k + 9), -4.6, 1.2 + 1.6 * hash1(k + 3), 0.5 * (hash1(k + 4) - 0.5), 0.1);
+  // Guntramin harppupuu
+  const tree = group(scene, { x: -6.5, y: 0, z: -0.6 });
+  const trunkPts = []; for (let i = 0; i <= 20; i++) { const u = i / 20; trunkPts.push([-0.6 * Math.sin(u * 2.4) + 0.3 * u, u * 6.4]); }
+  flat(tree, strokeGeo(trunkPts, (u) => 0.55 - 0.3 * u), ink(C.black), {});
+  const neckPts = []; for (let i = 0; i <= 24; i++) { const u = i / 24; neckPts.push([-0.4 + 4.8 * u, 6.3 + 0.9 * Math.sin(u * Math.PI) - 1.6 * u + 0.4 * Math.sin(u * Math.PI * 2)]); }
+  flat(tree, strokeGeo(neckPts, (u) => 0.32 - 0.18 * u), ink(C.black), {});
+  for (const s of deadTree(77, 0.9)) flat(tree, s, ink(C.black), { x: -0.3, y: 6.2, z: -0.01 });
+  flat(tree, strokeGeo([[-0.2, 2.9], [0.8, 3.15], [2.0, 3.4], [3.4, 3.7]], (u) => 0.16 - 0.08 * u), ink(C.black), { z: 0.02 });
+  const strings = [];
+  for (let k = 0; k < 10; k++) {
+    const u = 0.12 + k * 0.08;
+    const top = neckPts[Math.round(u * 24)];
+    const g = group(tree, { x: top[0], y: top[1], z: 0.01 });
+    flat(g, rect(0.022, 1.2 + 0.5 * hash1(k), 0.5, 1), ink(C.paper, { shade: C.blue, raster: 0.45 }), {});
+    strings.push({ g, k });
+  }
+
+  // --- muisto lammessa: aamun harjanne veden alla (peilikuva), ei kolmio eikä kartio ---
+  // Heijastus riippuu kaukorannan viivasta (y 0.25) alaspäin: harjanteen huippu osoittaa alas, aurinko sen takana,
+  // kahdeksan viiriä harjanteen alapuolella. Muoto = loc_valley.js:n tasanne ja rinteet (valleyRidge), x puristettuna.
+  const MY = 0.25, MCX = 4.3, MSX = 0.17, MSY = 0.42, MH0 = 1.4;
+  const mem = group(scene, { x: MCX, y: MY, z: PZ + 0.02 });
+  const mtnMat = ink(C.paper, { shade: C.blue, raster: 0.88 });      // takimmaiset vuoret (loc_valley.js: mid/far ridgePts)
+  const ridgeMat = ink(C.paper, { shade: C.blue, raster: 0.4 });     // pääharjanne (tasanne ja rinteet)
+  const rimMat = ink(C.black, {});
+  const sunMat = ink(C.red, { shade: C.black, raster: 0.25 });
+  const flagMat = ink(C.red, { shade: C.paper, raster: 0.2 });
+  const mastMat = ink(C.paper, { shade: C.blue, raster: 0.3 });
+  const rPts = [];
+  for (let x = -28; x <= 30.01; x += 0.5) rPts.push([x, Math.max(0.04, MH0 + valleyRidge(x))]);
+  const mPts = ridgePts(-45, 45, 5.5, 11, { lambda: 11, n: 240, offset: MH0 * 0.9 });
+  const sunG = group(mem, { x: 0.3, y: -1.9, z: -0.03 });
+  flat(sunG, circle(1.25, 40), sunMat, {});
+  const mtnG = group(mem, { z: -0.01 }); mtnG.scale.set(MSX, -MSY, 1);
+  flat(mtnG, poly([[-45, 0], ...mPts, [45, 0]]), mtnMat, {});
+  const ridgeG = group(mem, { z: 0.01 }); ridgeG.scale.set(MSX, -MSY, 1);
+  flat(ridgeG, poly([[-28, 0], ...rPts, [30, 0]]), ridgeMat, {});
+  flat(ridgeG, strokeGeo(rPts, 0.3), rimMat, { z: 0.01 });
+  const flagXs = Array.from({ length: 8 }, (_, k) => -10.5 + k * 3.0);
+  for (const x of flagXs) {
+    const y = MH0 + valleyRidge(x);
+    flat(ridgeG, rect(0.3, 2.4, 0.5, 0), mastMat, { x, y, z: 0.02 });
+    flat(ridgeG, poly([[x, y + 2.4], [x - 4.6, y + 1.95], [x, y + 1.5]]), flagMat, { z: 0.03 });
+  }
+  const memMats = [mtnMat, ridgeMat, rimMat, sunMat, flagMat, mastMat];
+  const setAppear = (mats, a) => { for (const m of mats) if (m.uniforms && m.uniforms.uAppear) m.uniforms.uAppear.value = a; };
+
+  // --- ritari ---
+  const L = leader(scene, {});
+  const HX = -4.3;       // harppupuun juuri
+  const HXS = -1.0;      // lammen ranta (polvistuminen)
+  const HXT = -5.6;      // selkä puuhun (piiritys)
+  const ridgeMates = Array.from({ length: 7 }, (_, i) => ({ P: knight(scene, { raster: 0.15 }), x: -1.5 + i * 2.3 }));
+
+  // --- soitinolennot (critters.js) ---
+  const Wc = common(S);
+  const env = { lows: Wc.lows, brass: Wc.smooth((t) => clamp(S.energy.brass(t)), 0.5), fl: Wc.smooth((t) => clamp(S.fam.winds(t) * 1.3), 0.5) };
+  const mosq = fluteMosquito(scene), duck = oboeDuck(scene), heron = cAnglaisHeron(scene);
+  const snails = [tubaSnail(scene), tubaSnail(scene)];
+  const frogs = [bassoonFrog(scene), bassoonFrog(scene)];
+  const crows = [tromboneCrow(scene), tromboneCrow(scene), tromboneCrow(scene)];
+  const mirror = knight(scene, { thin: true, body: C.black, limb: C.black, line: C.black, cape: C.black });   // Quijote-peili
+  const mirrorLance = flat(scene, poly([[-0.03, 0], [0.03, 0], [0.03, 3.6], [-0.03, 3.6]]), ink(C.black), { z: PZ + 0.02 });
+  const stab = flat(scene, poly([[0, 0], [0.12, 0.5], [0.5, 0.5], [0.2, 0.8], [0.34, 1.3], [0, 0.95], [-0.34, 1.3], [-0.2, 0.8], [-0.5, 0.5], [-0.12, 0.5]]), ink(C.black), { z: 0.9 });
+  const stamp = flat(scene, poly([[-1.1, 0.1], [-0.7, 0.9], [-0.1, 0.6], [0.4, 1.1], [0.9, 0.5], [1.2, -0.2], [0.5, -0.7], [-0.4, -0.5], [-0.9, -0.6]]), ink(C.black), { z: 0.9 });
+  const splash = flat(scene, poly([[-1.2, 0], [-0.9, 1.3], [-0.5, 0.4], [-0.2, 1.8], [0.1, 0.5], [0.5, 1.5], [0.8, 0.3], [1.2, 1.0], [1.2, 0]]), ink(C.paper), { x: 1.0, y: -1.5, z: PZ + 0.15 });
+  // tipat: jokaisesta olennosta seitsemän mustaa pisaraa, kun veto pyyhkäisee ohi
+  const dropMat = ink(C.black);
+  const mkDrops = () => Array.from({ length: 7 }, (_, k) => ({ m: flat(scene, circle(0.1 + 0.05 * hash1(k + 3), 12), dropMat, { z: 0.6 }), vx: (hash1(k + 11) - 0.3) * 1.6, vy: 0.6 + hash1(k + 21) * 1.2 }));
+  const CR = { mosq, duck, heron, sn0: snails[0], sn1: snails[1], fr0: frogs[0], fr1: frogs[1], cw0: crows[0], cw1: crows[1], cw2: crows[2] };
+  const drops = Object.fromEntries(Object.keys(CR).map((k) => [k, mkDrops()]));
+
+  // veto suon yli (wid_voitto): alkaa viirin kärjestä, päättyy suon oikeaan reunaan
+  const sweep = brushStroke(scene, 90, C.red, { wmin: 0.12, wmax: 0.75, hairW: 0.06, fs: 2.4, bleed: 0.06, dryLen: 0.2, lambda: 0.012, seed: 5, z: 0.8 });
+  // lautasten isku: yksi mustan musteen läiskä iskun ruudulla (kohtaloisku, koko z:stä)
+  const spl = splat(scene, 1, { color: C.black, life: 1.2 });
+  // englannintorven vääristys (tulkinta): haikara piirtää ritarin punaisen vedon mustina pisteinä
+  const dotMat = ink(C.black);
+  const dots = Array.from({ length: 14 }, () => flat(scene, circle(0.17, 14), dotMat, { z: 0.5 }));
+  const hitAge = (ta, life) => (t) => { const x = t - (ta - S.LEAD); return x >= -1e-6 && x < life ? x : -1; };
+  const hitStab = hitAge(tMos, 0.8), hitStamp = hitAge(tCrow, 1.6);
+
+  // soitinten nuottialut: eleet seuraavat oman soittimen fraaseja (S.onsetsIn), lisäksi kanavan verhokäyrä
+  const winOf = (...pairs) => ({ pairs, ons: pairs.flatMap(([a, b]) => S.onsetsIn(a, b)) });
+  const pulseEnv = (list, t, att = 0.12, dec = 0.6) => { let m = 0; for (const o of list) { const u = t - o; const v = u < -att ? 0 : u < 0 ? ease((u + att) / att) : Math.exp(-u / dec); if (v > m) m = v; } return m; };
+  const inWin = (w, t) => w.pairs.reduce((m, [a, b]) => Math.max(m, smoothstep(a - 0.3, a + 0.2, t) * (1 - smoothstep(b - 0.2, b + 0.8, t))), 0);
+  const WIN = {
+    mosq: winOf([tMos, tDuck], [tQ, tToad], [tRet, tR20]),
+    duck: winOf([tDuck, tQ], [tCrick, tMock], [tRet, tR20]),
+    heron: winOf([tQ, tToad], [tMock, tCrow], [tRet, tR20]),
+    snail: winOf([tToad, tCrick], [tCrow, tChor], [tRet, tSnap]),
+    frog: winOf([tMock, tCrow], [tR20, tSnap]),
+    crow: winOf([tCrow, tAns], [tRet, tR20]),
+  };
+  const act = (w, t, fam) => clamp(Math.max(pulseEnv(w.ons, t), 0.5 * fam(t)) * inWin(w, t));
+  const duty = (w, t) => 0.5 + 0.5 * Math.max(inWin(w, t), chor(t));   // vuorossa oleva täydessä värissä, muut rasterina
+  const chor = (t) => smoothstep(tChor - 0.5, tChor + 1, t) * (1 - smoothstep(tAns - 1, tAns + 2, t));   // kuoro: kaikki yhteen ääneen
+  const G = {
+    mosq: (t) => clamp(Math.max(act(WIN.mosq, t, env.fl), chor(t) * env.fl(t))),
+    duck: (t) => clamp(Math.max(act(WIN.duck, t, env.fl), chor(t) * env.fl(t))),
+    heron: (t) => clamp(Math.max(act(WIN.heron, t, env.fl), chor(t) * env.fl(t))),
+    snail: (t) => clamp(Math.max(act(WIN.snail, t, (u) => env.lows(u) * 1.6), chor(t) * env.lows(t))),
+    frog: (t) => clamp(Math.max(act(WIN.frog, t, (u) => env.lows(u) * 1.7), chor(t) * env.lows(t))),
+    crow: (t) => clamp(Math.max(act(WIN.crow, t, (u) => env.brass(u) * 1.8), chor(t) * env.brass(t))),
+  };
+
+  const present = (ta, t) => clamp(smoothstep(ta - 0.5, ta + S.LEAD, t));
+  const silent = (t) => smoothstep(tAns - 0.5, tAns + 3, t) * (1 - smoothstep(tRet - 0.5, tRet + 2, t));
+  const nightAway = (t) => smoothstep(tNight, fr(tNight, W2, 0.3), t) * (1 - smoothstep(tRet - 0.5, tRet + S.LEAD, t));
+  // veto: tippojen jälkeen olennot hajoavat (veto kulkee vasemmalta oikealle)
+  const sw0 = tVoit - S.LEAD, sw1 = fr(tVoit, END, 0.55);
+  const sweepP = (t) => clamp((t - sw0) / (sw1 - sw0));
+  const sweepX = (t, x0) => mix(x0, 17, ease(sweepP(t)));
+  const dissolve = (t, x) => smoothstep(x - 0.8, x + 1.2, sweepX(t, HX + 0.6)) * (t >= sw0 ? 1 : 0);
+  const vis = (ta, t) => present(ta, t) * (1 - 0.85 * silent(t)) * (1 - nightAway(t));
+  const visD = (ta, t, x) => vis(ta, t) * (1 - dissolve(t, x));
+
+  // --- paikat: kaikki olennot ritarin lähellä (≤ 8 yksikköä), mittakaava ritariin (2,0) nähden ---
+  const ST = { mosq: [HX + 1.7, 2.45], duck: [2.8, -2.0], heron: POSTS[0], mirror: [1.7, MY], snails: [[-1.3, 0.05], [-0.45, 0.05]], frogs: [[-3.05, 0.22], [-2.3, 0.2]], crows: [[-5.7, 3.85], [-4.6, 4.05], [-3.5, 4.25]] };
+  // piiritys (wid_uusi_hyokkays): asemat kutistuvat ritarin ympärille
+  const RING = { mosq: [HXT + 1.7, 2.9], duck: [-2.2, 0.35], heron: [-2.9, 0.1], snails: [[-3.4, 0.05], [-3.9, 0.05]], frogs: [[-3.0, 0.2], [-3.7, 0.2]], crows: [[-4.0, 3.5], [-3.1, 2.9], [-2.2, 3.5]] };
+  const SC = { mosq: 0.34, duck: 1.15, heron: 0.72, snail: 0.46, frog: 0.65, crow: 0.62 };
+  const ringK = (t) => ramp(tRet, fr(tRet, tR20, 0.8), t) * (1 - ramp(tSnap, tVoit, t));
+  const P2 = (a, b, k) => [mix(a[0], b[0], k), mix(a[1], b[1], k)];
+
+  // --- kamera: jokaisessa otossa ritari ja olento samassa rajauksessa ---
+  const HF = Math.tan((20 * Math.PI) / 180);   // puolikorkeus / etäisyys, kun fov 40
+  // frame(f, bot, d, hx): ritari (x = hx) on kuvan vaakaosuudella f, alareuna bot, etäisyys d
+  const frame = (f, bot, d, drift = 0.5, dx = 0.5, dy = 0.4, hx = HX) => {
+    const cx = hx + (0.5 - f) * 2 * d * HF * (16 / 9), cy = bot + d * HF;
+    return camPath([{ pos: [cx + dx, cy + dy, d], look: [cx, cy, 0], fov: 40 }, { pos: [cx + dx * 0.5, cy + dy, d - drift], look: [cx, cy + 0.05, 0], fov: 40 }]);
+  };
+  const wide = frame(0.4, -1.4, 13.5, 1.2, -0.6, 0.3);
+  const shots = [
+    { name: '2.1a laskeutuu suolle', a: A, b: tMos - S.LEAD, cam: wide },
+    { name: '2.1b pisto: hyttynen ja ritari', a: tMos - S.LEAD, b: tDuck - S.LEAD, cam: frame(0.62, -0.7, 5.6, 0.4, 0.5, 0.4) },
+    { name: '2.2a sorsa (oboe)', a: tDuck - S.LEAD, b: tQ - S.LEAD, cam: frame(0.3, -2.3, 7.6, 0.5) },
+    { name: '2.2b haikara (englannintorvi)', a: tQ - S.LEAD, b: tToad - S.LEAD, cam: frame(0.2, -3.0, 9.8, 0.6) },
+    { name: '2.2c kotilot (Dehring)', a: tToad - S.LEAD, b: tCrick - S.LEAD, cam: frame(0.3, -0.9, 5.8, 0.5, 0.4, 0.4) },
+    { name: '2.2d sorsa kiihtyy', a: tCrick - S.LEAD, b: tMock - S.LEAD, cam: frame(0.3, -2.3, 7.6, 0.5, -0.5, 0.5) },
+    { name: '2.2e peili ja sammakot', a: tMock - S.LEAD, b: tCrow - S.LEAD, cam: frame(0.28, -2.6, 7.6, 0.5, 0.5, 0.5) },
+    { name: '2.2f varikset harppupuussa', a: tCrow - S.LEAD, b: tChor - S.LEAD, cam: frame(0.4, -0.4, 7.6, 0.5, 0.6, 0.4) },
+    { name: '2.3 kuoro: sameus sakenee', a: tChor - S.LEAD, b: tAns - S.LEAD, cam: frame(0.28, -2.0, 10.0, 0.8, 0.4, 0.4) },
+    { name: '2.4a molli: kypärä alas', a: tAns - S.LEAD, b: tR16 - S.LEAD, cam: frame(0.5, -0.8, 4.6, 0.3, 0.8, 0.3, HX + 0.4) },
+    { name: '2.4b olennot kuuntelevat', a: tR16 - S.LEAD, b: tNight - S.LEAD, cam: frame(0.3, -2.0, 9.4, 0.8, -0.2, 0.4) },
+  ];
+  shots.push(
+    { name: '2.5a lampi: muisto nousee', a: tNight - S.LEAD, b: W2 - S.LEAD, cam: frame(0.2, -2.8, 8.6, 0.8, -0.6, 0.5, HXS) },
+    { name: '2.5b kasvot ja lampi', a: W2 - S.LEAD, b: W3 - S.LEAD, cam: frame(0.3, -1.6, 5.8, 0.6, -0.6, 0.4, HXS) },
+    { name: '2.5c tarttuu viiriin', a: W3 - S.LEAD, b: FADE - S.LEAD, cam: frame(0.34, -1.4, 6.6, 0.4, -0.6, 0.5, HXS) },
+    { name: '2.5d muisto häipyy, ritari kävelee puulle', a: FADE - S.LEAD, b: tRet - S.LEAD, cam: frame(0.5, -1.8, 10.0, 0.8, -0.2, 0.4, -3.3) },
+    { name: '2.6 piiritys', a: tRet - S.LEAD, b: tR20 - S.LEAD, cam: frame(0.3, -1.3, 8.4, 0.8, -0.4, 0.8, HXT) },
+    { name: '2.7 toverit harjanteella', a: tR20 - S.LEAD, b: tSnap - S.LEAD, cam: camPath([{ pos: [-8.6, 1.2, 8.5], look: [-0.5, 1.5, -2], fov: 46 }, { pos: [-8.0, 1.0, 7.8], look: [-0.2, 1.7, -2], fov: 46 }]) },
+    { name: '2.8a viiri pystyyn', a: tSnap - S.LEAD, b: tVoit - S.LEAD, cam: frame(0.42, -0.9, 9.6, 1.4, 1.2, 0.2, HXT) },
+    { name: '2.8b veto suon yli', a: tVoit - S.LEAD, b: END + 1, cam: camPath([{ pos: [-3.0, 0.3, 9.5], look: [-1.0, 1.8, 0], fov: 42 }, { pos: [0.5, 2.2, 15], look: [1.5, 1.8, 0], fov: 42 }, { pos: [2.0, 3.0, 21], look: [2.0, 1.8, 0], fov: 44 }]) },
+  );
+  shots.sort((a, b) => a.a - b.a);
+
+  // --- sankarin teko: pose ajan funktiona (ankkureiden osuuksia, ei kovakoodattuja sekunteja) ---
+  const kpose = (o) => ({ ...KP.sit, ...o });
+  const tWalk1 = fr(A, tMos, 0.85);                           // istuutuu, kun huilu on tulossa
+  const tSwat0 = fr(tMos, tDuck, 0.42), tSwat1 = fr(tMos, tDuck, 0.8);
+  const tTurn0 = fr(tDuck, tQ, 0.12), tTurn1 = fr(tDuck, tQ, 0.42);   // selkä sorsalle
+  const tBack0 = fr(tDuck, tQ, 0.78), tBack1 = fr(tQ, tToad, 0.5);    // takaisin, nousee puoliksi
+  const tEar0 = fr(tToad, tCrick, 0.1), tEar1 = fr(tToad, tCrick, 0.9);   // käsi korvalle
+  const tRiseM0 = fr(tCrick, tMock, 0.5), tRiseM1 = fr(tMock, tCrow, 0.45);   // katsoo peiliin
+  const tHide0 = fr(tCrow, tChor, 0.1), tHide1 = fr(tCrow, tChor, 0.9);      // viiri suojaan
+  const tTry1 = [fr(tChor, tAns, 0.1), fr(tChor, tAns, 0.28), fr(tChor, tAns, 0.46)];
+  const tTry2 = [fr(tChor, tAns, 0.54), fr(tChor, tAns, 0.66), fr(tChor, tAns, 0.8)];
+  const tK0 = fr(W1, W2, 0.4), tK1 = fr(W1, W2, 0.62);        // kävely rantaan ja polvistuminen
+  const tUp0 = FADE, tUp1 = fr(FADE, tRet, 0.3), tWk1 = fr(FADE, tRet, 0.92);
+  const tLook1 = fr(tR20, tSplash2, 0.85);
+
+  function heroState(t) {
+    let pose, x = HX, facing = 1, lanceAng = -0.38, width = 0.55;
+    const y = 0.05;
+    const sitTilt = -0.5 + 0.12 * Math.sin(t * 0.6);
+    const sitP = kpose({ tilt: sitTilt });
+    const kneelP = (tilt) => ({ ...KP.kneel, tilt });
+    const walkAt = (xx, x0, stride) => { const c = Math.abs(xx - x0) / stride; return POSES.kavely(c - Math.floor(c)); };
+    if (t < tMos) {
+      // laskeutuu suolle vasemmalta: kävely, istuutuu huilun tullessa
+      const w = ramp(A, tWalk1, t);
+      x = mix(HX - 0.9, HX, w);
+      const sitU = ramp(tWalk1, tMos, t);
+      pose = kmix(walkAt(x, HX - 0.9, 1.4), sitP, sitU);
+      lanceAng = mix(0.1, -0.38, sitU);
+    } else if (t < tTurn0) {
+      // huitaisu keihäällä: kyynärpää koukussa, ei suoraa kättä
+      const sw = bump(tSwat0, fr(tSwat0, tSwat1, 0.45), tSwat1, t);
+      pose = kmix(sitP, kpose({ aN: 1.5, eN: 1.5, tilt: 0.1, lean: 0.2 }), sw);
+      lanceAng = mix(-0.38, 1.25, sw);
+    } else if (t < tEar0) {
+      // sorsa: kääntää selkänsä (kapenee syrjäksi ja kääntyy vasemmalle); haikara: kääntyy takaisin ja nousee puoliksi
+      const away = ramp(tTurn0, tTurn1, t) * (1 - ramp(tBack0, tBack1, t));
+      facing = away > 0.5 ? -1 : 1;
+      pose = { ...kmix(sitP, kpose({ tilt: -0.75, lean: 0.4 }), away), sx: Math.max(0.12, Math.abs(1 - 2 * away)) };
+      const b = ramp(tBack0, tBack1, t);
+      pose = { ...kmix(pose, { ...kmix(KP.sit, KP.stand, 0.55), tilt: 0.25, lean: 0.22 }, 0.8 * b), sx: pose.sx };
+      lanceAng = mix(-0.38, -0.2, away);
+    } else if (t < tRiseM0) {
+      // Dehring: käsi korvalle, keihäs pystyssä pään vieressä
+      const e = bump(tEar0, fr(tEar0, tEar1, 0.2), tEar1, t);
+      pose = kmix(kpose({ tilt: -0.3, lean: 0.25 }), kpose({ aN: 2.5, eN: 2.45, tilt: -0.85, lean: 0.4 }), e);
+      lanceAng = mix(-0.25, 0.12, e);
+    } else if (t < tHide0) {
+      // peili: nousee puoliksi ja katsoo laihaa Quijotea
+      const m = ramp(tRiseM0, tRiseM1, t);
+      pose = kmix(kpose({ tilt: -0.3, lean: 0.25 }), kmix(KP.sit, { ...KP.look, hN: 1.2, kN: 1.5, hF: 1.1, kF: 1.6, lean: 0.12 }, 1), m);
+      lanceAng = mix(-0.25, -0.05, m);
+    } else if (t < tChor - S.LEAD) {
+      // varikset: viiri suojaan, keihäs kaatuu viistoon maahan, viiri kapenee
+      const h = ramp(tHide0, tHide1, t);
+      pose = kmix(kpose({ tilt: -0.3, lean: 0.25 }), kpose({ tilt: -0.9, lean: 0.5 }), h);
+      lanceAng = mix(-0.05, -1.9, h); width = mix(0.55, 0.25, h);
+    } else if (t < tAns - S.LEAD) {
+      // kuoro: yrittää nousta kahdesti ja painuu takaisin; viiri ei nouse
+      const b = Math.max(bump(tTry1[0], tTry1[1], tTry1[2], t), 0.7 * bump(tTry2[0], tTry2[1], tTry2[2], t));
+      pose = kmix(kpose({ tilt: -0.55, lean: 0.4 }), kmix(KP.sit, KP.plant, 1), b * 0.8);
+      pose.tilt = mix(-0.55, 0.1, b);
+      lanceAng = mix(-1.9, -0.6, b); width = mix(0.25, 0.4, b);
+    } else if (t < tR16) {
+      // molli: kypärä alas, keihäs maahan, viiri tummuu
+      const a = ramp(tAns - S.LEAD, fr(tAns, tR16, 0.5), t);
+      pose = kpose({ tilt: mix(-0.55, -0.95, a), lean: mix(0.4, 0.5, a) });
+      lanceAng = -1.9; width = mix(0.4, 0.55, a);
+    } else if (t < tNight) {
+      const br = 0.5 + 0.5 * Math.sin(t * 0.9);   // tumma viiri hengittää hitaasti
+      pose = kpose({ tilt: -0.95 + 0.05 * br, lean: 0.5 }); lanceAng = -1.9; width = 0.55 * (1 + 0.12 * br);
+    } else if (t < tUp0) {
+      // muisto: kävelee rantaan, polvistuu, nostaa päätään aalto aallolta, kolmannella tarttuu viiriin
+      const wk = ramp(tNight, tK0, t);
+      x = mix(HX, HXS, wk);
+      const head = mix(mix(-0.85, -0.45, ramp(W2, fr(W2, W3, 0.4), t)), 0.25, ramp(W3, fr(W3, FADE, 0.45), t));
+      const grab = ramp(W3, fr(W3, FADE, 0.5), t);
+      if (t < tK0) pose = kmix(kpose({ tilt: -0.95, lean: 0.5 }), walkAt(x, HX, 1.4), ramp(tNight, fr(tNight, tK0, 0.25), t) * (1 - ramp(fr(tNight, tK0, 0.85), tK0, t)));
+      else if (t < tK1) pose = kmix(walkAt(x, HX, 1.4), kneelP(-0.85), ramp(tK0, tK1, t));
+      else pose = kneelP(head);
+      pose = kmix(pose, { ...KP.kneel, tilt: head, aN: 1.2, eN: 0.7 }, grab * (t >= tK1 ? 1 : 0));
+      lanceAng = mix(-1.9, 0.08, grab); width = mix(0.55, 0.6, grab);
+    } else if (t < tRet) {
+      // nousee, kävelee puulle: selkä puuhun
+      const u = ramp(tUp0, tUp1, t), w = ramp(tUp1, tWk1, t);
+      x = mix(HXS, HXT, w);
+      pose = kmix(kmix(kneelP(0.25), KP.stand, u), kmix(walkAt(x, HXS, 1.5), KP.proud, ramp(tWk1, tRet, t)), w);
+      lanceAng = mix(0.08, 0.04, w);
+    } else if (t < tSnap - S.LEAD) {
+      x = HXT; lanceAng = 0.04;
+      if (t < tR20) pose = KP.proud;
+      else {
+        // kuulee toverinsa: katsoo harjanteelle, nostaa kellon ja vastaa (torvien verhokäyrä)
+        const lk = ramp(tR20, tLook1, t);
+        const hornUp = smoothstep(0.3, 0.75, S.energy.horns(t));
+        pose = kmix(kmix(KP.proud, KP.look, lk * 0.7), KP.call, ramp(tSplash2, tSnap, t) * (0.55 + 0.45 * hornUp));
+        lanceAng = 0.0;
+      }
+    } else if (t < tVoit - S.LEAD) {
+      // viiri pystyyn molemmin käsin, leimahtaa torvien tullessa
+      x = HXT;
+      const up = ramp(tSnap - S.LEAD, fr(tSnap, tVoit, 0.3), t);
+      pose = kmix(kmix(KP.proud, KP.call, 0.55), KP.lanceBoth, up);
+      lanceAng = 0.0;
+      width = 0.6 * (1 + 0.7 * smoothstep(0.3, 0.75, S.energy.horns(t)) * up);
+    } else {
+      // pyyhkäisy: keihäs kääntyy vaakaan eteen ja palaa
+      x = HXT;
+      const sw = bump(tVoit - S.LEAD, fr(tVoit, END, 0.25), fr(tVoit, END, 0.9), t);
+      pose = kmix(KP.lanceBoth, KP.plant, 0.5 * sw);
+      lanceAng = mix(0.0, 1.35, sw); width = 0.6 * (1 + 0.5 * (1 - sw));
+    }
+    if (pose.sx === undefined) pose = { ...pose, sx: 1 };
+    return { x, y, z: 0.1, facing, pose: { ...pose, mounted: false }, lanceAng: lanceAng * facing, width };
+  }
+    const windAt = (t) => ({ x: -(0.3 + 2.0 * S.energy.violins(t) + (t > tSnap ? 3 : 0)), y: -0.6 + 1.5 * S.energy.violins(t) + (t > tSnap ? 1.6 : 0) });
+
+  // muiston edistyminen aalloittain
+  const memWave = (t) => [1 - (1 - clamp((t - W1) / (fr(W1, W2, 0.55) - W1))) ** 2, ramp(W2, fr(W2, W3, 0.55), t), ramp(W3, fr(W3, FADE, 0.55), t)];
+  const memFade = (t) => 1 - ramp(FADE, tRet - 0.2, t);
+  const wvAt = (t) => 0.85 + 0.15 * clamp(S.fam.strings(t) * 1.5);
+
+  let wMax = 1e-6;
+  for (let t = tNight; t < tRet; t += 0.5) wMax = Math.max(wMax, S.loudSlow(t));
+  const wave = (t) => clamp(S.loudSlow(t) / wMax);
+
+  const st = {};   // viimeisin tila probea varten
+  function update(t) {
+    const u = SKY.u;
+    u.uTime.value = t;
+    const night = ramp(tNight, fr(tNight, W2, 0.35), t) * (1 - ramp(tRet, fr(tRet, tR20, 0.3), t));
+    const snap = smoothstep(tSnap - S.LEAD, tSnap + 2, t);
+    const evening = ramp(tVoit, END, t);
+    u.uBlueAmt.value = mix(0.5, 1.0, night) * (1 - 0.4 * evening);
+    u.uBlueH.value = mix(0.6, -0.2, night);
+    u.uRedAmt.value = mix(0.75, 0.05, night) + 0.5 * snap + 0.6 * evening;
+    u.uBlackTop.value = mix(0.3, 0.5, night) * (1 - 0.7 * evening);
+    const crit = [tMos, tDuck, tQ, tToad, tMock, tCrow].reduce((s, ta) => s + vis(ta, t), 0) / 6;
+    const chorus = chor(t);
+    // sameus: musta rasteriusva sakenee olentojen mukana ja väistyy voitossa
+    const murk = (0.15 + 0.5 * crit + 0.3 * chorus) * (1 - night) * (1 - 0.6 * snap) * (1 - dissolveAll(t));
+    u.uMurk.value = murk;
+    u.uMoon.value.set(60, 30, 14, 0);
+    u.uSun.value.w = 0;
+    u.uRays.value = 0;
+    // muisto lammessa
+    const [m1, m2, m3] = memWave(t);
+    const mf = memFade(t), wv = wvAt(t);
+    const memOn = t >= W1 ? 1 : 0;
+    setAppear([mtnMat, ridgeMat, rimMat], clamp(m1 * mf * wv));
+    setAppear([sunMat], clamp(m2 * mf * wv));
+    setAppear([flagMat, mastMat], clamp(m3 * mf * wv));
+    mem.visible = memOn > 0 && mf > 0.01;
+    pond.u.uTime.value = t;
+    pond.u.uGlint.value = 0.35 + 0.6 * S.fam.harp(t) + 0.4 * night;
+    pond.rings.forEach((r) => r.set(0, 0, -99, 0));
+    let rk = 0;
+    const hp = S.fam.harp(t);
+    strings.forEach((s) => { s.g.rotation.z = 0.04 * hp * Math.sin(t * 22 + s.k * 0.9); });
+    const hs = heroState(t);
+    L.place(t, heroState, windAt, { capeWind: 0.2 + S.energy.violins(t), width: hs.width });
+    // viirin leveys per ruutu (opts.width on kiinteä): sovelletaan banner-nauhaan skaalaamalla ei tarvita, leveys annetaan state:sta
+    const darkMinor = smoothstep(tAns - S.LEAD, tAns + 1.5, t);
+    const restore = t > tNight ? 0.6 * smoothstep(tNight, tRet, t) * (0.5 + 0.5 * wave(t)) : 0;
+    const dark = 0.55 * darkMinor * (1 - restore) * (1 - snap);
+    st.dark = dark;
+    for (const m of [L.P.M.body, L.P.M.tunic, L.bannerMat]) m.uniforms.uRaster.value = dark;
+    ridgeMates.forEach((m, i) => {
+      const gap = (tSplash2 - tR20) * 0.06, rise = (tSplash2 - tR20) * 0.34;
+      const r = smoothstep(tR20 - S.LEAD + i * gap, tR20 - S.LEAD + i * gap + rise, t);
+      m.P.root.visible = r > 0.01;
+      m.P.root.position.set(m.x, 0.8 - 2.6 * (1 - r), PZ - 0.4);
+      for (const mm of m.P.mats || []) if (mm.uniforms?.uRaster) mm.uniforms.uRaster.value = 0.5 * (1 - snap);
+      poseKnight(m.P, kmix(KP.proud, KP.call, smoothstep(0.3, 0.7, S.energy.horns(t))), t, 0.4);
+    });
+
+    const rg = ringK(t);
+    const gm = G.mosq(t), gd = G.duck(t), gh = G.heron(t), gs = G.snail(t), gf = G.frog(t), gc = G.crow(t);
+    st.gm = gm; st.gd = gd; st.gh = gh; st.gs = gs; st.gf = gf; st.gc = gc;
+    // dissolve-pisarat
+    const dropsFor = (key, cx, cy, d) => {
+      drops[key].forEach((p, k) => {
+        const a = d > 0.04 && d < 0.98;
+        p.m.visible = a;
+        if (a) {
+          const f = (d - 0.04) / 0.94;
+          p.m.position.set(cx + p.vx * f * 1.2, Math.max(-4.2, cy + 0.2 + p.vy * f - 3.2 * f * f), 0.6);
+          p.m.scale.setScalar(1 - 0.7 * f);
+        }
+      });
+    };
+    // huiluhyttynen: laskeutuu hitaasti, pistin ritariin, pisto ensimmäisellä äänellä
+    { const p = visD(tMos, t, ST.mosq[0]), dd = dissolve(t, ST.mosq[0]);
+      const swat = ramp(tSwat1, fr(tSwat1, tDuck, 1.0), t) * (1 - ramp(tRet - 3, tRet, t));
+      const sw = bump(tSwat0, fr(tSwat0, tSwat1, 0.45), tSwat1, t);
+      const hover = P2(ST.mosq, RING.mosq, rg);
+      const d = ease(smoothstep(tMos - 0.8, tMos + S.LEAD, t));
+      mosq.root.visible = p > 0.01; setAppear(mosq.mats, p * (1 - dd) * duty(WIN.mosq, t));
+      mosq.root.position.set(hover[0] + 0.15 * Math.sin(t * 0.8) + 2.2 * swat * (t < tRet - 3 ? 1 : 0), hover[1] + 1.8 * (1 - d) + 0.1 * Math.sin(t * 1.3) + 0.8 * swat * (t < tRet - 3 ? 1 : 0) - 0.15 * sw, 0.3);
+      mosq.root.scale.set(-SC.mosq, SC.mosq, 1);
+      mosq.pose(gm, t);
+      const f = Math.sin(t * Math.PI * 7);
+      mosq.wN.rotation.z = 0.5 * f * gm; mosq.wF.rotation.z = -0.5 * f * gm;   // siivet lyövät vain huilun soidessa
+      mosq.needle.position.x = 0.96 + 0.55 * gm;   // piikki = huilun kuvio
+      const hsd = hitStab(t);
+      stab.visible = hsd >= 0;
+      if (hsd >= 0) { stab.position.set(hover[0] - 0.9, hover[1] - 0.1, 0.9); stab.rotation.z = Math.PI * 0.55; stab.scale.setScalar(0.4 + 0.3 * Math.min(1, hsd / 0.1)); }
+      dropsFor('mosq', hover[0], hover[1], dd); }
+    // oboesorsa vedessä; wid_6:ssa kiihtyneenä
+    { const dd = dissolve(t, ST.duck[0]), p = visD(tDuck, t, ST.duck[0]), ex = smoothstep(tCrick - 0.5, tCrick + 1.5, t) * (1 - smoothstep(tMock - 0.5, tMock + 1, t));
+      const pos = P2(ST.duck, RING.duck, rg);
+      duck.root.visible = p > 0.01; setAppear(duck.mats, p * (1 - dd) * duty(WIN.duck, t));
+      duck.root.position.set(pos[0] + 0.12 * Math.sin(t * 0.3), pos[1] - 0.4 * (1 - present(tDuck, t)) + 0.03 * Math.sin(t * 1.7), PZ + 0.3 + (rg > 0.1 ? 3.9 : 0));
+      duck.root.scale.set(-SC.duck, SC.duck, 1);
+      duck.pose(clamp(gd * (1 + 0.5 * ex)));
+      duck.head.rotation.z += 0.18 * gd * Math.sin(t * 9) * ex;
+      if (rk < 16 && p > 0.5) pond.rings[rk++].set(pos[0], pos[1] + 0.05, tDuck, 0.5 + 0.5 * ex);
+      dropsFor('duck', pos[0], pos[1], dd); }
+    // englannintorvihaikara kävelee portaita ylös (kromaattinen nousu), sitten ff
+    { const dd = dissolve(t, POSTS[0][0]), p = visD(tQ, t, POSTS[0][0]);
+      const prog = clamp((t - tQ) / (tToad - tQ)) * 3;   // 0..3 askelta
+      const k = Math.min(2, Math.floor(prog)), w = prog - k;
+      const a = POSTS[k], b = POSTS[k + 1];
+      const hop = Math.sin(w * Math.PI) * 0.3;
+      const base = [mix(a[0], b[0], ease(w)), mix(a[1], b[1], ease(w)) + hop];
+      const rest = POSTS[Math.min(3, Math.floor(clamp((t - tQ) / (tToad - tQ)) * 3 + 0.0001) + (t >= tToad ? 1 : 0))];
+      const pos = t >= tToad ? [POSTS[3][0], POSTS[3][1]] : base;
+      const ringPos = P2(pos, RING.heron, rg);
+      heron.root.visible = p > 0.01; setAppear(heron.mats, p * (1 - dd) * duty(WIN.heron, t));
+      heron.root.position.set(ringPos[0], ringPos[1], PZ + 0.2 + (rg > 0.1 ? 3.9 : 0));
+      heron.root.scale.set(-SC.heron, SC.heron, 1);
+      heron.pose(gh, t, t >= tToad ? 0 : prog * 1.0);
+      void rest;
+      dropsFor('heron', ringPos[0], ringPos[1] + 1.2, dd); }
+    // Dehringin tuubakotilot: kellot kääntyvät hitaasti, ryömivät lähemmäs soidessaan
+    { const crawl = (i) => (1.5 - i * 0.2) * (Wc.lowsI(t) - Wc.lowsI(tToad)) * 0.05 * (1 - ramp(tRet, fr(tRet, tR20, 0.3), t)) * (t > tToad ? 1 : 0);
+      snails.forEach((s, i) => {
+        const dd = dissolve(t, ST.snails[i][0]), p = visD(tToad, t, ST.snails[i][0]);
+        const pos = P2([ST.snails[i][0] - Math.min(0.5, crawl(i)), ST.snails[i][1]], RING.snails[i], rg);
+        s.root.visible = p > 0.01; setAppear(s.mats, p * (1 - dd) * duty(WIN.snail, t));
+        s.root.position.set(pos[0], pos[1], 0.04);
+        s.root.scale.set(-SC.snail, SC.snail, 1);
+        s.pose(clamp(gs * (i ? 1.0 : 0.85)));
+        dropsFor(i ? 'sn1' : 'sn0', pos[0], pos[1] + 0.4, dd);
+      }); }
+    // Quijote-peili: sankarin heijastus venyy laihaksi lammen pintaan (veden alla)
+    { const q = smoothstep(tMock - 0.3, tMock + 0.8, t) * (1 - smoothstep(tCrow - 0.5, tCrow + 1.5, t)) * (1 - nightAway(t)) * (1 - dissolve(t, ST.mirror[0]));
+      mirror.root.visible = q > 0.01; mirrorLance.visible = q > 0.01;
+      setAppear(mirror.mats, q);
+      mirror.root.position.set(ST.mirror[0], ST.mirror[1], PZ + 0.3);
+      mirror.root.scale.set(-0.9, -1.35 * (1 + 0.3 * q), 1);
+      mirrorLance.position.set(ST.mirror[0] - 0.9, ST.mirror[1], PZ + 0.3);
+      mirrorLance.scale.y = -1;
+      poseKnight(mirror, kmix(KP.sit, { ...KP.call, tilt: 1.2, aN: 2.2, eN: 0.2, lean: -0.3 }, 0.5 * gh * q), t, 0); }
+    // fagottisammakot tukilla
+    { frogs.forEach((f, i) => {
+        const dd = dissolve(t, ST.frogs[i][0]), p = visD(tMock, t, ST.frogs[i][0]);
+        const pos = P2(ST.frogs[i], RING.frogs[i], rg);
+        f.root.visible = p > 0.01; setAppear(f.mats, p * (1 - dd) * duty(WIN.frog, t));
+        f.root.position.set(pos[0], pos[1] - 0.3 * (1 - present(tMock, t)), 0.05);
+        f.root.scale.set(i ? -SC.frog : SC.frog, SC.frog, 1);
+        f.pose(clamp(gf));
+        dropsFor(i ? 'fr1' : 'fr0', pos[0], pos[1] + 0.3, dd);
+      }); }
+    // pasuunavarikset laskeutuvat harppupuuhun; piirityksessä ritarin ympärille
+    { const land = ease(smoothstep(tCrow - 1.0, tCrow - S.LEAD, t));
+      crows.forEach((c, i) => {
+        const dd = dissolve(t, ST.crows[i][0]), p = visD(tCrow, t, ST.crows[i][0]);
+        const ang = t * 0.9 + i * 2.1;
+        const pos = P2(ST.crows[i], RING.crows[i], rg);
+        c.root.visible = p > 0.01 || (t > tCrow - 1.0 && t < tCrow); setAppear(c.mats, Math.max(p, land) * (1 - dd) * duty(WIN.crow, t));
+        c.root.position.set(pos[0] + 6 * (1 - land) + 0.3 * Math.cos(ang) * rg, pos[1] + 3 * (1 - land) + 0.25 * Math.sin(ang) * rg, -0.5 + (rg > 0.1 ? 0.8 : 0));
+        c.root.scale.set(SC.crow, SC.crow, 1);
+        c.pose(clamp(gc));
+        dropsFor('cw' + i, pos[0], pos[1], dd);
+      });
+      const hsd = hitStamp(t);
+      stamp.visible = hsd >= 0;
+      if (hsd >= 0) { stamp.position.set(-3.2, 5.0, 0.9); stamp.scale.setScalar(0.9 + 0.3 * Math.min(1, hsd / 0.1)); stamp.material.uniforms.uAppear.value = 1 - smoothstep(0.8, 1.6, hsd); } }
+    // wid_voitto: leveä punainen veto viirin kärjestä suon yli
+    { const sp = sweepP(t), show = t >= sw0 && t < END + 4;
+      sweep.mesh.visible = show && sp > 0.02;
+      if (sweep.mesh.visible) {
+        // alku: viirin kärjen oikea rata pyyhkäisyn huippuun (tPk), sitten veto jatkuu suon yli oikeaan reunaan
+        const tPk = fr(tVoit, END, 0.25), ARC = 12, NN = 40;
+        const pk = L.tipAt(tPk);
+        const pts = [];
+        for (let k = 0; k < NN; k++) {
+          if (k < ARC) { const q = L.tipAt(mix(sw0, tPk, k / (ARC - 1))); pts.push([q.x, q.y]); }
+          else { const f = (k - ARC + 1) / (NN - ARC); pts.push([pk.x + (17 - pk.x) * f, mix(pk.y, 1.6, smoothstep(0, 0.4, f)) - 1.4 * Math.sin(f * 2.2) + 0.4 * Math.sin(f * 9)]); }
+        }
+        const vis = ease(sp);
+        const n = Math.max(2, Math.round(vis * (NN - 1)) + 1);
+        sweep.set(pts.slice(0, n), 0.85, 1);
+      } }
+    spl.set(t, [{ t: tSplash2, x: 0.4, y: -1.2, s: 3.0, z: 6, z0: PZ + 0.5 }], S.LEAD);
+    { const q = smoothstep(tMock, fr(tMock, tCrow, 0.7), t) * (1 - smoothstep(fr(tMock, tCrow, 0.9), tCrow, t));
+      const hp = heron.root.position, tip = L.tipAt(t);
+      dots.forEach((d, k) => {
+        const f = (k + 1) / dots.length * q;
+        d.visible = q > 0.02 && k / dots.length < q;
+        const ox = hp[0] === undefined ? hp.x : hp.x;
+        d.position.set(ox - 0.9 - f * 4.0, hp.y + 1.4 + 0.5 * Math.sin(f * 9 + k) + 0.4 * f, 0.5);
+        d.scale.setScalar(1.3 + 0.4 * Math.sin(k));
+      });
+      void tip; }
+    // lautasten roiske lammessa: yhden elementin teko ruutua ennen ääntä
+    { const best = t - (tSplash2 - S.LEAD);
+      splash.visible = best >= -1e-6 && best < 0.7;
+      splash.scale.set(1 + best * 1.5, clamp(1 - best / 0.7) * 1.6, 1);
+      if (t > tSplash2 - S.LEAD && t - tSplash2 < 3 && rk < 16) pond.rings[rk++].set(1.0, -1.5, tSplash2, 1.8); }
+    st.hs = hs; st.mf = mf; st.m = [m1, m2, m3]; st.murk = murk; st.rg = rg;
+    const dim = 0.12 + 0.28 * night - 0.12 * snap + 0.14 * murk;
+    return { dim: clamp(dim, 0, 0.7), wind: 0.3 };
+  }
+  // koko veto on ohittanut kaikki (sameus väistyy)
+  function dissolveAll(t) { return dissolve(t, 3.0); }
+
+  // opastarkistus: olennot, ritarin teko, lampi ja muisto, sameus
+  const probe = (t) => {
+    const hs = heroState(t);
+    const tip = L.tipAt(t);
+    const [m1, m2, m3] = memWave(t);
+    const act = {
+      mosq: vis(tMos, t) > 0.05 ? G.mosq(t) : 0, duck: vis(tDuck, t) > 0.05 ? G.duck(t) : 0, heron: vis(tQ, t) > 0.05 ? G.heron(t) : 0,
+      snail: vis(tToad, t) > 0.05 ? G.snail(t) : 0, frog: vis(tMock, t) > 0.05 ? G.frog(t) : 0, crow: vis(tCrow, t) > 0.05 ? G.crow(t) : 0,
+    };
+    const hsd = hitStab(t), hst = hitStamp(t);
+    return {
+      mosq_ele: act.mosq, sorsa_ele: act.duck, haikara_ele: act.heron, kotilo_ele: act.snail, sammakko_ele: act.frog, varis_ele: act.crow,
+      puupuhallin_olennot: Math.max(act.mosq, act.duck, act.heron, act.frog), vaski_olennot: Math.max(act.snail, act.crow),
+      olennot: act.mosq + act.duck + act.heron + act.snail + act.frog + act.crow,
+      olento_nakyy: [mosq.root, duck.root, heron.root, snails[0].root, frogs[0].root, crows[0].root].filter((o) => o.visible).length,
+      pisto: hsd >= 0 ? 1 : 0, tahra: hst >= 0 ? 1 : 0,
+      sorsa_nokka: act.duck, haikara_askel: clamp((t - tQ) / (tToad - tQ)) * (t < tToad ? 1 : 0) + (t >= tToad ? 1 : 0),
+      peili: smoothstep(tMock - 0.3, tMock + 0.8, t) * (1 - smoothstep(tCrow - 0.5, tCrow + 1.5, t)),
+      sameus: st.murk ?? 0, piiritys: ringK(t), viiri_tumma: st.dark ?? 0,
+      viirikarki_y: tip ? tip.y : 0, viirikarki_x: tip ? tip.x : 0,
+      viiri_leveys: hs.width,
+      ritari_x: hs.x, ritari_suunta: hs.facing, ritari_tilt: hs.pose.tilt, ritari_lanceAng: hs.lanceAng ?? 0,
+      ritari_kallistus: hs.pose.tilt, ritari_polvella: hs.pose.hN > 1.3 ? 1 : 0,
+      muisto: Math.max(m1, 0) * (memFade(t)), muisto_aalto1: m1, muisto_aalto2: m2, muisto_aalto3: m3,
+      heijastus_y: mem.visible ? MY : null, heijastus_veden_alla: mem.visible ? 1 : 0,
+      toverit_n: ridgeMates.filter((m) => m.P.root.visible).length,
+      roiske: (() => { const b = t - (tSplash2 - S.LEAD); return b >= -1e-6 && b < 0.7 ? 1 + b : 0; })(),
+      veto: sweepP(t),
+    };
+  };
+  return { scene, update, shots, probe };
+}

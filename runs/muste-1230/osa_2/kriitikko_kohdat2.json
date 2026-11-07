@@ -1,0 +1,34 @@
+[
+ {
+  "id": "C4",
+  "otsikko": "Suo ja olennot",
+  "t0": 243.0,
+  "t1": 330.0,
+  "fps": 0.5,
+  "piti_nakya": "Huiluhyttynen, oboesorsa, englannintorvihaikara, tuubakotilot, fagottisammakot, pasuunavarikset: soitinten muotoisia, yhtenäinen mittakaava suhteessa ritariin, lähikuvissa ritarin kanssa, peili veden alla eikä hahmon päällä. Viivanpaksuus ja kontrasti riittävät, jotta olento lukeutuu 1280 px leveästä kuvasta."
+ },
+ {
+  "id": "C6",
+  "otsikko": "Muisto lammessa",
+  "t0": 330.0,
+  "t1": 410.0,
+  "fps": 0.5,
+  "piti_nakya": "Tyynen lammen pinnassa aamun auringonnousu ylösalaisin: harjanteen oikea muoto, ei käännetty kolmio/kartio. Kasvaa aalto aallolta; ritari nostaa päätään; olennot väistyvät reunoille."
+ },
+ {
+  "id": "C6a",
+  "otsikko": "Muisto lammessa, alku (wid_reh17 -> aalto 3)",
+  "t0": 303.0,
+  "t1": 333.0,
+  "fps": 1.0,
+  "piti_nakya": "Aamun harjanne (musta reuna, usvakaistat, vuoret) nousee veden alle ylösalaisin ensimmäisillä kahdella jousiaallolla; ritari kävelee rantaan, polvistuu ja alkaa nostaa päätään."
+ },
+ {
+  "id": "C6b",
+  "otsikko": "Muisto lammessa, aurinko ja viirit (aallot 3-5)",
+  "t0": 333.0,
+  "t1": 369.0,
+  "fps": 1.0,
+  "piti_nakya": "Aurinko laskeutuu peilissä vuorten alle, sitten viirit riippuvat harjanteen reunasta; ritari tarttuu viiriin, kuva häipyy ja ritari nousee."
+ }
+]

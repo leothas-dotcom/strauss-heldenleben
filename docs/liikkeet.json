@@ -1,0 +1,18 @@
+[
+  {"id": "L_huippu_pilvet", "otsikko": "Huippu: pilvet avautuvat auringon edestä (yksi avautuminen)", "t0": 226.0, "t1": 234.2, "crop": "0,0,1920,620", "mode": "cover", "thr": 110, "odotus": "1"},
+  {"id": "L_huippu_aurinko", "otsikko": "Huippu: aurinko tulee esiin pilvien takaa (ei häivytystä + liikettä erikseen)", "t0": 228.0, "t1": 234.2, "crop": "0,0,1920,700", "mode": "red-y", "odotus": "1"},
+  {"id": "L_huippu_sadekeha", "otsikko": "Tablo: sädekehä syttyy soinnun mukana", "t0": 234.3, "t1": 239.3, "crop": "560,300,800,500", "mode": "luma", "odotus": "1 (sammuu dom7:ssä)"},
+  {"id": "L_alku_aurinko", "otsikko": "Alku: aurinko nousee harjanteen takaa", "t0": 26.0, "t1": 46.0, "crop": "0,0,1920,560", "mode": "red-y", "odotus": "1"},
+  {"id": "L_alku_taivas", "otsikko": "Alku: taivas valkenee yöstä aamuun", "t0": 8.0, "t1": 46.0, "crop": "0,0,1920,400", "mode": "luma", "odotus": "1 (tai teema/viulut/vasket: enintään 3 selvää vaihetta, ei pysähdyksiä)"},
+  {"id": "L_kellot", "otsikko": "Kahdeksan nostaa kellot soittoasentoon", "t0": 39.0, "t1": 47.0, "crop": "0,500,1920,400", "mode": "red-y", "odotus": "1"},
+  {"id": "L_portaat", "otsikko": "Viirien portaat avautuvat aksenteissa", "t0": 153.0, "t1": 160.0, "crop": "0,0,1920,700", "mode": "red-y", "odotus": "iskuittain (154,54 / 154,66 / 155,67)"},
+  {"id": "L_nousu_huipulle", "otsikko": "Nosturi huipulle: kamera ja joukko nousevat", "t0": 229.0, "t1": 234.1, "crop": "0,0,1920,1080", "mode": "dark-y", "thr": 60, "odotus": "1"},
+  {"id": "L_viiva_saapuu", "otsikko": "Viiva saapuu iltataivaalle", "t0": 422.0, "t1": 436.0, "crop": "0,0,1920,600", "mode": "cover", "thr": 170, "odotus": "1 (viulun fraasi)"},
+  {"id": "L_vene_liukuu", "otsikko": "Vene liukuu joelle", "t0": 802.0, "t1": 815.5, "crop": "0,400,1920,500", "mode": "red-x", "odotus": "1"},
+  {"id": "L_vyo", "otsikko": "Viiva kietoutuu ritarin ympärille huipussa", "t0": 948.0, "t1": 960.0, "crop": "560,200,800,700", "mode": "cover", "thr": 170, "odotus": "1"},
+  {"id": "L_yo_kuivuu", "otsikko": "Yö kuivuu paperiksi", "t0": 1104.0, "t1": 1112.0, "crop": "0,0,1920,1080", "mode": "luma", "odotus": "1"},
+  {"id": "L_luonnos", "otsikko": "Luonnos piirtyy paperille", "t0": 1110.0, "t1": 1126.0, "crop": "0,0,1920,1080", "mode": "cover", "thr": 120, "odotus": "1 (laskee: paperi täyttyy)"},
+  {"id": "L_ratsaille", "otsikko": "Ritari nousee ratsaille", "t0": 1143.0, "t1": 1150.0, "crop": "400,200,1120,700", "mode": "red-y", "odotus": "1"},
+  {"id": "L_kentta_levyksi", "otsikko": "Kenttä kuivuu paperille ja ura kiertyy levyksi", "t0": 1221.0, "t1": 1238.0, "crop": "0,0,1920,1080", "mode": "luma", "odotus": "1-2 (kuivuminen, sitten ura)"},
+  {"id": "L_muisto_lampi", "otsikko": "Muisto lammessa kasvaa aalto aallolta (tarkoitettu askelittain)", "t0": 312.0, "t1": 362.0, "crop": "960,500,960,500", "mode": "cover", "thr": 150, "odotus": "iskuittain (5 jousipohjaa)"}
+]

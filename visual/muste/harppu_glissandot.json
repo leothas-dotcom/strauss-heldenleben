@@ -1,0 +1,16 @@
+{
+  "_ohje": "Harpun glissandot rakkauskohtauksessa (B10/B11, kierros 3, 31.10.2026). PANNs-harppukanava on kuollut (kuvakasikirjoitus.md), joten ajat tulevat partituurista ja mitatuista tahdeista: tahdin alut = beats.json (build/A2, build/A3) mitatut iskut, joista ensimmäinen on gef_rakkaus-tutti-isku (802,32; teemakartan ankkuri 802,0, mitattu ehdotus 802,3). Iskun paikka tahdissa luetaan partituurista (build/partituuri/s049.png, harjoitusnumero 37, Ges-duuri, 4/4, 2 harppua ff glissando alas). Aika = tahdin alku + (isku - 1) * tahdin pituus / 4. Spektrogrammi (runs/muste-1230/kierros3/) tukee: laskeva viuhka 813,6-814,7 s ja porras 809,3-809,9 s. Partituurissa ei ole muita glissandoja ennen gef_hiljaisuutta (sivut 50-60: harppujen arpeggiot ja soinnut, ei glissandoja).",
+  "tahdit": [802.32, 806.08, 809.88, 813.64, 817.74],
+  "tahtien_lahde": "beats.json: 802.32, 806.08 (A2/A3), 809.88/809.90, 813.64, 817.74",
+  "sointu": [{ "tahti": 0, "isku": 1, "harppu": "I", "dyn": "ff", "huom": "sointu tutti-iskussa" }],
+  "glissandot": [
+    { "tahti": 0, "alku": 2.75, "loppu": 5.0, "harppu": "I+II", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 1, "alku": 1.0, "loppu": 3.0, "harppu": "I", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 1, "alku": 2.0, "loppu": 5.0, "harppu": "II", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 2, "alku": 1.0, "loppu": 3.0, "harppu": "I", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 2, "alku": 2.0, "loppu": 5.0, "harppu": "II", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 3, "alku": 1.0, "loppu": 2.5, "harppu": "I", "suunta": "alas", "dyn": "ff" },
+    { "tahti": 3, "alku": 1.25, "loppu": 3.25, "harppu": "II", "suunta": "alas", "dyn": "dim" },
+    { "tahti": 3, "alku": 3.0, "loppu": 5.0, "harppu": "I", "suunta": "alas", "dyn": "dim" }
+  ]
+}

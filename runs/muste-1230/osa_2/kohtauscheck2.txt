@@ -1,0 +1,3 @@
+kerrosalueita verrattu 28 kertaa (keskimäärin 0.1 kerrosta ruudulla)
+
+tarkistettu 376 ruutua (15 ruudun välein), tyhjää taustaa 0 ruudussa, kerrosreunan ylityksiä 0 ruudussa

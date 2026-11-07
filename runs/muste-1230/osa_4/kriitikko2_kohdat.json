@@ -1,0 +1,50 @@
+[
+  {
+    "id": "A8_alkupaa",
+    "otsikko": "Siirtymä 3 -> 4, taistelukentän alku (osan renderin alku)",
+    "t0": 1126.0,
+    "t1": 1133.0,
+    "fps": 2,
+    "piti_nakya": "Taistelukenttä on painunut luonnoksen päälle selkeänä kuvana: ritari, hevonen, horisontti ja kolme viiriä (musta, valkoinen, punainen). Ei puoliksi haalistunutta välivaihetta, ei väärää kohtausta. Jaksokortti IV näkyy, kun kenttä on jo painunut."
+  },
+  {
+    "id": "A11_vyo",
+    "otsikko": "Sankarin vyö ja viulun teemat taistelussa",
+    "t0": 1126.0,
+    "t1": 1224.0,
+    "fps": 0.5,
+    "piti_nakya": "Ritarilla on kumppanin valkoinen viiva kietoutuneena (vyö olkapäältä lanteelle, vapaa pää tuulessa). Kun viulut soivat (noin 1144-1158 s ja useissa kohdissa 1171-1222 s) viiva leimahtaa ja laajenee; kun viulut vaikenevat, se painuu kehoon. Taivaalla ei ole erillistä kumppanin viivaa."
+  },
+  {
+    "id": "C8_eleet",
+    "otsikko": "Taistelu: viirin lyönti, ritari luettavana",
+    "t0": 1176.0,
+    "t1": 1224.0,
+    "fps": 1,
+    "piti_nakya": "Ritari pysyy luettavana yhdellä silmäyksellä (läiskät ja pyörteet eri syvyydessä ja hevosen sekä keihään edessä, eivät ritarin päällä). Viirin lyönti on kaari, viiri tekee iskun; käsivarsi on koukussa eikä suora viistosti ylös eteen (ei natsitervehdystä muistuttavaa elettä)."
+  },
+  {
+    "id": "C8_iskut",
+    "otsikko": "Taistelun iskut: salamat ja läiskät (1174-1181 s)",
+    "t0": 1174.0,
+    "t1": 1181.0,
+    "fps": 8,
+    "piti_nakya": "Salama on paperinvalkoinen siksak mustalla ääriviivalla (paperin leikkaus), ei pelkkä musta piikki; läiskä on musta roiske olennon kuolinpaikalla. Isku on yhden elementin teko; ritari ja kamera jatkavat liikettään."
+  },
+  {
+    "id": "C8_levy",
+    "otsikko": "Kenttä kiertyy levyksi (wal_puolenvaihto -> loppu)",
+    "t0": 1222.0,
+    "t1": 1240.0,
+    "fps": 2,
+    "piti_nakya": "Kenttä kuivuu rasteriksi paperille ja levyn ura kiertyy ulkoreunalta sisäänpäin vähitellen; ei leikkausta levyyn."
+  },
+  {
+    "id": "Nousu_ratsaille",
+    "otsikko": "Ratsaille nousu (wal_vastaus, 1145 s)",
+    "t0": 1143.0,
+    "t1": 1150.0,
+    "fps": 4,
+    "piti_nakya": "Ritari nousee ratsaille yhtenä jatkuvana liikkeenä fraasin mitalta; lantion korkeus ei hyppää yhdessä ruudussa."
+  }
+]

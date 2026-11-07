@@ -1,0 +1,365 @@
+koot 240.00 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 240.50 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 241.00 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 241.50 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 242.00 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 242.50 F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä: hyttynen 3.686x1.5507, sorsa 2.2516x1.3525, haikara 2.3184x3.677, kotilo1 2.4864x2.4314, kotilo2 2.4864x2.4314, sammakko1 2.8673x1.8903, sammakko2 2.8673x1.8903, varis1 2.6887x1.4778, varis2 2.6887x1.4778, varis3 2.6887x1.4778, ritari_paa 0.6948x0.8249, ritari 1.0641x2.5549
+koot 243.00 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.2986x0.1278, ritari_paa 0.861x0.7556, ritari 1.6637x1.9788
+koot 243.50 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.3494x0.1474, ritari_paa 0.8605x0.7567, ritari 1.6632x1.9807
+koot 244.00 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.3649x0.1334, ritari_paa 0.86x0.7578, ritari 1.6605x1.9835
+koot 244.50 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.3723x0.1569, ritari_paa 0.7457x0.8467, ritari 1.3724x2.1458
+koot 245.00 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.1974x0.1447, ritari_paa 0.7653x0.8498, ritari 1.4259x2.1368
+koot 245.50 G suo/2.1b pisto: hyttynen ja ritari: hyttynen 0.3277x0.157, sorsa 1.0527x0.6323, ritari_paa 0.8655x0.7411, ritari 1.6647x1.956
+koot 246.00 G suo/2.2a sorsa (oboe): hyttynen 0.3267x0.1374, sorsa 1.0487x0.6348, ritari_paa 0.8673x0.7254, ritari 1.6701x1.9309
+koot 246.50 G suo/2.2a sorsa (oboe): sorsa 1.0369x0.6431, ritari_paa 0.8671x0.7135, ritari 1.6703x1.9138
+koot 247.00 G suo/2.2a sorsa (oboe): sorsa 1.0339x0.6401, ritari_paa 0.212x0.6662, ritari 0.4154x1.8445
+koot 247.50 G suo/2.2a sorsa (oboe): sorsa 1.0321x0.6403, ritari_paa 0.7873x0.5985, ritari 1.5974x1.7527
+koot 248.00 G suo/2.2a sorsa (oboe): sorsa 1.0336x0.6418, ritari_paa 0.8302x0.5956, ritari 1.6873x1.7489
+koot 248.50 G suo/2.2a sorsa (oboe): sorsa 1.0376x0.6438, ritari_paa 0.8302x0.5956, ritari 1.6873x1.7489
+koot 249.00 G suo/2.2a sorsa (oboe): sorsa 1.0414x0.647, ritari_paa 0.8302x0.5956, ritari 1.6873x1.7489
+koot 249.50 G suo/2.2a sorsa (oboe): sorsa 1.0444x0.6499, haikara 1.0529x1.3716, ritari_paa 0.7432x0.6257, ritari 1.4883x1.8071
+koot 250.00 G suo/2.2b haikara (englannintorvi): sorsa 1.0459x0.6511, haikara 1.0279x1.3804, ritari_paa 0.1029x0.7617, ritari 0.1974x2.1336
+koot 250.50 G suo/2.2b haikara (englannintorvi): sorsa 1.0444x0.6502, haikara 0.931x1.4332, ritari_paa 0.584x0.8495, ritari 1.1138x2.3827
+koot 251.00 G suo/2.2b haikara (englannintorvi): sorsa 1.04x0.6471, haikara 0.8871x1.4462, ritari_paa 0.7428x0.8458, ritari 1.4001x2.4232
+koot 251.50 G suo/2.2b haikara (englannintorvi): sorsa 1.0339x0.6419, haikara 0.8817x1.431, ritari_paa 0.7585x0.8493, ritari 1.4283x2.3841
+koot 252.00 G suo/2.2c kotilot (Dehring): sorsa 1.0273x0.6362, haikara 0.8758x1.412, kotilo1 0.7064x0.7177, ritari_paa 0.789x0.8374, ritari 1.505x2.2144
+koot 252.50 G suo/2.2c kotilot (Dehring): sorsa 1.0206x0.6321, haikara 0.87x1.3973, kotilo1 0.7495x0.7454, kotilo2 0.7531x0.744, ritari_paa 0.8257x0.8113, ritari 1.5408x2.0773
+koot 253.00 G suo/2.2c kotilot (Dehring): sorsa 1.0155x0.6295, haikara 0.8658x1.4066, kotilo1 0.7804x0.7623, kotilo2 0.7818x0.7606, ritari_paa 0.8465x0.7847, ritari 1.5763x2.0386
+koot 253.50 G suo/2.2c kotilot (Dehring): sorsa 1.0146x0.6276, haikara 0.8647x1.3793, kotilo1 0.6323x0.6257, kotilo2 0.7963x0.7591, ritari_paa 0.8305x0.5962, ritari 1.6694x1.7569
+koot 254.00 G suo/2.2c kotilot (Dehring): sorsa 1.0174x0.6282, haikara 0.8669x1.4044, kotilo1 0.6308x0.6174, kotilo2 0.7891x0.775, ritari_paa 0.8011x0.5407, ritari 1.6655x1.6872
+koot 254.50 G suo/2.2c kotilot (Dehring): sorsa 1.0228x0.6329, haikara 0.8718x1.4146, kotilo1 0.6195x0.6214, kotilo2 0.7658x0.7665, ritari_paa 0.8072x0.5515, ritari 1.6668x1.7004
+koot 255.00 G suo/2.2c kotilot (Dehring): sorsa 1.0303x0.6398, haikara 0.8786x1.4295, kotilo1 0.6028x0.6143, kotilo2 0.7351x0.7463, ritari_paa 0.8257x0.5864, ritari 1.6692x1.7443
+koot 255.50 G suo/2.2c kotilot (Dehring): sorsa 1.0388x0.6464, haikara 0.8861x1.444, kotilo1 0.5853x0.5986, kotilo2 0.7092x0.7242, ritari_paa 0.8499x0.6413, ritari 1.6667x1.8167
+koot 256.00 G suo/2.2c kotilot (Dehring): sorsa 1.0464x0.6515, haikara 0.8927x1.4551, kotilo1 0.5698x0.5833, kotilo2 0.6876x0.7047, ritari_paa 0.8657x0.6998, ritari 1.6509x1.9009
+koot 256.50 G suo/2.2c kotilot (Dehring): sorsa 1.0516x0.6547, haikara 0.8971x1.4623, kotilo1 0.5568x0.5726, kotilo2 0.6669x0.6875, ritari_paa 0.8645x0.7456, ritari 1.6201x1.9768
+koot 257.00 G suo/2.2c kotilot (Dehring): sorsa 1.0545x0.6565, haikara 0.8995x1.4664, kotilo1 0.5462x0.5645, kotilo2 0.6486x0.6726, ritari_paa 0.85x0.7784, ritari 1.5831x2.0308
+koot 257.50 G suo/2.2c kotilot (Dehring): sorsa 1.0559x0.6574, haikara 0.9007x1.4683, kotilo1 0.5376x0.5569, kotilo2 0.6384x0.6608, ritari_paa 0.8345x0.8018, ritari 1.5545x2.0604
+koot 258.00 G suo/2.2c kotilot (Dehring): sorsa 1.0562x0.6575, haikara 0.901x1.4687, kotilo1 0.5305x0.55, kotilo2 0.63x0.6515, ritari_paa 0.8276x0.8094, ritari 1.5429x2.0705
+koot 258.50 G suo/2.2c kotilot (Dehring): sorsa 1.0554x0.6571, haikara 0.9003x1.4676, kotilo1 0.5244x0.5441, kotilo2 0.6228x0.6434, ritari_paa 0.8271x0.8099, ritari 1.5421x2.0712
+koot 259.00 G suo/2.2d sorsa kiihtyy: sorsa 1.0529x0.6555, haikara 0.8982x1.4642, kotilo1 0.5189x0.5408, kotilo2 0.6162x0.6342, ritari_paa 0.8271x0.8099, ritari 1.5421x2.0712
+koot 259.50 G suo/2.2d sorsa kiihtyy: sorsa 1.0474x0.6521, haikara 0.8935x1.4565, kotilo1 0.5109x0.5394, kotilo2 0.628x0.6272, ritari_paa 0.8271x0.8099, ritari 1.5421x2.0712
+koot 260.00 G suo/2.2d sorsa kiihtyy: sorsa 1.0368x0.6455, haikara 0.8845x1.4417, kotilo1 0.5113x0.5363, kotilo2 0.6255x0.6062, ritari_paa 0.8271x0.8099, ritari 1.5421x2.0712
+koot 260.50 G suo/2.2d sorsa kiihtyy: sorsa 1.0199x0.635, haikara 0.8703x1.4176, kotilo1 0.6275x0.6068, kotilo2 0.6278x0.6091, ritari_paa 0.8271x0.8099, ritari 1.5421x2.0712
+koot 261.00 G suo/2.2d sorsa kiihtyy: sorsa 0.9971x0.6208, haikara 0.8515x1.3835, kotilo1 0.6351x0.6162, kotilo2 0.6349x0.6146, ritari_paa 0.8177x0.8182, ritari 1.53x2.0869
+koot 261.50 G suo/2.2d sorsa kiihtyy: sorsa 1.0843x0.708, haikara 0.8303x1.3434, kotilo1 0.6501x0.6293, ritari_paa 0.7826x0.8452, ritari 1.4591x2.1535
+koot 262.00 G suo/2.2e peili ja sammakot: sorsa 0.8445x0.8886, haikara 0.811x1.3067, ritari_paa 0.7159x0.8354, ritari 1.3151x2.2201
+koot 262.50 G suo/2.2e peili ja sammakot: sorsa 0.832x0.8754, haikara 0.7992x1.2835, sammakko1 0.4457x0.2284, ritari_paa 0.5854x0.8148, ritari 1.2381x2.2265
+koot 263.00 G suo/2.2e peili ja sammakot: haikara 0.7993x1.2821, sammakko1 0.3145x0.2925, sammakko2 0.455x0.2589, ritari_paa 0.6004x0.8325, ritari 1.2257x2.2576
+koot 263.50 G suo/2.2e peili ja sammakot: haikara 0.8115x1.3056, sammakko1 0.5312x0.3085, sammakko2 0.4614x0.3635, ritari_paa 0.6253x0.8435, ritari 1.2221x2.273
+koot 264.00 G suo/2.2e peili ja sammakot: haikara 0.8314x1.346, sammakko1 0.5436x0.3163, sammakko2 0.462x0.3885, ritari_paa 0.6254x0.8436, ritari 1.2221x2.273
+koot 264.50 G suo/2.2e peili ja sammakot: haikara 0.8523x1.3869, sammakko1 0.5459x0.3184, sammakko2 0.4585x0.3992, ritari_paa 0.6254x0.8436, ritari 1.2221x2.273
+koot 265.00 G suo/2.2e peili ja sammakot: haikara 0.8691x1.4164, sammakko1 0.539x0.3137, sammakko2 0.4576x0.3861, ritari_paa 0.6254x0.8436, ritari 1.2221x2.273
+koot 265.50 G suo/2.2f varikset kuolleessa puussa: haikara 0.8792x1.4192, sammakko1 0.5223x0.3035, sammakko2 0.466x0.3411, ritari_paa 0.6254x0.8436, ritari 1.2221x2.273
+koot 266.00 G suo/2.2f varikset kuolleessa puussa: haikara 0.9193x1.3826, sammakko1 0.494x0.2903, sammakko2 0.4448x0.2531, varis1 0.5223x0.2661, ritari_paa 0.6254x0.8436, ritari 1.2221x2.273
+koot 266.50 G suo/2.2f varikset kuolleessa puussa: haikara 1.0069x1.3202, sammakko1 0.4247x0.2417, varis1 0.449x0.2728, varis2 0.5515x0.281, ritari_paa 0.6229x0.8425, ritari 1.2225x2.2718
+koot 267.00 G suo/2.2f varikset kuolleessa puussa: haikara 1.0069x1.2589, varis1 0.5768x0.2943, varis2 0.5768x0.2943, varis3 0.5779x0.2944, ritari_paa 0.5934x0.8291, ritari 1.227x2.2562
+koot 267.50 G suo/2.2f varikset kuolleessa puussa: varis1 0.594x0.3027, varis2 0.594x0.3027, varis3 0.594x0.3027, ritari_paa 0.5706x0.8106, ritari 1.238x2.2343
+koot 268.00 G suo/2.2f varikset kuolleessa puussa: varis1 0.5954x0.3034, varis2 0.5954x0.3034, varis3 0.5921x0.3034, ritari_paa 0.6867x0.8259, ritari 1.2845x2.2497
+koot 268.50 G suo/2.2f varikset kuolleessa puussa: varis1 0.5823x0.2967, varis2 0.5823x0.2967, varis3 0.5823x0.2967, ritari_paa 0.7748x0.8488, ritari 1.4896x2.2061
+koot 269.00 G suo/2.2f varikset kuolleessa puussa: varis1 0.5276x0.2811, varis2 0.5276x0.2811, varis3 0.5276x0.2811, ritari_paa 0.845x0.7873, ritari 1.6445x2.0809
+koot 269.50 G suo/2.2f varikset kuolleessa puussa: varis1 0.4696x0.2651, varis2 0.4696x0.2651, varis3 0.4696x0.2651, ritari_paa 0.8643x0.691, ritari 1.7175x1.9
+koot 270.00 G suo/2.2f varikset kuolleessa puussa: varis1 0.4478x0.2579, varis2 0.4478x0.2579, varis3 0.4478x0.2579, ritari_paa 0.8206x0.5765, ritari 1.7255x1.7234
+koot 270.50 G suo/2.2f varikset kuolleessa puussa: varis1 0.4565x0.2606, varis2 0.4565x0.2606, varis3 0.4565x0.2606, ritari_paa 0.8154x0.5877, ritari 1.7558x1.6531
+koot 271.00 G suo/2.2f varikset kuolleessa puussa: varis1 0.4951x0.2723, varis2 0.4951x0.2723, varis3 0.4951x0.2723, ritari_paa 0.822x0.6176, ritari 1.7768x1.6385
+koot 271.50 G suo/2.2f varikset kuolleessa puussa: hyttynen 0.3156x0.1531, sorsa 1.0136x0.6088, haikara 1.0133x1.3157, varis1 0.5575x0.2895, varis2 0.5575x0.2895, varis3 0.5575x0.2895, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 272.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3359x0.1358, sorsa 1.0361x0.6273, haikara 1.0102x1.3535, kotilo1 0.6797x0.6886, sammakko1 0.4486x0.2011, varis1 0.5907x0.301, varis2 0.5907x0.301, varis3 0.5907x0.301, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 272.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3763x0.1585, sorsa 1.041x0.6481, haikara 0.928x1.4292, kotilo1 0.6884x0.6911, kotilo2 0.6915x0.6907, sammakko1 0.4267x0.2428, sammakko2 0.4366x0.2237, varis1 0.598x0.3047, varis2 0.598x0.3047, varis3 0.598x0.3047, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 273.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3777x0.165, sorsa 1.0449x0.6505, haikara 0.8913x1.453, kotilo1 0.6881x0.6907, kotilo2 0.6883x0.6915, sammakko1 0.4782x0.2787, sammakko2 0.4376x0.2941, varis1 0.5908x0.301, varis2 0.5908x0.301, varis3 0.5908x0.301, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 273.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3757x0.1583, sorsa 1.0396x0.6472, haikara 0.8868x1.4456, kotilo1 0.5629x0.5807, kotilo2 0.6959x0.6913, sammakko1 0.4801x0.2797, sammakko2 0.4363x0.3049, varis1 0.5508x0.2883, varis2 0.5508x0.2883, varis3 0.5508x0.2883, ritari_paa 0.8217x0.6163, ritari 1.7762x1.6431
+koot 274.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3701x0.1353, sorsa 1.0244x0.6377, haikara 0.8738x1.4243, kotilo1 0.566x0.5799, kotilo2 0.6947x0.6996, sammakko1 0.4835x0.2812, sammakko2 0.4345x0.3124, varis1 0.4916x0.2703, varis2 0.4916x0.2703, varis3 0.4916x0.2703, ritari_paa 0.818x0.5714, ritari 1.7305x1.8155
+koot 274.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3596x0.1516, sorsa 0.9999x0.6215, haikara 0.8528x1.3885, kotilo1 0.5677x0.5765, kotilo2 0.6997x0.7022, sammakko1 0.4856x0.2821, sammakko2 0.4307x0.32, varis1 0.4525x0.2551, varis2 0.4525x0.2551, varis3 0.4525x0.2551, ritari_paa 0.8627x0.7512, ritari 1.7014x2.2809
+koot 275.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3421x0.1497, sorsa 0.9698x0.5995, haikara 0.8265x1.3399, kotilo1 0.5655x0.5737, kotilo2 0.6961x0.6998, sammakko1 0.4838x0.281, sammakko2 0.4284x0.3196, varis1 0.4201x0.2427, varis2 0.4201x0.2427, varis3 0.4201x0.2427, ritari_paa 0.7821x0.8456, ritari 1.5521x2.5144
+koot 275.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3198x0.1354, sorsa 0.9402x0.5756, haikara 0.7999x1.2873, kotilo1 0.5586x0.5716, kotilo2 0.6817x0.6913, sammakko1 0.4774x0.2776, sammakko2 0.428x0.3095, varis1 0.4037x0.235, varis2 0.4041x0.2351, varis3 0.4739x0.245, ritari_paa 0.7568x0.8491, ritari 1.4761x2.5412
+koot 276.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3026x0.1204, sorsa 0.9179x0.5578, haikara 0.7798x1.2478, kotilo1 0.5485x0.5665, kotilo2 0.6616x0.6774, sammakko1 0.4677x0.2726, sammakko2 0.4257x0.2962, varis1 0.397x0.2311, varis2 0.4475x0.2384, varis3 0.4754x0.2423, ritari_paa 0.7659x0.8498, ritari 1.4998x2.5363
+koot 276.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.2987x0.1264, sorsa 0.9099x0.5523, haikara 0.7727x1.2356, kotilo1 0.5378x0.5581, kotilo2 0.6433x0.6627, sammakko1 0.4577x0.2672, sammakko2 0.4203x0.2859, varis1 0.4273x0.2342, varis2 0.4718x0.2404, ritari_paa 0.8258x0.8112, ritari 1.6401x2.4267
+koot 277.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3073x0.1336, sorsa 0.9174x0.5595, haikara 0.7799x1.2515, kotilo1 0.5288x0.5496, kotilo2 0.6299x0.651, sammakko1 0.4498x0.2628, sammakko2 0.4142x0.2796, varis1 0.4703x0.2396, ritari_paa 0.8565x0.6607, ritari 1.7353x2.0269
+koot 277.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3221x0.1363, sorsa 0.9352x0.5743, haikara 0.7962x1.2844, kotilo1 0.523x0.544, kotilo2 0.6209x0.6432, sammakko1 0.4446x0.2599, sammakko2 0.4102x0.2757, varis1 0.4693x0.2391, ritari_paa 0.8161x0.5905, ritari 1.7594x1.6807
+koot 278.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3363x0.1258, sorsa 0.9548x0.59, haikara 0.8137x1.3187, kotilo1 0.5205x0.5418, kotilo2 0.6177x0.6397, sammakko1 0.4423x0.2586, sammakko2 0.4087x0.2736, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 278.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3452x0.1457, sorsa 0.9693x0.6008, haikara 0.8264x1.3425, kotilo1 0.5212x0.5424, kotilo2 0.6187x0.6404, sammakko1 0.443x0.259, sammakko2 0.409x0.2743, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 279.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3466x0.1517, sorsa 0.9768x0.6048, haikara 0.8327x1.3517, kotilo1 0.5249x0.5454, kotilo2 0.6231x0.6453, sammakko1 0.4465x0.2608, sammakko2 0.411x0.2778, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6373
+koot 279.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3416x0.1445, sorsa 0.9807x0.6041, haikara 0.8354x1.3507, kotilo1 0.5314x0.5512, kotilo2 0.631x0.6537, sammakko1 0.4524x0.2641, sammakko2 0.415x0.283, ritari_paa 0.8139x0.5637, ritari 1.7292x1.7982
+koot 280.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3376x0.1295, sorsa 0.9851x0.6042, haikara 0.8385x1.3513, kotilo1 0.5407x0.5598, kotilo2 0.6421x0.6654, sammakko1 0.4606x0.2687, sammakko2 0.4212x0.2896, ritari_paa 0.861x0.7556, ritari 1.6973x2.2956
+koot 280.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3433x0.1453, sorsa 0.9931x0.6105, haikara 0.8456x1.3652, kotilo1 0.5525x0.5705, kotilo2 0.6562x0.6805, sammakko1 0.4711x0.2746, sammakko2 0.4288x0.2985, ritari_paa 0.8297x0.8073, ritari 1.6455x2.418
+koot 281.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3562x0.1559, sorsa 1.0049x0.622, haikara 0.8566x1.3902, kotilo1 0.5662x0.5816, kotilo2 0.6744x0.6984, sammakko1 0.4835x0.2813, sammakko2 0.4361x0.3106, ritari_paa 0.8516x0.7751, ritari 1.6791x2.3492
+koot 281.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3666x0.1545, sorsa 1.0183x0.6332, haikara 0.8685x1.4145, kotilo1 0.5801x0.5907, kotilo2 0.6952x0.7169, sammakko1 0.4961x0.2883, sammakko2 0.4416x0.3251, ritari_paa 0.8508x0.6438, ritari 1.7362x1.9851
+koot 282.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3715x0.1358, sorsa 1.0281x0.64, haikara 0.877x1.4296, kotilo1 0.5923x0.5969, kotilo2 0.7137x0.7327, sammakko1 0.5069x0.2943, sammakko2 0.4448x0.3394, ritari_paa 0.8189x0.6024, ritari 1.7672x1.6637
+koot 282.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3716x0.1566, sorsa 1.0281x0.6401, haikara 0.8771x1.4298, kotilo1 0.6014x0.603, kotilo2 0.7251x0.744, sammakko1 0.5147x0.2989, sammakko2 0.4489x0.3491, varis1 0.5225x0.2662, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 283.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3665x0.1601, sorsa 1.0146x0.6316, haikara 0.8655x1.4107, kotilo1 0.6086x0.613, kotilo2 0.7282x0.7518, sammakko1 0.5209x0.3024, sammakko2 0.4568x0.3493, varis1 0.4977x0.2714, varis2 0.5457x0.278, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 283.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3543x0.1494, sorsa 0.9867x0.6131, haikara 0.8415x1.3696, kotilo1 0.6165x0.6259, kotilo2 0.7305x0.7591, sammakko1 0.5274x0.3063, sammakko2 0.4675x0.3477, varis1 0.5494x0.2859, varis2 0.5494x0.2859, varis3 0.5654x0.2881, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 284.00 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3326x0.1247, sorsa 0.9467x0.5845, haikara 0.8067x1.3067, kotilo1 0.6277x0.6371, kotilo2 0.743x0.7716, sammakko1 0.5369x0.3119, sammakko2 0.4758x0.3543, varis1 0.5754x0.2932, varis2 0.5722x0.2932, varis3 0.5754x0.2932, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 284.50 G suo/2.3 kuoro: sameus sakenee: hyttynen 0.3036x0.1286, sorsa 0.8986x0.5492, haikara 0.7643x1.2284, kotilo1 0.6423x0.6408, kotilo2 0.763x0.7914, sammakko1 0.5496x0.3192, sammakko2 0.4767x0.3771, varis1 0.5719x0.2914, varis2 0.5719x0.2914, varis3 0.3988x0.2914, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 285.00 G suo/2.4a molli: kypärä alas: hyttynen 0.2433x0.1151, sorsa 0.8735x0.5236, haikara 0.6635x1.1451, kotilo1 0.6572x0.6664, kotilo2 0.7325x0.7823, sammakko1 0.5623x0.3266, sammakko2 0.1561x0.2703, varis1 0.4959x0.2749, varis2 0.4959x0.2749, varis3 0.4959x0.2749, ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 285.50 G suo/2.4a molli: kypärä alas: hyttynen 0.25x0.1149, sorsa 0.7171x0.7406, haikara 0.7322x1.0726, kotilo1 0.4421x0.6999, kotilo2 0.8053x0.8199, sammakko1 0.5654x0.3312, sammakko2 0.5138x0.2784, varis1 0.445x0.2591, varis2 0.445x0.2591, varis3 0.5017x0.2673, ritari_paa 0.8226x0.621, ritari 1.7789x1.637
+koot 286.00 G suo/2.4a molli: kypärä alas: hyttynen 0.2392x0.1006, sorsa 0.6786x0.714, haikara 0.773x0.9935, kotilo1 0.6681x0.7009, kotilo2 0.8174x0.7922, sammakko1 0.5146x0.2788, varis1 0.4257x0.2478, varis2 0.4617x0.2531, varis3 0.5098x0.2598, ritari_paa 0.8231x0.6239, ritari 1.78x1.6364
+koot 286.50 G suo/2.4a molli: kypärä alas: kotilo1 0.8082x0.7815, kotilo2 0.8083x0.7824, varis1 0.4305x0.2418, varis2 0.4913x0.2503, ritari_paa 0.8237x0.6284, ritari 1.7817x1.6355
+koot 287.00 G suo/2.4a molli: kypärä alas: kotilo1 0.7887x0.7634, kotilo2 0.7887x0.7634, varis1 0.4794x0.2443, varis2 0.4794x0.2443, ritari_paa 0.8243x0.6326, ritari 1.7833x1.6346
+koot 287.50 G suo/2.4a molli: kypärä alas: kotilo1 0.7655x0.741, varis1 0.473x0.241, ritari_paa 0.8246x0.6348, ritari 1.7841x1.6341
+koot 288.00 G suo/2.4a molli: kypärä alas: ritari_paa 0.8246x0.6348, ritari 1.7841x1.6341
+koot 288.50 G suo/2.4a molli: kypärä alas: ritari_paa 0.8245x0.6338, ritari 1.7837x1.6343
+koot 289.00 G suo/2.4a molli: kypärä alas: ritari_paa 0.8245x0.6335, ritari 1.7836x1.6344
+koot 289.50 G suo/2.4a molli: kypärä alas: ritari_paa 0.8246x0.6348, ritari 1.7841x1.6341
+koot 290.00 G suo/2.4a molli: kypärä alas: ritari_paa 0.825x0.6374, ritari 1.785x1.6335
+koot 290.50 G suo/2.4a molli: kypärä alas: ritari_paa 0.8253x0.6405, ritari 1.7861x1.6327
+koot 291.00 G suo/2.4a molli: kypärä alas: ritari_paa 0.8256x0.6431, ritari 1.787x1.6321
+koot 291.50 G suo/2.4a molli: kypärä alas: ritari_paa 0.8257x0.644, ritari 1.7873x1.6319
+koot 292.00 G suo/2.4a molli: kypärä alas: ritari_paa 0.8255x0.6427, ritari 1.7869x1.6322
+koot 292.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8252x0.6393, ritari 1.7857x1.633
+koot 293.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8246x0.6345, ritari 1.784x1.6341
+koot 293.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8239x0.6292, ritari 1.782x1.6353
+koot 294.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8231x0.6244, ritari 1.7802x1.6363
+koot 294.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8226x0.6212, ritari 1.779x1.637
+koot 295.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 295.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8227x0.6215, ritari 1.7791x1.6369
+koot 296.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8233x0.6251, ritari 1.7805x1.6362
+koot 296.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.824x0.63, ritari 1.7823x1.6351
+koot 297.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8247x0.6354, ritari 1.7843x1.6339
+koot 297.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8252x0.64, ritari 1.7859x1.6329
+koot 298.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8256x0.643, ritari 1.787x1.6321
+koot 298.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8257x0.644, ritari 1.7873x1.6319
+koot 299.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8255x0.6426, ritari 1.7868x1.6322
+koot 299.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8252x0.6392, ritari 1.7856x1.633
+koot 300.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8246x0.6343, ritari 1.7839x1.6342
+koot 300.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8238x0.629, ritari 1.782x1.6353
+koot 301.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8231x0.6243, ritari 1.7802x1.6363
+koot 301.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8226x0.6211, ritari 1.779x1.637
+koot 302.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8224x0.6201, ritari 1.7786x1.6372
+koot 302.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8227x0.6216, ritari 1.7792x1.6369
+koot 303.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8233x0.6253, ritari 1.7806x1.6361
+koot 303.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.824x0.6302, ritari 1.7824x1.6351
+koot 304.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8247x0.6355, ritari 1.7843x1.6339
+koot 304.50 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8253x0.6401, ritari 1.786x1.6328
+koot 305.00 G suo/2.4b hiljaa, ei olentoja: ritari_paa 0.8256x0.6431, ritari 1.787x1.6321
+koot 305.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8255x0.642, ritari 1.7848x1.6381
+koot 306.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8213x0.6141, ritari 1.7499x1.72
+koot 306.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8024x0.5449, ritari 1.6591x1.9053
+koot 307.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8401x0.6172, ritari 1.6057x2.1809
+koot 307.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8591x0.6693, ritari 1.5519x2.2979
+koot 308.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8634x0.6867, ritari 1.5274x2.3168
+koot 308.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3346
+koot 309.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3048
+koot 309.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.335
+koot 310.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3059
+koot 310.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.335
+koot 311.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3
+koot 311.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.335
+koot 312.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3323
+koot 312.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3092
+koot 313.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6874, ritari 1.5263x2.3004
+koot 313.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8635x0.6873, ritari 1.5262x2.2983
+koot 314.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8634x0.6867, ritari 1.5262x2.2928
+koot 314.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8632x0.6857, ritari 1.526x2.2776
+koot 315.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8629x0.6844, ritari 1.5259x2.2451
+koot 315.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8626x0.6832, ritari 1.5504x2.1892
+koot 316.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8626x0.6829, ritari 1.5727x2.1108
+koot 316.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.863x0.6847, ritari 1.5732x2.0203
+koot 317.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8639x0.6891, ritari 1.5563x1.9686
+koot 317.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8651x0.6955, ritari 1.5688x1.9349
+koot 318.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8662x0.7034, ritari 1.5713x1.9174
+koot 318.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8671x0.7121, ritari 1.5708x1.9164
+koot 319.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8674x0.7214, ritari 1.5705x1.9271
+koot 319.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.867x0.7308, ritari 1.5698x1.9409
+koot 320.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8659x0.7392, ritari 1.5685x1.9539
+koot 320.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8643x0.7464, ritari 1.5669x1.9653
+koot 321.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8624x0.7522, ritari 1.5652x1.975
+koot 321.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8605x0.7567, ritari 1.5634x1.9827
+koot 322.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8591x0.7596, ritari 1.5621x1.9878
+koot 322.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8583x0.7609, ritari 1.5615x1.9902
+koot 323.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8579x0.7616, ritari 1.5611x1.9914
+koot 323.50 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8576x0.7623, ritari 1.5608x1.9926
+koot 324.00 G suo/2.5a lampi: harjanne ja vuoret nousevat: ritari_paa 0.8572x0.7629, ritari 1.5604x1.9938
+koot 324.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8568x0.7635, ritari 1.5601x1.9949
+koot 325.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8565x0.7639, ritari 1.5598x1.9957
+koot 325.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8561x0.7645, ritari 1.5595x1.9968
+koot 326.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8554x0.7662, ritari 1.5589x1.9987
+koot 326.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8543x0.769, ritari 1.5579x2.0017
+koot 327.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8528x0.7724, ritari 1.5566x2.0052
+koot 327.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8513x0.7757, ritari 1.5553x2.0087
+koot 328.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8498x0.7788, ritari 1.554x2.012
+koot 328.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.848x0.7822, ritari 1.5524x2.0157
+koot 329.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8455x0.7866, ritari 1.5503x2.0204
+koot 329.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8417x0.7924, ritari 1.5471x2.0268
+koot 330.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8365x0.7995, ritari 1.5427x2.0347
+koot 330.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8305x0.8065, ritari 1.5376x2.0426
+koot 331.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8248x0.8121, ritari 1.5329x2.0493
+koot 331.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8195x0.8167, ritari 1.5285x2.0547
+koot 332.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.8139x0.8211, ritari 1.5238x2.06
+koot 332.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.807x0.8258, ritari 1.5181x2.066
+koot 333.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7978x0.8311, ritari 1.5105x2.0728
+koot 333.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7896x0.8362, ritari 1.5015x2.0799
+koot 334.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7873x0.8404, ritari 1.4922x2.0861
+koot 334.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7849x0.8433, ritari 1.4839x2.0909
+koot 335.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7826x0.8452, ritari 1.4773x2.0943
+koot 335.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7807x0.8464, ritari 1.4719x2.0968
+koot 336.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7786x0.8475, ritari 1.4666x2.099
+koot 336.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7763x0.8483, ritari 1.4611x2.1011
+koot 337.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7742x0.8489, ritari 1.4562x2.1028
+koot 337.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7719x0.8493, ritari 1.4511x2.1044
+koot 338.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.769x0.8497, ritari 1.4449x2.1062
+koot 338.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7656x0.8498, ritari 1.4378x2.108
+koot 339.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7617x0.8496, ritari 1.4303x2.1096
+koot 339.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7579x0.8492, ritari 1.4232x2.1109
+koot 340.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7544x0.8487, ritari 1.4168x2.1118
+koot 340.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7513x0.848, ritari 1.4113x2.1125
+koot 341.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7482x0.8473, ritari 1.4059x2.1131
+koot 341.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7442x0.8462, ritari 1.3992x2.1137
+koot 342.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.739x0.8447, ritari 1.3907x2.1141
+koot 342.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7333x0.8427, ritari 1.3815x2.1143
+koot 343.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7277x0.8405, ritari 1.3776x2.1143
+koot 343.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7227x0.8385, ritari 1.3776x2.1141
+koot 344.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7189x0.8368, ritari 1.3776x2.1138
+koot 344.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7159x0.8354, ritari 1.3776x2.1136
+koot 345.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7129x0.834, ritari 1.3776x2.1133
+koot 345.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7094x0.8324, ritari 1.3776x2.1128
+koot 346.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.706x0.8307, ritari 1.3776x2.1124
+koot 346.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7035x0.8294, ritari 1.3776x2.112
+koot 347.00 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7018x0.8286, ritari 1.3776x2.1117
+koot 347.50 G suo/2.5b kasvot ja lampi: aurinko: ritari_paa 0.7007x0.828, ritari 1.3776x2.1115
+koot 348.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6995x0.8274, ritari 1.3776x2.1113
+koot 348.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6979x0.8265, ritari 1.3776x2.111
+koot 349.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6959x0.8255, ritari 1.3776x2.1106
+koot 349.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6937x0.8251, ritari 1.3776x2.1102
+koot 350.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6914x0.8254, ritari 1.3776x2.1097
+koot 350.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6891x0.8257, ritari 1.3776x2.1093
+koot 351.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.687x0.8259, ritari 1.3776x2.1088
+koot 351.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6852x0.8261, ritari 1.3776x2.1084
+koot 352.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6836x0.8262, ritari 1.3776x2.108
+koot 352.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6816x0.8263, ritari 1.3776x2.1075
+koot 353.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6796x0.8265, ritari 1.3776x2.107
+koot 353.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6779x0.8266, ritari 1.3776x2.1066
+koot 354.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6767x0.8266, ritari 1.3776x2.1063
+koot 354.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6758x0.8267, ritari 1.3776x2.1061
+koot 355.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6754x0.8267, ritari 1.3776x2.106
+koot 355.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.6751x0.8267, ritari 1.3776x2.1059
+koot 356.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 356.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 357.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 357.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 358.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 358.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 359.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 359.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.3776x2.1059
+koot 360.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.4106x2.1059
+koot 360.50 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.4822x2.1059
+koot 361.00 G suo/2.5c laaja: viirit, hän tarttuu viiriin: ritari_paa 0.675x0.8267, ritari 1.5152x2.1059
+koot 361.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.675x0.8267, ritari 1.522x2.1059
+koot 362.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.6779x0.8266, ritari 1.4447x2.2048
+koot 362.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.6879x0.8258, ritari 1.2036x2.5375
+koot 363.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.6945x0.825, ritari 1.0679x2.5756
+koot 363.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.4428x0.825, ritari 0.6784x2.5717
+koot 364.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.6773x0.8258, ritari 1.042x2.5727
+koot 364.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.7006x0.8279, ritari 1.0898x2.579
+koot 365.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.7061x0.8308, ritari 1.1151x2.5808
+koot 365.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.7114x0.8334, ritari 1.1399x2.5737
+koot 366.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.3718x0.835, ritari 0.6015x2.5644
+koot 366.50 G suo/2.5d muisto häipyy, ritari kävelee puulle: ritari_paa 0.7101x0.8356, ritari 1.153x2.5855
+koot 367.00 G suo/2.5d muisto häipyy, ritari kävelee puulle: kotilo1 0.7612x0.7753, ritari_paa 0.68x0.8264, ritari 1.1344x2.5688
+koot 367.50 G suo/2.6 piiritys: kotilo1 0.8127x0.8017, kotilo2 0.8163x0.7986, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 368.00 G suo/2.6 piiritys: kotilo1 0.8459x0.8127, kotilo2 0.8456x0.8138, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 368.50 G suo/2.6 piiritys: kotilo1 0.6901x0.6883, kotilo2 0.8686x0.8242, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 369.00 G suo/2.6 piiritys: hyttynen 0.2525x0.127, kotilo1 0.7038x0.702, kotilo2 0.8782x0.8632, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 369.50 G suo/2.6 piiritys: hyttynen 0.2616x0.1122, sorsa 0.8392x0.5041, haikara 0.8298x1.0951, kotilo1 0.7124x0.7105, kotilo2 0.8845x0.876, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 370.00 G suo/2.6 piiritys: hyttynen 0.2886x0.1138, sorsa 0.8678x0.5284, haikara 0.7918x1.1496, kotilo1 0.7161x0.7143, kotilo2 0.8841x0.882, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 370.50 G suo/2.6 piiritys: hyttynen 0.3022x0.128, sorsa 0.8994x0.5489, haikara 0.7661x1.2272, kotilo1 0.7157x0.7139, kotilo2 0.878x0.882, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 371.00 G suo/2.6 piiritys: hyttynen 0.3175x0.1386, sorsa 0.9327x0.5711, haikara 0.7936x1.2773, kotilo1 0.7109x0.7091, kotilo2 0.8663x0.8758, varis1 0.5053x0.2574, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 371.50 G suo/2.6 piiritys: hyttynen 0.3363x0.1423, sorsa 0.9654x0.5947, haikara 0.8223x1.3297, kotilo1 0.701x0.6992, kotilo2 0.8487x0.8629, varis1 0.5352x0.2727, varis2 0.5352x0.2727, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 372.00 G suo/2.6 piiritys: hyttynen 0.3548x0.1312, sorsa 0.9948x0.6168, haikara 0.8481x1.3784, kotilo1 0.686x0.6842, kotilo2 0.8251x0.8434, varis1 0.3748x0.2849, varis2 0.5671x0.289, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 372.50 G suo/2.6 piiritys: hyttynen 0.3675x0.1549, sorsa 1.019x0.634, haikara 0.8692x1.4162, kotilo1 0.6671x0.664, kotilo2 0.7967x0.8191, varis1 0.5955x0.3034, varis2 0.1371x0.3034, varis3 0.5955x0.3034, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 373.00 G suo/2.6 piiritys: hyttynen 0.3747x0.1637, sorsa 1.0367x0.6454, haikara 0.8844x1.4416, kotilo1 0.6474x0.6455, kotilo2 0.7586x0.7904, varis1 0.6151x0.3134, varis2 0.6151x0.3134, varis3 0.5604x0.3134, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 373.50 G suo/2.6 piiritys: hyttynen 0.3786x0.1595, sorsa 1.0475x0.6522, haikara 0.8936x1.4567, kotilo1 0.6301x0.6384, kotilo2 0.7365x0.7625, varis1 0.6219x0.3169, varis2 0.6219x0.3169, varis3 0.6219x0.3169, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 374.00 G suo/2.6 piiritys: hyttynen 0.3806x0.1391, sorsa 1.0531x0.6556, haikara 0.8983x1.4644, kotilo1 0.6163x0.6242, kotilo2 0.7189x0.7441, varis1 0.6144x0.313, varis2 0.6144x0.313, varis3 0.6144x0.313, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 374.50 G suo/2.6 piiritys: hyttynen 0.3815x0.1608, sorsa 1.0555x0.6571, haikara 0.9004x1.4678, kotilo1 0.6048x0.608, kotilo2 0.7042x0.7312, varis1 0.5936x0.3025, varis2 0.5936x0.3025, varis3 0.5936x0.3025, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 375.00 G suo/2.6 piiritys: hyttynen 0.3818x0.1668, sorsa 1.0562x0.6576, haikara 0.901x1.4688, kotilo1 0.5931x0.5952, kotilo2 0.6905x0.7176, varis1 0.5387x0.2837, varis2 0.5387x0.2837, varis3 0.5387x0.2837, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 375.50 G suo/2.6 piiritys: hyttynen 0.3815x0.1607, sorsa 1.0554x0.6571, haikara 0.9003x1.4677, kotilo1 0.5804x0.5887, kotilo2 0.6757x0.6985, varis1 0.4686x0.2613, varis2 0.4686x0.2613, varis3 0.4686x0.2613, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 376.00 G suo/2.6 piiritys: hyttynen 0.3806x0.1391, sorsa 1.0529x0.6555, haikara 0.8982x1.4642, kotilo1 0.5689x0.5857, kotilo2 0.6623x0.6772, varis1 0.4175x0.2423, varis2 0.4175x0.2423, varis3 0.4218x0.243, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 376.50 G suo/2.6 piiritys: hyttynen 0.3785x0.1595, sorsa 1.0472x0.652, haikara 0.8933x1.4563, kotilo1 0.5633x0.5852, kotilo2 0.6558x0.6641, varis1 0.3952x0.2301, varis2 0.3966x0.2303, varis3 0.4733x0.2412, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 377.00 G suo/2.6 piiritys: hyttynen 0.3744x0.1636, sorsa 1.0361x0.645, haikara 0.8838x1.4407, kotilo1 0.5678x0.5906, kotilo2 0.661x0.6682, varis1 0.3815x0.2221, varis2 0.4388x0.2303, varis3 0.4569x0.2328, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 377.50 G suo/2.6 piiritys: hyttynen 0.3669x0.1547, sorsa 1.0177x0.6331, haikara 0.8681x1.4143, kotilo1 0.5827x0.6011, kotilo2 0.6783x0.6922, varis1 0.4129x0.2232, varis2 0.4474x0.228, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 378.00 G suo/2.6 piiritys: hyttynen 0.3536x0.1309, sorsa 0.9923x0.6152, haikara 0.8461x1.3747, kotilo1 0.6031x0.6075, kotilo2 0.7021x0.7284, varis1 0.4428x0.2256, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 378.50 G suo/2.6 piiritys: hyttynen 0.3339x0.1413, sorsa 0.961x0.5916, haikara 0.8185x1.3227, kotilo1 0.6211x0.6115, kotilo2 0.723x0.7574, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 379.00 G suo/2.6 piiritys: hyttynen 0.3146x0.1373, sorsa 0.9242x0.5659, haikara 0.7864x1.2657, kotilo1 0.6291x0.6275, kotilo2 0.7385x0.7678, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 379.50 G suo/2.6 piiritys: hyttynen 0.2983x0.1263, sorsa 0.8849x0.5405, haikara 0.7526x1.209, kotilo1 0.6246x0.6137, kotilo2 0.7271x0.7615, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 380.00 G suo/2.6 piiritys: hyttynen 0.2804x0.1111, sorsa 0.8472x0.5152, haikara 0.7198x1.1526, kotilo1 0.6111x0.6163, kotilo2 0.7114x0.7377, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 380.50 G suo/2.7 toverit harjanteella: hyttynen 0.2568x0.1091, sorsa 0.8141x0.4922, haikara 0.6907x1.101, kotilo1 0.5964x0.6184, kotilo2 0.6944x0.7047, ritari_paa 0.6534x0.8264, ritari 1.0979x2.5611
+koot 381.00 G suo/2.7 toverit harjanteella: hyttynen 0.2455x0.1143, sorsa 0.7885x0.4751, haikara 0.6684x1.0626, kotilo1 0.5839x0.6165, kotilo2 0.6977x0.7227, ritari_paa 0.6488x0.8261, ritari 1.0987x2.5596
+koot 381.50 G suo/2.7 toverit harjanteella: hyttynen 0.2408x0.1168, sorsa 0.7735x0.4659, haikara 0.6556x1.0419, kotilo1 0.5876x0.6164, kotilo2 0.7189x0.6967, sammakko1 0.4576x0.2345, ritari_paa 0.6237x0.823, ritari 1.1003x2.5506
+koot 382.00 G suo/2.7 toverit harjanteella: sorsa 0.7707x0.4644, haikara 0.6533x1.0387, kotilo1 0.5946x0.6238, kotilo2 0.7293x0.7075, sammakko1 0.311x0.2942, sammakko2 0.4527x0.2576, ritari_paa 0.5732x0.8114, ritari 1.0913x2.529
+koot 382.50 G suo/2.7 toverit harjanteella: sorsa 0.7809x0.4706, haikara 0.6619x1.0526, kotilo1 0.7427x0.7205, kotilo2 0.7425x0.7187, sammakko1 0.5182x0.3009, sammakko2 0.4532x0.3496, ritari_paa 0.5717x0.8181, ritari 1.0644x2.5258
+koot 383.00 G suo/2.7 toverit harjanteella: sorsa 0.8031x0.4845, haikara 0.681x1.0836, kotilo1 0.7575x0.7332, sammakko1 0.5287x0.307, sammakko2 0.4644x0.3534, ritari_paa 0.6219x0.8421, ritari 1.0435x2.5431
+koot 383.50 G suo/2.7 toverit harjanteella: sorsa 0.8352x0.5057, haikara 0.7089x1.1312, sammakko1 0.5391x0.313, sammakko2 0.4721x0.3626, ritari_paa 0.6465x0.8517, ritari 1.0254x2.5497
+koot 384.00 G suo/2.7 toverit harjanteella: sorsa 0.872x0.5318, haikara 0.7413x1.1895, sammakko1 0.5479x0.3183, sammakko2 0.4718x0.3815, ritari_paa 0.6507x0.8532, ritari 1.0216x2.5508
+koot 384.50 G suo/2.7 toverit harjanteella: sorsa 0.9071x0.5572, haikara 0.7723x1.2461, sammakko1 0.5536x0.3223, sammakko2 0.4698x0.397, ritari_paa 0.6507x0.8532, ritari 1.0216x2.5508
+koot 385.00 G suo/2.7 toverit harjanteella: sorsa 0.9351x0.5765, haikara 0.7966x1.2888, sammakko1 0.5583x0.3248, sammakko2 0.4757x0.3972, ritari_paa 0.6511x0.8534, ritari 1.022x2.5509
+koot 385.50 G suo/2.7 toverit harjanteella: sorsa 0.9512x0.5869, haikara 0.8104x1.312, sammakko1 0.5626x0.3268, sammakko2 0.4872x0.3873, ritari_paa 0.6541x0.8544, ritari 1.0251x2.5517
+koot 386.00 G suo/2.7 toverit harjanteella: sorsa 0.9519x0.5879, haikara 0.8111x1.3142, sammakko1 0.5671x0.3293, sammakko2 0.4927x0.3876, ritari_paa 0.6618x0.8569, ritari 1.0328x2.5539
+koot 386.50 G suo/2.7 toverit harjanteella: sorsa 0.9375x0.5787, haikara 0.7988x1.2937, sammakko1 0.571x0.3326, sammakko2 0.4821x0.4133, ritari_paa 0.6746x0.8605, ritari 1.0439x2.5569
+koot 387.00 G suo/2.7 toverit harjanteella: sorsa 0.9107x0.5595, haikara 0.7754x1.2511, sammakko1 0.5745x0.3353, sammakko2 0.4812x0.4226, ritari_paa 0.6915x0.8644, ritari 1.055x2.5599
+koot 387.50 G suo/2.7 toverit harjanteella: sorsa 0.8749x0.5336, haikara 0.7439x1.1937, sammakko1 0.5736x0.3347, sammakko2 0.4804x0.4218, ritari_paa 0.7106x0.8669, ritari 1.0948x2.5616
+koot 388.00 G suo/2.7 toverit harjanteella: sorsa 0.8352x0.5063, haikara 0.7091x1.1325, sammakko1 0.564x0.3291, sammakko2 0.4724x0.4148, ritari_paa 0.7295x0.8671, ritari 1.1521x2.5608
+koot 388.50 G suo/2.7 toverit harjanteella: sorsa 0.8789x0.5267, haikara 0.1803x1.0719, sammakko1 0.5463x0.3188, sammakko2 0.4576x0.4018, ritari_paa 0.7464x0.8643, ritari 1.1983x2.5571
+koot 389.00 G suo/2.7 toverit harjanteella: sorsa 0.6774x0.7128, haikara 0.7251x1.0168, sammakko1 0.5284x0.3068, sammakko2 0.4618x0.357, ritari_paa 0.76x0.8588, ritari 1.2302x2.551
+koot 389.50 G suo/2.7 toverit harjanteella: sorsa 0.6579x0.6923, haikara 0.7584x0.9559, sammakko1 0.5105x0.2976, sammakko2 0.4656x0.3223, ritari_paa 0.7743x0.852, ritari 1.2485x2.5437
+koot 390.00 G suo/2.7 toverit harjanteella: sammakko1 0.5051x0.2952, sammakko2 0.4657x0.3134, ritari_paa 0.7869x0.8452, ritari 1.2569x2.5366
+koot 390.50 G suo/2.7 toverit harjanteella: sammakko1 0.5169x0.3007, sammakko2 0.4656x0.3327, ritari_paa 0.7947x0.8401, ritari 1.2596x2.5313
+koot 391.00 G suo/2.7 toverit harjanteella: sammakko1 0.537x0.3124, sammakko2 0.4572x0.3825, ritari_paa 0.7985x0.8373, ritari 1.2602x2.5283
+koot 391.50 G suo/2.7 toverit harjanteella: sammakko1 0.559x0.3262, sammakko2 0.4682x0.4112, ritari_paa 0.7995x0.8364, ritari 1.2602x2.5275
+koot 392.00 G suo/2.8a viiri pystyyn: sammakko1 0.5804x0.3384, sammakko2 0.541x0.2764, ritari_paa 0.7991x0.8368, ritari 1.2696x2.5279
+koot 392.50 G suo/2.8a viiri pystyyn: sammakko1 0.5541x0.283, sammakko2 0.5591x0.2503, ritari_paa 0.7958x0.8393, ritari 1.2615x2.5303
+koot 393.00 G suo/2.8a viiri pystyyn: sammakko1 0.5655x0.2532, ritari_paa 0.7802x0.849, ritari 1.2197x2.5404
+koot 393.50 G suo/2.8a viiri pystyyn: ritari_paa 0.7468x0.8642, ritari 1.1498x2.5572
+koot 394.00 G suo/2.8a viiri pystyyn: ritari_paa 0.6932x0.8647, ritari 1.0602x2.5617
+koot 394.50 G suo/2.8a viiri pystyyn: ritari_paa 0.6307x0.8457, ritari 1.0771x2.5479
+koot 395.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5888x0.8268, ritari 0.978x2.533
+koot 395.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5713x0.8179, ritari 0.8473x2.5262
+koot 396.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5645x0.8143, ritari 0.8495x2.5235
+koot 396.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5628x0.8134, ritari 0.85x2.5228
+koot 397.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 397.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 398.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 398.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 399.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 399.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 400.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 400.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 401.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 401.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 402.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 402.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 403.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 403.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 404.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 404.50 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 405.00 G suo/2.8a viiri pystyyn: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 405.50 G suo/2.8a viiri pystyyn: varis1 0.5569x0.2838, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 406.00 G suo/2.8a viiri pystyyn: varis1 0.4982x0.2901, varis2 0.5777x0.2944, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 406.50 G suo/2.8a viiri pystyyn: varis1 0.5852x0.2982, varis2 0.5852x0.2982, varis3 0.5852x0.2982, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 407.00 G suo/2.8a viiri pystyyn: varis1 0.5763x0.2937, varis2 0.5763x0.2937, varis3 0.5763x0.2937, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 407.50 G suo/2.8a viiri pystyyn: varis1 0.5284x0.2787, varis2 0.5284x0.2787, varis3 0.5254x0.2787, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 408.00 G suo/2.8a viiri pystyyn: varis1 0.4495x0.2565, varis2 0.4495x0.2565, varis3 0.4495x0.2565, ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 408.50 G suo/2.8b veto suon yli: varis2 0.4134x0.2406, varis3 0.4134x0.2406, ritari_paa 0.5615x0.8127, ritari 0.851x2.5224
+koot 409.00 G suo/2.8b veto suon yli: varis2 0.3944x0.2296, varis3 0.3944x0.2296, ritari_paa 0.5468x0.8045, ritari 0.8612x2.5181
+koot 409.50 G suo/2.8b veto suon yli: varis3 0.3823x0.2225, ritari_paa 0.5671x0.8096, ritari 0.9027x2.5309
+koot 410.00 G suo/2.8b veto suon yli: ritari_paa 0.6093x0.8204, ritari 1.1539x2.5498
+koot 410.50 G suo/2.8b veto suon yli: ritari_paa 0.6455x0.8258, ritari 1.3316x2.5605
+koot 411.00 G suo/2.8b veto suon yli: ritari_paa 0.6667x0.8268, ritari 1.407x2.5636
+koot 411.50 G suo/2.8b veto suon yli: ritari_paa 0.6728x0.8268, ritari 1.4233x2.564
+koot 412.00 G suo/2.8b veto suon yli: ritari_paa 0.6728x0.8268, ritari 1.4233x2.564
+koot 412.50 G suo/2.8b veto suon yli: ritari_paa 0.672x0.8268, ritari 1.4212x2.564
+koot 413.00 G suo/2.8b veto suon yli: ritari_paa 0.6695x0.8268, ritari 1.4147x2.5638
+koot 413.50 G suo/2.8b veto suon yli: ritari_paa 0.6648x0.8268, ritari 1.4013x2.5634
+koot 414.00 G suo/2.8b veto suon yli: ritari_paa 0.6576x0.8266, ritari 1.3781x2.5626
+koot 414.50 G suo/2.8b veto suon yli: ritari_paa 0.648x0.826, ritari 1.3418x2.561
+koot 415.00 G suo/2.8b veto suon yli: ritari_paa 0.6359x0.8248, ritari 1.2896x2.5582
+koot 415.50 G suo/2.8b veto suon yli: ritari_paa 0.6217x0.8227, ritari 1.2204x2.5541
+koot 416.00 G suo/2.8b veto suon yli: ritari_paa 0.606x0.8197, ritari 1.1357x2.5486
+koot 416.50 G suo/2.8b veto suon yli: ritari_paa 0.5895x0.8159, ritari 1.0399x2.5417
+koot 417.00 G suo/2.8b veto suon yli: ritari_paa 0.5731x0.8114, ritari 0.9396x2.534
+koot 417.50 G suo/2.8b veto suon yli: ritari_paa 0.5575x0.8066, ritari 0.8777x2.5259
+koot 418.00 G suo/2.8b veto suon yli: ritari_paa 0.5438x0.802, ritari 0.8684x2.5181
+koot 418.50 G suo/2.8b veto suon yli: ritari_paa 0.5473x0.8048, ritari 0.8609x2.5183
+koot 419.00 G suo/2.8b veto suon yli: ritari_paa 0.5552x0.8092, ritari 0.8554x2.5207
+koot 419.50 G suo/2.8b veto suon yli: ritari_paa 0.56x0.8119, ritari 0.852x2.5221
+koot 420.00 G suo/2.8b veto suon yli: ritari_paa 0.5622x0.8131, ritari 0.8504x2.5227
+koot 420.50 G suo/2.8b veto suon yli: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 421.00 G suo/2.8b veto suon yli: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 421.50 G suo/2.8b veto suon yli: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
+koot 422.00 S rantaniitty/3.1 ääni: viiva latvoissa, ritari pieni: ritari_paa 0.5627x0.8133, ritari 0.85x2.5228
