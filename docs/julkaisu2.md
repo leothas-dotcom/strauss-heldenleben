@@ -76,7 +76,33 @@ silmällä (kuka soittaa, ei tahtinumeroa äänestä). Tulos kirjataan teemakart
   mutta ajat pitää varmistaa.
 - **Lavan takana soivat trumpetit** (#70, #72).
 
-### 1.5 Tuotos
+### 1.5 Levyn nopeus (käyttäjän havainto 7.11.)
+
+Krauss soi hieman korkealta: siirto pyörii liian nopeasti. Nopeus ja sävelkorkeus skaalautuvat
+yhdessä (1 % nopeampi = +17 senttiä ja 1 % lyhyempi kesto), joten tämä on mitattava ennen muuta:
+
+1. **Mittaus:** `rekisteri.py` / CREPE alkutahtien Es-duurista (sellot ja käyrätorvet, `held_alku`) ja
+   muutamasta pitkästä tutti-soinnusta (`held_dom7_sointu`, rakkauskohtauksen Ges-duuri). Poikkeama
+   senteissä verrattuna viritystasoon. Viritystaso on itsessään epävarma: Wienin filharmonikot
+   soittivat 1952 todennäköisesti yli 440 Hz **[tarkista: 443–445]**, joten +15–20 senttiä voi olla
+   viritys, ei nopeus. Vasta sen yli menevä osuus on nopeusvirhe. Referenssiäänite auttaa tässäkin:
+   DTW-linjauksen kesto­suhde t_krauss/t_ref antaa nopeuden riippumatta virityksestä (olettaen, että
+   tempoerot keskiarvoistuvat 20 minuutissa; ±1 % tarkkuus).
+2. **DTW:** chroma-piirteet on laskettava nopeuskorjatusta tai senttitarkasti viritetystä
+   signaalista (`librosa.cqt`-pohjainen chroma `tuning`-parametrilla), muuten yli 50 sentin siirtymä
+   vaihtaa bineä ja linjaus epäonnistuu. Sama koskee CREPE-säveliä, jos niitä verrataan partituuriin.
+3. **Julkaisu:** kaksi vaihtoehtoa, päätös käyttäjällä.
+   - **a) Ääni ennallaan.** Video ja kaikki ankkurit pysyvät; levyn vika on osa "elävää vedosta".
+     Kuvaukseen rivi: "the transfer runs slightly fast; pitch is about +N cents".
+   - **b) Nopeus korjataan** (`ffmpeg -af asetrate`/`rubberband` ei; pelkkä uudelleennäytteistys, jotta
+     sävel ja kesto korjaantuvat yhdessä kuten levysoittimella). Kaikki ajat kertautuvat kertoimella
+     k = (1 + poikkeama): teemakartta, cues, aksentit ja paketit generoidaan uudelleen k:lla, ja video
+     renderöidään uudelleen. Kohtaukset ovat aikafunktioita ja lukevat ajat ankkureista, joten
+     kuvakäsikirjoitus ei muutu. Työmäärä: paketit (GPU, tunteja) + renderi (noin 18 min) + master.
+   Suositus: mitataan ensin; jos nopeusvirhe on alle 0,5 %, a) riittää. Jos selvästi yli, b) on
+   muusikon videolle oikea ratkaisu, ja se sopii samaan uuteen lataukseen kuin prologi.
+
+### 1.6 Tuotos
 
 `annotations/teemat.json`: jokaiselle soitinta nimeävälle ankkurille `soittimet: [{nimi, varmuus:
 kuultu|ehdokas|kielletty, lahteet: [krauss, ref, partituuri]}]`. `make_cues.py` ja `kuunteluopas.py`
@@ -115,7 +141,7 @@ Kuuntele-rivi erottuu sanalla, ei värillä (SRT ei kanna tyyliä kaikilla alust
 
 ### 2.3 Mitä poistetaan tai muutetaan
 
-- Jokainen soitinväite, jonka varmuus ei ole `kuultu` (luku 1.5). Kysymysmuoto ("Arvostelijoiden
+- Jokainen soitinväite, jonka varmuus ei ole `kuultu` (luku 1.6). Kysymysmuoto ("Arvostelijoiden
   kaikuako?") ei riitä: joko varma tai pois.
 - Rivit, jotka selittävät koodia katsojalle ("Sädekehä on levyn ääni: jokainen säde on yksi
   taajuusalue") siirretään making-ofiin; videon tekstitys puhuu musiikista ja tarinasta.
