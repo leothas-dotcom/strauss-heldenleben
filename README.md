@@ -6,15 +6,21 @@ eräänlaisen fantasiadraaman. Äänenä on Clemens Kraussin ja Wienin filharmon
 Ne seuraavat musiikin rakennetta (teemat, jaksot, soittimet) ja sen hetkellistä ilmaisua.
 Koodin kirjoittaa Claude.
 
-**Missä ollaan:** demossa on edetty siihen pisteeseen, että musiikkia voidaan visualisoida.
-Kuuntelutyökalu ja teemakartta antavat koko levyn jaksot, soittimet ja iskut tämän äänitteen ajassa,
-ja demovideo [Punainen purje](runs/purje-400/brief.md) (A 0:00–6:40) seuraa niitä ruudun
-tarkkuudella. Seuraavaksi suunnitellaan koko teoksen kuvakäsikirjoitus. README ei seuraa projektin
-tilaa; työjärjestys on [kokonaissuunnitelmassa](docs/kokonaissuunnitelma.md) (luku 10).
+**Missä ollaan (7.11.2026):** A-puoli on valmis ja julkaistu YouTubessa:
+[Punainen muste](runs/muste-1230/README.md) (A 0:00–20:40, v6, 2160p, https://youtu.be/EZ22YboLk7c)
+kahdeksan kielen tekstityksin. Julkaisu ei saanut huomiota, ja tekstitykset paljastivat soitinhavaintojen
+virheitä. Seuraava vaihe on [Julkaisu 2.0](docs/julkaisu2.md): soitinhavaintojen tarkistus
+referenssiäänitteestä ja partituurista, tekstitykset kolmessa kerroksessa, prologi, Shorts-paketti ja
+uusi lataus. B-puoli ja making-of tulevat sen jälkeen. Projekti on git-repo
+(https://github.com/leothas-dotcom/strauss-heldenleben). Työjärjestys on
+[kokonaissuunnitelmassa](docs/kokonaissuunnitelma.md) (luku 10). Aiempi demo: [Punainen purje](runs/purje-400/brief.md).
 
 | Dokumentti | Sisältö |
 |---|---|
 | [docs/kokonaissuunnitelma.md](docs/kokonaissuunnitelma.md) | **kokonaisuus**: mitä inspiraatiovideosta opittiin, vaiheet, analyysipaketti, riippuvuudet, työjärjestys |
+| [docs/julkaisu2.md](docs/julkaisu2.md) | **Julkaisu 2.0**: soitinhavaintojen tarkistus (referenssi + partituuri), tekstitykset 2.0, prologi, Shorts, uusi lataus |
+| [docs/youtube.md](docs/youtube.md) | julkaisu v6 (1.11.2026): oikeudet, master, otsikko, kuvaus, thumbnail, making-ofin runko |
+| [runs/muste-1230/](runs/muste-1230/README.md) | **julkaistu video** "Punainen muste" (A-puoli): tilanne, tekstitykset, YouTube-aineisto |
 | [docs/analyysisuunnitelma.md](docs/analyysisuunnitelma.md) | kuuntelutyökalu: mallit, tulosteet, mitatut tulokset, rajoitukset |
 | [annotations/kuunteluopas.md](annotations/kuunteluopas.md) | **kuunteluopas** (sanoitusten tilalla): tarina, henkilöt, ankkurit ja koko teos minuutti minuutilta (ajat generoitu teemakartasta) |
 | [annotations/teemat.json](annotations/teemat.json) | **teemakartta**: jaksot ja tapahtumat tämän äänitteen ajassa, varmuus ja peruste; ainoa paikka, jossa aikoja korjataan |

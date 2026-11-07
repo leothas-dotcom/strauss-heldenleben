@@ -78,8 +78,8 @@ Tarkemmat suunnitelmat:
 | 4 Kuunteluopas | ✓ versio 3: koko teos minuutti minuutilta, aikakoodatut osat generoitu teemakartasta (`kuunteluopas.py`). Tarkistus korvalla on kesken. |
 | 5 Merkinnät | ✓ teemakartta `annotations/teemat.json` (lähteiden järjestys + aikajanan ajat, varmuus ja peruste) → `make_cues.py` → `cues.json`. Melodiakaarten luettelo (`themes.json`) jätettiin pois: melodioita ei lueta partituurista. |
 | 6 Paketti | ✓ demominuutille. `check_package.py` tarkistaa JSONit ja binääridatan. |
-| 7 Ajo | ◐ `runs/torviritari-400` (A 0:00–6:40, Disney-henkinen paperipiirretty) työn alla; edeltäjä `sankarin-paiva-400` jäi kesken. Hylätyt: `video-400`, `video-400b` (friisi, staattinen) ja `drehbuehne-400` (sama tanssi koko ajan, pyörivä kamera). |
-| 8 Arviointi | still-kuvat ja kontaktiarkki toimivat |
+| 7 Ajo | ✓ `runs/muste-1230` (A-puoli kokonaan, "Punainen muste") renderöity ja julkaistu 1.11.2026. Demot: `purje-400`, `torviritari-400`. Hylätyt: `video-400`, `video-400b`, `drehbuehne-400`, `sankarin-paiva-400`. |
+| 8 Arviointi | ✓ still-kuvat, kontaktiarkit, camcheck, kohtauscheck, videotarkistus, kriitikkoportti. ◐ Julkaisun jälkeen (7.11.): tekstitykset paljastivat soitinhavaintojen virheitä → `docs/julkaisu2.md`. |
 
 ## 4. Analyysipaketti: litteraatin kuusi osaa
 
@@ -202,16 +202,25 @@ ongelmaa korjataan kerrallaan. Lopuksi selkeystesti (tyylidokumentti, luku 16).
 
 ## 10. Työjärjestys
 
+*Päivitetty 7.11.2026.*
+
 1. ✓ **Riippuvuudet:** `pyproject.toml` + `uv.lock`, `npm ci` ja mallimanifesti.
 2. ✓ **Kuuntelutyökalu** (`listen.py`) demominuutille, tarkistuskuvat, JSON-ulostulo
    (`make_cues.py` → `annotations/cues.json`), tulkinta (`interpret.py`) ja tarkistus
-   (`check_package.py`). Validoitu 400 sekunnilla (luku 9, kohdat 1, 2 ja 6). Kesken: CLAP.
-3. ✓ **Kuunteluopas** versio 3 koko teokselle (teemakartta, aikajana). ◐ Sinun
-   tarkistuksesi korvalla: tarkistuslista on oppaan lopussa.
-4. ◐ **Musiikkivideo** A 0:00–6:40: `runs/torviritari-400`. Kuvakäsikirjoitus, still-kuvat ja
-   kameratarkistus tehty; iskujen tulkinta uusitaan (isku on elementin teko, liike ei pysähdy),
-   sitten renderöinti. Hylätyt: `video-400` ja `video-400b` (friisi, staattinen) sekä
-   `drehbuehne-400` (sama tanssi koko ajan, pyörivä kamera).
-5. ◐ **Koko teoksen** analyysi: soittimet, iskut, tapahtumat, jaksot ja teemakartta ovat
-   valmiit; stemmit ja sävelkorkeus muille kuin A 0–400 s ajetaan, kun muistia on vapaana.
-6. **Tuotanto** jakso kerrallaan.
+   (`check_package.py`). Validoitu 400 sekunnilla (luku 9, kohdat 1, 2 ja 6). CLAP hylätty.
+3. ✓ **Kuunteluopas** versio 3 koko teokselle (teemakartta, aikajana). ◐ Tarkistus korvalla kesken;
+   tekstitykset paljastivat soitinvirheitä (kohta 7).
+4. ✓ **Demovideot** A 0:00–6:40: `purje-400` (viimeinen demo), `torviritari-400`. Hylätyt: `video-400`,
+   `video-400b` (friisi, staattinen), `drehbuehne-400` (pyörivä kamera), `sankarin-paiva-400` (kesken).
+5. ◐ **Koko teoksen** analyysi: soittimet, iskut, tapahtumat, jaksot ja teemakartta valmiit;
+   stemmit ja sävelkorkeus muille kuin A 0–400 s ajetaan, kun muistia on vapaana.
+6. ✓ **A-puolen tuotanto** `runs/muste-1230` ("Punainen muste", 0–1240 s): ohjaaja + osa-agentit
+   (`docs/tuotantojako.md`), kriitikkoportti, v6 renderöity, 2160p-master, julkaistu YouTubeen
+   1.11.2026 (`docs/youtube.md`), tekstitykset kahdeksalla kielellä 4.11.
+7. ◐ **Julkaisu 2.0** (`docs/julkaisu2.md`): a) soitinhavaintojen varmuus kolmesta lähteestä
+   (Krauss, referenssiäänite DTW-linjattuna, partituuri) teemakarttaan; b) tekstitykset kolmessa
+   kerroksessa, vain varmat soittimet; c) prologi, Shorts-paketti, thumbnail, otsikko, kappalemerkit,
+   uusi lataus ja jakelu. Projekti siirretty gitiin 7.11. (github.com/leothas-dotcom/strauss-heldenleben).
+8. **B-puoli**: analyysi on, kuvakäsikirjoitus (`docs/kuvakasikirjoitus.md`) luonnoksena; tuotanto
+   samalla jaolla kuin A.
+9. **Making-of** (`docs/youtube.md` luku 7) B-puolen jälkeen; prologi (kohta 7c) on sen ydin etukäteen.
