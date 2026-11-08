@@ -157,3 +157,36 @@ klarinetti 0,30, vasket 0,37, käyrätorvi 0,23, trumpetti 0,20, pasuuna 0,17, o
 hyviä. **Harppu 0,021, patarumpu 0,087, lautaset 0,001, virveli 0,005**: PANNs on näille heikko myös
 puhtaassa stereossa, joten niistä luetaan vain *suhteellinen* piikki (≫ p90), ei absoluuttista tasoa.
 Linjauksen epävarmuus siirrossa: ±0,4 s, paitsi Gefährtinin alussa noin 3 s (tehtävä 2).
+
+## Tehtävä 5: patarumpu kolmesta lähteestä (#6, #7, #73)
+
+Lähteet: K = Krauss `build/demo400|A3` PANNs `panns_timpani` (30 fps) ja `aksentit.json` rumpustemmin
+lyönnit; R = referenssin PANNs Kraussin ajassa (`soittimet_krauss_aika.json`); P = partituuri
+`build/partituuri/s0NN.png` (Dover-sivunumero kuvassa; P:n #6–#8 tarkisti mobiili-istunto 7.11.).
+Koska PANNs on patarummulle heikko molemmissa levytyksissä (maksimit 0,107 ja 0,087), luetaan vain
+suhteellinen piikki paketin p90:een nähden.
+
+| # | Krauss s | P | K | R | varmuus |
+|---|---|---|---|---|---|
+| 6 | 31 | mf-tremolo yksi tahti (T. 13) | 0,046 kohdassa 31,5–33,5 = 400 s paketin maksimi; lyönnit 31,0/31,6/32,1 | 0,048 samassa tahdissa | **kuultu, heikko** (yksi tahti; korvavahvistus) |
+| 7 | 39 | ei patarumpua (Dover 180) | 0,002–0,004 = p90; lyönnit 40,5–42,7 vääriä | 0,001–0,002 | **kielletty** |
+| 73 | 1172 | Dover 229–230: harj. 43 ja 44 jälkeen Pauke mf → f, tremolo | 0,006 (6× p90) 1177–1178; lyönnit 1175,0/1175,8/1177,5 | 0,035 (≫ p90 0,003) 1176–1180 | **kuultu**; alku 1175,0, ei 1172,5 |
+
+Partituurin rakenne Walstattin alussa (Dover 229–230): harj. 42 *lebhaft* kolme kulissitrumpettia
+(T. 368, Krauss `wal_kulissi1` 1125,7) → harj. 43 orkesterin vastaus, **Pauke mf → f** (Krauss
+`wal_vastaus` 1145) → harj. 44 *wieder lebhaft* toinen kutsu (`wal_kulissi2` 1164,3) → orkesteri
+purkautuu, **Pauke mf → f** (Krauss 1175,0; `wal_taistelu` 1172,5 on mp → f -raja 2,5 s aiemmin).
+Rivit kirjattu `korjaukset.md`:hen lähteineen; teemakarttaa ja tekstityksiä ei muutettu (vaihe 2).
+
+## Yhteenveto vaiheesta 1
+
+1. ✓ yt-dlp `setup.ps1`:ssä valinnaisena, latausskripti `analysis/ref_lataus.ps1`.
+2. ✓ Linjaus ajettu; portti **hylätty** Gefährtinin rajalla (−4,2 s annettuun, noin −3 s mitattuun
+   viulun tuloon), muut ≤ 0,4 s. Rajaa ei löysätty; kolme vaihtoehtoa käyttäjälle.
+3. ✓ Nopeus: Krauss ≈ 447 Hz, virhe +0,6…+0,9 % (WPh 443–444) → **b) ehdotetaan**, ei tehty. WPh 1952
+   [tarkista].
+4. ✓ Referenssin PANNs Kraussin aikaan (`soittimet_krauss_aika.json`).
+5. ✓ Patarumpu: #6 kuultu/heikko, #7 kielletty, #73 kuultu (alku 1175,0).
+
+Vaiheeseen 2 (koko korjauslista, teemakartta, tekstit.json v2) tarvitaan käyttäjältä: WPh:n viritystaso
+tai päätös a/b, korvavahvistus kohtaan 31,5–33,5 s, ja valinta Gefährtin-linjauksen vaihtoehdoista.
