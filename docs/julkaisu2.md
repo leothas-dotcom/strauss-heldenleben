@@ -112,6 +112,10 @@ yhdessä (1 % nopeampi = +17 senttiä ja 1 % lyhyempi kesto), joten tämä on mi
    joten se ei ole puhdas nopeusmuunnos (aikavenytys remasteroinnissa [tarkista]); virhe luettiin sävelestä.
    Ketju: `analysis/skaalaa_ajat.py` (teemakartta ym. käsin vahvistetut ajat) → `analysis/uudelleenajo_k.sh`
    (kuuntelukopiot, paketit, teemaviiva, viuluviiva, cues, opas) → kohtauksen pakettirajat 1258 s → renderi.
+   **Tehty 9.11.2026: v7** (`runs/muste-1230/renders/heldenleben_muste_A_v7.mp4`, 1258 s; 2160p-master samalla
+   reseptillä kuin v6). Mitattu: ääni totuutta vasten 0,00 ms koko matkalla, iskut 8 OK + lautaset +1 ruutu,
+   jähmettymiä 0, camcheck 0/95, näkyvyys 0 rikettä, korjattu sävel 1–3 c Deccan yläpuolella. Kuva on v6
+   skaalatussa ajassa (ks. `run.json` video_v7). Ei vielä julkaistu: uusi lataus tehdään luvun 3 paketin kanssa.
 
 ### 1.6 Tuotos
 

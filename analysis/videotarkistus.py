@@ -116,8 +116,10 @@ def main():
 
     # 3. jähmettymät ennen yleistaukoa
     gp = next((e["t"] for e in m["events"] if e["id"] == "held_gp" and e["side"] == a.side), t_end)
+    # vain musiikin aikana: nimikortti ja ura ennen held_alkua ovat tarkoituksella lähes paikallaan (9.11.2026)
+    alku = next((e["t"] for e in m["events"] if e["id"] == "held_alku" and e["side"] == a.side), a.start + 1)
     ts = a.start + (np.arange(len(d)) + 1) / FPS
-    still = (d < STILL) & (ts > a.start + 1) & (ts < gp)
+    still = (d < STILL) & (ts > max(a.start + 1, alku)) & (ts < gp)
     runs, cur = [], 0
     for k, s in enumerate(still):
         cur = cur + 1 if s else 0

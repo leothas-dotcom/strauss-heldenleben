@@ -1,147 +1,178 @@
 {
-  "name": "muste-1230",
-  "title": "Punainen muste",
-  "side": 1,
-  "start": 0,
-  "duration": 1240,
-  "paketit": [
-    "build/demo400",
-    "build/A2",
-    "build/A3"
+ "name": "muste-1230",
+ "title": "Punainen muste",
+ "side": 1,
+ "start": 0,
+ "duration": 1258,
+ "paketit": [
+  "build/demo400",
+  "build/A2",
+  "build/A3"
+ ],
+ "ajat": "annotations/teemat.json -> cues.json (ankkurit), build/*/aksentit.json, build/demo400/teemaviiva.json, build/koko/viuluviiva_A.json",
+ "aikojen_totuus": "build/kuuntelu/A_puoli_kuuntelu.wav",
+ "kuvakasikirjoitus": "runs/muste-1230/storyboard.md",
+ "kohtaus": "visual/muste/index.html",
+ "video": "runs/muste-1230/renders/heldenleben_muste_1240s.mp4",
+ "whatsapp": "runs/muste-1230/renders/heldenleben_muste_1240s_whatsapp.mp4",
+ "tyoTapa": "ohjaaja + sonnet-aliagentit (30.10.2026)",
+ "render": {
+  "fps": 30,
+  "resolution": [
+   1920,
+   1080
   ],
-  "ajat": "annotations/teemat.json -> cues.json (ankkurit), build/*/aksentit.json, build/demo400/teemaviiva.json, build/koko/viuluviiva_A.json",
-  "aikojen_totuus": "build/kuuntelu/A_puoli_kuuntelu.wav",
-  "kuvakasikirjoitus": "runs/muste-1230/storyboard.md",
-  "kohtaus": "visual/muste/index.html",
-  "video": "runs/muste-1230/renders/heldenleben_muste_1240s.mp4",
-  "whatsapp": "runs/muste-1230/renders/heldenleben_muste_1240s_whatsapp.mp4",
-  "tyoTapa": "ohjaaja + sonnet-aliagentit (30.10.2026)",
-  "render": {
-    "fps": 30,
-    "resolution": [
-      1920,
-      1080
-    ],
-    "workers": 2,
-    "chunk_s": 40,
-    "fade_out_s": 3.5,
-    "codec": "libx264 crf 18, aac 320k"
+  "workers": 2,
+  "chunk_s": 40,
+  "fade_out_s": 3.5,
+  "codec": "libx264 crf 18, aac 320k"
+ },
+ "video_final": "runs/muste-1230/renders/heldenleben_muste_A_final.mp4",
+ "youtube": {
+  "master": "runs/muste-1230/renders/heldenleben_muste_A_youtube_2160p.mp4",
+  "resolution": [
+   3840,
+   2160
+  ],
+  "codec": "libx264 crf 20 maxrate 60M, bt709 tv, aac kopioitu",
+  "thumbnails": "runs/muste-1230/youtube/",
+  "ohje": "docs/youtube.md"
+ },
+ "video_v2": {
+  "render": "runs/muste-1230/renders/heldenleben_muste_A_v2.mp4",
+  "master_2160p": "runs/muste-1230/renders/heldenleben_muste_A_v2_youtube_2160p.mp4",
+  "pvm": "2026-10-31 18:39-19:20",
+  "mitattu": {
+   "videotarkistus": "ääni 0,00 ms, jähmettymiä 0, alun 3 iskua +2 ruutua, held_isku4 -1",
+   "camcheck": "0 ylitystä",
+   "kohtauscheck": "0 reunaylitystä, tyhjä tausta vain paperissa 0-7,5 ja 1224-1240 s",
+   "jatkuvuus": "välkyntä yli rajan 34 (final 67), hypyt 123 (final 407); ryppäät tarkoitettuja, avoimet 435,5 ja 606,3 s pieniä",
+   "kriitikko": "kriitikko_v2/index_tayt.md: C11, C12, A11, A12, B6, C8 OK; avoimet A8 (hidas luonnos), B10 849-877, C6 osin, pienet olennot"
   },
-  "video_final": "runs/muste-1230/renders/heldenleben_muste_A_final.mp4",
+  "huom": "master gop 30; muuten sama resepti kuin docs/youtube.md luku 3",
+  "julkaisu": "master valmis; käyttäjä päättää latauksesta (docs/youtube.md)"
+ },
+ "video_v3": {
+  "render": "renders/heldenleben_muste_A_v3.mp4",
+  "whatsapp": "renders/heldenleben_muste_A_v3_whatsapp.mp4",
+  "master_2160p": null,
+  "pvm": "2026-11-01 00:06",
+  "korjaukset": [
+   "A13 huipun aurinko (loc_storm.js)",
+   "B10/B11 harppu = kuun sillan välke, glissandot partituurista (loc_shore.js, harppu_glissandot.json)"
+  ],
+  "mitattu": {
+   "videotarkistus": "videotarkistus_v3.txt: ääni 0,00 ms, jähmettymiä 0, iskut kuten v2 (4 poikkeamaa)",
+   "jatkuvuus": "jatkuvuus_v3.txt: välkyntä 32, hyppyjä 120 (v2 34/123)",
+   "silta_kirkkaus": "huiput 806,0/807,9/809,9/811,7/813,6/815,2 s; tahdinalut 806,08/809,88/813,64 osuvat",
+   "kriitikko": "kriitikko_v3/index_tayt.md (22 kohtaa)"
+  },
+  "huom": "A13 ja B10 ✅ stilleistä; B11 käyttäjän kuunneltava; D9 (soitinmuotoiset olennot) ja D8 (puu) odottavat päätöstä; ei uutta renderiä pelkän puun takia (käyttäjä 1.11.)",
+  "julkaisu": "master tekemättä; käyttäjä päättää"
+ },
+ "video_v4": {
+  "render": "renders/heldenleben_muste_A_v4.mp4",
+  "whatsapp": "renders/heldenleben_muste_A_v4_whatsapp.mp4",
+  "master_2160p": null,
+  "pvm": "2026-11-01 02:07",
+  "korjaukset": [
+   "E1 huipun pilvet yksi avautuminen, aurinko ilman alfaa (loc_storm)",
+   "A15 täysi sädekehä yhtenä kaarena (loc_storm uRays)",
+   "E2 alun aurinko ja taivas yksi kaari (loc_valley)",
+   "A14 kumppani ihmisenä (companion.js ihminen, loc_shore)",
+   "D8 tavallinen kuollut puu, oksat jousten mukaan (loc_swamp)",
+   "D10 rannan jämät: DUST[12..17] ja moonDash pois, viiva yhtenä nauhana (loc_shore)",
+   "A8 luonnos jatkuvaksi (main.js washAt)",
+   "D11 olennot soittimensa mukana (loc_swamp)",
+   "osa 1: vedon häntä, niityn irtopilvet, välkerenkaat vain harpussa, myrskypilvi myöhemmin"
+  ],
+  "mitattu": {
+   "videotarkistus": "ääni 0,00 ms; iskut kuten v3; jähmettymä 140,87 s (2 ruutua ennen leikkausta)",
+   "jatkuvuus": "välkyntä 30, hyppyjä 157 (uudet tarkoitettuja: siirtymä 243,8, leikkaus 832,5, varis 405,8, pöllähdykset 435–440)",
+   "stillit": "kierros4/v4_sheet1.png, v4_sheet2.png"
+  },
+  "huom": "Kriitikko v3b:n bugilista käyty läpi; D9 ja B11 odottavat käyttäjää",
+  "julkaisu": "master tekemättä; käyttäjä katsoo v4:n WhatsApp-version"
+ },
+ "video_v6": {
+  "render": "renders/heldenleben_muste_A_v6.mp4",
+  "whatsapp": "renders/heldenleben_muste_A_v6_whatsapp.mp4",
+  "master_2160p": "renders/heldenleben_muste_A_v6_youtube_2160p.mp4",
+  "pvm": "2026-11-01 07:18",
+  "korjaukset": [
+   "suon, unen ja taistelun olennot tyyliohjeen luvun 10 kokoihin ja rekistereihin, tukki pois, nakyvyys 0 (C4, C14, D12, B9)",
+   "alun iskut t6/t8/t11 ruudulleen (B8)",
+   "jähmettymä 140,87 pois (D3)",
+   "pilven jäämä 232 s pois, aurinko piilossa väistöön asti (E1)",
+   "rannan 9 käännöstä jatkuviksi (C10)",
+   "yö hengittää 1104–1107",
+   "kumppanin nauha ohut ja ritarin takaa 811",
+   "luonnoksen reunaviiva pois 1118"
+  ],
+  "mitattu": {
+   "videotarkistus": "ääni 0,00 ms; iskut 7 OK, 2 × −1 ruutu (sallittu); jähmettymiä 0",
+   "jatkuvuus": "välkyntä 16, hyppyjä 121 (v5 21/146)",
+   "nakyvyys": "0 rikettä 240–422 s",
+   "stillit": "kierros4/v6_suo_sheet.png, v6_muut_sheet.png"
+  },
+  "huom": "Koko palautelistan uusintatarkistus v6:sta käynnissä (kriitikko_v6)",
+  "julkaisu": "JULKAISTU 1.11.2026 (käyttäjä): https://youtu.be/EZ22YboLk7c. Käyttäjän palaute: \"HIENO!\"; uudet palautteet A16, C15, D13 kirjattu, ei toteuteta vielä.",
   "youtube": {
-    "master": "runs/muste-1230/renders/heldenleben_muste_A_youtube_2160p.mp4",
-    "resolution": [
-      3840,
-      2160
-    ],
-    "codec": "libx264 crf 20 maxrate 60M, bt709 tv, aac kopioitu",
-    "thumbnails": "runs/muste-1230/youtube/",
-    "ohje": "docs/youtube.md"
-  },
-  "video_v2": {
-    "render": "runs/muste-1230/renders/heldenleben_muste_A_v2.mp4",
-    "master_2160p": "runs/muste-1230/renders/heldenleben_muste_A_v2_youtube_2160p.mp4",
-    "pvm": "2026-10-31 18:39-19:20",
-    "mitattu": {
-      "videotarkistus": "ääni 0,00 ms, jähmettymiä 0, alun 3 iskua +2 ruutua, held_isku4 -1",
-      "camcheck": "0 ylitystä",
-      "kohtauscheck": "0 reunaylitystä, tyhjä tausta vain paperissa 0-7,5 ja 1224-1240 s",
-      "jatkuvuus": "välkyntä yli rajan 34 (final 67), hypyt 123 (final 407); ryppäät tarkoitettuja, avoimet 435,5 ja 606,3 s pieniä",
-      "kriitikko": "kriitikko_v2/index_tayt.md: C11, C12, A11, A12, B6, C8 OK; avoimet A8 (hidas luonnos), B10 849-877, C6 osin, pienet olennot"
-    },
-    "huom": "master gop 30; muuten sama resepti kuin docs/youtube.md luku 3",
-    "julkaisu": "master valmis; käyttäjä päättää latauksesta (docs/youtube.md)"
-  },
-  "video_v3": {
-    "render": "renders/heldenleben_muste_A_v3.mp4",
-    "whatsapp": "renders/heldenleben_muste_A_v3_whatsapp.mp4",
-    "master_2160p": null,
-    "pvm": "2026-11-01 00:06",
-    "korjaukset": [
-      "A13 huipun aurinko (loc_storm.js)",
-      "B10/B11 harppu = kuun sillan välke, glissandot partituurista (loc_shore.js, harppu_glissandot.json)"
-    ],
-    "mitattu": {
-      "videotarkistus": "videotarkistus_v3.txt: ääni 0,00 ms, jähmettymiä 0, iskut kuten v2 (4 poikkeamaa)",
-      "jatkuvuus": "jatkuvuus_v3.txt: välkyntä 32, hyppyjä 120 (v2 34/123)",
-      "silta_kirkkaus": "huiput 806,0/807,9/809,9/811,7/813,6/815,2 s; tahdinalut 806,08/809,88/813,64 osuvat",
-      "kriitikko": "kriitikko_v3/index_tayt.md (22 kohtaa)"
-    },
-    "huom": "A13 ja B10 ✅ stilleistä; B11 käyttäjän kuunneltava; D9 (soitinmuotoiset olennot) ja D8 (puu) odottavat päätöstä; ei uutta renderiä pelkän puun takia (käyttäjä 1.11.)",
-    "julkaisu": "master tekemättä; käyttäjä päättää"
-  },
-  "video_v4": {
-    "render": "renders/heldenleben_muste_A_v4.mp4",
-    "whatsapp": "renders/heldenleben_muste_A_v4_whatsapp.mp4",
-    "master_2160p": null,
-    "pvm": "2026-11-01 02:07",
-    "korjaukset": [
-      "E1 huipun pilvet yksi avautuminen, aurinko ilman alfaa (loc_storm)",
-      "A15 täysi sädekehä yhtenä kaarena (loc_storm uRays)",
-      "E2 alun aurinko ja taivas yksi kaari (loc_valley)",
-      "A14 kumppani ihmisenä (companion.js ihminen, loc_shore)",
-      "D8 tavallinen kuollut puu, oksat jousten mukaan (loc_swamp)",
-      "D10 rannan jämät: DUST[12..17] ja moonDash pois, viiva yhtenä nauhana (loc_shore)",
-      "A8 luonnos jatkuvaksi (main.js washAt)",
-      "D11 olennot soittimensa mukana (loc_swamp)",
-      "osa 1: vedon häntä, niityn irtopilvet, välkerenkaat vain harpussa, myrskypilvi myöhemmin"
-    ],
-    "mitattu": {
-      "videotarkistus": "ääni 0,00 ms; iskut kuten v3; jähmettymä 140,87 s (2 ruutua ennen leikkausta)",
-      "jatkuvuus": "välkyntä 30, hyppyjä 157 (uudet tarkoitettuja: siirtymä 243,8, leikkaus 832,5, varis 405,8, pöllähdykset 435–440)",
-      "stillit": "kierros4/v4_sheet1.png, v4_sheet2.png"
-    },
-    "huom": "Kriitikko v3b:n bugilista käyty läpi; D9 ja B11 odottavat käyttäjää",
-    "julkaisu": "master tekemättä; käyttäjä katsoo v4:n WhatsApp-version"
-  },
-  "video_v6": {
-    "render": "renders/heldenleben_muste_A_v6.mp4",
-    "whatsapp": "renders/heldenleben_muste_A_v6_whatsapp.mp4",
-    "master_2160p": "renders/heldenleben_muste_A_v6_youtube_2160p.mp4",
-    "pvm": "2026-11-01 07:18",
-    "korjaukset": [
-      "suon, unen ja taistelun olennot tyyliohjeen luvun 10 kokoihin ja rekistereihin, tukki pois, nakyvyys 0 (C4, C14, D12, B9)",
-      "alun iskut t6/t8/t11 ruudulleen (B8)",
-      "jähmettymä 140,87 pois (D3)",
-      "pilven jäämä 232 s pois, aurinko piilossa väistöön asti (E1)",
-      "rannan 9 käännöstä jatkuviksi (C10)",
-      "yö hengittää 1104–1107",
-      "kumppanin nauha ohut ja ritarin takaa 811",
-      "luonnoksen reunaviiva pois 1118"
-    ],
-    "mitattu": {
-      "videotarkistus": "ääni 0,00 ms; iskut 7 OK, 2 × −1 ruutu (sallittu); jähmettymiä 0",
-      "jatkuvuus": "välkyntä 16, hyppyjä 121 (v5 21/146)",
-      "nakyvyys": "0 rikettä 240–422 s",
-      "stillit": "kierros4/v6_suo_sheet.png, v6_muut_sheet.png"
-    },
-    "huom": "Koko palautelistan uusintatarkistus v6:sta käynnissä (kriitikko_v6)",
-    "julkaisu": "JULKAISTU 1.11.2026 (käyttäjä): https://youtu.be/EZ22YboLk7c. Käyttäjän palaute: \"HIENO!\"; uudet palautteet A16, C15, D13 kirjattu, ei toteuteta vielä.",
-    "youtube": {
-      "url": "https://youtu.be/EZ22YboLk7c",
-      "nakyvyys": "yksityinen",
-      "ladattu": "2026-11-01 aamu, YouTube Studio Chromessa (Claude in Chrome), lataus kesken kun tallennettiin",
-      "asetukset": "kieli englanti, luokka Musiikki, ei lapsille, tavallinen lisenssi, kommentit päällä, ei synteettinen-merkintää, otsikko ja kuvaus docs/youtube.md luvuista 4–5 (Making-of-linkki: coming later)"
-    }
-  },
-  "tekstitykset": {
-    "kansio": "tekstitykset/",
-    "generaattori": "analysis/tekstitys.py",
-    "video": "https://youtu.be/EZ22YboLk7c",
-    "kielet": [
-      "fi",
-      "en",
-      "de",
-      "sv",
-      "fr",
-      "es",
-      "it",
-      "ja"
-    ],
-    "tekstejä": 79,
-    "ruudulla_osuus": 0.28,
-    "pvm": "2026-11-04",
-    "tila": "julkaistu YouTubessa 4.11.2026: en, fi, de, sv, fr, es, it, ja (manuaaliset raidat, tarkistettu julkiselta videosivulta)",
-    "kommentti": "julkaistu 4.11.2026 @NikoKilpi: ohje laittaa tekstitykset päälle (en + fi), ei kiinnitetty"
+   "url": "https://youtu.be/EZ22YboLk7c",
+   "nakyvyys": "yksityinen",
+   "ladattu": "2026-11-01 aamu, YouTube Studio Chromessa (Claude in Chrome), lataus kesken kun tallennettiin",
+   "asetukset": "kieli englanti, luokka Musiikki, ei lapsille, tavallinen lisenssi, kommentit päällä, ei synteettinen-merkintää, otsikko ja kuvaus docs/youtube.md luvuista 4–5 (Making-of-linkki: coming later)"
   }
+ },
+ "tekstitykset": {
+  "kansio": "tekstitykset/",
+  "generaattori": "analysis/tekstitys.py",
+  "video": "https://youtu.be/EZ22YboLk7c",
+  "kielet": [
+   "fi",
+   "en",
+   "de",
+   "sv",
+   "fr",
+   "es",
+   "it",
+   "ja"
+  ],
+  "tekstejä": 79,
+  "ruudulla_osuus": 0.28,
+  "pvm": "2026-11-04",
+  "tila": "julkaistu YouTubessa 4.11.2026: en, fi, de, sv, fr, es, it, ja (manuaaliset raidat, tarkistettu julkiselta videosivulta)",
+  "kommentti": "julkaistu 4.11.2026 @NikoKilpi: ohje laittaa tekstitykset päälle (en + fi), ei kiinnitetty"
+ },
+ "lahde": {
+  "aani": "audio/lp_krauss_k/side1.flac",
+  "k": 0.98598,
+  "pvm": "2026-11-09",
+  "peruste": "LP-siirto soi +24,4 c yli Deccan virallisen julkaisun (sama esitys, a1 ≈ 440,5 Hz; Wien 1952 enintään 440 Hz); analysis/nopeus_sama_esitys.py, release2/referenssi_hr2015.md",
+  "aika": "kaikki ajat 9.11.2026 alkaen korjatun lähteen aikaa: t_uusi = t_vanha / k; v1–v6 ja niiden dokumentit alkuperäisen siirron aikaa",
+  "vanhat": "build/v1/ (paketit), build/kuuntelu_v1/ (kuuntelukopiot)"
+ },
+ "paketit_huom": "demo400 0–400, A2 400–820, A3 800–1260 (korjattu aika); generoitu uudelleen 9.11. analysis/uudelleenajo_k.sh",
+ "video_v7": {
+  "render": "renders/heldenleben_muste_A_v7.mp4",
+  "whatsapp": "renders/heldenleben_muste_A_v7_whatsapp.mp4",
+  "master_2160p": "renders/heldenleben_muste_A_v7_youtube_2160p.mp4",
+  "kesto_s": 1258.0,
+  "pvm": "2026-11-09 00:04–00:42",
+  "korjaukset": [
+   "nopeuskorjattu lähde k = 0,98598 (−24,4 c, +17,3 s musiikkia): paketit, teemakartta, cues, kuuntelukopio korjatussa ajassa",
+   "puolen loppu 1240 → 1258 s (main.js, loc_shore.js)",
+   "loc_swamp.js muiston aaltojen pohjakynnys 0,12 → 0,08 (viides pohja 341 s on uudessa analyysissä 0,10)",
+   "kuva muuten v6"
+  ],
+  "mitattu": {
+   "videotarkistus": "ääni 0,00 ms koko 1258 s; iskut 8 OK, lautaset +1 ruutu; jähmettymiä musiikin aikana 0 (tarkistus rajattu held_alku–held_gp 9.11.)",
+   "jatkuvuus": "välkyntä 19, hyppyjä 97 (v6 16/121; leikkaukset lasketaan hyppyinä)",
+   "camcheck": "95 ottoa, 0 yli 20 °/s (release2/camcheck_v7.txt)",
+   "nakyvyys": "0 rikettä 243,4–428 s (release2/nakyvyys_v7.txt)",
+   "stillit": "release2/stillit_k/kontakti.jpg (8 ankkurikohtaa), renders/heldenleben_muste_A_v7_kontakti.jpg",
+   "savel": "korjattu LP +2,4…+4,6 c vs Decca +0,6…+3,3 c (nopeus.py-kohdat A, C, T190)"
+  },
+  "huom": "Ei julkaistu. Julkaisu 2.0 (docs/julkaisu2.md): tekstitykset 2.0, prologi ja uusi lataus tehdään tästä versiosta; tekstit.json:n ankkurit ovat jo korjatussa ajassa (SRT:t generoitava uudelleen)."
+ }
 }
