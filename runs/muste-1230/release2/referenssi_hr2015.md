@@ -190,3 +190,25 @@ Rivit kirjattu `korjaukset.md`:hen lähteineen; teemakarttaa ja tekstityksiä ei
 
 Vaiheeseen 2 (koko korjauslista, teemakartta, tekstit.json v2) tarvitaan käyttäjältä: WPh:n viritystaso
 tai päätös a/b, korvavahvistus kohtaan 31,5–33,5 s, ja valinta Gefährtin-linjauksen vaihtoehdoista.
+
+## Lisäys 9.11.2026: Wien 440 Hz ja saman esityksen Decca-siirto (`analysis/nopeus_sama_esitys.py`)
+
+Käyttäjä: Wienin viritystaso oli 1952 korkeintaan 440 Hz, ja Kraussin levytys on Spotifyssa (Decca).
+Deccan virallinen julkaisu on YouTuben Topic-kanavilla; ladattiin `audio/ref/ref_decca_held.flac`
+(Der Held, 240,5 s) ja `ref_decca_wid.flac` (Widersacher). Sama esitys → tempo identtinen → kaksi
+riippumatonta mittaria ilman oletuksia viritystasosta:
+
+| mittari | tulos | luotettavuus |
+|---|---|---|
+| Kesto: iskukäyrien korrelaatio skaalan r yli (LP 7,6–239,2 s) | r = 1,0192 (+1,92 %), korrelaatio 0,44, toiseksi paras huippu 0,24 | 20 teemakartan ankkuria osuvat ennusteeseen ±0,1 s 220 s matkalla (regressio r = 1,0206 yhden poikkeavan kanssa) → varma |
+| Sävel: CREPE samoista tahdeista | LP − Decca = **+24,4 c** (A +27,0, C +21,9, T190 +24,4; T120 hylätty, Decca MAD 11) | Decca +0,6…+3,3 c ≈ 440,5–441 Hz, sama kuin käyttäjän tieto Wienistä → varma |
+
+Mittarit eivät täsmää (1,9 % vs 1,4 %): Deccan remaster **ei ole LP:n puhdas nopeusmuunnos**, vaan
+siinä kesto ja sävel on irrotettu toisistaan noin 0,5 % (digitaalinen aikavenytys remasteroinnissa
+**[tarkista]**; Opus/YouTube ei muuta nopeutta). Levysoitin ei voi tehdä sellaista, joten LP:n
+nopeusvirhe luetaan **sävelestä**.
+
+**Päätös (käyttäjä valitsi b) 8.11.):** k = 2^(−24,4/1200) = **0,98598** (−1,40 %). Korjattu LP soi samalla
+korkeudella kuin Decca/Spotify (a¹ ≈ 441 Hz), joten korvavertailu on suora. A-puolen musiikki pitenee
++17,3 s (1216 → 1233 s). Tasan 440 Hz vaatisi −26,5 c (k = 0,98481); ero 2 c on mittaustarkkuuden sisällä.
+Sama k molemmille puolille (sama siirto); B tarkistetaan Deccan B-raidoista ennen B-puolen tuotantoa.
