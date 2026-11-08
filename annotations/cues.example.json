@@ -2,7 +2,7 @@
   "_ohje": "Malli merkintätiedostolle. Kopioi nimelle cues.json. Ajat sekunteina LP-puolen tiedoston alusta (side = 1 tai 2), esim. Audacityn label-raidalta. 'arvio': true = alustava arvio LP:n voimakkuuskäyrästä, tarkista korvalla. 'transform' = teeman muunnos: augment, diminish, invert, fragment, transpose, distort, combine, return. 'of' = minkä teeman muunnos. null = ei vielä merkitty.",
   "recording": {
     "title": "Ein Heldenleben – Wienin filharmonikot, Clemens Krauss (London LL 659)",
-    "sides": { "1": "audio/lp_krauss/side1.flac", "2": "audio/lp_krauss/side2.flac" }
+    "sides": { "1": "audio/lp_krauss_k/side1.flac", "2": "audio/lp_krauss_k/side2.flac" }
   },
   "sections": [
     { "id": "held",          "title": "Der Held",                             "side": 1, "start": 0.0,   "arvio": true },

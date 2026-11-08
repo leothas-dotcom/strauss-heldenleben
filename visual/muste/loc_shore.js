@@ -66,9 +66,9 @@ const WATER_FS = /* glsl */ `
 // S.fam ei sisällä näitä erillisinä, joten ne luetaan suoraan analyysipaketeista (sama aikajana kuin data.js: ruutu i = i/30 s).
 const CH_NAMES = ['panns_pizzicato', 'panns_harp', 'panns_flute', 'panns_clarinet', 'panns_wind_instrument_woodwind_instrument', 'panns_violin_fiddle', 'stem_vocals'];
 async function loadChannels(names) {
-  const n = Math.round(1240 * 30) + 1;
+  const n = Math.round(1258 * 30) + 1; // puolen loppu korjatussa ajassa (1240 / k, audio/lahde.json)
   const out = Object.fromEntries(names.map((c) => [c, new Float32Array(n)]));
-  for (const p of [{ dir: 'build/A2', from: 400, to: 810 }, { dir: 'build/A3', from: 810, to: 1240 }]) {
+  for (const p of [{ dir: 'build/A2', from: 400, to: 810 }, { dir: 'build/A3', from: 810, to: 1258 }]) {
     const r1 = await fetch(`/${p.dir}/listen.json`), r2 = await fetch(`/${p.dir}/listen.f32`);
     if (!r1.ok || !r2.ok) throw new Error(`kanavat puuttuvat: ${p.dir}`);
     const m = await r1.json(), raw = new Float32Array(await r2.arrayBuffer());

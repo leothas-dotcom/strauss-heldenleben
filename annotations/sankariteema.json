@@ -2,14 +2,14 @@
  "lahde": "partituuri IMSLP 19168 s. 3–4, sellostemma (käyttäjän lupa 30.10.2026); muoto vain, tarkka sävelkorkeus ja ajoitus mitataan äänestä analysis/teemaviiva.py:llä",
  "huomautus": "Iskut neljäsosina (0 = tahdin alku, 4/4). Sidotut samat sävelet on yhdistetty yhdeksi nuotiksi. T14–16 ei nuotinnettu: sellot vaikenevat, johtava linja on viulujen nopeita juoksutuksia.",
  "tahtiankkurit": {
-  "1": 7.62,
-  "6": 17.64,
-  "8": 21.62,
-  "9": 23.62,
-  "11": 27.5,
-  "13": 31.42,
-  "17": 39.44,
-  "20": 45.74
+  "1": 7.73,
+  "6": 17.89,
+  "8": 21.93,
+  "9": 23.96,
+  "11": 27.89,
+  "13": 31.87,
+  "17": 40.0,
+  "20": 46.39
  },
  "nuotit": [
   {
@@ -615,5 +615,11 @@
    "varmuus": "epävarma",
    "huomio": "geteilt, treble-avain; ylempi ääni"
   }
- ]
+ ],
+ "nopeuskorjaus": {
+  "k": 0.98598,
+  "pvm": "2026-11-09",
+  "kansio": "audio/lp_krauss_k",
+  "huom": "ajat = korjatun lähteen aikaa, t_uusi = t_vanha / k"
+ }
 }

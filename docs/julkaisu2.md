@@ -105,6 +105,14 @@ yhdessä (1 % nopeampi = +17 senttiä ja 1 % lyhyempi kesto), joten tämä on mi
    Suositus: mitataan ensin; jos nopeusvirhe on alle 0,5 %, a) riittää. Jos selvästi yli, b) on
    muusikon videolle oikea ratkaisu, ja se sopii samaan uuteen lataukseen kuin prologi.
 
+   **Tulos 8.–9.11.2026** (`runs/muste-1230/release2/referenssi_hr2015.md`): LP-siirto soi a¹ ≈ 447 Hz
+   (+26,5 c), ja saman esityksen Decca-julkaisu (YouTube Topic = Spotify) ≈ 440,5 Hz; Wien soitti 1952
+   enintään 440 Hz (käyttäjä). Ero +24,4 c = +1,40 % → **b) valittu**, k = 0,98598 (`audio/lahde.json`,
+   `audio/lp_krauss_k/`). Huomio: Deccan remasterin kesto on 1,9 % pidempi mutta sävel vain 1,4 % alempi,
+   joten se ei ole puhdas nopeusmuunnos (aikavenytys remasteroinnissa [tarkista]); virhe luettiin sävelestä.
+   Ketju: `analysis/skaalaa_ajat.py` (teemakartta ym. käsin vahvistetut ajat) → `analysis/uudelleenajo_k.sh`
+   (kuuntelukopiot, paketit, teemaviiva, viuluviiva, cues, opas) → kohtauksen pakettirajat 1258 s → renderi.
+
 ### 1.6 Tuotos
 
 `annotations/teemat.json`: jokaiselle soitinta nimeävälle ankkurille `soittimet: [{nimi, varmuus:

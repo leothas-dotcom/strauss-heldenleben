@@ -24,10 +24,10 @@ import soundfile as sf
 from scipy.signal import butter, sosfilt
 
 ROOT = Path(__file__).resolve().parent.parent
-FILES = {1: ROOT / "audio" / "lp_krauss" / "side1.flac", 2: ROOT / "audio" / "lp_krauss" / "side2.flac"}
-# kohinan vertailukohta: levyn pinta ilman musiikkia (A: sisäänajoura 0:04-0:07.2; B: loppuura 23:20,
-# koska B-puolen alku 0:00-0:08 on digitaalista hiljaisuutta eikä kelpaa vertailuksi)
-NOISE = {1: (4.0, 7.2), 2: (1400.0, 1406.0)}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+# lähdeääni ja kohinan vertailukohta (A: sisäänajoura 0:04-0:07.2; B: loppuura 23:20) audio/lahde.json:sta,
+# korjatun siirron aikaan skaalattuina
+from lahde import FILES, NOISE  # noqa: E402
 BANDS = [("matala", 40, 220), ("keski", 220, 1000), ("korkea", 1000, 3500)]
 N, H = 16384, 4800
 

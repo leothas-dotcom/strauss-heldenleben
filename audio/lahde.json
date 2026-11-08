@@ -1,0 +1,8 @@
+{
+  "kansio": "audio/lp_krauss_k",
+  "alkuperainen": "audio/lp_krauss",
+  "k": 0.98598,
+  "pvm": "2026-11-09",
+  "peruste": "Levyn siirto soi +24,4 c yli Deccan virallisen julkaisun (sama esitys, a1 ~440,5 Hz; Wien 1952 enintaan 440 Hz). Korjaus: ffmpeg asetrate=96000*k, aresample soxr precision 28, 24 bit. runs/muste-1230/release2/referenssi_hr2015.md, docs/julkaisu2.md 1.5 b.",
+  "huom": "Kaikki ajat (teemakartta, cues, paketit, kuuntelukopiot, video) ovat korjatun lahteen aikaa: t_uusi = t_vanha / k. Alkuperaiset ajat ennen 9.11.2026 ovat build/v1/- ja build/kuuntelu_v1/-kansioissa."
+}

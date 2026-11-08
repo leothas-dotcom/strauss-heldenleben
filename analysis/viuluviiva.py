@@ -20,8 +20,9 @@ import numpy as np
 import soundfile as sf
 
 ROOT = Path(__file__).resolve().parent.parent
-FILES = {1: ROOT / "audio" / "lp_krauss" / "side1.flac", 2: ROOT / "audio" / "lp_krauss" / "side2.flac"}
-NOISE = {1: (4.0, 7.2), 2: (1400.0, 1406.0)}
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lahde import FILES, NOISE  # lähdeääni ja kohinaväli audio/lahde.json:sta (nopeuskorjattu siirto)  # noqa: E402
 PACKS = {1: ["build/A2", "build/A3"], 2: []}
 SR = 22050
 HOP = 256

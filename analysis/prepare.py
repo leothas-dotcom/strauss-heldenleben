@@ -19,6 +19,7 @@ import argparse
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -26,9 +27,10 @@ import soundfile as sf
 from scipy import signal
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lahde import FILES, RUNOUT  # lähdeääni ja loppuurat audio/lahde.json:sta (nopeuskorjattu siirto)  # noqa: E402
+
 SR = 22050
-# Pelkkää loppuuraa kummallakin puolella: (alku s, kesto s).
-RUNOUT = {1: (1240.0, 50.0), 2: (1400.0, 60.0)}
 MONO = "pan=mono|c0=0.5*c0+0.5*c1"
 
 
@@ -72,7 +74,7 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     a = ap.parse_args()
 
-    src = ROOT / "audio" / "lp_krauss" / f"side{a.side}.flac"
+    src = FILES[a.side]
     out = a.out if a.out.is_absolute() else ROOT / a.out
     out.mkdir(parents=True, exist_ok=True)
 
@@ -101,6 +103,7 @@ def main():
 
     meta = {
         "side": a.side,
+        "lahde": str(src.relative_to(ROOT)),
         "start": a.start,
         "duration": a.duration,
         "sr": SR,

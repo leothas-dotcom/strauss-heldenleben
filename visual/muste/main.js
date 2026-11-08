@@ -35,7 +35,7 @@ const W = 1920, H = slate ? 1000 : 1080;
 const PACKS = [
   { dir: 'build/demo400', from: 0, to: 400 },
   { dir: 'build/A2', from: 400, to: 810 },
-  { dir: 'build/A3', from: 810, to: 1240 },
+  { dir: 'build/A3', from: 810, to: 1258 },
 ];
 const fmt = (t) => { const m = Math.floor(t / 60); const s = t - 60 * m; return `A ${m}:${s.toFixed(1).padStart(4, '0')}`; };
 

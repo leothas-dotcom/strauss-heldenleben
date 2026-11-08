@@ -4,6 +4,7 @@ build/
 output/
 audio/*
 !audio/.gitkeep
+!audio/lahde.json
 models/
 runs/*/renders/
 runs/*/stills/

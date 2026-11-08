@@ -1,4 +1,4 @@
-// Koko A-puoli kolmesta analyysipaketista (build/demo400 0–400 s, A2 400–820 s, A3 800–1240 s).
+// Koko A-puoli kolmesta analyysipaketista (build/demo400 0–400 s, A2 400–820 s, A3 800–1260 s; korjatun lähteen aika, audio/lahde.json).
 // Paketit yhdistetään yhdeksi aikajanaksi puolen omassa ajassa (0 = tiedoston alku). Limityksissä
 // käytetään saumaa SEAM: sitä ennen edellinen paketti, sen jälkeen seuraava. Kaikki ruutudata on
 // 30 fps, joten ruutu i = i/30 s. Tapahtumalistat (iskut, nuotinalut, naksahdukset, jaksot) otetaan

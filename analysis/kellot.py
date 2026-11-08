@@ -26,7 +26,9 @@ import soundfile as sf
 from scipy.signal import correlate, resample_poly
 
 ROOT = Path(__file__).resolve().parent.parent
-FILES = {1: ROOT / "audio" / "lp_krauss" / "side1.flac", 2: ROOT / "audio" / "lp_krauss" / "side2.flac"}
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lahde import FILES  # lähdeääni audio/lahde.json:sta (nopeuskorjattu siirto)  # noqa: E402
 FS = 8000
 WIN, MARGIN = 6.0, 0.5  # vertailuikkuna ja haettava siirtymä (s)
 SILENT_DB = -45.0       # hiljaisia ikkunoita (esim. yleistauko) ei mitata

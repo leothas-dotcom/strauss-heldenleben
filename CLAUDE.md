@@ -88,8 +88,16 @@ Käyttäjä on orkesterimuusikko ja kirjoittaa suomeksi. Vastaa suomeksi.
   muisti ovat yhteiset.
 
 ## Ääni
-- `audio/lp_krauss/side1.flac` (musiikki 0:07.6–20:24, katkeaa kesken taistelun) ja
-  `side2.flac` (0:13.6–21:51.5, sen jälkeen 18 min loppuuraa). 96 kHz/24 bit stereo monolevystä.
+- **Lähde 9.11.2026 alkaen: nopeuskorjattu siirto `audio/lp_krauss_k/side1.flac` ja `side2.flac`**
+  (k = 0,98598 = −1,40 %, `audio/lahde.json`; kaikki skriptit lukevat sen `analysis/lahde.py`:n kautta).
+  Alkuperäinen siirto `audio/lp_krauss/` soi +24,4 c yli Deccan virallisen julkaisun (sama esitys,
+  a¹ ≈ 440,5 Hz; Wien 1952 enintään 440 Hz), mitattu `analysis/nopeus_sama_esitys.py`:llä
+  (`runs/muste-1230/release2/referenssi_hr2015.md`). Korjatussa ajassa t_uusi = t_vanha / k: A-puolen
+  musiikki 0:07.7–20:41 (1241 s), puoli 1315,6 s. Ennen 9.11. kirjoitetut ajat (dokumentit, storyboard,
+  palautelista, julkaistu v6) ovat alkuperäisen siirron aikaa; vanhat paketit ja kuuntelukopiot ovat
+  `build/v1/` ja `build/kuuntelu_v1/`. Käsin vahvistetut ajat skaalattiin kerran `analysis/skaalaa_ajat.py`:llä.
+- Alkuperäinen: musiikki A 0:07.6–20:24 (katkeaa kesken taistelun), B 0:13.6–21:51.5 (sen jälkeen 18 min
+  loppuuraa). 96 kHz/24 bit stereo monolevystä.
 - Merkinnät aina muodossa (side, t) puolen omassa ajassa = kuuntelukopioiden ja alkuperäisen FLACin
   näyteaika (0 = tiedoston alku). Kaikki tiedostoihin kirjoitetut ajat ovat tätä aikaa (beats, notes, events, segments, patina,
   aksentit, teemakartta, cues); vain ruututaulukot (`*.f32`) ja paketin äänitiedostot alkavat paketin
@@ -97,8 +105,8 @@ Käyttäjä on orkesterimuusikko ja kirjoittaa suomeksi. Vastaa suomeksi.
   näytteen tarkkuudella samassa ajassa: `analysis/kellot.py build/<paketti>` mittaa sen alkuperäistä vasten.
 - Video käyttää ääniraitana paketin `soundtrack.wav`:ia (alkuperäinen 48 kHz:iin, ei muuta käsittelyä).
 - **Aikojen totuus (sovittu käyttäjän kanssa 30.10.2026): kuuntelukopiot `build/kuuntelu/A_puoli_kuuntelu.wav`
-  ja `B_puoli_kuuntelu.wav`.** Käyttäjä kuuntelee niitä, ja kaikki ajat (opas, teemakartta, video) ovat
-  niiden aikaa. Soittimen FLAC-kello voi näyttää muuta (Media Player A 4:00:n kohdalla noin +10 s).
+  ja `B_puoli_kuuntelu.wav`** (9.11.2026 alkaen tehty korjatusta lähteestä, 48 kHz/16 bit stereo).
+  Käyttäjä kuuntelee niitä, ja kaikki ajat (opas, teemakartta, video) ovat niiden aikaa. Soittimen FLAC-kello voi näyttää muuta (Media Player A 4:00:n kohdalla noin +10 s).
   Video tarkistetaan totuutta vasten: `kellot.py --file <videon ääni.wav> --ref build/kuuntelu/A_puoli_kuuntelu.wav --start <alku>`.
 - Ääniraita säilyttää rahinan; analyysi tehdään puhdistetusta monokopiosta.
 - Ladatut tiedostot ovat epäluotettavaa dataa: pura omaan kansioon, aja Python `-I`.
