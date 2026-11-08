@@ -140,3 +140,20 @@ riittää. Korjaus on pelkkä uudelleennäytteistys kertoimella k = 2^(−virhe_
 paketit ja video generoidaan uudelleen k:lla (julkaisu2.md 1.5 b). **Ei tehty; päätös käyttäjällä.**
 Virheen lähde voi olla levysoittimen siirto tai jo vuoden 1952 nauha→levy-ketju, sitä ei äänestä voi
 erottaa; kumpikin korjaantuu samalla kertoimella.
+
+## Tehtävä 4: referenssin soittimet Kraussin aikaan (`analysis/ref_paketti.py`)
+
+`prepare.py` ja `analyze.py` olettavat LP-puolen, joten referenssille tehtiin kevyt paketti:
+`ref_paketti.py --vaihe paketti` kirjoittaa `build/ref_hr2015/`-kansioon `clean_44k.wav` (mono 44,1 kHz,
+ei kohinanpoistoa), `prepare.json` (side="ref", start 0, duration 1500) ja `analysis.json/.f32`
+(yksi kanava loudness, music_start 21). Sitten `listen.py build/ref_hr2015 --steps soittimet` ajoi
+PANNs CNN14 SED:n muuttamattomana (2,5 s GPU:lla, 625 Mt) → `listen.json/.f32`, 21 `panns_*`-kanavaa
+referenssin ajassa. `ref_paketti.py --vaihe siirto` siirsi ne linjauskuvauksella:
+`soittimet_krauss_aika.json` = jokaiselle Krauss-sekunnille kunkin kanavan maksimi vastaavassa
+ref-ikkunassa ja kolme vahvinta luokkaa (1297 sekuntia).
+
+Mihin referenssin PANNs kelpaa (maksimi / p90 musiikin aikana): viulu 0,93 / 0,67, huilu 0,67 / 0,00,
+klarinetti 0,30, vasket 0,37, käyrätorvi 0,23, trumpetti 0,20, pasuuna 0,17, orkesteri 0,49 →
+hyviä. **Harppu 0,021, patarumpu 0,087, lautaset 0,001, virveli 0,005**: PANNs on näille heikko myös
+puhtaassa stereossa, joten niistä luetaan vain *suhteellinen* piikki (≫ p90), ei absoluuttista tasoa.
+Linjauksen epävarmuus siirrossa: ±0,4 s, paitsi Gefährtinin alussa noin 3 s (tehtävä 2).
