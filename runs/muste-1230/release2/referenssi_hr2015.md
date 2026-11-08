@@ -88,6 +88,55 @@ monihuippuiseksi. Lisäksi ref −16 c tarkoittaisi, että hr soittaisi 436 Hz, 
 - Teemakartan `gef_viulu`-ankkuri 422,0 on pp-hännän, ei viulun, alku; viulu tulee 423,2. Tämä
   kirjataan korjauslistaan tarkistettavaksi vaiheessa 2 (ei muuteta nyt).
 
-## Tehtävä 3: levyn nopeus toisella menetelmällä
+## Tehtävä 3: levyn nopeus toisella menetelmällä (`analysis/nopeus.py`)
 
-*(kesken)*
+Menetelmä: torchcrepe (full, weighted_argmax ilman ditheriä, periodisuus ≥ 0,7) seuraa johtavaa linjaa
+samoista tahdeista molemmissa äänitteissä; jokaisen ruudun poikkeama lähimmästä tasavireisestä
+sävelestä (A440) senteissä → mediaani ja MAD. Kohta kelpaa, kun MAD < 10 c molemmissa (muuten
+ikkunat eivät sisällä samoja säveliä tai seuranta on epävarma). Tulos `build/ref_hr2015/nopeus.md`.
+
+| kohta | Krauss c (MAD) | ref c (MAD) | kelpaa |
+|---|---|---|---|
+| A alun Es-duuri, sellot ja käyrätorvet (7.6–20 / 21–35) | **+27.8** (6.9) | +5.3 (1.7) | kyllä |
+| B sooloviulun tulo (423.2–443 / 480.2–502) | +7.1 (19.9) | +7.2 (11.5) | ei: rubato, eri sävelet, LP-kohina |
+| C dom7-sointu ennen taukoa (229–238.5 / 257.5–268) | **+25.2** (1.7) | +9.8 (1.6) | kyllä |
+| D kulissitrumpetit (1125.7–1136 / 1214–1225) | +2.9 (3.7) | +2.2 (0.5) | ei: kulissisoittajien oma taso (23 c alle orkesterin) |
+| E Widersacherin huilu (243–258 / 272.4–289) | −12.5 (19.7) | +6.8 (4.8) | ei: huilu LP-kohinassa epävarma |
+| F rakkauskohtauksen huippu (919–936 / 984.4–1003.8) | **+29.6** (10.4) | +9.4 (6.5) | rajalla; vahvistaa A:n ja C:n |
+
+- **Krauss soi tasolla +26,5 c (A ja C; F +29,6 samaa luokkaa) eli a¹ ≈ 447 Hz.** Taso on sama puolen
+  alussa (8 s), 229 s:ssa ja 919 s:ssa: siirron nopeus on vakio koko puolella, virhe ei ole
+  pyörimisnopeuden huojuntaa.
+- **Referenssi hr 2015 mittautuu +5…+10 c eli ≈ 442 Hz**, tiukalla hajonnalla (MAD 1,6–1,7 c tutissa).
+  Se on uskottava nykyinen saksalainen radio-orkesteritaso, joten CREPE ei ole harhainen: menetelmä
+  toimii, ja referenssiä ei tarvita itse nopeuslukuun, vain mittarin vahvistukseen.
+- Kulissitrumpetit (D) soivat kummassakin levytyksessä orkesteria matalammalta (Krauss −23 c, hr
+  −5 c): kulissisoittimia ei saa käyttää viritystason mittaamiseen eikä tekstityksessä väittää niiden
+  intonaatiosta mitään.
+- Menetelmä 1 (`estimate_tuning`, tehtävä 2) antoi Krauss +16 c ja ref −16 c: ref-arvo on selvästi
+  väärä (436 Hz), joten menetelmän 1 lukuja ei käytetä.
+
+### Nopeusvirhe = Kraussin taso − WPh:n viritystaso 1952
+
+| WPh 1952 | nopeusvirhe c | nopeusvirhe % | A-puolen musiikki (1216 s) oikealla nopeudella |
+|---|---|---|---|
+| 440 Hz | +26.5 | +1.54 % | +19 s |
+| 442 Hz | +18.6 | +1.08 % | +13 s |
+| 443 Hz | +14.7 | **+0.85 %** | +10 s |
+| 444 Hz | +10.8 | **+0.63 %** | +8 s |
+| 445 Hz | +6.9 | +0.40 % | +5 s |
+
+WPh:n 1952-taso on edelleen **[tarkista]**: kaksi verkkohakua (8.11.) eivät löytäneet lähdettä
+1950-luvulle; nykytasoksi mainitaan 443 tai 444 Hz, Berliinin aiempi 445 Hz koskee eri orkesteria.
+Emaus & Junger 2013 (Austrian high tuning, s. 56–59) on skannattu PDF ilman tekstikerrosta, ei luettu.
+Käyttäjä (orkesterimuusikko) voi tietää paremmin; muuten oletus 443–444 Hz.
+
+### Johtopäätös (julkaisu2.md 1.5:n säännöllä)
+
+Virhe on +0,6…+0,9 %, kun WPh:n tasoksi oletetaan 443–444 Hz, eli **yli 0,5 %:n rajan** → vaihtoehto
+**b) nopeuden korjaus** ehdotetaan. Vain jos WPh soitti 1952 jo 445 Hz, virhe alittaa rajan ja a)
+riittää. Korjaus on pelkkä uudelleennäytteistys kertoimella k = 2^(−virhe_c/1200) (443 Hz → k =
+0,9915, puoli pitenee 10 s; 444 Hz → 0,9938, +8 s), ja sen jälkeen teemakartta, cues, aksentit,
+paketit ja video generoidaan uudelleen k:lla (julkaisu2.md 1.5 b). **Ei tehty; päätös käyttäjällä.**
+Virheen lähde voi olla levysoittimen siirto tai jo vuoden 1952 nauha→levy-ketju, sitä ei äänestä voi
+erottaa; kumpikin korjaantuu samalla kertoimella.
