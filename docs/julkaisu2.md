@@ -57,8 +57,11 @@ Referenssin aikaleimat eivät saa sekoittua videon aikaan. Siksi:
 4. Referenssin soitinhavainnot siirretään kuvauksen kautta Kraussin aikaan ja kirjataan teemakarttaan
    kentällä `ref: {lahde, t_ref, varmuus}`. **Videon ja kuunteluoppaan aika on edelleen Kraussin aika.**
 
-**Hankinta.** Tämä työtila ja koneen VM eivät pääse verkkoon (archive.org, IMSLP, pypi estetty
-7.11.), joten referenssi tuodaan käsin kansioon `audio/ref/` (gitignoressa). Kelpaa mikä tahansa
+**Hankinta.** Pilvityötila ei pääse verkkoon (archive.org, IMSLP, pypi estetty 7.11.), joten
+referenssi ladataan työkoneella: `analysis/ref_lataus.ps1 -Url <osoite> -Tunniste <id>` (yt-dlp,
+asennus vain `setup.ps1 -WithYtDlp`) kansioon `audio/ref/` (gitignoressa). Ladattu 8.11.2026:
+`ref_Us1jfC7bMpA.flac`, hr-Sinfonieorchester / Orozco-Estrada, Alte Oper Frankfurt 11.12.2015,
+50 min 40 s, 48 kHz mono. Kelpaa mikä tahansa
 selkeä stereolevytys, koska sitä ei julkaista: oma CD-rippi käy. Vapaita ehdokkaita Internet Archivesta
 **[tarkista saatavuus]**: Reiner / Chicago 1954 (RCA Living Stereo, EU:ssa vapaa ennen 1963), Beecham /
 RPO 1947. Nykyaikainen levytys on parempi erottelultaan; se saa olla käyttäjän oma.

@@ -6,13 +6,15 @@
   .\setup.ps1                 # asentaa puuttuvat + tarkistaa
   .\setup.ps1 -CheckOnly      # pelkkä tarkistus, ei asennuksia
   .\setup.ps1 -WithAudacity   # asentaa myös Audacityn (äänitteen merkintään)
+  .\setup.ps1 -WithYtDlp      # asentaa myös yt-dlp:n (referenssiäänitteen lataus analyysiin)
 
   Näytönohjainanalyysi (PyTorch CUDA, ~3 Gt) asennetaan aina; mallipainot ladataan
   ensimmäisellä analyysiajolla.
 #>
 param(
     [switch]$CheckOnly,
-    [switch]$WithAudacity
+    [switch]$WithAudacity,
+    [switch]$WithYtDlp
 )
 
 $ErrorActionPreference = 'Continue'
@@ -195,6 +197,18 @@ if ($WithAudacity -and -not (Get-AudacityExe)) { Install-WingetPackage 'Audacity
 $aud = Get-AudacityExe
 if ($aud) { Report 'Audacity (merkinnät)' 'OK' $aud }
 else      { Report 'Audacity (merkinnät)' 'VALINNAINEN' '.\setup.ps1 -WithAudacity (tai muu ohjelma, joka vie label-tiedoston)' }
+
+# --- 6b. yt-dlp (referenssiäänite) -------------------------------------------------
+# Valinnainen: Julkaisu 2.0:n soitinhavaintojen tarkistus (docs/julkaisu2.md luku 1.3) vertaa Kraussin
+# levyä moderniin referenssiäänitteeseen, joka ladataan analysis\ref_lataus.ps1:llä kansioon audio\ref\
+# (gitignoressa, vain analyysiin, ei julkaisuun). Videon tekemiseen yt-dlp:tä ei tarvita.
+Step 'yt-dlp'
+if ($WithYtDlp -and -not (Get-Command yt-dlp -ErrorAction SilentlyContinue)) { Install-WingetPackage 'yt-dlp.yt-dlp' }
+if (Get-Command yt-dlp -ErrorAction SilentlyContinue) {
+    Report 'yt-dlp (referenssiäänite)' 'OK' ("yt-dlp " + (& yt-dlp --version 2>$null))
+} else {
+    Report 'yt-dlp (referenssiäänite)' 'VALINNAINEN' '.\setup.ps1 -WithYtDlp (vain docs/julkaisu2.md:n referenssilinjaukseen)'
+}
 
 # --- 7. Kansiot, äänite, merkinnät, levytila ------------------------------------
 Step 'Kansiot, äänite, merkinnät ja levytila'
