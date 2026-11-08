@@ -12,9 +12,12 @@ Kohtia, joissa "vahvistettu": true, ei koskaan muuteta eikä poisteta; muut luod
 """
 import argparse
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lahde import FILES  # lähdeääni audio/lahde.json:sta (nopeuskorjattu siirto)  # noqa: E402
 CUES = ROOT / "annotations" / "cues.json"
 EXAMPLE = ROOT / "annotations" / "cues.example.json"
 
@@ -124,7 +127,8 @@ def main():
                   "Ajat sekunteina LP-puolen tiedoston alusta. lahde: analyysi / arvio / vahvistettu. "
                   "Muokkaa vapaasti ja aseta \"vahvistettu\": true - make_cues.py ei koskaan muuta vahvistettuja "
                   "kohtia. Luotu: python -I analysis/make_cues.py <paketit>."),
-        "recording": base["recording"],
+        # lähdeääni audio/lahde.json:sta (nopeuskorjattu siirto), ei vanhasta cues.json:sta
+        "recording": {**base["recording"], "sides": {str(s): str(p.relative_to(ROOT)).replace("\\", "/") for s, p in FILES.items()}},
         "themes": {**base["themes"], **map_themes, **GENERATED_THEMES},
         "sections": sections,
         "cues": cues,

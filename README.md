@@ -6,6 +6,11 @@ eräänlaisen fantasiadraaman. Äänenä on Clemens Kraussin ja Wienin filharmon
 Ne seuraavat musiikin rakennetta (teemat, jaksot, soittimet) ja sen hetkellistä ilmaisua.
 Koodin kirjoittaa Claude.
 
+**9.11.2026: lähdeääni vaihdettiin nopeuskorjattuun siirtoon** (`audio/lp_krauss_k/`, k = 0,98598: levy soi
++24,4 c yli Deccan julkaisun; `docs/julkaisu2.md` 1.5, `runs/muste-1230/release2/referenssi_hr2015.md`).
+Kaikki ajat ketjussa ovat nyt korjatun lähteen aikaa (t_uusi = t_vanha / k); tätä vanhemmat ajat
+dokumenteissa ja julkaistussa v6:ssa ovat alkuperäisen siirron aikaa.
+
 **Missä ollaan (7.11.2026):** A-puoli on valmis ja julkaistu YouTubessa:
 [Punainen muste](runs/muste-1230/README.md) (A 0:00–20:40, v6, 2160p, https://youtu.be/EZ22YboLk7c)
 kahdeksan kielen tekstityksin. Julkaisu ei saanut huomiota, ja tekstitykset paljastivat soitinhavaintojen

@@ -54,12 +54,12 @@ export function build(K) {
 
   // --- muiston aallot: jousikanavan (S.fam.strings) tasoitetun käyrän pohjat wid_reh17:n ja wid_uusi_hyokkays:n välissä ---
   // Käyrä tasoitetaan 1,5 s:n gaussilla; pohja = paikallinen minimi ±4 s:n ikkunassa, jonka kummallakin puolella (8 s) on
-  // vähintään 0,12 korkeampi huippu. Aalto = kahden pohjan väli. Kasvu aallon sisällä = kanavan kertymä (kasvaa soidessa,
+  // vähintään 0,08 korkeampi huippu. Aalto = kahden pohjan väli. Kasvu aallon sisällä = kanavan kertymä (kasvaa soidessa,
   // pysähtyy tauossa, ei koskaan palaa), joten kuva seuraa mitattua soittoa eikä kellotettua kaavaa.
   const WF = 30, wA = tNight, wN = Math.round((tRet + 8 - wA) * WF) + 1;
   const strRaw = Float32Array.from({ length: wN }, (_, i) => S.fam.strings(wA + i / WF));
   const strSm = gaussian(strRaw, 45);
-  const troughs = [];
+  const troughs = [], ehdokkaat = [];
   for (let i = 120; i < wN - 120; i++) {
     const tt = wA + i / WF;
     if (tt < wA + 3 || tt > tRet - 4) continue;
@@ -69,9 +69,15 @@ export function build(K) {
     let lm = 0, rm = 0;
     for (let j = Math.max(0, i - 240); j <= i; j++) lm = Math.max(lm, strSm[j]);
     for (let j = i; j < Math.min(wN, i + 241); j++) rm = Math.max(rm, strSm[j]);
-    if (Math.min(lm, rm) - strSm[i] >= 0.12) troughs.push(tt);
+    const prom = Math.min(lm, rm) - strSm[i];
+    ehdokkaat.push([tt, prom]);
+    // kynnys 0,08 (oli 0,12): nopeuskorjatun lähteen analyysissä (9.11.2026) viidennen aallon pohjan (341 s) prominenssi on 0,10
+    if (prom >= 0.08) troughs.push(tt);
   }
-  if (troughs.length < 5) throw new Error('muiston aallot: jousikanavan pohjia alle 5 (wid_reh17 .. wid_uusi_hyokkays)');
+  if (troughs.length < 5) {
+    const lista = ehdokkaat.sort((a, b) => b[1] - a[1]).slice(0, 8).map(([tt, p]) => `${tt.toFixed(1)} s (${p.toFixed(3)})`).join(', ');
+    throw new Error(`muiston aallot: jousikanavan pohjia alle 5 (wid_reh17 .. wid_uusi_hyokkays): ${troughs.length} pohjaa; ehdokkaat ${lista}`);
+  }
   const WB = [tNight, ...troughs.slice(0, 5), tRet];          // kuusi aaltoa
   const cumA = new Float32Array(wN);
   { let acc = 0; for (let i = 0; i < wN; i++) { acc += Math.max(strRaw[i], 0.08) / WF; cumA[i] = acc; } }
