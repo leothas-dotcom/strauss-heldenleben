@@ -59,7 +59,9 @@ def chroma(y, tuning_cents):
     per = int(round(SR / HOP / FPS))
     n = c.shape[1] // per
     c = c[:, : n * per].reshape(12, n, per).mean(axis=2)
-    c = c / (np.linalg.norm(c, axis=0, keepdims=True) + 1e-9)
+    # pieni tasainen pohja, jotta hiljainen ruutu ei ole nollavektori (kosinietäisyys antaisi NaN:in)
+    c = c + 1e-4
+    c = c / np.linalg.norm(c, axis=0, keepdims=True)
     return c.astype(np.float32)
 
 
@@ -83,8 +85,9 @@ def main():
     print("lataa Krauss (kuuntelukopio, totuusaika)")
     yk = lataa(a.krauss)
     k_kesto = len(yk) / SR
-    r_loppu = a.ref_loppu if a.ref_loppu else None
-    print("lataa referenssi")
+    # Referenssi rajataan A-puolen alueelle: koko levy (B-puoli mukana) vääristäisi Sakoe-Chiba-diagonaalin.
+    r_loppu = a.ref_loppu if a.ref_loppu else a.ref_alku + (k_kesto - k_alku) + 120.0
+    print(f"lataa referenssi 0-{r_loppu:.0f} s")
     yr = lataa(a.ref, 0.0, r_loppu)
 
     # 1. viritys
@@ -107,7 +110,11 @@ def main():
     t_kr = wp[:, 1] / FPS
     # yksikäsitteinen kuvaus: jokaiselle Krauss-sekunnille referenssin aika (mediaani polun pisteistä)
     sek = np.arange(0, int(k_kesto) + 1)
-    kuvaus = np.interp(sek, t_kr, t_ref)
+    # polulla on samalle Krauss-ruudulle useita ref-ruutuja (pystysuorat askeleet): keskiarvo ruutua kohti,
+    # sitten interpolointi sekunnin ruudukkoon (np.interp vaatii aidosti nousevan x:n)
+    j_uniq, inv = np.unique(wp[:, 1], return_inverse=True)
+    r_mean = np.bincount(inv, weights=wp[:, 0]) / np.bincount(inv)
+    kuvaus = np.interp(sek, j_uniq / FPS, r_mean / FPS)
     # paikallinen nopeussuhde d t_ref / d t_krauss 30 s ikkunassa
     slope = np.gradient(np.convolve(kuvaus, np.ones(31) / 31, mode="same"))
 
