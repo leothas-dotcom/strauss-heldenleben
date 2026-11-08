@@ -173,6 +173,7 @@
    "stillit": "release2/stillit_k/kontakti.jpg (8 ankkurikohtaa), renders/heldenleben_muste_A_v7_kontakti.jpg",
    "savel": "korjattu LP +2,4…+4,6 c vs Decca +0,6…+3,3 c (nopeus.py-kohdat A, C, T190)"
   },
-  "huom": "Ei julkaistu. Julkaisu 2.0 (docs/julkaisu2.md): tekstitykset 2.0, prologi ja uusi lataus tehdään tästä versiosta; tekstit.json:n ankkurit ovat jo korjatussa ajassa (SRT:t generoitava uudelleen)."
+  "huom": "Ei julkaistu. Julkaisu 2.0 (docs/julkaisu2.md): tekstitykset 2.0, prologi ja uusi lataus tehdään tästä versiosta; tekstit.json:n ankkurit ovat jo korjatussa ajassa (SRT:t generoitava uudelleen).",
+  "master_mitattu": "6,00 Gt, 1258,0 s, h264 3840x2160 bt709 tv, aac 48 kHz; enkoodaus 00:43–00:56"
  }
 }
