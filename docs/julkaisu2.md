@@ -164,9 +164,14 @@ Kuuntele-rivi erottuu sanalla, ei värillä (SRT ei kanna tyyliä kaikilla alust
 ### 2.4 Toteutus
 
 `tekstit.json` v2 samaan kansioon, kenttä `kerros: tarina|kuuntele|tausta`. `tekstitys.py` tarkistaa
-kerrosjakauman (kuuntele ≤ 40 %, tausta ≤ 15 %), soitinvarmuuden ja entiset rajat. Käännökset 7 kielelle
+kerrosjakauman (kuuntele ≤ 40 %, tausta ≤ 20 %), soitinvarmuuden ja entiset rajat. Käännökset 7 kielelle
 uudelleen vain muuttuneille tunnisteille. SRT:t vaihdetaan YouTube Studiossa vanhojen tilalle; video
 pysyy samana, jos kuvaa ei muuteta.
+
+**Tehty 9.11.2026:** soitinvarmuus 32 ankkurille teemakarttaan (`soittimet`), `release2/korjaukset.md` kaikille riveille,
+`tekstit.json` v2 (82 tekstiä: tarina 36, kuuntele 31, tausta 15; 45 muutettua tai uutta) ja SRT:t v7:n ajoitukseen
+(`tekstitykset/srt/`), 0 rikettä. Tausta-raja nostettiin 15 → 20 %:iin, koska pelkän partituurin soitintiedot siirrettiin
+tähän kerrokseen. Koska v7:n ajat eroavat julkaistusta v6:sta (k), SRT:t ladataan vasta v7:n kanssa (luku 3).
 
 ## 3. Uusi release
 
