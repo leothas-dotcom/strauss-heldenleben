@@ -14,6 +14,9 @@ Säännöt, jotka tarkistetaan (rikkeet pysäyttävät):
     (kesto tulee hitaimmin luettavasta kielestä)
   - ei tekstiä yleistauon aikana (tyyliohje 13.7: hiljaisuus on tyhjää paperia)
   - teksti ei ajaudu yli 4 s irti ankkuristaan
+  - kerrokset (docs/julkaisu2.md luku 2, 9.11.2026): jokaisella tekstillä 'kerros' tarina|kuuntele|tausta;
+    kuuntele-teksti alkaa sanalla Kuuntele (kielittäin PREFIX) ja nimeää 'soittimet', joiden varmuus
+    teemakartan ankkurissa (events[].soittimet) on 'kuultu'; kuuntele <= 40 % ja tausta <= 20 % teksteistä
 Tulokset: srt/<nimi>.<kieli>.srt ja tekstitys.md (tarkistustaulukko).
 --esikatselu <kieli> tekee kontaktiarkit, joissa teksti on ruudun päällä (vain tarkistukseen:
 tekstejä ei polteta videoon, kuvasääntö 27).
@@ -29,6 +32,9 @@ CPS = {'ja': 6.0}
 CPS_MUU = 15.0
 RIVI = 42        # leveysyksikköä; täysleveä merkki = 2
 AJAUTUMA_MAX = 4.0
+KERROKSET = ('tarina', 'kuuntele', 'tausta')
+OSUUS_MAX = {'kuuntele': 0.40, 'tausta': 0.20}
+PREFIX = {'fi': 'Kuuntele', 'en': 'Listen', 'de': 'Hör', 'sv': 'Lyssna', 'fr': 'Écoutez', 'es': 'Escucha', 'it': 'Ascolta', 'ja': '聴'}
 
 
 def leveys(s):
@@ -78,6 +84,7 @@ def main():
     L = json.load(io.open(a.lahde, encoding='utf-8'))
     kartta = json.load(io.open(os.path.join(ROOT, 'annotations', 'teemat.json'), encoding='utf-8'))
     A = {e['id']: float(e['t']) for e in kartta['events'] if e.get('side') == 1}
+    SOITTIMET = {e['id']: {s['nimi']: s['varmuus'] for s in e.get('soittimet', [])} for e in kartta['events'] if e.get('side') == 1}
     p = subprocess.run([a.ffmpeg.replace('ffmpeg', 'ffprobe'), '-v', 'error', '-show_entries', 'format=duration',
                         '-of', 'csv=p=0', a.video], capture_output=True, text=True)
     loppu = float(p.stdout.strip())
@@ -106,7 +113,25 @@ def main():
             else:
                 virheet.append(f"{c['id']}: käännös puuttuu ({k})")
         cues.append({**c, 'ank': t, 'tekstit': tekstit})
+        # kerrokset ja soitinvarmuus
+        kerros = c.get('kerros')
+        if kerros not in KERROKSET:
+            virheet.append(f"{c['id']}: kerros puuttuu tai tuntematon ({kerros})")
+        if kerros == 'kuuntele':
+            for k, s in tekstit.items():
+                if k in PREFIX and not s.startswith(PREFIX[k]):
+                    virheet.append(f"{c['id']} [{k}]: kuuntele-teksti ei ala sanalla {PREFIX[k]}: {s}")
+            for nimi in c.get('soittimet', []):
+                v = SOITTIMET.get(c['a'], {}).get(nimi)
+                if v != 'kuultu':
+                    virheet.append(f"{c['id']}: soitin '{nimi}' ankkurissa {c['a']} ei ole kuultu (teemakartta: {v})")
+        elif c.get('soittimet'):
+            virheet.append(f"{c['id']}: 'soittimet' vain kuuntele-kerroksessa")
     cues.sort(key=lambda c: c['ank'])
+    for kerros, raja in OSUUS_MAX.items():
+        osuus = sum(1 for c in cues if c.get('kerros') == kerros) / max(1, len(cues))
+        if osuus > raja:
+            virheet.append(f"kerros {kerros}: {100 * osuus:.0f} % teksteistä (raja {100 * raja:.0f} %)")
 
     # ajoitus: yhteinen kaikille kielille
     edellinen = 0.0
@@ -145,10 +170,11 @@ def main():
     with io.open(os.path.join(a.out, 'tekstitys.md'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(f"# Tekstitykset: tarkistustaulukko\n\nGeneroitu: `analysis/tekstitys.py`. {len(cues)} tekstiä, "
                 f"ruudulla {peitto:.0f} s / {loppu:.0f} s ({100 * peitto / loppu:.0f} %). Korjaukset tiedostoon `tekstit.json`.\n\n"
-                "| # | Aika | Ankkuri | Suomi | English | Lähde |\n|---|---|---|---|---|---|\n")
+                "| # | Aika | Ankkuri | Kerros | Suomi | English | Lähde |\n|---|---|---|---|---|---|---|\n")
         for i, c in enumerate(cues, 1):
-            f.write(f"| {i} | {mmss(c['alku'])} | `{c['a']}` | {c['fi']} | {c['en']} | {c['lahde']} |\n")
-    print(f"{len(cues)} tekstiä, ruudulla {peitto:.0f} s / {loppu:.0f} s ({100 * peitto / loppu:.0f} %), kielet {sorted(cues[0]['tekstit'])}")
+            f.write(f"| {i} | {mmss(c['alku'])} | `{c['a']}` | {c.get('kerros', '')} | {c['fi']} | {c['en']} | {c['lahde']} |\n")
+    jakauma = {k: sum(1 for c in cues if c.get('kerros') == k) for k in KERROKSET}
+    print(f"{len(cues)} tekstiä, ruudulla {peitto:.0f} s / {loppu:.0f} s ({100 * peitto / loppu:.0f} %), kielet {sorted(cues[0]['tekstit'])}, kerrokset {jakauma}")
     aukot = sorted(((cues[i + 1]['alku'] - cues[i]['loppu'], cues[i]['loppu']) for i in range(len(cues) - 1)), reverse=True)[:5]
     print('pisimmät tauot:', ', '.join(f"{g:.0f} s ({mmss(t)})" for g, t in aukot))
     for v in virheet:

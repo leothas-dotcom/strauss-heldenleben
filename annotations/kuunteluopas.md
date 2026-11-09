@@ -338,6 +338,7 @@ Kehittely. Kaukaiset trumpetit kutsuvat, sitten lyömäsoittimet, 3/4 ja trumpet
 | A 19:21.3–19:36.5 | tunnelma | Orkesteri vastaa f, sitten hiipuu | – | analyysi |
 | **A 19:40.9–19:49.2** | uusi soitin | Trumpettikutsu uudelleen hiljaisuuden jälkeen | Toinen kutsu | analyysi |
 | A 19:49.2 | tunnelma | Patarummut f; trumpetit ja virvelit 19:39.5; 3/4 | Taistelu alkaa (Wikipedia: lyömäsoittimet ja soolotrumpetti, ensimmäinen 3/4) | lähde+analyysi |
+| **A 19:51.7** | uusi soitin | Patarummut mf -> f orkesterin purkauksessa toisen kulissikutsun jälkeen (Dover s. 230, harj. 44 jälkeen); tremolo seuraa | Taistelu alkaa: patarummut lyövät | lähde+analyysi |
 
 ##### A 20:00–21:00 · Taistelu
 

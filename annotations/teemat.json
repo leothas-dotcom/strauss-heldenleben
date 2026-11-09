@@ -1,5 +1,5 @@
 {
- "_ohje": "Teemakartta: teoksen jaksot ja tapahtumat tämän äänitteen (Krauss, London LL 659) ajassa, sekunteina LP-puolen tiedoston alusta. Tapahtumien JÄRJESTYS tulee lähteistä (docs/heldenleben_tutkimus.md: Porter, Wikipedia en/de, Kennedy). AJAT tulevat aikajanasta (build/koko/aikajana_A/B: segments.py:n jaksorajat ja interpret.py:n soitintapahtumat, analysis/aikajana.py). Kenttä 'peruste' kertoo, mikä mitattu piirre aikaan osuu. luokka: soitin (uusi soitin sisään), tunnelma (tunnelman/dynamiikan muutos), soolo, teema, huippu, tauko. varmuus: vahvistettu (käyttäjä tarkistanut) / analyysi (selvä mitattu piirre) / lahde+analyysi (lähteen tapahtuma osuu selvään piirteeseen) / arvio (tulkinta, tarkista). make_cues.py kirjoittaa nämä cues.json:iin, kuunteluopas.py kuunteluoppaan minuuttiosaan. Muokkaa vain tätä tiedostoa ja aja molemmat. NOPEUSKORJAUS 2026-11-09: kaikki ajat jaettu k=0.98598:lla (audio/lahde.json); alkuperäiset ajat gitin historiassa ennen tätä.",
+ "_ohje": "Teemakartta: teoksen jaksot ja tapahtumat tämän äänitteen (Krauss, London LL 659) ajassa, sekunteina LP-puolen tiedoston alusta. Tapahtumien JÄRJESTYS tulee lähteistä (docs/heldenleben_tutkimus.md: Porter, Wikipedia en/de, Kennedy). AJAT tulevat aikajanasta (build/koko/aikajana_A/B: segments.py:n jaksorajat ja interpret.py:n soitintapahtumat, analysis/aikajana.py). Kenttä 'peruste' kertoo, mikä mitattu piirre aikaan osuu. luokka: soitin (uusi soitin sisään), tunnelma (tunnelman/dynamiikan muutos), soolo, teema, huippu, tauko. varmuus: vahvistettu (käyttäjä tarkistanut) / analyysi (selvä mitattu piirre) / lahde+analyysi (lähteen tapahtuma osuu selvään piirteeseen) / arvio (tulkinta, tarkista). make_cues.py kirjoittaa nämä cues.json:iin, kuunteluopas.py kuunteluoppaan minuuttiosaan. Muokkaa vain tätä tiedostoa ja aja molemmat. NOPEUSKORJAUS 2026-11-09: kaikki ajat jaettu k=0.98598:lla (audio/lahde.json); alkuperäiset ajat gitin historiassa ennen tätä. Kenttä 'soittimet' (9.11.2026): tekstityksessä nimetyn soittimen varmuus kuultu|ehdokas|kielletty lähteineen (docs/julkaisu2.md 1.6); tekstitys.py hyväksyy Kuuntele-kerrokseen vain 'kuultu'.",
  "themes": {
   "gp": "Yleistauko tai lähes hiljaisuus",
   "climax": "Huippukohta tai uusi taso",
@@ -116,7 +116,25 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Sankariteema alkaa matalalta: käyrätorvi, alttoviulut ja sellot yhdessä, kontrabassot alla; Es-duuri, harppoo ylös. Viulut ovat tauolla.",
    "tarina": "Sankari astuu esiin",
-   "peruste": "musiikin alku +12 dB/s 7.6; partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)"
+   "peruste": "musiikin alku +12 dB/s 7.6; partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 3-4",
+      "krauss PANNs 3,8x p90"
+     ]
+    },
+    {
+     "nimi": "matalat jouset",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 3-4 (alttoviulut, sellot, bassot)",
+      "krauss rekisteri matala"
+     ]
+    }
+   ]
   },
   {
    "id": "held_isku_t6",
@@ -172,7 +190,17 @@
    "kuuluu": "Viulut tulevat ensimmäistä kertaa: kohotahti 23.1, teema tahdista 9 (23.6); samalla fagottien ja käyrätorvien isku",
    "tarina": "Teema nousee ylös",
    "peruste": "käyttäjä: viulut alkavat 0:23; isku 23.07 s (z 5.5); jaksoraja 23.6; partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)",
-   "z": 5.5
+   "z": 5.5,
+   "soittimet": [
+    {
+     "nimi": "viulu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 3-4 (T. 9)",
+      "krauss korva 29.10. + PANNs 1,5x"
+     ]
+    }
+   ]
   },
   {
    "id": "held_isku_t11",
@@ -210,7 +238,27 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Trumpetti, pasuunat, bassotuuba ja patarummut tulevat ensimmäistä kertaa (mf, harjoitusnumero 1); kasvu ff:ään. Lautasia ei ole.",
    "tarina": "Ensimmäinen avautuminen: vasket ja patarummut liittyvät",
-   "peruste": "jaksoraja 31.4 ff; matalan kaistan isku 33.87 s (z 5.3, kontrasti 7.5 dB); partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)"
+   "peruste": "jaksoraja 31.4 ff; matalan kaistan isku 33.87 s (z 5.3, kontrasti 7.5 dB); partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)",
+   "soittimet": [
+    {
+     "nimi": "vasket",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 179 Dover (harj. 1: trumpetti, pasuunat, tuuba)",
+      "krauss jaksoraja ff + matalan kaistan isku"
+     ]
+    },
+    {
+     "nimi": "patarumpu",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri: yksi mf-tremolotahti",
+      "krauss PANNs 0,019 = 9x p90",
+      "ref PANNs 8x p90"
+     ],
+     "huom": "heikko: yksi tahti vaskien alla; ei tekstiin ilman korvavahvistusta"
+    }
+   ]
   },
   {
    "id": "held_intro_loppuu",
@@ -230,7 +278,18 @@
    "vahvistettu": true,
    "kuuluu": "Käyrätorvet ff matalalla teemassa sellojen ja kontrabassojen kanssa (ff); trumpetit p toistuvin soinnuin, tenori- ja bassotuuba f; I viulut tauolla",
    "tarina": "Intro päättyy, jotain uutta alkaa",
-   "peruste": "käyttäjä: '0:00-0:40 intro, sitten uusi asia' (korvalla 29.10.); jaksoraja ja nuotinalku 39.4; partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)"
+   "peruste": "käyttäjä: '0:00-0:40 intro, sitten uusi asia' (korvalla 29.10.); jaksoraja ja nuotinalku 39.4; partituuri s. 3-4 (tahdit 1-20) ja tahtiruudukko (T1 7.62, T6 17.64, T8 21.62, T9 23.62, T11 27.50, T13 31.42, T17 39.44, T20 45.74)",
+   "soittimet": [
+    {
+     "nimi": "patarumpu",
+     "varmuus": "kielletty",
+     "lahteet": [
+      "partituuri Dover s. 180: ei patarumpua",
+      "krauss PANNs p90-taso",
+      "ref PANNs p90-taso"
+     ]
+    }
+   ]
   },
   {
    "id": "held_viulut_paluu",
@@ -264,7 +323,25 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 2: puupuhaltimet (3 huilua, oboet, englannintorvi, klarinetit, fagotit) ja 2 harppua tulevat ENSIMMÄISTÄ KERTAA; huilut ja viulut nousevin juoksutuksin pp crescendo, harppujen arpeggiot mf, patarummun tremolo pp; lyyrinen vastateema H-duurissa",
    "tarina": "Sankarin mielikuvitus ja tunne: lyyrinen vastateema (Wikipedia)",
-   "peruste": "partituuri s. 5 (T. 21); tahtiruudukko T21 47.80; jouset sisään 48.0; jaksoraja 49.8 (Wikipedia: lyyrinen teema H-duurissa korkeissa jousissa ja puupuhaltimissa)"
+   "peruste": "partituuri s. 5 (T. 21); tahtiruudukko T21 47.80; jouset sisään 48.0; jaksoraja 49.8 (Wikipedia: lyyrinen teema H-duurissa korkeissa jousissa ja puupuhaltimissa)",
+   "soittimet": [
+    {
+     "nimi": "puupuhaltimet",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri s. 5 (harj. 2)"
+     ],
+     "huom": "PANNs sokea tässä (0,1x); vain partituuri -> tausta-kerros"
+    },
+    {
+     "nimi": "harppu",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri s. 5 (2 harppua mf)"
+     ],
+     "huom": "vain partituuri"
+    }
+   ]
   },
   {
    "id": "held_t25",
@@ -440,7 +517,19 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Hiljainen, ilmeikäs jakso pp ('ausdrucksvoll'): huilu ja I viulut laulavat, harput pp, patarummun tremolo pp, kontrabassot pizz",
    "tarina": "Sankarin hellempi puoli",
-   "peruste": "partituuri s. 11 (T. 49); tahtiruudukko T49 102.3; jaksoraja 100.2 mf"
+   "peruste": "partituuri s. 11 (T. 49); tahtiruudukko T49 102.3; jaksoraja 100.2 mf",
+   "soittimet": [
+    {
+     "nimi": "harppu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 11 (harput pp)",
+      "krauss PANNs 2x p90",
+      "ref PANNs 2x p90"
+     ],
+     "huom": "heikko"
+    }
+   ]
   },
   {
    "id": "held_reh6",
@@ -458,7 +547,17 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 6: puupuhallinten ja käyrätorvien mf-sointu; T53-56 käyrätorvet I-II laulavat 'ausdrucksvoll', alttoviulun soolo, klarinetti 'hervortretend'",
    "tarina": "Käyrätorvien laulu",
-   "peruste": "partituuri s. 12 (T. 52); tahtiruudukko T52 108.5 = jaksoraja 108.5 (matalin rekisteri)"
+   "peruste": "partituuri s. 12 (T. 52); tahtiruudukko T52 108.5 = jaksoraja 108.5 (matalin rekisteri)",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri s. 12 (T. 53-56 I-II espressivo)"
+     ],
+     "huom": "PANNs 0,5x; vain partituuri"
+    }
+   ]
   },
   {
    "id": "held_t61",
@@ -495,7 +594,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 8: ff-tutti, 8 käyrätorvea sankariteemassa, 2 Es-trumpettia, pasuunat, tenori- ja bassotuuba, kaikki jouset ff",
    "tarina": "Sankari täydessä voimassa",
-   "peruste": "vasket sisään 140.9, jouset ulos 141.5 (interpret.py), jaksoraja 141.7; partituuri s. 13 (T. 68)"
+   "peruste": "vasket sisään 140.9, jouset ulos 141.5 (interpret.py), jaksoraja 141.7; partituuri s. 13 (T. 68)",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 13 (8 käyrätorvea ff)",
+      "krauss PANNs 2,4x",
+      "ref PANNs 1,4x"
+     ]
+    }
+   ]
   },
   {
    "id": "held_reh9",
@@ -548,7 +658,25 @@
    "kuuluu": "Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo",
    "tarina": "Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä",
    "peruste": "jaksoraja 180.5 ff crescendo; partituuri s. 18 (T. 90)",
-   "tarkista": true
+   "tarkista": true,
+   "soittimet": [
+    {
+     "nimi": "harppu",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri s. 18 (2 harppua fff glissando)"
+     ],
+     "huom": "PANNs sokea ff-tutissa"
+    },
+    {
+     "nimi": "puupuhaltimet",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "partituuri s. 18"
+     ],
+     "huom": "PANNs sokea ff-tutissa"
+    }
+   ]
   },
   {
    "id": "held_reh12",
@@ -693,7 +821,18 @@
    "varmuus": "analyysi",
    "kuuluu": "Huilu I 'sehr scharf und spitzig' yksin korkealla (F#6, D#6, C6...). Levyllä hyvin hiljainen: kokonaistaso vain noin 6 dB rahinan yläpuolella, joten tauko voi kuulostaa jatkuvan 4:10 asti",
    "tarina": "Arvostelija 1 aloittaa",
-   "peruste": "korkea kaista (1-3.5 kHz) 76/500 taajuutta kohinan yli 4:03, keski- ja matala kaista tyhjiä (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026); isku 243.10 (ensimmäinen sävel tauon jälkeen)"
+   "peruste": "korkea kaista (1-3.5 kHz) 76/500 taajuutta kohinan yli 4:03, keski- ja matala kaista tyhjiä (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026); isku 243.10 (ensimmäinen sävel tauon jälkeen)",
+   "soittimet": [
+    {
+     "nimi": "huilu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Porter 1)",
+      "krauss PANNs 110x + rekisteri korkea kaista",
+      "ref PANNs 224x"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_2_oboe",
@@ -709,7 +848,18 @@
    "varmuus": "analyysi",
    "kuuluu": "Oboe 'schnarrend' (narisevasti) keskirekisterissä (C#5)",
    "tarina": "Arvostelija 2 mutisee",
-   "peruste": "keskikaista: C#5 +36 dB kohinan yli 4:06, heikompana jo 4:04 (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026)"
+   "peruste": "keskikaista: C#5 +36 dB kohinan yli 4:06, heikompana jo 4:04 (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026)",
+   "soittimet": [
+    {
+     "nimi": "oboe",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Porter 2)",
+      "krauss rekisteri C#5 +36 dB",
+      "ref PANNs puupuhallin 82x"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_3_4",
@@ -746,7 +896,17 @@
    "varmuus": "analyysi",
    "kuuluu": "Tenorituuba ja bassotuuba p matalalla (G3, Es3), pisteellinen rytmi",
    "tarina": "Dehring: 'Dok-tor Deh-ring'",
-   "peruste": "matala kaista (40-220 Hz) syttyy 4:12: G3 +27, Es3 +24 dB kohinan yli, kestää 4:18 asti (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026)"
+   "peruste": "matala kaista (40-220 Hz) syttyy 4:12: G3 +27, Es3 +24 dB kohinan yli, kestää 4:18 asti (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026)",
+   "soittimet": [
+    {
+     "nimi": "tuuba",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Porter 5: tenori- ja bassotuuba)",
+      "krauss rekisteri G3/Es3 +27/+24 dB"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_6",
@@ -785,7 +945,25 @@
    "kuuluu": "Englannintorvi ff ja 2 fagottia ff",
    "tarina": "Arvostelijat 7 ja 8: pilkka",
    "peruste": "matala kaista (G3) 4:22-4:25 ja keskikaista G#4/F#4 4:25 (spektri alkuperäisestä FLACista verrattuna levyn kohinaan (sisäänajoura), 30.10.2026); partituuri s. 24",
-   "tarkista": true
+   "tarkista": true,
+   "soittimet": [
+    {
+     "nimi": "englannintorvi",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Porter 7)",
+      "krauss rekisteri keskikaista G#4/F#4"
+     ]
+    },
+    {
+     "nimi": "fagotti",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Porter 8)",
+      "krauss rekisteri matala kaista G3"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_9_pasuunat",
@@ -803,7 +981,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "3 sordinoitua pasuunaa ff, sitten trilli p; tuubat (Dehring) taas p",
    "tarina": "Arvostelija 9: sordinoitujen pasuunojen terävä sointu (Porter)",
-   "peruste": "partituuri s. 24 (T. 130); vasket sisään 265.5, ulos 274.8 (interpret.py)"
+   "peruste": "partituuri s. 24 (T. 130); vasket sisään 265.5, ulos 274.8 (interpret.py)",
+   "soittimet": [
+    {
+     "nimi": "pasuuna",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri s. 24 (T. 130, 3 sordinoitua)",
+      "krauss PANNs 16x",
+      "ref PANNs 26x"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_kuoro",
@@ -870,7 +1059,17 @@
    "kuuluu": "Harjoitusnumero 17: I viulut sordinoituina G-kielellä 'mit Steigerung'; jouset kasvavat aaltoina mp -> mf",
    "tarina": "Sankari kerää itseään",
    "peruste": "rekisterimittaus (analysis/rekisteri.py, alkuperäinen FLAC vs levyn kohina): 5:05 alkaen keski A#5 ja korkea F6/A#6 eivät sovi G-kieleen; partituuri s. 26 (T. 151); jouset sisään 305.2 (x11) (interpret.py); jaksot 305.3-367.2 mp-mf",
-   "tarkista": true
+   "tarkista": true,
+   "soittimet": [
+    {
+     "nimi": "viulu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (harj. 17: I viulut sord.)",
+      "krauss rekisteri A#5 jne."
+     ]
+    }
+   ]
   },
   {
    "id": "wid_uusi_hyokkays",
@@ -890,7 +1089,17 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 19 'zurückhaltend, etwas langsamer': pikkuhuilu ja huilu ff, oboet, englannintorvi ja Es-klarinetti ff, tuubat p (Dehring), sordinoidut pasuunat fp",
    "tarina": "'The critics renew their attacks' (Kennedy)",
-   "peruste": "rekisterimittaus (analysis/rekisteri.py, alkuperäinen FLAC vs levyn kohina): korkea kaista 108 -> 191 -> 216 taajuutta 6:08-6:12 (G6, D6), matala G3/G2 +40 dB 6:14-6:17 (tuubat); partituuri s. 28 (T. 170); jaksoraja 367.2 +puupuhaltimet; puupuhaltimet 368.5, vasket 371.3 (interpret.py)"
+   "peruste": "rekisterimittaus (analysis/rekisteri.py, alkuperäinen FLAC vs levyn kohina): korkea kaista 108 -> 191 -> 216 taajuutta 6:08-6:12 (G6, D6), matala G3/G2 +40 dB 6:14-6:17 (tuubat); partituuri s. 28 (T. 170); jaksoraja 367.2 +puupuhaltimet; puupuhaltimet 368.5, vasket 371.3 (interpret.py)",
+   "soittimet": [
+    {
+     "nimi": "huilu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (harj. 19: pikkuhuilu, huilu ff)",
+      "krauss rekisteri korkea kaista 108 -> 19"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_reh20",
@@ -909,7 +1118,17 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 20 'Wieder etwas langsamer': oboet ja fagotit ff, kaikki 8 käyrätorvea 'espressivo', tuubat p (Dehring), lautaset 'zischend'; accelerando",
    "tarina": "Arvostelijat ja sankarin torvet vastakkain",
-   "peruste": "rekisterimittaus (analysis/rekisteri.py, alkuperäinen FLAC vs levyn kohina): keskikaista G#4 +51 / H4 +46 dB 6:20-6:23 (käyrätorvet); partituuri s. 30 (T. 176); jaksoraja 380.5; vasket sisään 382.2 (interpret.py)"
+   "peruste": "rekisterimittaus (analysis/rekisteri.py, alkuperäinen FLAC vs levyn kohina): keskikaista G#4 +51 / H4 +46 dB 6:20-6:23 (käyrätorvet); partituuri s. 30 (T. 176); jaksoraja 380.5; vasket sisään 382.2 (interpret.py)",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (harj. 20: 8 käyrätorvea espressivo)",
+      "krauss rekisteri + PANNs 2,6x"
+     ]
+    }
+   ]
   },
   {
    "id": "wid_reh20_lautaset",
@@ -958,7 +1177,17 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Vasket ff (huippu 0.96)",
    "tarina": "Sankari ajaa vastustajat pakoon ja puhkeaa pieneen voitonhymniin",
-   "peruste": "jaksoraja 408.2; vasket sisään 412.6 (x36); max 0.96"
+   "peruste": "jaksoraja 408.2; vasket sisään 412.6 (x36); max 0.96",
+   "soittimet": [
+    {
+     "nimi": "vasket",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "Kennedy: 'a fanfare from the brass'",
+      "krauss vasket sisään x36, max 0,96"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_viulu",
@@ -973,7 +1202,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Sooloviulu, pp, harppu; tekstuuri ohut",
    "tarina": "Kumppani astuu esiin, hellä ensiesiintyminen",
-   "peruste": "jaksoraja 422.0: dynamiikka f -> pp, +harppu, viulut"
+   "peruste": "jaksoraja 422.0: dynamiikka f -> pp, +harppu, viulut",
+   "soittimet": [
+    {
+     "nimi": "viulu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (Gefährtin: sooloviulu)",
+      "krauss PANNs viulu",
+      "ref PANNs 0,93"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_vastaus1",
@@ -989,7 +1229,18 @@
    "varmuus": "analyysi",
    "kuuluu": "Orkesterin lyhyt vastaus: käyrätorvet ja patarumpu, mp",
    "tarina": "Sankari vastaa",
-   "peruste": "jaksoraja 434.5 +käyrätorvet +patarummut, pp -> mp"
+   "peruste": "jaksoraja 434.5 +käyrätorvet +patarummut, pp -> mp",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "krauss PANNs 21x p90",
+      "kuunteluopas / jaksoraja +käyrätorvet"
+     ],
+     "huom": "ref ei käytettävissä (linjaus ~3 s edellä Gefährtinin alussa)"
+    }
+   ]
   },
   {
    "id": "gef_viulu2",
@@ -1021,7 +1272,17 @@
    "varmuus": "analyysi",
    "kuuluu": "Sellot, bassot ja harppu mp (H-duuri)",
    "tarina": "Sankarin vastaus",
-   "peruste": "jaksoraja 471.5 pp -> mp"
+   "peruste": "jaksoraja 471.5 pp -> mp",
+   "soittimet": [
+    {
+     "nimi": "matalat jouset",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "tutkimus (Porter: matalien jousten repliikit)",
+      "krauss rekisteri matala, jaksoraja mp"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_mielialat",
@@ -1052,7 +1313,18 @@
    "varmuus": "analyysi",
    "kuuluu": "Käyrätorvet ja bassot mf, B-duuri",
    "tarina": "Sankari vastaa painokkaasti",
-   "peruste": "jaksot 605.0 ja 610.0 mf, käyrätorvet"
+   "peruste": "jaksot 605.0 ja 610.0 mf, käyrätorvet",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "krauss PANNs 0,3x",
+      "ref PANNs 1,6x"
+     ],
+     "huom": "heikko"
+    }
+   ]
   },
   {
    "id": "gef_kiihkea",
@@ -1083,7 +1355,17 @@
    "tarkista": true,
    "kuuluu": "Puupuhaltimet etualalla",
    "tarina": "Arvostelijoiden kaiku vai kumppanin pistely?",
-   "peruste": "puupuhaltimet sisään 637.8; jaksoraja 637.5 +puupuhaltimet"
+   "peruste": "puupuhaltimet sisään 637.8; jaksoraja 637.5 +puupuhaltimet",
+   "soittimet": [
+    {
+     "nimi": "puupuhaltimet",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "krauss PANNs klarinetti 26x"
+     ],
+     "huom": "ref 0,3x; ankkuri on arvio; vain yksi lähde"
+    }
+   ]
   },
   {
    "id": "gef_leimahdus",
@@ -1115,7 +1397,17 @@
    "tarkista": true,
    "kuuluu": "Viulu hyvin nopeana ja korkealla (5.2 ääntä/s)",
    "tarina": "Kumppani nauraa ja riehaantuu (partituurissa mm. 'beinahe doppelt so schnell (lustig)')",
-   "peruste": "jaksoraja 702.0 +viulut, liike 0.6 -> 5.2/s, rekisteri 0.84"
+   "peruste": "jaksoraja 702.0 +viulut, liike 0.6 -> 5.2/s, rekisteri 0.84",
+   "soittimet": [
+    {
+     "nimi": "viulu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "krauss liike 5,2 nt/s, rekisteri 0,84",
+      "partituuri (sooloviulu)"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_rauhoittava",
@@ -1166,7 +1458,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Ges-duuri (Fis), cantabile, koko orkesteri f, harpun glissandot",
    "tarina": "Rakkauskohtaus alkaa: 'a voluptuously scored love-scene' (Wikipedia)",
-   "peruste": "jaksoraja 802.0 p -> f, +12 dB/s 802.5; Fis/Ges-duuri 0.85 13:30"
+   "peruste": "jaksoraja 802.0 p -> f, +12 dB/s 802.5; Fis/Ges-duuri 0.85 13:30",
+   "soittimet": [
+    {
+     "nimi": "harppu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri (glissandot, B10/B11 1.11.)",
+      "käyttäjä korva 31.10. (rakkauskohtauksen harppu)"
+     ],
+     "huom": "PANNs harppu sokea (1,0x)"
+    }
+   ]
   },
   {
    "id": "gef_rakkaus_hiljaa",
@@ -1215,7 +1518,26 @@
    "varmuus": "analyysi",
    "kuuluu": "Jouset ja harppu nousevat pp -> mf",
    "tarina": "",
-   "peruste": "jaksot 886.5 ja 895.0"
+   "peruste": "jaksot 886.5 ja 895.0",
+   "soittimet": [
+    {
+     "nimi": "harppu",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "krauss PANNs 2,1x",
+      "ref PANNs 2,0x"
+     ],
+     "huom": "heikko"
+    },
+    {
+     "nimi": "jouset",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "krauss PANNs viulu 2,3x"
+     ],
+     "huom": "ref 0,9x"
+    }
+   ]
   },
   {
    "id": "gef_kolkutus",
@@ -1232,7 +1554,17 @@
    "tarkista": true,
    "kuuluu": "Puupuhaltimet ja matala vaski hiljaa kesken nousun (mf -> p)",
    "tarina": "Arvostelijat kolkuttelevat ovelle (Porter)",
-   "peruste": "jaksoraja 908.0 +trumpetit/tuubat +puupuhaltimet; puupuhaltimet sisään 909.6"
+   "peruste": "jaksoraja 908.0 +trumpetit/tuubat +puupuhaltimet; puupuhaltimet sisään 909.6",
+   "soittimet": [
+    {
+     "nimi": "puupuhaltimet",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "krauss PANNs klarinetti 11x",
+      "ref PANNs klarinetti 22x"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_huippu",
@@ -1287,7 +1619,17 @@
    "varmuus": "analyysi",
    "kuuluu": "pp, käyrätorvet hiljaa (16:20, 16:45, 17:05, 17:14.5), harppu",
    "tarina": "Jälkihehku, yö",
-   "peruste": "jaksot 980.0-1069.0 pp-p, +käyrätorvet"
+   "peruste": "jaksot 980.0-1069.0 pp-p, +käyrätorvet",
+   "soittimet": [
+    {
+     "nimi": "käyrätorvi",
+     "varmuus": "ehdokas",
+     "lahteet": [
+      "krauss interpret +käyrätorvet 878,4 (alkup.)"
+     ],
+     "huom": "PANNs 1,0x molemmissa"
+    }
+   ]
   },
   {
    "id": "gef_arvostelijat_uni",
@@ -1302,7 +1644,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Puupuhaltimet pp",
    "tarina": "Arvostelijoiden katkelmat 'unisessa hiljaisuudessa' (Wikipedia de)",
-   "peruste": "puupuhaltimet sisään 1076.4, ulos 1101.7"
+   "peruste": "puupuhaltimet sisään 1076.4, ulos 1101.7",
+   "soittimet": [
+    {
+     "nimi": "puupuhaltimet",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "krauss PANNs huilu 33x",
+      "ref PANNs huilu 220x",
+      "Porter/Kennedy: arvostelijat palaavat"
+     ]
+    }
+   ]
   },
   {
    "id": "gef_hiljaisuus",
@@ -1329,7 +1682,18 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Kaukainen trumpettifanfaari, hiljaa ja korkealta (pp -> mp)",
    "tarina": "Kulissitrumpetit kutsuvat taisteluun; kaukana, horisontissa",
-   "peruste": "puupuhaltimet ja vasket sisään 1125.7-1126.0 lähes hiljaisuuden jälkeen; jaksoraja 1127.0 +käyrätorvet +trumpetit, rekisteri nousee 0.82"
+   "peruste": "puupuhaltimet ja vasket sisään 1125.7-1126.0 lähes hiljaisuuden jälkeen; jaksoraja 1127.0 +käyrätorvet +trumpetit, rekisteri nousee 0.82",
+   "soittimet": [
+    {
+     "nimi": "trumpetti",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri Dover s. 229 (harj. 42, 3 Tromp. hinter der Scene)",
+      "krauss PANNs 23x",
+      "ref PANNs 16x"
+     ]
+    }
+   ]
   },
   {
    "id": "wal_vastaus",
@@ -1356,7 +1720,18 @@
    "varmuus": "analyysi",
    "kuuluu": "Trumpettikutsu uudelleen hiljaisuuden jälkeen",
    "tarina": "Toinen kutsu",
-   "peruste": "vasket sisään 1164.3; jaksoraja 1165.0 +käyrätorvet +trumpetit, rekisteri 0.78"
+   "peruste": "vasket sisään 1164.3; jaksoraja 1165.0 +käyrätorvet +trumpetit, rekisteri 0.78",
+   "soittimet": [
+    {
+     "nimi": "trumpetti",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri Dover s. 230 (harj. 44)",
+      "krauss PANNs 27x",
+      "ref PANNs 26x"
+     ]
+    }
+   ]
   },
   {
    "id": "wal_taistelu",
@@ -1373,6 +1748,32 @@
    "kuuluu": "Patarummut f; trumpetit ja virvelit 19:39.5; 3/4",
    "tarina": "Taistelu alkaa (Wikipedia: lyömäsoittimet ja soolotrumpetti, ensimmäinen 3/4)",
    "peruste": "jaksoraja 1172.5 mp -> f, patarummut; 1179.5 +trumpetit +virveli"
+  },
+  {
+   "id": "wal_patarummut",
+   "side": 1,
+   "t": 1191.71,
+   "luokka": "soitin",
+   "theme": "battle",
+   "lead": [
+    "timpani"
+   ],
+   "varmuus": "lahde+analyysi",
+   "vahvistettu": false,
+   "kuuluu": "Patarummut mf -> f orkesterin purkauksessa toisen kulissikutsun jälkeen (Dover s. 230, harj. 44 jälkeen); tremolo seuraa",
+   "tarina": "Taistelu alkaa: patarummut lyövät",
+   "peruste": "rumpustemmin lyönnit 1175,0 / 1175,8 / 1177,5 (alkuperäinen aika; aksentit.json A3), referenssin PANNs timpani 0,035 >> p90 0,003 samassa kohdassa, partituuri Dover s. 229-230 (Pauke mf -> f). Tekstitys #73 (release2/korjaukset.md).",
+   "soittimet": [
+    {
+     "nimi": "patarumpu",
+     "varmuus": "kuultu",
+     "lahteet": [
+      "partituuri Dover s. 230 (Pauke mf -> f)",
+      "krauss rumpustemmi 3 lyöntiä",
+      "ref PANNs 0,035 >> p90"
+     ]
+    }
+   ]
   },
   {
    "id": "wal_puolenvaihto",
