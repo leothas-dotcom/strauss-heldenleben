@@ -142,7 +142,26 @@
   "ruudulla_osuus": 0.28,
   "pvm": "2026-11-04",
   "tila": "julkaistu YouTubessa 4.11.2026: en, fi, de, sv, fr, es, it, ja (manuaaliset raidat, tarkistettu julkiselta videosivulta)",
-  "kommentti": "julkaistu 4.11.2026 @NikoKilpi: ohje laittaa tekstitykset päälle (en + fi), ei kiinnitetty"
+  "kommentti": "julkaistu 4.11.2026 @NikoKilpi: ohje laittaa tekstitykset päälle (en + fi), ei kiinnitetty",
+  "v2": {
+   "pvm": "2026-11-09",
+   "video": "renders/heldenleben_muste_A_v7.mp4 (1258 s, korjattu aika)",
+   "teksteja": 82,
+   "ruudulla_osuus": 0.31,
+   "kerrokset": {
+    "tarina": 36,
+    "kuuntele": 31,
+    "tausta": 15
+   },
+   "muutettu_tai_uusi": 45,
+   "poistettu": [
+    "sadekeha",
+    "puupuhaltimet"
+   ],
+   "tarkistus": "tekstitys.py 0 rikettä (rivit, lukunopeus, yleistauko, ajautuma, kerrokset, soitinvarmuus); kuvan väitteet esikatselusta tyo/esikatselu_fi_1-5.jpg",
+   "srt": "tekstitykset/srt/ (v7); v1 = tekstitykset/srt_v6/ ja v1/",
+   "tila": "ei ladattu: kuuluu v7:n lataukseen (julkaisu2.md luku 3)"
+  }
  },
  "lahde": {
   "aani": "audio/lp_krauss_k/side1.flac",
