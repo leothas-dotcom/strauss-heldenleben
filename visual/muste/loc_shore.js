@@ -765,8 +765,10 @@ export function build(K) {
   const dustMat = ink(C.paper, { shade: C.blue, raster: 0.5 });
   const lens = poly([[-1, 0], [0, 0.4], [1, 0], [0, -0.4]]);
   const DUST = Array.from({ length: 12 }, () => flat(scene, lens, dustMat, { z: 0.22 }));
-  const percOns = S.onsetsIn(T.v1 - 0.6, T.v2 - 1, (t) => S.fam.perc(t) > 0.1).slice(0, 4);
-  while (percOns.length < 3) percOns.push(T.v1 + 1.2 + 2.1 * percOns.length);
+  // 10.11.2026 (korjaukset.md K7): partituurissa (harj. 23, s034) ensimmäisessä orkesterivastauksessa soittavat fagotit, käyrätorvet ja
+  // matalat jouset, EI patarumpu. Pöllähdykset tulivat S.fam.perc-kohinasta ja kovakoodatusta varalistasta, joten ne on poistettu:
+  // mikä on vaiti, on levossa (kuvasääntö 8).
+  const percOns = [];
   // saari kaislikkoineen (3.16): olennot nousevat sieltä
   const isleX = 31;
   const reedBlades = [];
@@ -1206,6 +1208,7 @@ export function build(K) {
     // veneen alla koko ajan): S.fam.perc on suhteutettu oman 95. persentiilinsä mukaan, joten kohina ylitti kynnyksen lähes joka ruudulla.
     const mote = 0;
     DUST.forEach((d, i) => {
+      if (!percOns.length) { d.visible = false; return; }
       const o = percOns[i % percOns.length] - S.LEAD;
       const age = t - o - 0.0;
       const on = age > 0 && age < 1.7;

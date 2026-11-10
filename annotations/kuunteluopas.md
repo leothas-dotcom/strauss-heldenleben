@@ -196,8 +196,8 @@ Eloisa, laaja sankariteema, joka ei pysähdy 116 tahtiin. Teeman aikana esitell�
 
 | Aika | Mitä | Mitä kuuluu | Merkitys | Varmuus |
 |---|---|---|---|---|
-| **A 3:03.1–3:21.8** | uusi soitin | Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo | Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä | lähde+analyysi **[tarkista]** |
-| A 3:21.8–3:33.6 | huippu | Harjoitusnumero 12: ff-tutti patarumpuineen; sankariarpeggiot matalissa soittimissa | – | lähde+analyysi **[tarkista]** |
+| **A 3:06.2–3:21.8** | uusi soitin | Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo | Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä | lähde+analyysi **[tarkista]** |
+| A 3:25.0–3:33.6 | huippu | Harjoitusnumero 12: ff-tutti patarumpuineen; sankariarpeggiot matalissa soittimissa | – | lähde+analyysi **[tarkista]** |
 | **A 3:36.4** | isku | Pidetty ff-sointu (patarummun tremolo) katkeaa 3:32.5, ja ff-kohotahti-isku lyö | Ensimmäinen kohtaloisku | lähde+analyysi |
 | **A 3:40.3** | isku | Sama uudelleen: katko 3:36.3, isku | Toinen kohtaloisku | lähde+analyysi |
 | **A 3:44.1** | isku | Katko 3:40.1, isku | Kolmas kohtaloisku | lähde+analyysi |
@@ -250,7 +250,7 @@ Sooloviulun pitkä säestetty kadenssi tarkkoine esitysohjeineen (teeskennelty k
 | Aika | Mitä | Mitä kuuluu | Merkitys | Varmuus |
 |---|---|---|---|---|
 | **A 7:08.0** | soolo | Sooloviulu, pp, harppu; tekstuuri ohut | Kumppani astuu esiin, hellä ensiesiintyminen | lähde+analyysi |
-| **A 7:20.7–7:27.8** | uusi soitin | Orkesterin lyhyt vastaus: käyrätorvet ja patarumpu, mp | Sankari vastaa | analyysi |
+| **A 7:20.7–7:27.8** | uusi soitin | Orkesterin lyhyt vastaus (harj. 23): käyrätorvet, fagotit, alttoviulut, sellot ja kontrabassot, mf; ei patarumpua | Sankari vastaa | analyysi |
 | **A 7:27.8–7:58.2** | soolo | Viulu ja harppu, pp; matalat jouset vuorottelevat | Keskustelu | analyysi |
 | A 7:58.2–8:05.8 | tunnelma | Sellot, bassot ja harppu mp (H-duuri) | Sankarin vastaus | analyysi |
 
@@ -523,8 +523,8 @@ Järjestys (Wikipedia, Porter): arvostelijamotiivi tuo agitaton, Dehring keskeyt
 
 <!-- GEN:tarkista -->
 - **A 2:53.4–3:03.1** Harjoitusnumero 10: fff-tutti, kaikki puupuhaltimet fff, jouset kolmijaettuina soinnuin, trumpetit ja pasuunat; ei patarumpuja: Huippu: koko orkesteri
-- **A 3:03.1–3:21.8** Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo: Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä
-- **A 3:21.8–3:33.6** Harjoitusnumero 12: ff-tutti patarumpuineen; sankariarpeggiot matalissa soittimissa: tarkista
+- **A 3:06.2–3:21.8** Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo: Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä
+- **A 3:25.0–3:33.6** Harjoitusnumero 12: ff-tutti patarumpuineen; sankariarpeggiot matalissa soittimissa: tarkista
 - **A 4:13.6** Tekstuuri tihenee: pikkuhuilu, englannintorven kromaattinen nousu; lautasten 'zischend' pp ei erotu rahinasta: Arvostelijat 3 ja 4
 - **A 4:22.7–4:25.7** Oboe ja Es-klarinetti 'sehr scharf und spitzig', korkealla: Arvostelija 6: kiihtynyt oboe
 - **A 4:25.7–4:29.3** Englannintorvi ff ja 2 fagottia ff: Arvostelijat 7 ja 8: pilkka

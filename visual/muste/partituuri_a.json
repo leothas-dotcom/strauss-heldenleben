@@ -1,0 +1,59 @@
+{
+  "_ohje": "Harppujen ja patarummun tapahtumat A-puolen Der Held -jaksossa PARTITUURISTA luettuina (IMSLP 19168, build/partituuri/s003-s021.png = Dover s. 179-197), 10.11.2026. Syy: PANNs-harppukanava on kuollut (raaka maksimi 0,001) ja rumpustemmin lyöntitunnistin epäluotettava (A-puolella 1797 'lyöntiä', joista 92 saa tukea), joten kuvan välkerenkaat, pöly ja salamat syttyivät kohinasta (runs/muste-1230/release2/korjaukset.md K1-K7). Ajat EIVÄT ole tässä: tahti ja isku (4/4) muunnetaan ajaksi teemakartan ankkureista (tahtiankkurit: [tahti, ankkuri]), lineaarisesti kahden peräkkäisen ankkurin välillä (visual/muste/partituuri.js). 'kesto' on iskuina; tremolo ja arpeggio antavat yhden tapahtuman iskua kohden. Sama periaate kuin rakkauskohtauksen harppu_glissandot.json (B10/B11).",
+  "tahtiankkurit": [
+    [13, "held_vasket_t13"], [17, "held_intro_loppuu"], [21, "held_lyyrinen"], [25, "held_t25"],
+    [31, "held_t31"], [34, "held_t34"], [37, "held_reh4"], [49, "held_t49"], [52, "held_reh6"],
+    [90, "held_reh11"], [98, "held_reh12"], [103.75, "held_isku1"]
+  ],
+  "tahtiankkurit_huom": "held_isku1 = ff-kohotahti tahdin 103 neljännellä iskulla (s020). held_reh11 ja held_reh12 korjattu teemakarttaan 10.11.2026 (T. 90 = B-urkupisteen alku 186,2 s; T. 98 = tutti-isku 204,96 s).",
+  "harput": [
+    { "tahti": 21, "isku": 1, "kesto": 2, "dyn": "mf", "laji": "arpeggio", "huom": "harj. 2, I+II (s005)" },
+    { "tahti": 21, "isku": 3, "kesto": 2, "dyn": "mf", "laji": "arpeggio", "huom": "I jatkaa" },
+    { "tahti": 22, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu" },
+    { "tahti": 22, "isku": 3, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II" },
+    { "tahti": 22, "isku": 4, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "I" },
+    { "tahti": 23, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu" },
+    { "tahti": 23, "isku": 3, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II" },
+    { "tahti": 23, "isku": 4, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "I" },
+    { "tahti": 24, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu", "huom": "sitten tauolla T. 25-30 (s006: ei harppuviivastoa)" },
+
+    { "tahti": 31, "isku": 1, "kesto": 2, "dyn": "mf", "laji": "arpeggio", "huom": "s007, I+II" },
+    { "tahti": 31, "isku": 3, "kesto": 2, "dyn": "mf", "laji": "arpeggio", "huom": "I jatkaa" },
+    { "tahti": 32, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu" },
+    { "tahti": 32, "isku": 3, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II" },
+    { "tahti": 32, "isku": 4, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "I" },
+    { "tahti": 33, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu" },
+    { "tahti": 33, "isku": 3, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II" },
+    { "tahti": 33, "isku": 4, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "I" },
+    { "tahti": 34, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "sointu", "huom": "s008" },
+    { "tahti": 34, "isku": 2, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II" },
+    { "tahti": 34, "isku": 3, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "I" },
+    { "tahti": 35, "isku": 1, "kesto": 1, "dyn": "mf", "laji": "trioli", "huom": "II; sitten tauolla T. 36-48" },
+
+    { "tahti": 49, "isku": 1, "kesto": 3, "dyn": "pp", "laji": "arpeggio", "huom": "s011: I nouseva arpeggio, II sointu" },
+    { "tahti": 50, "isku": 1, "kesto": 2, "dyn": "pp", "laji": "arpeggio", "huom": "I arpeggio, II sointu" },
+    { "tahti": 50, "isku": 3, "kesto": 2, "dyn": "pp", "laji": "sointu", "huom": "II neljäsosat" },
+    { "tahti": 51, "isku": 1, "kesto": 1, "dyn": "pp", "laji": "sointu", "huom": "II" },
+    { "tahti": 51, "isku": 3, "kesto": 2, "dyn": "pp", "laji": "sointu", "huom": "II neljäsosat" },
+    { "tahti": 52, "isku": 1, "kesto": 1, "dyn": "f", "laji": "sointu", "huom": "harj. 6, II (s012); T. 55 isku 3 vielä yksi p-sointu, sitten tauolla" },
+
+    { "tahti": 90, "isku": 2, "kesto": 3, "dyn": "fff", "laji": "juoksutus_alas", "huom": "harj. 11 (s018), 2 harppua unisono" },
+    { "tahti": 91, "isku": 2, "kesto": 3, "dyn": "fff", "laji": "juoksutus_alas" },
+    { "tahti": 92, "isku": 2, "kesto": 3, "dyn": "fff", "laji": "juoksutus_alas" },
+    { "tahti": 93, "isku": 2.5, "kesto": 2.5, "dyn": "fff", "laji": "glissando_ylos" },
+    { "tahti": 94, "isku": 1, "kesto": 1, "dyn": "fff", "laji": "sointu", "huom": "s019; sitten tauolla T. 95-97" },
+    { "tahti": 98, "isku": 1, "kesto": 1, "dyn": "ff", "laji": "sointu", "huom": "harj. 12, murrettu sointu" }
+  ],
+  "patarumpu": [
+    { "tahti": 13, "isku": 1, "kesto": 3, "dyn": "mf", "laji": "tremolo", "huom": "harj. 1 (s003): ainoa patarumpu tahdeissa 1-20; T. 14-20 ei patarumpua (s003-s004)" },
+    { "tahti": 21, "isku": 1, "kesto": 2, "dyn": "pp", "laji": "tremolo", "huom": "s005" },
+    { "tahti": 31, "isku": 1, "kesto": 2, "dyn": "pp", "laji": "tremolo", "huom": "s007" },
+    { "tahti": 37, "isku": 1, "kesto": 2, "dyn": "p", "laji": "tremolo", "huom": "harj. 4 (s008)" },
+    { "tahti": 49, "isku": 1, "kesto": 3, "dyn": "pp", "laji": "tremolo", "huom": "s011" },
+    { "tahti": 90, "isku": 1, "kesto": 16, "dyn": "p", "laji": "tremolo", "huom": "harj. 11 (s018): crescendo-tremolo neljä tahtia B:llä" },
+    { "tahti": 94, "isku": 1, "kesto": 2, "dyn": "ff", "laji": "tremolo", "huom": "s019" },
+    { "tahti": 98, "isku": 1, "kesto": 2, "dyn": "ff", "laji": "tremolo", "huom": "harj. 12" },
+    { "tahti": 102, "isku": 1, "kesto": 2, "dyn": "ff", "laji": "tremolo", "huom": "s020; T. 104, 106, 108 ja 110 samoin kohtaloiskujen jälkeen (s020-s021)" }
+  ],
+  "ei_patarumpua": "Gefährtinin ensimmäinen orkesterivastaus (harj. 23, s034 = Dover s. 210, teemakartan gef_vastaus1): fagotit, käyrätorvet, alttoviulut, sellot ja kontrabassot; EI patarumpua. Patarummun pp-tremolo tulee vasta myöhemmässä pp-soinnussa (kaksi tahtia ennen 'beinahe doppelt so schnell'), jolla ei ole ankkuria."
+}

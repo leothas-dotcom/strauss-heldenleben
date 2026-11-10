@@ -18,6 +18,7 @@ import { C, ink, flat, group, poly, ridgeGeo, ridgePts, skylineGeo, rect, cloud,
 import { knightBack, KP, kmix, POSES, backGrip } from './puppets.js';
 import { leader, camPath, ease, GRIP_BELOW } from './hero.js';
 import { tipTrail, heroGate } from './brush.js';
+import { soitin, iskut } from './partituuri.js';
 
 export function build(K) {
   const { S } = K;
@@ -133,8 +134,9 @@ export function build(K) {
   // T. 11: kaikki kahdeksan nostavat kellon soittoasentoon fraasin mittaisena liikkeenä (nousu 1,6 s, lasku 1,6 s)
   const tBell = tHits[2].t;
   const bellHit = (t) => ease(smoothstep(tBell - 0.2, tBell + 1.4, t)) * (1 - ease(smoothstep(tBell + 2.2, tBell + 3.8, t)));
-  // patarummun lyönnit vaskien tulosta alkaen
-  const drum = S.strokesIn(tBrass - 0.2, tEnd);
+  // patarumpu partituurista (partituuri_a.json): tahdeissa 13-20 vain T. 13:n mf-tremolo, yksi pöllähdys iskua kohden.
+  // Ennen 10.11.2026 rumpustemmin lyöntitunnistimesta: 8 pöllähdystä tahdeissa 14-20, joissa patarumpu on vaiti (korjaukset.md K1).
+  const drum = iskut(soitin(S, 'patarumpu', tBrass - 0.2, tEnd)).map((e) => e.t);
   const low = S.accIn(tBrass, tHeroes, 5).filter((x) => x.kaistat_z.matala > 6);
   // trumpettien toistuvat soinnut tahdeista 17-19: nuotinalut
   const tptOns = S.onsetsIn(tHeroes, tGust);

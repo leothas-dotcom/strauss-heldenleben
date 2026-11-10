@@ -24,6 +24,7 @@ import { C, ink, flat, group, poly, rect, circle, cloud, crownPeak, ridgeGeo, sk
 import { knightBack, KP, kmix, backGrip } from './puppets.js';
 import { leader, camPath, ease, GRIP_BELOW } from './hero.js';
 import { tipTrail, heroGate } from './brush.js';
+import { soitin, iskut } from './partituuri.js';
 
 export function build(K) {
   const { S } = K;
@@ -83,7 +84,9 @@ export function build(K) {
   flat(fallG, skylineGeo(poolPts, -20), groundMat, { z: -5.7 });
   const waveMats = [];
   const waves = Array.from({ length: 14 }, (_, k) => { const m = ink(C.paper); waveMats.push(m); const w = flat(fallG, cloud(5.0, 1.0, k + 90, false), m, { x: FX, z: -5.9 }); w.visible = false; return w; });
-  const harpOns = S.onsetsIn(tFall - 0.2, tStorm).filter((o) => S.fam.harp(o) > 0.18);
+  // harput partituurista (partituuri_a.json, harj. 11: kolme juoksutusta alas T. 90-92, glissando ylös T. 93, sointu T. 94),
+  // ei kuolleesta PANNs-harppukanavasta (korjaukset.md K5, 10.11.2026)
+  const harpOns = iskut(soitin(S, 'harput', tFall - 0.2, tStorm)).map((e) => e.t);
   const fallHits = S.accIn(tFall - 0.2, tFall + 4, 5).map((x) => x.t);
   const fallEvents = [...new Set([...fallHits, ...harpOns])].sort((a, b) => a - b);
   // myrskypilvet ja sade
@@ -94,7 +97,8 @@ export function build(K) {
   });
   const rain = streaks(scene, 260, ink(C.paper, { shade: C.blue, raster: 0.3 }), 2);
   const boltMat = ink(C.paper);
-  const strongStrokes = S.strokesIn(tStorm, breaks[0][0]).filter((t, i, a) => i === 0 || t - a[i - 1] > 2.5).slice(0, 3);
+  // pilvien salamat = patarummun ff-tremolot partituurista (T. 98 ja T. 102), ei rumpustemmin lyöntitunnistimesta (korjaukset.md K6)
+  const strongStrokes = soitin(S, 'patarumpu', tStorm - 0.05, breaks[0][0]).map((e) => e.t);
   const dropTimes = breaks.map((b) => b[0]);   // salama = pidetyn soinnun katkeaminen, joka EDELTÄÄ paussin (ei paussin kohtaa)
   const boltTimes = [...strongStrokes, ...dropTimes];
   // salama: leveä paperinvalkoinen ydin mustalla ääriviivalla; kohtaloiskuissa sivuhaara ja

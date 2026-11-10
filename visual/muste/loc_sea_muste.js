@@ -16,6 +16,7 @@ import { C, ink, flat, group, poly, rect, ridgeGeo, cloud, sky as makeSky, strea
 import { KP, kmix, handFK, POSES } from './puppets.js';
 import { camPath, ease } from './hero.js';
 import { seaBand, ship, ride, terns, splashes, common } from './world.js';
+import { soitin, iskut, verho } from './partituuri.js';
 
 export function build(K) {
   const { S } = K;
@@ -70,7 +71,11 @@ export function build(K) {
   // tiirat: syntyvät vaahdosta puupuhaltimien tullessa, siivet puupuhallinten fraasin mukaan
   const flap = W.integ((t) => 5 + 9 * W.winds(t));
   const birth = (i) => t0 + 0.12 + i * 0.22;
-  const harpOns = S.onsetsIn(t0 - 0.2, tEnd).filter((o) => S.fam.harp(o) > 0.16);
+  // harput partituurista (partituuri_a.json: T. 21-24 ja 31-35); muualla tässä jaksossa harput ovat vaiti, eikä renkaita synny.
+  // Ennen 10.11.2026 kuolleesta PANNs-harppukanavasta (kohina suhteutettuna omaan huippuunsa, korjaukset.md K2).
+  const harpEv = soitin(S, 'harput', t0 - 0.2, tEnd);
+  const harpOns = iskut(harpEv).map((e) => e.t);
+  const harpEnv = verho(harpEv, 0.1, 1.5);
   // sforzandot (held_reh4 .. huippu): tiirojen syöksyjä
   const sfz = S.accIn(tR4, tPeak - 0.5, 4.5).map((x) => x.t).filter((x) => Math.abs(x - tR5) > 0.4);
   const peakEnv = (t) => smoothstep(tR4, tPeak, t) * (1 - smoothstep(tPeak + 0.5, tEnd + 1.5, t));
@@ -146,7 +151,7 @@ export function build(K) {
     seaMid.set(tw, 0.25 + 0.3 * lows + 0.5 * pk);
     seaNear.set(tw, 0.3 + 0.5 * lows + 1.6 * pk, t);
     seaFore.set(tw, 0.4 + 0.5 * lows + 0.8 * pk);
-    const gl = 0.3 + 0.5 * S.energy.violins(t) + 0.4 * S.fam.harp(t);
+    const gl = 0.3 + 0.5 * S.energy.violins(t) + 0.4 * harpEnv(t);
     for (const b of [seaFar, seaMid, seaNear]) b.u.uGlint.value = clamp(gl);
     // harpun nuotinalut: välkerenkaat laivan ympärillä (renkaat jäävät paikalleen veteen)
     const recent = harpOns.filter((o) => o <= t + S.LEAD && o > t - 2.6).slice(-12);

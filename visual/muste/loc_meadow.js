@@ -13,6 +13,7 @@ import { C, ink, flat, group, poly, rect, cloud, earleTree, ridgeGeo, skylineGeo
 import { knight, poseKnight, KP, kmix } from './puppets.js';
 import { leader, camPath, ease } from './hero.js';
 import { tipTrail } from './brush.js';
+import { soitin, iskut, verho } from './partituuri.js';
 
 export function build(K) {
   const { S } = K;
@@ -54,8 +55,14 @@ export function build(K) {
   const flap = (t) => ons.reduce((s, o) => s + smoothstep(o - 1 / 30, o + 0.08, t) * Math.exp(-Math.max(0, t - o) / 0.12), 0);
   // välkerenkaat vain kohdassa, jossa harput soivat: held_t49 -> held_reh6 (kuunteluopas A 1:42.3-1:48.5 'harput pp', cues held_t49 lead harps);
   // held_reh6:ssa (käyrätorvet laulavat, alttoviulu) harput eivät ole mukana, joten uusia renkaita ei synny
-  const harpOns = ons.filter((o) => S.fam.harp(o) > 0.2 && o >= tKneel && o < tDuet);
-  const hum = (t) => (S.rolls.some(([a, b]) => t >= a && t <= b) ? 1 : 0) * smoothstep(tKneel - 0.5, tKneel + 1, t) * (1 - smoothstep(tDuet - 1, tDuet, t));
+  // 10.11.2026 (korjaukset.md K3, K4): harput ja patarumpu partituurista (partituuri_a.json, T. 49-52), ei kuolleesta harppukanavasta
+  // eikä tremolotunnistimesta (S.rolls ei löytänyt tästä yhtään tremoloa, joten heinät eivät koskaan värisseet).
+  const harpEv = soitin(S, 'harput', tKneel - 0.2, tDuet + 0.2);
+  const harpOns = iskut(harpEv).map((e) => e.t);
+  const harpPP = verho(harpEv, 0.1, 1.5);
+  const harpEnv = (t) => clamp(harpPP(t) / 0.35);                    // pp = täysi välke tässä hiljaisessa kuvassa
+  const timpPP = verho(soitin(S, 'patarumpu', tKneel - 0.2, tDuet), 0.25, 0.6);
+  const hum = (t) => clamp(timpPP(t) / 0.35);                        // patarummun pp-tremolo T. 49: heinät värisevät sen ajan
   const kneel = (t) => ease(smoothstep(tKneel - 1.2, tKneel + 0.8, t)) * (1 - ease(smoothstep(tDuet - 1.5, tDuet + 0.5, t)));
   function leaderState(t) {
     const pose = kmix(kmix(KP.proud, KP.look, smoothstep(A, A + 2, t)), KP.kneel, kneel(t));
@@ -125,7 +132,7 @@ export function build(K) {
     dashN = dn;
     // puro: harpun hiljaiset renkaat
     brook.u.uTime.value = t;
-    brook.u.uGlint.value = 0.35 + 0.6 * S.fam.harp(t);
+    brook.u.uGlint.value = 0.35 + 0.6 * harpEnv(t);
     brook.rings.forEach((r) => r.set(0, 0, -99, 0));
     let k = 0;
     for (let i = harpOns.length - 1; i >= 0 && k < 16; i--) {
@@ -148,7 +155,7 @@ export function build(K) {
     olennot: birds.reduce((s, g) => s + (g.visible ? Math.abs(g.scale.y / g.scale.x) : 0), 0),
     polvi: kneel(t),
     hahmo: 1 - (K.fx && K.fx.heroFade ? K.fx.heroFade(t) : 0),
-    puro: S.fam.harp(t),
+    puro: harpEnv(t),
     heinat: hum(t),
   });
   return { scene, update, shots, probe };

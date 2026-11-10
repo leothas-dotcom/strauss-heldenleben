@@ -644,7 +644,7 @@
   {
    "id": "held_reh11",
    "side": 1,
-   "t": 183.07,
+   "t": 186.2,
    "t1": 201.83,
    "tahti": 90,
    "luokka": "soitin",
@@ -657,7 +657,7 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 11: ff, puupuhaltimet juoksutuksin, 2 harppua fff alas ja glissando, patarummun crescendo-tremolo",
    "tarina": "Puupuhaltimet ja harput ryöppyävät alaspäin, patarummut kasvattavat jännitettä",
-   "peruste": "jaksoraja 180.5 ff crescendo; partituuri s. 18 (T. 90)",
+   "peruste": "jaksoraja 180.5 ff crescendo; partituuri s. 18 (T. 90) KORJATTU 10.11.2026 (oli 183.07): B-urkupiste (patarumpu ja kontrabassot, T. 90-93) alkaa 186,2 s; bassolinja F-G-As 183,0-186,0 = T. 88-89 pasuunoiden ja bassojen aksentoidut puolinuotit (kapeakaistaspektri 58/117 Hz, iskut 183,06 ja 184,09). Vanha aika oli jaksoraja (T. 88 isku 3), ei harj. 11.",
    "tarkista": true,
    "soittimet": [
     {
@@ -681,7 +681,7 @@
   {
    "id": "held_reh12",
    "side": 1,
-   "t": 201.83,
+   "t": 204.96,
    "t1": 213.59,
    "tahti": 98,
    "luokka": "huippu",
@@ -689,7 +689,7 @@
    "varmuus": "lahde+analyysi",
    "kuuluu": "Harjoitusnumero 12: ff-tutti patarumpuineen; sankariarpeggiot matalissa soittimissa",
    "tarina": "",
-   "peruste": "partituuri s. 19 (T. 98); tahtiruudukko T98 199.5",
+   "peruste": "partituuri s. 19 (T. 98); tahtiruudukko T98 199.5 KORJATTU 10.11.2026 (oli 201.83): harj. 12:n ff-tutti-isku 204,96 s (aksentti z 6,6; C- ja G-basso 205,0-206,5); T. 102 = 213,05 ja kohtaloiskut 4 ja 8 s myöhemmin tasaisella 2,0 s:n tahdilla. Vanha aika oli T. 96-97.",
    "tarkista": true
   },
   {
@@ -1224,12 +1224,13 @@
    "theme": "hero_answer",
    "lead": [
     "horns",
-    "timpani"
+    "bassoons",
+    "low_strings"
    ],
    "varmuus": "analyysi",
-   "kuuluu": "Orkesterin lyhyt vastaus: käyrätorvet ja patarumpu, mp",
+   "kuuluu": "Orkesterin lyhyt vastaus (harj. 23): käyrätorvet, fagotit, alttoviulut, sellot ja kontrabassot, mf; ei patarumpua",
    "tarina": "Sankari vastaa",
-   "peruste": "jaksoraja 434.5 +käyrätorvet +patarummut, pp -> mp",
+   "peruste": "jaksoraja 434.5 +käyrätorvet +patarummut, pp -> mp KORJATTU 10.11.2026: partituuri s034 (Dover s. 210), harj. 23: ei Pauken-viivastoa; aiempi '+patarummut' oli PANNs-lyömäsoitinkanavan kohinaa.",
    "soittimet": [
     {
      "nimi": "käyrätorvi",
