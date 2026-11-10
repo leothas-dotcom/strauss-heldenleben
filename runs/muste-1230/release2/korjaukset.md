@@ -82,3 +82,25 @@ tuttivaskien alla ei ole 1952 monolevyltä kuultavissa. **Kuuntele-kerrokseen p�
 katsoja voi todentaa tästä äänitteestä.** Partituurin totuus kuuluu tausta-kerrokseen ("Partituurissa
 …"). PANNs on harpulle, käyrätorville tekstuurissa ja koko ff-tutille sokea molemmissa levytyksissä;
 siellä K-lähde on `rekisteri.py`:n spektri tai korva, ei PANNs.
+
+## Kuvaan välittyneet kuunteluvirheet (kartoitus 10.11.2026, ei vielä korjattu; v7 = v6:n kuva)
+
+Mitattu uusista paketeista: `aksentit.json`:n patarumpulyönnit (Demucs-rumpustemmi) vs. PANNs timpani
+(Krauss ja ref, ≥ 3× p90) ja partituuri. **Rumpustemmin lyöntitunnistin on epäluotettava: A-puolella
+1797 "lyöntiä", joista 92 saa tukea timpani-kanavasta.** PANNs timpani on itsekin heikko tuomari, joten
+vain partituuri on varma. `S.fam.harp` on kuollut kanava (raaka maksimi 0,001), jonka `signals.js`
+suhteuttaa omaan 95. persentiiliinsä, eli harppuelementtien yksittäiset hetket tulevat kohinasta.
+
+| # | Kuva | Ohjaus koodissa | Mitattu | Partituuri | Tila |
+|---|---|---|---|---|---|
+| K1 | Laakso 0:32–0:48: pöly harjanteella | `S.strokesIn` + matalat aksentit (loc_valley) | 11 lyöntiä: 3 T. 13:ssa (tuettu), 8 T. 14–20:ssa (0 tukea) | T. 14–19 ei patarumpua | **väärä**: 8 pöllähdystä ilman syytä; matalat aksentit saavat jäädä |
+| K2 | Meri 0:48–1:29: välkerenkaat = harppu | nuotinalut, joissa `S.fam.harp` > 0,16 (loc_sea_muste) | kanava 1,2× p90 = kohinaa | harput soivat harj. 2:sta (s. 5) | jakso oikea, **hetket satunnaisia** |
+| K3 | Niitty 1:44–1:50: puron välke = harppu | `S.fam.harp` (loc_meadow) | 2,0× p90 (heikko) | s. 11: harput pp | jakso oikea, hetket epävarmoja |
+| K4 | Niitty: heinät värisevät = patarummun tremolo | `S.rolls` (loc_meadow) | 0 tremoloa ikkunassa → **elementti ei koskaan näy** | s. 11: patarummun tremolo pp [tarkista sivu uudelleen] | **puuttuu** |
+| K5 | Myrsky 3:03: putouksen harppuisku | nuotinalut, joissa `S.fam.harp` > 0,18 (loc_storm) | 0,4× p90 | s. 18: 2 harppua fff glissando | jakso oikea, **hetket satunnaisia** |
+| K6 | Myrsky 3:10–3:36: salamat = patarummun lyönnit | kolme ensimmäistä lyöntiä 2,5 s välein (loc_storm) | ensimmäinen (190,1) ilman tukea, kaksi muuta 6–8× | s. 18: patarummun cresc.-tremolo | 1/3 epävarma |
+| K7 | Ranta 7:20: maan pöllähdys = patarumpu | nuotinalut, joissa `S.fam.perc` > 0,1 (loc_shore 3.2) | timpani 5× p90; lyöntejä 0 | ei tarkistettu | **ehdokas**, partituuri katsottava |
+| K8 | Taistelu 19:49–: pöllähdykset, olentojen synty | `S.strokesIn` (loc_battle) | 24/33 lyöntiä tuettu | Dover s. 230: Pauke mf → f | kunnossa |
+
+Rakkauskohtauksen harppu (kuun sillan välke) korjattiin jo 1.11. lukemalla glissandot partituurista
+(`harppu_glissandot.json`, B10/B11); K2, K3 ja K5 ovat sama vika, jota ei silloin korjattu.
