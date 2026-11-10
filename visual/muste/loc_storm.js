@@ -435,14 +435,17 @@ export function build(K) {
     }
     waves.forEach((w) => (w.visible = false));
     let wk = 0, surge = 0;
-    for (let i = fallEvents.length - 1; i >= 0 && wk < waves.length; i--) {
+    for (let i = fallEvents.length - 1; i >= 0; i--) {
       const a = t - (fallEvents[i] - S.LEAD);
-      if (a < 0 || a > 1.6) continue;
+      if (a < 0 || a > 2.3) continue;
+      // vaahto: pehmeä nousu aallon osuessa pohjaan (0,95-1,2 s) ja hidas lasku (1,1 s), jotta kolmen iskun juoksutus
+      // on yksi paisunta eikä kolme yhden ruudun pompahdusta (jatkuvuus_v8: hypyt 191,4-196,2 s; 10.11.2026)
+      surge = Math.max(surge, smoothstep(0.95, 1.2, a) * (1 - smoothstep(1.2, 2.3, a)));
+      if (a > 1.6 || wk >= waves.length) continue;
       const w = waves[wk++];
       w.visible = true;
       w.position.y = FTOP + 0.5 - 15 * a * a;
       w.scale.set(1 + 0.3 * a, 1, 1);
-      surge = Math.max(surge, a > 1.1 ? 1 - (a - 1.1) / 0.5 : 0);
     }
     fallG.position.y = -70 * (1 - clamp((t - (tFall - S.LEAD)) / 1.8));
     foam.scale.set(1 + 0.25 * surge, 1 + 0.8 * surge, 1);

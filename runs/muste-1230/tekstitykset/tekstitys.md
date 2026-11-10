@@ -43,9 +43,9 @@ soittavat teemaa täydellä voimalla. | Listen: all eight horns play
 the theme at full strength. | opas |
 | 16 | 2:40.7 | `held_reh9` | tausta | Es-duuri, kuten Eroicassa. Strauss lupasi: ei surumarssia, mutta käyrätorvia. | E flat, as in the Eroica. Strauss promised no funeral march, but plenty of horns. | tutkimus (Strauss) |
 | 17 | 2:53.1 | `held_reh10` | tarina | Koko orkesteri, fortissimo. Edessä on myrskyvuori. | Full orchestra, fortissimo. Ahead lies the storm mountain. | opas, kuva |
-| 18 | 3:02.8 | `held_reh11` | tausta | Vesiputous: partituurissa harput syöksyvät
-glissandona alas, puupuhaltimet juoksevat. | The waterfall: in the score the harps
-plunge in glissandi, the winds run down. | opas, ohjaus, partituuri s. 18, korjauslista #17 |
+| 18 | 3:05.9 | `held_reh11` | tausta | Vesiputous: partituurissa harput syöksyvät
+alas kolmesti, puupuhaltimet juoksevat. | The waterfall: in the score the harps
+plunge three times, the woodwinds race. | opas, ohjaus, partituuri s. 18 (T. 90-92 kolme juoksutusta alas, glissando vasta T. 93 ylös), korjauslista #17 |
 | 19 | 3:34.9 | `held_isku1` | kuuntele | Kuuntele: neljä kertaa sointu katkeaa ja
 isku lyö. Salama, ja joukko jatkaa. | Listen: four times the chord breaks off
 and a blow falls. Lightning, then onward. | opas, kuva |
