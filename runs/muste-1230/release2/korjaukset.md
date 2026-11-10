@@ -104,3 +104,26 @@ suhteuttaa omaan 95. persentiiliinsä, eli harppuelementtien yksittäiset hetket
 
 Rakkauskohtauksen harppu (kuun sillan välke) korjattiin jo 1.11. lukemalla glissandot partituurista
 (`harppu_glissandot.json`, B10/B11); K2, K3 ja K5 ovat sama vika, jota ei silloin korjattu.
+
+## Korjattu v8:aan (10.11.2026)
+
+Kaikki tapahtumat luettiin partituurista (`build/partituuri/s003–s021, s034`) tiedostoon
+`visual/muste/partituuri_a.json` (tahti, isku, dynamiikka), ja `visual/muste/partituuri.js` muuntaa ne ajaksi
+teemakartan ankkureista. Sama periaate kuin rakkauskohtauksen harpussa (B10/B11).
+
+| # | Korjaus |
+|---|---|
+| K1 | Laakson pöly: patarummusta vain T. 13:n mf-tremolo (kolme iskua); matalat aksentit ennallaan. Tahtien 14–20 kahdeksan pöllähdystä poissa. |
+| K2 | Meren välkerenkaat: harput T. 21–24 ja T. 31–35 (11 + 12 rengasta). Tahdeissa 25–30 ja 36–48 harput ovat vaiti, eikä renkaita synny. |
+| K3 | Niityn puron välke ja renkaat: harput T. 49–52 (pp, harj. 6:n f-sointu viimeisenä). |
+| K4 | Niityn heinät värisevät T. 49:n patarummun pp-tremolon ajan (kolme iskua). Ennen elementti ei näkynyt koskaan. |
+| K5 | Putouksen aallot: kolme harppujuoksutusta alas (T. 90–92), glissando ylös (T. 93), sointu (T. 94). |
+| K6 | Pilvisalamat: patarummun ff-tremolot T. 98 ja T. 102 (ennen kolme, joista yksi ilman syytä). |
+| K7 | Rannan 3.2 pöllähdys poistettu: harj. 23:n vastauksessa ei ole patarumpua (fagotit, käyrätorvet, matalat jouset). Myös kovakoodattu varalista (`T.v1 + 1.2 + 2.1 n`) poistui. Teemakartan `gef_vastaus1` ja `docs/ohjaus.md` 3.2 korjattu. |
+
+**Lisälöytö: kaksi ankkuria oli 3,1 s (puolitoista tahtia) etuajassa.** `held_reh11` (T. 90) oli asetettu
+jaksorajaan 183,07 s, joka on T. 88:n kolmas isku (pasuunoiden ja bassojen aksentoidut puolinuotit F–G–As). B♭-urkupiste
+(patarumpu ja kontrabassot, T. 90–93) alkaa 186,2 s: kapeakaistaspektri 58 ja 117 Hz. `held_reh12` (T. 98) oli 201,83 s;
+ff-tutti-isku on 204,96 s (aksentti, C- ja G-basso), ja siitä T. 102 (213,05) ja kohtaloiskut seuraavat tasaisella
+2,0 s:n tahdilla. Molemmat korjattu teemakarttaan, joten otot "1.14 Putous" ja "1.15 Myrsky" leikkaavat nyt
+harjoitusnumeroihin. Tekstitys "Vesiputous…" siirtyy ankkurin mukana.
