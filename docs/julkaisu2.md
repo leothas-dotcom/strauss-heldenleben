@@ -115,7 +115,12 @@ yhdessä (1 % nopeampi = +17 senttiä ja 1 % lyhyempi kesto), joten tämä on mi
    **Tehty 9.11.2026: v7** (`runs/muste-1230/renders/heldenleben_muste_A_v7.mp4`, 1258 s; 2160p-master samalla
    reseptillä kuin v6). Mitattu: ääni totuutta vasten 0,00 ms koko matkalla, iskut 8 OK + lautaset +1 ruutu,
    jähmettymiä 0, camcheck 0/95, näkyvyys 0 rikettä, korjattu sävel 1–3 c Deccan yläpuolella. Kuva on v6
-   skaalatussa ajassa (ks. `run.json` video_v7). Ei vielä julkaistu: uusi lataus tehdään luvun 3 paketin kanssa.
+   skaalatussa ajassa (ks. `run.json` video_v7). Ei julkaistu.
+   **Tehty 10.11.2026: v8** (`runs/muste-1230/renders/heldenleben_muste_A_v8.mp4`, 1258 s, 2160p-master 6,00 Gt) =
+   v7 + kuvan korjaukset K1–K7 (`release2/korjaukset.md`): harppujen ja patarummun tapahtumat partituurista,
+   `held_reh11` ja `held_reh12` +3,1 s, putouksen vaahto pehmeäksi paisunnaksi. Mitattu: ääni 0,00 ms, iskut 8 OK +
+   lautaset +1 ruutu, jähmettymiä 0, camcheck 0/95, näkyvyys 0 rikettä; jatkuvuus välkyntä 23 / hyppyjä 89 (v7 19/97,
+   ks. `run.json` video_v8). **Uusi lataus tehdään v8:sta** luvun 3 paketin kanssa.
 
 ### 1.6 Tuotos
 
@@ -171,7 +176,9 @@ pysyy samana, jos kuvaa ei muuteta.
 **Tehty 9.11.2026:** soitinvarmuus 32 ankkurille teemakarttaan (`soittimet`), `release2/korjaukset.md` kaikille riveille,
 `tekstit.json` v2 (82 tekstiä: tarina 36, kuuntele 31, tausta 15; 45 muutettua tai uutta) ja SRT:t v7:n ajoitukseen
 (`tekstitykset/srt/`), 0 rikettä. Tausta-raja nostettiin 15 → 20 %:iin, koska pelkän partituurin soitintiedot siirrettiin
-tähän kerrokseen. Koska v7:n ajat eroavat julkaistusta v6:sta (k), SRT:t ladataan vasta v7:n kanssa (luku 3).
+tähän kerrokseen. Koska v7:n ajat eroavat julkaistusta v6:sta (k), SRT:t ladataan vasta uuden videon kanssa (luku 3).
+**10.11.2026:** SRT:t generoitu v8:n ajoitukseen (0 rikettä). Vain "putous" muuttui: se siirtyi ankkurin `held_reh11`
+mukana (3:05,9) ja teksti korjattiin partituurin mukaan (T. 90–92 kolme juoksutusta alas, glissando vasta T. 93 ylös).
 
 ## 3. Uusi release
 

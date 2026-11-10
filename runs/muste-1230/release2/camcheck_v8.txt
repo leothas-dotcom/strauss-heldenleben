@@ -1,0 +1,97 @@
+   0.0 s  A paperi/paperi                                                  kääntö max   0.0 °/s (0.0 s)  siirto max 0.3 m/s
+   7.7 s  B laakso/1.1-1.3 nosturi: selkäkuva -> auringonnousu             kääntö max   0.2 °/s (21.0 s)  siirto max 1.5 m/s
+  40.0 s  B laakso/5 matala edestä: kahdeksan nousee                       kääntö max   0.2 °/s (41.8 s)  siirto max 1.2 m/s
+  43.4 s  B laakso/5 sivuajo rivin ohi                                     kääntö max   1.4 °/s (44.9 s)  siirto max 3.2 m/s
+  46.4 s  B laakso/6 puuska nostaa viirit (koko joukko)                    kääntö max   0.2 °/s (47.1 s)  siirto max 0.2 m/s
+  48.5 s  C avomeri/1.5a lento parven mukana: tiirat syntyvät vaahdosta    kääntö max   1.1 °/s (52.9 s)  siirto max 4.3 m/s
+  56.6 s  C avomeri/1.5b ritari keulassa ojentaa kätensä, tiira laskeutuu kärkeen kääntö max   0.1 °/s (63.2 s)  siirto max 2.4 m/s
+  68.5 s  C avomeri/1.6a purje nousee                                      kääntö max   0.8 °/s (71.3 s)  siirto max 3.2 m/s
+  74.0 s  C avomeri/1.6b sivuajo: laivasto rinnakkain                      kääntö max   3.9 °/s (77.0 s)  siirto max 9.1 m/s
+  79.9 s  C avomeri/1.7a mainingit kasvavat, kello nousee (lähikuva)       kääntö max   3.7 °/s (91.2 s)  siirto max 6.1 m/s
+  95.4 s  C avomeri/1.7b harjan yli: lähikuvasta laajaan, aurinko murtautuu kääntö max  14.6 °/s (96.3 s)  siirto max 12.5 m/s
+  99.5 s  C avomeri/1.7c laskeutuu niitylle                                kääntö max   1.8 °/s (100.4 s)  siirto max 8.3 m/s
+ 100.4 s  E niitty/13 kultainen niitty: kaksi pääskyä                      kääntö max   2.3 °/s (102.2 s)  siirto max 1.0 m/s
+ 103.8 s  E niitty/14 puron äärellä                                        kääntö max   0.2 °/s (110.0 s)  siirto max 0.1 m/s
+ 110.0 s  E niitty/1.9 hajoaminen: kaksi vetoa juoksee                     kääntö max   0.0 °/s (110.1 s)  siirto max 0.6 m/s
+ 127.2 s  F tasanko ja myrsky/16 vedot kokoontuvat, joukko marssii         kääntö max   0.5 °/s (134.8 s)  siirto max 3.3 m/s
+ 143.0 s  F tasanko ja myrsky/1.11 rivi ja leveä veto                      kääntö max   1.0 °/s (156.8 s)  siirto max 0.4 m/s
+ 156.8 s  F tasanko ja myrsky/1.12 viirien portaat, sivuajo                kääntö max   0.1 °/s (173.4 s)  siirto max 1.0 m/s
+ 173.4 s  F tasanko ja myrsky/1.13 kallio ja myrskyvuori                   kääntö max   0.4 °/s (173.5 s)  siirto max 0.4 m/s
+ 186.2 s  F tasanko ja myrsky/20 putous                                    kääntö max   2.2 °/s (186.2 s)  siirto max 4.3 m/s
+ 205.0 s  F tasanko ja myrsky/21-22 rinne sateessa ja kohtaloiskut         kääntö max   1.7 °/s (210.3 s)  siirto max 11.1 m/s
+ 232.3 s  F tasanko ja myrsky/23 nosturi huipulle                          kääntö max   4.9 °/s (235.1 s)  siirto max 6.0 m/s
+ 237.4 s  F tasanko ja myrsky/24 tablo: selkäkuva ja sädekehä              kääntö max   0.1 °/s (245.6 s)  siirto max 0.2 m/s
+ 246.2 s  G suo/2.1a laskeutuu suolle                                      kääntö max   6.8 °/s (246.3 s)  siirto max 7.3 m/s
+ 246.4 s  G suo/2.1b pisto: hyttynen ja ritari                             kääntö max   1.4 °/s (248.0 s)  siirto max 0.3 m/s
+ 249.5 s  G suo/2.2a sorsa (oboe)                                          kääntö max   0.8 °/s (251.6 s)  siirto max 0.2 m/s
+ 253.5 s  G suo/2.2b haikara (englannintorvi)                              kääntö max   1.2 °/s (254.6 s)  siirto max 0.5 m/s
+ 255.5 s  G suo/2.2c kotilot (Dehring)                                     kääntö max   0.4 °/s (259.3 s)  siirto max 0.1 m/s
+ 262.6 s  G suo/2.2d sorsa kiihtyy                                         kääntö max   1.0 °/s (264.2 s)  siirto max 0.3 m/s
+ 265.7 s  G suo/2.2e peili ja sammakot                                     kääntö max   0.8 °/s (267.6 s)  siirto max 0.3 m/s
+ 269.2 s  G suo/2.2f varikset kuolleessa puussa                            kääntö max   0.5 °/s (272.7 s)  siirto max 0.1 m/s
+ 275.8 s  G suo/2.3 kuoro: sameus sakenee                                  kääntö max   0.2 °/s (282.4 s)  siirto max 0.0 m/s
+ 288.9 s  G suo/2.4a molli: kypärä alas                                    kääntö max   1.0 °/s (292.9 s)  siirto max 0.1 m/s
+ 296.6 s  G suo/2.4b hiljaa, ei olentoja                                   kääntö max   0.1 °/s (303.4 s)  siirto max 0.1 m/s
+ 309.5 s  G suo/2.5a lampi: harjanne ja vuoret nousevat                    kääntö max   0.2 °/s (319.6 s)  siirto max 0.1 m/s
+ 328.8 s  G suo/2.5b kasvot ja lampi: aurinko                              kääntö max   0.1 °/s (341.4 s)  siirto max 0.0 m/s
+ 353.1 s  G suo/2.5c laaja: viirit, hän tarttuu viiriin                    kääntö max   0.2 °/s (360.5 s)  siirto max 0.1 m/s
+ 367.5 s  G suo/2.5d muisto häipyy, ritari kävelee puulle                  kääntö max   0.2 °/s (370.1 s)  siirto max 0.3 m/s
+ 372.4 s  G suo/2.6 piiritys                                               kääntö max   0.2 °/s (379.3 s)  siirto max 0.1 m/s
+ 385.9 s  G suo/2.7 toverit harjanteella                                   kääntö max   0.3 °/s (391.7 s)  siirto max 0.1 m/s
+ 397.2 s  G suo/2.8a viiri pystyyn                                         kääntö max   0.3 °/s (406.3 s)  siirto max 0.1 m/s
+ 414.0 s  G suo/2.8b veto suon yli                                         kääntö max   2.3 °/s (418.8 s)  siirto max 1.4 m/s
+ 428.0 s  S rantaniitty/3.1 ääni: viiva latvoissa, ritari pieni            kääntö max   0.0 °/s (434.5 s)  siirto max 0.3 m/s
+ 440.7 s  S rantaniitty/3.2 vastaus: kello, lähikuva                       kääntö max   0.2 °/s (444.4 s)  siirto max 0.1 m/s
+ 447.8 s  S rantaniitty/3.3 keskustelu: ensimmäinen askel                  kääntö max   0.0 °/s (453.5 s)  siirto max 0.2 m/s
+ 458.8 s  S rantaniitty/3.3 keskustelu: puiden lomassa                     kääntö max   0.1 °/s (462.2 s)  siirto max 0.3 m/s
+ 465.3 s  S rantaniitty/3.3 keskustelu: ritari niityllä                    kääntö max   0.0 °/s (471.9 s)  siirto max 0.1 m/s
+ 478.2 s  S rantaniitty/3.4 toinen vastaus: kävelee rantaan                kääntö max   0.3 °/s (484.1 s)  siirto max 1.6 m/s
+ 490.2 s  S rantaniitty/3.4 toinen vastaus: ranta ja aurinko puiden takana kääntö max   0.0 °/s (500.6 s)  siirto max 0.2 m/s
+ 510.3 s  S rantaniitty/3.4 toinen vastaus: kivellä                        kääntö max   0.0 °/s (518.1 s)  siirto max 0.1 m/s
+ 525.4 s  S rantaniitty/3.5 kaipaus: kaari veden yllä                      kääntö max   0.0 °/s (532.8 s)  siirto max 0.2 m/s
+ 540.3 s  S rantaniitty/3.5 ilo: kiveltä kivelle                           kääntö max   0.0 °/s (549.9 s)  siirto max 0.1 m/s
+ 558.8 s  S rantaniitty/3.5 kevytmielisyys: puun taakse                    kääntö max   0.0 °/s (566.5 s)  siirto max 0.1 m/s
+ 573.7 s  S rantaniitty/3.5 hellyys: kämmenelle                            kääntö max   0.0 °/s (582.2 s)  siirto max 0.1 m/s
+ 590.1 s  S rantaniitty/3.5 sarkasmi: piikki                               kääntö max   0.1 °/s (601.1 s)  siirto max 0.2 m/s
+ 613.6 s  S rantaniitty/3.6 painokas vastaus: kello täyttää kuvan          kääntö max   0.0 °/s (622.3 s)  siirto max 0.0 m/s
+ 630.3 s  S rantaniitty/3.7 kiihtyminen: pyörre, kuva laajenee             kääntö max   0.6 °/s (635.5 s)  siirto max 1.8 m/s
+ 646.6 s  S rantaniitty/3.8 pisteet: keihäs otetaan                        kääntö max   0.0 °/s (654.3 s)  siirto max 0.1 m/s
+ 662.3 s  S rantaniitty/3.8 pisteet: metsänreuna                           kääntö max   0.0 °/s (673.1 s)  siirto max 0.1 m/s
+ 683.3 s  S rantaniitty/3.8 pisteet: kääntyy kohti                         kääntö max   0.1 °/s (691.3 s)  siirto max 0.2 m/s
+ 698.3 s  S rantaniitty/3.9 leimahdus: viiri täyttää kuvan                 kääntö max   0.1 °/s (705.4 s)  siirto max 0.1 m/s
+ 712.0 s  S rantaniitty/3.10 nauru: viiva kaukana, ritari pieni            kääntö max   0.1 °/s (725.7 s)  siirto max 0.1 m/s
+ 739.4 s  S rantaniitty/3.11 rauhoittava fraasi: käsi ja maa               kääntö max   0.1 °/s (752.5 s)  siirto max 0.1 m/s
+ 762.7 s  S rantaniitty/3.12 lähentyminen: latvoista                       kääntö max   0.0 °/s (769.5 s)  siirto max 0.4 m/s
+ 775.5 s  S rantaniitty/3.12 lähentyminen: kiven taakse                    kääntö max   0.0 °/s (778.7 s)  siirto max 0.3 m/s
+ 781.6 s  S rantaniitty/3.12 lähentyminen: kämmenelle                      kääntö max   0.1 °/s (785.8 s)  siirto max 0.1 m/s
+ 789.6 s  S rantaniitty/3.12 lähentyminen: olkapäälle, kaari               kääntö max   0.0 °/s (800.9 s)  siirto max 0.1 m/s
+ 813.4 s  S rantaniitty/3.13 rakkauskohtaus: työntää veneen                kääntö max   0.0 °/s (820.5 s)  siirto max 0.4 m/s
+ 827.2 s  S rantaniitty/3.13 rakkauskohtaus: vene kuun juovalla            kääntö max   0.0 °/s (835.6 s)  siirto max 0.5 m/s
+ 844.3 s  S rantaniitty/3.14 kahden kesken: punos syntyy                   kääntö max   0.1 °/s (847.7 s)  siirto max 0.4 m/s
+ 850.9 s  S rantaniitty/3.14 kahden kesken: punos lähikuvassa, kuu takana  kääntö max   0.2 °/s (854.1 s)  siirto max 0.2 m/s
+ 857.2 s  S rantaniitty/3.14 kahden kesken: kaksi hahmoa                   kääntö max   0.0 °/s (866.8 s)  siirto max 0.1 m/s
+ 875.8 s  S rantaniitty/3.14 kahden kesken: pitkä veto                     kääntö max   0.0 °/s (882.4 s)  siirto max 0.3 m/s
+ 889.5 s  S rantaniitty/3.15 hiljaisuus: vene leijuu                       kääntö max   0.0 °/s (894.2 s)  siirto max 0.2 m/s
+ 899.1 s  S rantaniitty/3.15 nousu: punos levenee                          kääntö max   0.1 °/s (906.4 s)  siirto max 0.1 m/s
+ 913.5 s  S rantaniitty/3.15 nousu: kuu ja punos                           kääntö max   0.1 °/s (917.0 s)  siirto max 0.5 m/s
+ 920.9 s  S rantaniitty/3.16 ovella: nousee seisomaan                      kääntö max   0.0 °/s (927.1 s)  siirto max 0.1 m/s
+ 933.1 s  S rantaniitty/3.17 huippu: olennot painuvat, veto kuun yli       kääntö max   0.0 °/s (936.5 s)  siirto max 0.3 m/s
+ 940.0 s  S rantaniitty/3.17 huippu: purppura                              kääntö max   0.1 °/s (943.1 s)  siirto max 0.3 m/s
+ 946.3 s  S rantaniitty/3.17 huippu: kuva nousee                           kääntö max   0.0 °/s (953.8 s)  siirto max 0.2 m/s
+ 962.0 s  S rantaniitty/3.18 hellänä: kaksi muotoa                         kääntö max   0.1 °/s (971.7 s)  siirto max 0.2 m/s
+ 980.8 s  S rantaniitty/3.19 aalto: vene rantaan                           kääntö max   0.1 °/s (987.3 s)  siirto max 1.6 m/s
+ 993.9 s  S rantaniitty/3.20 jälkihehku: laaja, kuu ja ranta               kääntö max   0.0 °/s (1008.7 s)  siirto max 0.1 m/s
+1022.7 s  S rantaniitty/3.20 jälkihehku: kaksi hahmoa                      kääntö max   0.0 °/s (1036.7 s)  siirto max 0.0 m/s
+1049.9 s  S rantaniitty/3.20 jälkihehku: taivas                            kääntö max   0.1 °/s (1056.3 s)  siirto max 0.0 m/s
+1062.7 s  S rantaniitty/3.20 jälkihehku: kaksi hahmoa, kutsu               kääntö max   0.0 °/s (1077.6 s)  siirto max 0.0 m/s
+1091.7 s  S rantaniitty/3.21 uni: suon olennot kaislikon reunassa, ritari ja kumppani kääntö max   0.0 °/s (1105.1 s)  siirto max 0.1 m/s
+1117.7 s  S rantaniitty/3.22 tyven: paperi, kaksi muotoa                   kääntö max   0.0 °/s (1129.8 s)  siirto max 0.1 m/s
+1141.7 s  J taistelukenttä/4.1 kutsu: kolme viiriä horisontissa            kääntö max   0.1 °/s (1161.3 s)  siirto max 0.2 m/s
+1161.3 s  J taistelukenttä/4.1 ritari ratsaille, kenttä painuu esiin       kääntö max   0.2 °/s (1174.0 s)  siirto max 2.3 m/s
+1180.9 s  J taistelukenttä/4.1 viirit lähempänä                            kääntö max   0.1 °/s (1180.9 s)  siirto max 5.2 m/s
+1189.2 s  J taistelukenttä/4.2 patarummut: pysäytys kentän laidalla        kääntö max   0.1 °/s (1194.0 s)  siirto max 5.2 m/s
+1198.1 s  J taistelukenttä/4.3 rynnäkkö: sukellus kerrosten läpi           kääntö max   1.8 °/s (1242.0 s)  siirto max 4.5 m/s
+1241.1 s  K levy/levy                                                      kääntö max   0.0 °/s (0.0 s)  siirto max 4.9 m/s
+1242.1 s  J taistelukenttä/4.4 kamera vetäytyy                             kääntö max   1.8 °/s (1242.1 s)  siirto max 4.2 m/s
+
+ottoja 95, rajan 20 °/s ylittäviä 0

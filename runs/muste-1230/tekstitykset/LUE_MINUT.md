@@ -1,16 +1,20 @@
 # Tekstitykset: Ein Heldenleben, A-puoli
 
-**v2 (9.11.2026, Tekstitykset 2.0, `docs/julkaisu2.md` luku 2):** 82 tekstiä renderille **v7** (nopeuskorjattu lähde,
+**v2 (9.11.2026, Tekstitykset 2.0, `docs/julkaisu2.md` luku 2; ajoitus 10.11. renderille v8):** 82 tekstiä renderille **v8** (nopeuskorjattu lähde,
 1258 s), ruudulla 31 % ajasta, kahdeksan kieltä, kolme kerrosta: *tarina* 36 (kuva ja tarina), *kuuntele* 31 (alkaa sanalla
 Kuuntele; vain soittimet, joiden varmuus teemakartassa on `kuultu`, `release2/korjaukset.md`), *tausta* 15 (Strauss, Pauline,
 kriitikot, partituurin tieto sanalla "Partituurissa"). Rakennettu v1:stä skriptillä `v2_rakenna.py`; v1 (79 tekstiä, v6:n
-ajoitus, julkaistu 4.11.) on kansioissa `v1/` ja `srt_v6/`. **v2:n SRT:t eivät ole vielä YouTubessa:** ne kuuluvat v7:n
+ajoitus, julkaistu 4.11.) on kansioissa `v1/` ja `srt_v6/`. **v2:n SRT:t eivät ole vielä YouTubessa:** ne kuuluvat v8:n
 lataukseen (julkaisu2.md luku 3), koska v6:n ajat ovat alkuperäisen siirron aikaa.
 
 Muutokset v1 → v2: patarumpuväitteet #6 ja #7 pois (ehdokas / kielletty), #73 uuteen ankkuriin `wal_patarummut`;
 pelkän partituurin soittimet tausta-kerrokseen ("Partituurissa …": #8, #12, #17); "sädekehä on levyn ääni" ja
 "arvostelijoiden kaikuako?" poistettu; prologi kahtena tekstinä; uudet tausta-rivit yleistauosta, Dehring/Hanslick-huhusta,
 Straussin vihasta kriitikoihin ja Sinfonia domesticasta. Kuvaa koskevat väitteet tarkistettu v7:n ruuduista (`tyo/esikatselu_fi_*.jpg`).
+
+Muutos v7 → v8 (10.11.2026): vain #18 "putous". Se siirtyi ankkurin `held_reh11` mukana (3:02,8 → 3:05,9), ja teksti
+"harput syöksyvät glissandona alas" korjattiin muotoon "alas kolmesti": partituurissa (s. 18) on T. 90–92 kolme kirjoitettua
+juoksutusta alas ja glissando vasta T. 93 ylös. Käännöksistä poistui myös puupuhaltimien suunta ("run down").
 
 Alkuperäinen v1: https://youtu.be/EZ22YboLk7c (renderi v6). 79 tekstiä, ruudulla 28 % ajasta, kahdeksan kieltä.
 
@@ -39,7 +43,7 @@ tarkoittaa. Tämä on tyyliohjeen luvun 17 avoin kysymys 6, "selitetty painos", 
 | `tekstitys.md` | tarkistustaulukko: aika, ankkuri, suomi, englanti, lähde |
 | `tyo/esikatselu_*.jpg` | tekstit ruudun päällä, vain tarkistukseen |
 
-Generointi: `.venv\Scripts\python.exe -I analysis\tekstitys.py --lahde runs/muste-1230/tekstitykset/tekstit.json --video runs/muste-1230/renders/heldenleben_muste_A_v7.mp4 --out runs/muste-1230/tekstitykset [--esikatselu fi]`
+Generointi: `.venv\Scripts\python.exe -I analysis\tekstitys.py --lahde runs/muste-1230/tekstitykset/tekstit.json --video runs/muste-1230/renders/heldenleben_muste_A_v8.mp4 --out runs/muste-1230/tekstitykset [--esikatselu fi]`
 
 Rajat, jotka generaattori tarkistaa: kaksi riviä, rivi enintään 42 merkkiä (japani 21), lukunopeus 15 merkkiä/s (japani 6), sama
 ajoitus kaikilla kielillä, ajautuma ankkurista enintään 4 s; v2:ssa lisäksi kerros jokaisella tekstillä, Kuuntele-alkusana

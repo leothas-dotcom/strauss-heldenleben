@@ -145,7 +145,7 @@
   "kommentti": "julkaistu 4.11.2026 @NikoKilpi: ohje laittaa tekstitykset päälle (en + fi), ei kiinnitetty",
   "v2": {
    "pvm": "2026-11-09",
-   "video": "renders/heldenleben_muste_A_v7.mp4 (1258 s, korjattu aika)",
+   "video": "renders/heldenleben_muste_A_v8.mp4 (1258 s, korjattu aika); generoitu ensin v7:lle 9.11.",
    "teksteja": 82,
    "ruudulla_osuus": 0.31,
    "kerrokset": {
@@ -159,8 +159,8 @@
     "puupuhaltimet"
    ],
    "tarkistus": "tekstitys.py 0 rikettä (rivit, lukunopeus, yleistauko, ajautuma, kerrokset, soitinvarmuus); kuvan väitteet esikatselusta tyo/esikatselu_fi_1-5.jpg",
-   "srt": "tekstitykset/srt/ (v7); v1 = tekstitykset/srt_v6/ ja v1/",
-   "tila": "ei ladattu: kuuluu v7:n lataukseen (julkaisu2.md luku 3)"
+   "srt": "tekstitykset/srt/ (v8, 10.11.2026: 'putous' siirtyi ankkurin held_reh11 mukana +3,1 s ja sen teksti korjattiin partituurin mukaan); v1 = tekstitykset/srt_v6/ ja v1/",
+   "tila": "ei ladattu: kuuluu v8:n lataukseen (julkaisu2.md luku 3)"
   }
  },
  "lahde": {
@@ -194,5 +194,28 @@
   },
   "huom": "Ei julkaistu. Julkaisu 2.0 (docs/julkaisu2.md): tekstitykset 2.0, prologi ja uusi lataus tehdään tästä versiosta; tekstit.json:n ankkurit ovat jo korjatussa ajassa (SRT:t generoitava uudelleen).",
   "master_mitattu": "6,00 Gt, 1258,0 s, h264 3840x2160 bt709 tv, aac 48 kHz; enkoodaus 00:43–00:56"
+ },
+ "video_v8": {
+  "render": "renders/heldenleben_muste_A_v8.mp4",
+  "whatsapp": "renders/heldenleben_muste_A_v8_whatsapp.mp4",
+  "master_2160p": "renders/heldenleben_muste_A_v8_youtube_2160p.mp4",
+  "kesto_s": 1258.0,
+  "pvm": "2026-11-10 08:35–10:26",
+  "korjaukset": [
+   "K1–K7 (release2/korjaukset.md): harppujen ja patarummun kuvatapahtumat partituurista (visual/muste/partituuri_a.json, partituuri.js), ei kuolleesta PANNs-harppukanavasta eikä rumpustemmin lyöntitunnistimesta",
+   "teemakartta: held_reh11 183,07 → 186,2 ja held_reh12 201,83 → 204,96 (otot Putous ja Myrsky leikkasivat 1,5 tahtia etuajassa); gef_vastaus1 ilman patarumpua",
+   "putouksen vaahto: nousu 0,25 s ja lasku 1,1 s (loc_storm.js); ensimmäisessä v8-renderissä vaahto kasvoi yhdessä ruudussa joka harpun iskulla (jatkuvuus: neljä uutta hyppyä 191–196 s, voimakkuus 140)",
+   "kuva muuten v7"
+  ],
+  "renderointi": "koko renderi 08:35–09:00 (final8_chain.log); vaahtokorjauksen jälkeen vain osa 162,33–202,9 s (ruudut 4870–6086) renderöitiin uudelleen ja liitettiin avainruuduista (final8b_chain.sh). Liitoksen tarkistus: 37740 ruutua, ruudut 4800–4869, 6087–6150 ja 30000–30030 bittitarkasti samat kuin ennen liitosta; uusi osa eroaa vanhasta vain 187–197 s (muualla PSNR ≥ 40 dB)",
+  "mitattu": {
+   "videotarkistus": "ääni 0,00 ms koko 1258 s; iskut 8 OK, lautaset +1 ruutu (kuten v7); jähmettymiä musiikin aikana 0 (release2/videotarkistus_v8.txt)",
+   "jatkuvuus": "välkyntä 23, hyppyjä 89 (v7 19/97). Rajan ylittävät välkynnät ovat samoissa kohdissa kuin v7:ssä; lisäksi teemaviivan haihtuminen 155 s nousi rajan yli (134 → 190, koodi ennallaan). Putouksen hypyt 191–196 s: voimakkuus 140 → 42–79, lohkoja 30–38 → 5–9",
+   "camcheck": "95 ottoa, 0 yli 20 °/s (release2/camcheck_v8.txt)",
+   "nakyvyys": "0 rikettä 243,4–428 s (release2/nakyvyys_v8.txt)",
+   "stillit": "release2/stillit_v8/ (korjauskohdat ja vertailut v7:ään), renders/heldenleben_muste_A_v8_kontakti.jpg; korjatut otot katsottu 0,5 s:n kontaktiarkeista (laakso 31–46, meri 47–82, niitty 102–117, putous ja myrsky 185–215, ranta 439–454 s)"
+  },
+  "huom": "Ei julkaistu. Julkaisu 2.0:n lataus (docs/julkaisu2.md luku 3) tehdään tästä versiosta; SRT:t (tekstitykset/srt/) on generoitu tämän ajoitukseen.",
+  "master_mitattu": "6,00 Gt (5 999 912 307 tavua), h264 3840x2160, sama resepti kuin v7 (master8.sh); enkoodaus 10:09–10:25"
  }
 }

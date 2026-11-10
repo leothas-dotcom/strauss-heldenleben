@@ -127,3 +127,13 @@ jaksorajaan 183,07 s, joka on T. 88:n kolmas isku (pasuunoiden ja bassojen aksen
 ff-tutti-isku on 204,96 s (aksentti, C- ja G-basso), ja siitä T. 102 (213,05) ja kohtaloiskut seuraavat tasaisella
 2,0 s:n tahdilla. Molemmat korjattu teemakarttaan, joten otot "1.14 Putous" ja "1.15 Myrsky" leikkaavat nyt
 harjoitusnumeroihin. Tekstitys "Vesiputous…" siirtyy ankkurin mukana.
+
+**Putouksen vaahto (10.11.2026, ensimmäisen v8-renderin jatkuvuustarkistuksesta).** Kun aallot tulivat partituurin
+tasaisista iskuista, putouksen juuren vaahto kasvoi yhdessä ruudussa jokaisella iskulla ja pumppasi (neljä uutta hyppyä
+191,4–196,2 s, voimakkuus 140). Vaahdon nousu on nyt 0,25 s ja lasku 1,1 s (`loc_storm.js`), joten kolmen iskun juoksutus
+on yksi paisunta. Vain osa 162,3–202,9 s renderöitiin uudelleen ja liitettiin avainruuduista; muualla ruudut ovat
+bittitarkasti samat. Uusittu jatkuvuus: samojen kohtien hypyt voimakkuus 42–79, lohkoja 5–9.
+
+**Tekstitys "putous".** Sama partituurisivu (s. 18) osoitti, että teksti "harput syöksyvät glissandona alas" oli
+epätarkka: T. 90–92 ovat kirjoitettuja juoksutuksia alas ja glissando on vasta T. 93 ylöspäin. Korjattu kahdeksalla
+kielellä ("alas kolmesti").

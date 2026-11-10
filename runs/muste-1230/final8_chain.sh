@@ -2,20 +2,20 @@
 # Julkaisu 2.0 (10.11.2026): koko A-puolen renderi v8 = v7 + kuvan korjaukset K1-K7 (harput ja patarumpu partituurista, held_reh11/reh12 korjattu).
 # audio/lahde.json): paketit, teemakartta, cues ja kuuntelukopio korjatussa ajassa, puolen loppu 1258 s.
 # Renderi -> videotarkistus -> jatkuvuus -> kontaktiarkki -> WhatsApp (720p).
-# Käynnistys Git Bashissa:  bash /f/code/heldenleben-video/runs/muste-1230/final7_chain.sh
+# Käynnistys Git Bashissa:  bash /f/code/heldenleben-video/runs/muste-1230/final8_chain.sh
 cd /f/code/heldenleben-video || exit 1
 R=runs/muste-1230
 OUT=$R/renders/heldenleben_muste_A_v8.mp4
-LOG=$R/final7_chain.log
+LOG=$R/final8_chain.log
 echo "odotus alkaa $(date)" > "$LOG"
 while grep -qi "käynnissä" $R/pyynnot.md 2>/dev/null; do sleep 60; done
-echo "- ohjaaja: KOKO A-puolen renderi v8 (nopeuskorjattu lähde) käynnissä $(date) (final7_chain.sh)" >> $R/pyynnot.md
+echo "- ohjaaja: KOKO A-puolen renderi v8 (nopeuskorjattu lähde) käynnissä $(date) (final8_chain.sh)" >> $R/pyynnot.md
 node render/camcheck.mjs --page visual/muste/index.html --data build/demo400 --max 20 > $R/release2/camcheck_v8.txt 2>&1
 node render/nakyvyys.mjs --from 243.4 --to 428 --step 0.5 --page visual/muste/index.html --data build/demo400 --json $R/release2/nakyvyys_v8.json > $R/release2/nakyvyys_v8.txt 2>&1
 echo "renderi alkaa $(date)" >> "$LOG"
 node render/render.mjs --page visual/muste/index.html --data build/demo400 --out "$OUT" --workers 2 --fade-out 3.5 >> "$LOG" 2>&1
 echo "renderi loppui $(date) exit $?" >> "$LOG"
-sed -i '/final7_chain.sh/d' $R/pyynnot.md
+sed -i '/final8_chain.sh/d' $R/pyynnot.md
 .venv/Scripts/python.exe -I analysis/videotarkistus.py "$OUT" > $R/release2/videotarkistus_v8.txt 2>&1
 .venv/Scripts/python.exe -I analysis/jatkuvuus.py "$OUT" --start 0 --json $R/release2/jatkuvuus_v8.json > $R/release2/jatkuvuus_v8.txt 2>&1
 "${FFMPEG:-ffmpeg}" -v error -y -i "$OUT" -vf "fps=1/5,scale=270:-1,tile=8x32" $R/renders/heldenleben_muste_A_v8_kontakti.jpg >> "$LOG" 2>&1
